@@ -1361,15 +1361,15 @@ The first line of our program shows how we can print a text literal `string` wit
 
 
 
-Nim supports the [method call syntax]{.ndef}, which was earlier called
-[Uniform Function Call Syntax]{.ndef} in the D programming language.
-With that syntax, we can write procedure calls in the form [a.f]{.code}
-instead of [f(a)]{.code}. We will discuss that syntax in more detail
+Nim supports the `method call syntax]{.ndef}, which was earlier called
+`Uniform Function Call Syntax]{.ndef} in the D programming language.
+With that syntax, we can write procedure calls in the form `a.f]{.code}
+instead of `f(a)]{.code}. We will discuss that syntax in more detail
 when we explain procedures and functions. For now, it is enough that you
 know about the existence of that syntax, as we may use it at some places
 in the following sections. For example, for the length of text
-[strings]{.str}, we generally write [myTextString.len]{.code} instead of
-[len(myTextString)]{.code}. Both notations are fully
+`strings]{.str}, we generally write `myTextString.len]{.code} instead of
+`len(myTextString)]{.code}. Both notations are fully
 equivalent.^\[[17](#_footnotedef_17 "View footnote."){#_footnoteref_17
 .footnote}\]^
 
@@ -1380,18 +1380,18 @@ equivalent.^\[[17](#_footnotedef_17 "View footnote."){#_footnoteref_17
 When you try the example code from above, you may want a variant of it
 that does read in the textual input not on its own line, but directly
 after the prompt like \"What is your name: Nimrod\". As the
-[echo]{.func} [proc]{.proc} always writes a newline character after the
+`echo]{.func} `proc]{.proc} always writes a newline character after the
 last argument has been written, we have to use a different function to
-get the input prompt on the same line. We can use the [write()]{.func}
-[proc]{.proc} from the [system]{.mod} module for this. As
-[write()]{.func} can not only write to the terminal, but also to files,
+get the input prompt on the same line. We can use the `write()]{.func}
+`proc]{.proc} from the `system]{.mod} module for this. As
+`write()]{.func} can not only write to the terminal, but also to files,
 it needs an additional parameter which specifies the destination. We can
-pass the variable [stdout]{.var} from the [system]{.mod} module to
-indicate that [write()]{.func} should write to our terminal window.
+pass the variable `stdout]{.var} from the `system]{.mod} module to
+indicate that `write()]{.func} should write to our terminal window.
 Another desire of beginners is, generally, to have the ability to read
 single character input without the need to press additional the return
-key. For that, we can use the [getch()]{.func} function from the
-[terminal]{.mod} module --- that functions waits (blocks) until a key is
+key. For that, we can use the `getch()]{.func} function from the
+`terminal]{.mod} module --- that functions waits (blocks) until a key is
 pressed and returns the ASCII character of the pressed key:
 
 
@@ -1412,16 +1412,16 @@ echo "OK, let us continue, you pressed key:", c
 
 
 
-Don't get confused by the fact that the first [write()]{.func} call and
-the following [readline()]{.func} call does not appear on the same line
+Don't get confused by the fact that the first `write()]{.func} call and
+the following `readline()]{.func} call does not appear on the same line
 in our example. The actual format of our source code does in this case
 not influence the program output. We could write both function calls on
 a single line, separated with a semicolon. But that would make no
 difference for the program output. The significant difference of the
-code above is just, that [write()]{.func} prints the text, but does not
+code above is just, that `write()]{.func} prints the text, but does not
 move the cursor in the terminal window to the next line, while
-[echo()]{.func} moves the cursor to the next line when all arguments
-have been printed. We say that [echo()]{.func} prints automatically a
+`echo()]{.func} moves the cursor to the next line when all arguments
+have been printed. We say that `echo()]{.func} prints automatically a
 \'\\n\' character, which we call newline character, after all the
 arguments have been printed.
 
@@ -1447,18 +1447,18 @@ the performance of our programs.
 The most fundamental data type --- in real life and in computer
 science --- are integer (whole) numbers. All other numeric data types,
 like fractional, floating point or complex numbers, and other
-fundamental types like the boolean type with its two values [true]{.lit}
-and [false]{.lit}, or character and text [string]{.str} types, can be
+fundamental types like the boolean type with its two values `true]{.lit}
+and `false]{.lit}, or character and text `string]{.str} types, can be
 represented as integers. For that reason, the early computers built in
 the 1950s as well as today's tiniest microcontrollers work internally
 only with integer numbers. The integer data type is not only very
 important for arithmetic operations, but is also used as index to access
-elements in containers like [arrays]{.type}, and the integer numbers are
-often interpreted as bit vectors to represent [set]{.type}-like data
+elements in containers like `arrays]{.type}, and the integer numbers are
+often interpreted as bit vectors to represent `set]{.type}-like data
 types. As all CPUs are able to do basic bit operations like setting or
 clearing individual bits, and as bit patterns map well to mathematical
-sets, [set]{.type} data types are well-supported by all CPUs, and so
-[set]{.type} operations are generally very efficient. Advanced computers
+sets, `set]{.type} data types are well-supported by all CPUs, and so
+`set]{.type} operations are generally very efficient. Advanced computers
 built in the 1980s got support for the important class of floating point
 numbers by special floating point processors for fast numerical
 computations. These floating point units are today typically integrated
@@ -1471,23 +1471,23 @@ multiple data).
 
 
 
-None numeric types like characters or text [strings]{.str} are
+None numeric types like characters or text `strings]{.str} are
 internally represented by integer numbers --- in the C language the data
-type to present text [strings]{.str} is called char, but it is indeed
+type to present text `strings]{.str} is called char, but it is indeed
 only an 8-bit integer type which supports all the mathematical
 operations defined for ordinary integer types. In Nim and the wirthian
 languages, most math operations are not directly allowed for the
-[char]{.type} data type, which should prevent misuse and allows catching
+`char]{.type} data type, which should prevent misuse and allows catching
 logical errors by the compiler.
 
 
 
 Nim supports also some built in homogeneous container types like
-[arrays]{.type} and [sequences]{.type}, and many built in derived types
+`arrays]{.type} and `sequences]{.type}, and many built in derived types
 like enumeration types, sub-ranges and slices, distinct types and view
 types (experimental). The built-in inhomogeneous container types
-[object]{.key} and [tuple]{.tup}, which allow to group other types, are
-supported by a [variant]{.type} type container, which allows instances
+`object]{.key} and `tuple]{.tup}, which allow to group other types, are
+supported by a `variant]{.type} type container, which allows instances
 of that type to contain different child types at runtime. These
 inhomogeneous container types are similar to the struct and union types
 from the C programming language.
@@ -1504,12 +1504,12 @@ and procedures working on them.
 
 
 Note that all the data types that are build into the language, like the
-primitive types [int]{.type}, [float]{.type} or [char]{.type}, as well
-as the built-in container types like [tuple]{.tup}, [object]{.type},
-[seq]{.type} and [string]{.type}, are written in lower case, while data
+primitive types `int]{.type}, `float]{.type} or `char]{.type}, as well
+as the built-in container types like `tuple]{.tup}, `object]{.type},
+`seq]{.type} and `string]{.type}, are written in lower case, while data
 types that are defined by the Nim standard library or that we define our
 self, by convention starts with a capital letter like the
-[CountTables]{.type} type defined in the [tables]{.mod} module. Some
+`CountTables]{.type} type defined in the `tables]{.mod} module. Some
 people may regard this as an inconsistency, others may say that in this
 way we can differentiate built in types from types defined by libraries.
 At least we may agree that using capital notation for common types as in
@@ -1521,53 +1521,53 @@ that nice.
 ### Integer types
 
 
-We have already used the [int]{.type} data type, which indicates a
-signed integer type of [4]{.lit} or [8]{.lit} byte size, depending on
+We have already used the `int]{.type} data type, which indicates a
+signed integer type of `4]{.lit} or `8]{.lit} byte size, depending on
 the operating system. The reason why the size of that type depends on
 the word size of the OS will become clear later, when we explain what
-references and [pointers]{.type} are.
+references and `pointers]{.type} are.
 
 
 
-Beside the [int]{.type} data type, Nim has some more data types for
-signed and unsigned integers: [int8]{.type}, [int16]{.type},
-[int32]{.type} and [int64]{.type} are signed types with well-defined bit
-and byte size, and [uint8]{.type}, [uint16]{.type}, [uint32]{.type} and
-[uint64]{.type} are the unsigned equivalents. The number at the end of
+Beside the `int]{.type} data type, Nim has some more data types for
+signed and unsigned integers: `int8]{.type}, `int16]{.type},
+`int32]{.type} and `int64]{.type} are signed types with well-defined bit
+and byte size, and `uint8]{.type}, `uint16]{.type}, `uint32]{.type} and
+`uint64]{.type} are the unsigned equivalents. The number at the end of
 the type name is the bit size; we get the byte size when we divide that
-value by [8]{.lit}. Additionally, we have the type [uint]{.type}, which
-corresponds to [int]{.type} and has the same size, but stores unsigned
+value by `8]{.lit}. Additionally, we have the type `uint]{.type}, which
+corresponds to `int]{.type} and has the same size, but stores unsigned
 numbers only.
 ^\[[18](#_footnotedef_18 "View footnote."){#_footnoteref_18
-.footnote}\]^ Generally, we should try to use the [int]{.type} type for
+.footnote}\]^ Generally, we should try to use the `int]{.type} type for
 all integral numbers, but sometimes it can make sense to use the other
 types. For example, when you have to work with a large collection of
 numbers, you know that each number is not very big, and your RAM is not
-really that large, then you may decide for example to use [int16]{.type}
+really that large, then you may decide for example to use `int16]{.type}
 for all your numbers. Or when you know that your numbers will be huge
 and will not fit in a 4 byte integer, then you may use the
-[int64]{.type} type to ensure that the numbers fit in that type even
+`int64]{.type} type to ensure that the numbers fit in that type even
 when your program is compiled and executed on a computer with a 32-bit
 OS.
 
 
 
-For integer numbers we have the predefined operators [+]{.op}, [-]{.op}
-and [\*]{.op} available for addition, subtraction and multiplication.
+For integer numbers we have the predefined operators `+]{.op}, `-]{.op}
+and `*]{.op} available for addition, subtraction and multiplication.
 Basically, these operations works as we may expect, but we have to
 remember that we may get overflows. For signed integers we get compile-
 or run-time errors in that case, while unsigned integers just wrap
 around, see the example at the end of this section. For division of
-integers we have the operators [div]{.op}, [mod]{.op}, and [/]{.op}
-available. The [div]{.op} operator does an integer division ignoring the
-remainder, [mod]{.op} is short for modulus and gives us the remainder of
-the division, and [/]{.op} finally is currently only predefined for the
-signed [int]{.type} type and gives us a fractional result of data type
-[float]{.type}. That type is introduced in the next section.
+integers we have the operators `div]{.op}, `mod]{.op}, and `/]{.op}
+available. The `div]{.op} operator does an integer division ignoring the
+remainder, `mod]{.op} is short for modulus and gives us the remainder of
+the division, and `/]{.op} finally is currently only predefined for the
+signed `int]{.type} type and gives us a fractional result of data type
+`float]{.type}. That type is introduced in the next section.
 
 
 
-Remembering how [div]{.op} and [mod]{.op} behaves when the divisor or
+Remembering how `div]{.op} and `mod]{.op} behaves when the divisor or
 dividend are negative can be confusing, and it may differ for other
 programming languages. You may find a detailed justified explanation for
 the concrete behavior in the Nim manual and at Wikipedia.
@@ -1607,21 +1607,21 @@ Integer division for positive and negative operants
 
 
 When performance matters, we generally should try to use the \"CPU
-native\" number type, what for Nim is the [int]{.type} type. And we
+native\" number type, what for Nim is the `int]{.type} type. And we
 should try to avoid using math expressions with different types, as the
 CPU may have to do type conversion in that case before the math
-operation can be applied. Adding two [int8]{.type} types can on some
-CPUs be slower than adding two [ints]{.type}, because the CPU may have
+operation can be applied. Adding two `int8]{.type} types can on some
+CPUs be slower than adding two `ints]{.type}, because the CPU may have
 to size extend the operands before the math operation is performed. But
 this depends on the actual CPU, and there are important exceptions:
-Multiplying two ints would result in an int128 result if [int]{.type}
+Multiplying two ints would result in an int128 result if `int]{.type}
 size is 64 bit, which can be slow when the CPU does not support that
 operation well. Another essential point to consider for maximum
 performance is the cache usage. If you are performing operations on a
 large set of data, then you may get a significant performance gain when
 large fractions of your data fits in the caches of your computer, as
 cache access is much faster than ordinary RAM access. So using smaller
-data types, i.e. [int32]{.type} instead of Nim's default [int]{.int}
+data types, i.e. `int32]{.type} instead of Nim's default `int]{.int}
 which is int64 on a 64-bit OS, may increase performance in this special
 application.
 
@@ -1629,17 +1629,17 @@ application.
 
 When we use Nim on tiny microcontrollers, maybe even on 8-bit
 controllers like the popular AVR devices, it may be best to use only
-integers of well-defined size like [int8]{.type}.
+integers of well-defined size like `int8]{.type}.
 
 
 
 When we write integer literal numbers, then we use generally our common
-decimal notation, as in [var i = 100]{.code}. To increase the
+decimal notation, as in `var i = 100]{.code}. To increase the
 readability for long number literals we can use the underscore character
-as in [1_000]{.lit}, that underscore character is just ignored by the
+as in `1_000]{.lit}, that underscore character is just ignored by the
 compiler. We can also write integer literals in binary, octal or
 hexadecimal notation. For that we prefix the literal value with
-[0b]{.lit}, [0o]{.lit} or [0x]{.lit}. The leading zero is necessary, and
+`0b]{.lit}, `0o]{.lit} or `0x]{.lit}. The leading zero is necessary, and
 the next letter indicates binary, octal or hexadecimal encoding. But
 such integer literal notation is very rarely used.
 
@@ -1647,12 +1647,12 @@ such integer literal notation is very rarely used.
 
 More important is the actual size of integer literals, in particular
 when we use type inference. Ordinary integer literals have the
-[int]{.type} type, but integer literals not fitting in 32 bit have
-[int64]{.type} type. We can also specify the type of integer literals by
-appending the literal with [i8]{.lit}, [i16]{.lit}, [i32]{.lit} or
-[i64]{.lit} for signed types and with [u]{.lit}, [u8]{.lit},
-[u16]{.lit}, [u32]{.lit} or [u64]{.lit} for unsigned types. We can
-separate the actual number and the suffix with a [\']{.lit} character,
+`int]{.type} type, but integer literals not fitting in 32 bit have
+`int64]{.type} type. We can also specify the type of integer literals by
+appending the literal with `i8]{.lit}, `i16]{.lit}, `i32]{.lit} or
+`i64]{.lit} for signed types and with `u]{.lit}, `u8]{.lit},
+`u16]{.lit}, `u32]{.lit} or `u64]{.lit} for unsigned types. We can
+separate the actual number and the suffix with a `\']{.lit} character,
 but that is not necessary for the integer literals.
 
 
@@ -1676,13 +1676,13 @@ echo g, typeof(g)
 
 In arithmetic expressions, integer types of different sizes are
 generally compatible when all the types are signed or unsigned, e.g. in
-the example code from above we could write [echo a + b + c]{.code}, and
+the example code from above we could write `echo a + b + c]{.code}, and
 typeof(a + b + c) is int64, that is the expression is propagated to the
-largest type of all the involved operands. But [echo a + b + c +
+largest type of all the involved operands. But `echo a + b + c +
 d]{.code} would not compile, as for such a mix of signed and unsigned
 operands it is not clear if signed or unsigned arithmetic should be
-used. Also note that even on a 64-bit OS, [echo typeof(a) is
-typeof(b)]{.code} would print [false]{.lit}.
+used. Also note that even on a 64-bit OS, `echo typeof(a) is
+typeof(b)]{.code} would print `false]{.lit}.
 
 
 
@@ -1704,11 +1704,11 @@ while true:
 
 
 
-The above code would print the numbers [0]{.lit} up to [127]{.lit} and
+The above code would print the numbers `0]{.lit} up to `127]{.lit} and
 then terminate program execution due to an overflow error. But when we
-change the data type to [uint8]{.type}, we would get a continues
-sequence of the numbers [0]{.lit} up to [255]{.lit}. After the value
-[255]{.lit} is reached, the value wraps around to [0]{.lit} again and
+change the data type to `uint8]{.type}, we would get a continues
+sequence of the numbers `0]{.lit} up to `255]{.lit}. After the value
+`255]{.lit} is reached, the value wraps around to `0]{.lit} again and
 the process continues. This behavior can lead to strange bugs and is one
 of the reason why the Nim team generally recommends avoiding unsigned
 integers.
@@ -1716,17 +1716,17 @@ integers.
 
 
 For compatibility with external libraries, Nim has also the integer
-types [cint]{.type} and [cuint]{.type}, which exactly match the C types
-[int]{.type} and [uint]{.type} when we compile for the C or C++ backend.
+types `cint]{.type} and `cuint]{.type}, which exactly match the C types
+`int]{.type} and `uint]{.type} when we compile for the C or C++ backend.
 For the JavaScript backend, the LLVM backend or other backends, these
 types may be also available, for details you should consult the compiler
 documentation. For most operating system and C compilers the
-[int]{.type} and [uint]{.type} types in C are 4 bytes in size, but there
+`int]{.type} and `uint]{.type} types in C are 4 bytes in size, but there
 can be exceptions, so we better should not write code that depends on
-the actual byte size of the types. The Nim types [cint]{.type} and
-[cuint]{.type} are mainly only used for parameter lists of © library
-functions. To match other C integer types like [char]{.type},
-[short]{.type}, [long]{.type}, [longlong]{.type} Nim supports these
+the actual byte size of the types. The Nim types `cint]{.type} and
+`cuint]{.type} are mainly only used for parameter lists of © library
+functions. To match other C integer types like `char]{.type},
+`short]{.type}, `long]{.type}, `longlong]{.type} Nim supports these
 types when we put a c letter in front of the name like clong. Again, you
 should consult the Nim compiler manual when you need more details, i.e.
 when you create bindings to external libraries.
@@ -1737,11 +1737,11 @@ when you create bindings to external libraries.
 ### Floating point types
 
 
-Another important numeric data type is [float]{.type}, for floating
-point numbers. [Floats]{.type} are an approximation of real numbers.
+Another important numeric data type is `float]{.type}, for floating
+point numbers. `Floats]{.type} are an approximation of real numbers.
 They can also store fractions, and are most often printed in the decimal
 system with a decimal point, or in scientific notation with an exponent.
-Examples for the use of variables of [float]{.type} data type are
+Examples for the use of variables of `float]{.type} data type are
 
 
 
@@ -1756,33 +1756,33 @@ var
 
 
 
-The variable [mean]{.var} is assigned the result of the division of two
-[float]{.type} literals --- the result has again the data type
-[float]{.type}, and so the compiler can infer for the type of variable
-[mean]{.var} that same type. If we printed the result of the division,
+The variable `mean]{.var} is assigned the result of the division of two
+`float]{.type} literals --- the result has again the data type
+`float]{.type}, and so the compiler can infer for the type of variable
+`mean]{.var} that same type. If we printed the result of the division,
 there would be a decimal point and some digits following it. For
-variable [x]{.var} we specify the [float]{.type} type explicitly and
-assign the value [12]{.lit}. We could use type inference if we assigned
-[12.0]{.lit}, because the compiler can recognize by the decimal point
-that we want a [float]{.type}, not an [int]{.type} variable. In line 3
-we use scientific notation for the [float]{.type} literal that we assign
-to [y]{.var}, and the assigned value is [1.2 \* 10\^3 = 1200.0]{.term}.
-Literal values, like [2E3]{.lit}, are also valid [float]{.type}
-literals --- the value would be [2000.0]{.lit}. But literals with a
-decimal point and no digits before or after the point --- [1.]{.lit} or
-[.2]{.lit} --- are not valid in Nim.
+variable `x]{.var} we specify the `float]{.type} type explicitly and
+assign the value `12]{.lit}. We could use type inference if we assigned
+`12.0]{.lit}, because the compiler can recognize by the decimal point
+that we want a `float]{.type}, not an `int]{.type} variable. In line 3
+we use scientific notation for the `float]{.type} literal that we assign
+to `y]{.var}, and the assigned value is `1.2 \* 10\^3 = 1200.0]{.term}.
+Literal values, like `2E3]{.lit}, are also valid `float]{.type}
+literals --- the value would be `2000.0]{.lit}. But literals with a
+decimal point and no digits before or after the point --- `1.]{.lit} or
+`.2]{.lit} --- are not valid in Nim.
 
 
 
-In the current Nim implementation, [float]{.type} variables always
-occupy 64 bits. Nim has also the data type [float64]{.type}, which is
-currently identical to plain [float]{.type}, and [float32]{.type} which
+In the current Nim implementation, `float]{.type} variables always
+occupy 64 bits. Nim has also the data type `float64]{.type}, which is
+currently identical to plain `float]{.type}, and `float32]{.type} which
 can store only smaller numbers and has less
 precision.^\[[19](#_footnotedef_19 "View footnote."){#_footnoteref_19
-.footnote}\]^ [Floats]{.type} can store values up to a magnitude of
-approximately [1E308]{.lit} with a positive or negative sign, and
-[floats]{.type} have a typical precision of 16 digits. That is, when you
-do a division of two arbitrary [floats]{.type} and print the result, you
+.footnote}\]^ `Floats]{.type} can store values up to a magnitude of
+approximately `1E308]{.lit} with a positive or negative sign, and
+`floats]{.type} have a typical precision of 16 digits. That is, when you
+do a division of two arbitrary `floats]{.type} and print the result, you
 will get up to 16 valid digits. If you tried to print more than 16
 significant digits, then the additional decimal places would be just
 some form of random garbage. Note: The number of significant digits of a
@@ -1790,29 +1790,29 @@ floating point number is the total number of digits before and after the
 decimal point, but possible leading zero digits would not be counted.
 The reason that leading zeros are not significant is just that in the
 ordinary notation of numbers, we always assume that there is just
-nothing before the first non-zero digit. For our car odometer [001234.5
-km]{.term} is identical to [1234.5 km]{.term}. And if we give our body
-size as [1.80 m]{.lit} or [180 cm]{.lit} makes no difference, both
+nothing before the first non-zero digit. For our car odometer `001234.5
+km]{.term} is identical to `1234.5 km]{.term}. And if we give our body
+size as `1.80 m]{.lit} or `180 cm]{.lit} makes no difference, both
 values have 3 significant digits.
 
 
 
-Generally, we use [floats]{.type} whenever integers are not sufficient
+Generally, we use `floats]{.type} whenever integers are not sufficient
 for some reason. For example, when we have to do complicated
 mathematical operations which include fractional operands like
-[Pi]{.var}, or when we have to do divisions and need the exact
+`Pi]{.var}, or when we have to do divisions and need the exact
 fractional value.
 
 
 
-The [float]{.type}, [float32]{.type} and [float64]{.type} data types
-provides the [+]{.op}, [-]{.op}, [\*]{.op} and [/]{.op} operators for
+The `float]{.type}, `float32]{.type} and `float64]{.type} data types
+provides the `+]{.op}, `-]{.op}, `\*]{.op} and `/]{.op} operators for
 addition, subtraction, multiplication and division. Unlike for the
-[int]{.type} types, for the [float]{.type} types we never get overflow
+`int]{.type} types, for the `float]{.type} types we never get overflow
 or underflow errors, and also no error for a division by zero. But the
-result of an operation of two [float]{.type} operands can be a special
-value like [system]{.mod}.[Inf]{.lit}, system.NegInf or system.NaN. The
-first two indicate an over- or underflow, and [NaN]{.lit} (Not a Number)
+result of an operation of two `float]{.type} operands can be a special
+value like `system]{.mod}.`Inf]{.lit}, system.NegInf or system.NaN. The
+first two indicate an over- or underflow, and `NaN]{.lit} (Not a Number)
 indicates that the result of an operation is not a valid number at all,
 for example the result of a division by zero or the result of
 calculating the square root of a negative number. This behavior is
@@ -1822,83 +1822,83 @@ kept. So we can detect at the end of a longer mathematical calculation
 if something went wrong --- we have not to check after each single
 operation.^\[[20](#_footnotedef_20 "View footnote."){#_footnoteref_20
 .footnote}\]^ An interesting property of floating point numbers is, that
-when we test two variables of [float]{.type} type for equality, and one
-has the value [NaN]{.lit}, then the test is always false. That is, the
-test [a == NaN]{.code} is always false. When we forget this fact, we may
-initialize a [float]{.type} variable to the value [NaN]{.lit} and later
-test with [if a == NaN:]{.code} to check if we have already assigned a
+when we test two variables of `float]{.type} type for equality, and one
+has the value `NaN]{.lit}, then the test is always false. That is, the
+test `a == NaN]{.code} is always false. When we forget this fact, we may
+initialize a `float]{.type} variable to the value `NaN]{.lit} and later
+test with `if a == NaN:]{.code} to check if we have already assigned a
 value, which is not what we really had in mind, as that test has always
-a negative result. The actual test for the value [NaN]{.lit} is [a ==
-a]{.code}, which is only false when [a]{.var} has the value [NaN]{.lit},
+a negative result. The actual test for the value `NaN]{.lit} is `a ==
+a]{.code}, which is only false when `a]{.var} has the value `NaN]{.lit},
 or we may use math.isNaN(). More useful constants and functions for the
-[float]{.type} data types can be found in the [std/fenv]{.mod} module,
-and functions working with [floats]{.type} like the trigonometric ones
-are available from the [std/math]{.mod}
+`float]{.type} data types can be found in the `std/fenv]{.mod} module,
+and functions working with `floats]{.type} like the trigonometric ones
+are available from the `std/math]{.mod}
 module.^\[[21](#_footnotedef_21 "View footnote."){#_footnoteref_21
 .footnote}\]^
 
 
 
-For [floats]{.type}, we have the operators [+]{.op}, [-]{.op}, [\*]{.op}
-and [/]{.op} for addition, subtraction, multiplication and division. For
-powers with integral exponents, you can use the [\^]{.op} operator, but
-you have to import it from the [std/math]{.mod} module. The expression
-[x \^ 3]{.code} is the same as [x \* x \* x]{.code}. The [math]{.mod}
-module contains many more functions like [sin()]{.func} or
-[cos()]{.func}, [sqrt()]{.func} and [pow()]{.func}. The function name
-[sqrt()]{.func} is short for square-root, and [pow()]{.func} stands for
-power, so [pow(x, y)]{.func} is [x]{.var} to the power of [y]{.var},
-when both operands have type [float]{.type}. For performance critical
-code you should always keep in mind that [pow()]{.func} is an actual
+For `floats]{.type}, we have the operators `+]{.op}, `-]{.op}, `*]{.op}
+and `/]{.op} for addition, subtraction, multiplication and division. For
+powers with integral exponents, you can use the `^]{.op} operator, but
+you have to import it from the `std/math]{.mod} module. The expression
+`x \^ 3]{.code} is the same as `x \* x \* x]{.code}. The `math]{.mod}
+module contains many more functions like `sin()]{.func} or
+`cos()]{.func}, `sqrt()]{.func} and `pow()]{.func}. The function name
+`sqrt()]{.func} is short for square-root, and `pow()]{.func} stands for
+power, so `pow(x, y)]{.func} is `x]{.var} to the power of `y]{.var},
+when both operands have type `float]{.type}. For performance critical
+code you should always keep in mind that `pow()]{.func} is an actual
 function call, maybe a call of a dynamic library which can not be
-inlined, so a call of [pow(x, 2)]{.func} may be a lot slower than a
-plain [x \* x]{.code}. And even when using the [\^]{.op} operator as in
-[x \^ 3]{.code} we should be a bit critical. But of course, we always
+inlined, so a call of `pow(x, 2)]{.func} may be a lot slower than a
+plain `x \* x]{.code}. And even when using the `\^]{.op} operator as in
+`x \^ 3]{.code} we should be a bit critical. But of course, we always
 hope that the compiler will optimize all that for us.
 
 
 
-The operators [+]{.op}, [-]{.op}, [\*]{.op} and [/]{.op} can be used
-also when one operand is a [float]{.type} variable and the other operand
+The operators `+]{.op}, `-]{.op}, `\*]{.op} and `/]{.op} can be used
+also when one operand is a `float]{.type} variable and the other operand
 is an integer literal. In that case, the compiler knows that we really
-intend to do a [float]{.type} operation and converts the integer literal
-automatically to the [float]{.type} type. But when one operand is a
-[float]{.type} variable and the other is an [int]{.type} variable, then
-an explicit type conversion is necessary, like in [float(myIntVal) \*
+intend to do a `float]{.type} operation and converts the integer literal
+automatically to the `float]{.type} type. But when one operand is a
+`float]{.type} variable and the other is an `int]{.type} variable, then
+an explicit type conversion is necessary, like in `float(myIntVal) \*
 myFloatVal]{.code}. For the type conversion we use the desired type like
-a function, as in [float()]{.func}. One explanation why in this case the
-[int]{.type} value is not automatically converted to [float]{.type} is,
-that this may mean a loss in precision, as large [int64]{.type} values
-can not be presented exactly as a [float]{.type}. Well, for
-[int32]{.type} this reason does not really apply, but still there is no
+a function, as in `float()]{.func}. One explanation why in this case the
+`int]{.type} value is not automatically converted to `float]{.type} is,
+that this may mean a loss in precision, as large `int64]{.type} values
+can not be presented exactly as a `float]{.type}. Well, for
+`int32]{.type} this reason does not really apply, but still there is no
 automatic conversion. But indeed, as Nim is used as a systems
 programming language, it seems to be a good decision to need explicit
 conversions in this case, as it makes it more clear what really is
 intended. And generally, we should try to avoid using a lot of
 operations with mixed types, as that may make type conversions
 necessary, which may cost performance. If we really do not care, we may
-import the module [std/lenientOps]{.mod}, which defines the arithmetic
+import the module `std/lenientOps]{.mod}, which defines the arithmetic
 operations for mixed operands.
 
 
 
-Floating point literals have the [float]{.type} data type by default,
+Floating point literals have the `float]{.type} data type by default,
 but as for integer literals, we can also explicitly specify the data
-type: The suffixes [f]{.lit} and [f32]{.lit} specify a 32-bit
-[float]{.type} type, and [d]{.lit} and [f64]{.lit} specify a 64-bit
+type: The suffixes `f]{.lit} and `f32]{.lit} specify a 32-bit
+`float]{.type} type, and `d]{.lit} and `f64]{.lit} specify a 64-bit
 type. We can separate the suffix from the actual number with a
-[\']{.lit} character, but that is not required as long as there is no
-ambiguity. We can also specify [float]{.type} literals in binary, octal
+`\']{.lit} character, but that is not required as long as there is no
+ambiguity. We can also specify `float]{.type} literals in binary, octal
 or hexadecimal notation, when we append one of these suffixes. In case
-of hexadecimal notation, the [\']{.lit} is obviously needed to separate
-the suffix, as [f]{.lit} and [d]{.lit} are valid hex digits.
+of hexadecimal notation, the `\']{.lit} is obviously needed to separate
+the suffix, as `f]{.lit} and `d]{.lit} are valid hex digits.
 
 
 
 As for integer variables, Nim supports also the compatible types
-[cfloat]{.type} and [cdouble]{.type} which match the C types
-[float]{.type} and double when the C backend is enabled. For most C
-compilers, C [float]{.type} matches Nim's \[.type\]#float#32 and C
+`cfloat]{.type} and `cdouble]{.type} which match the C types
+`float]{.type} and double when the C backend is enabled. For most C
+compilers, C `float]{.type} matches Nim's \[.type\]#float#32 and C
 double matches Nim's \[.type\]#float#64.
 
 
@@ -1917,21 +1917,21 @@ backend is used.
 
 
 
-Two important properties of [floats]{.type} are that not all numbers can
+Two important properties of `floats]{.type} are that not all numbers can
 be represented exactly, and that math operations are not absolutely
 accurate. Recall that in our decimal system, some fractions like
-[1/2]{.lit} can be represented exactly as [0.5]{.lit} in decimal
-notation, while others like [1/3]{.lit} can be only approximated as
-[0.3333...​]{.lit} As all data, [floats]{.type} are stored internally in
-binary form following the [IEEE Standard for Floating-Point Arithmetic
+`1/2]{.lit} can be represented exactly as `0.5]{.lit} in decimal
+notation, while others like `1/3]{.lit} can be only approximated as
+`0.3333...]{.lit} As all data, `floats]{.type} are stored internally in
+binary form following the `IEEE Standard for Floating-Point Arithmetic
 (IEEE 754)]{.ndef}. In that format some values, e.g. the value
-[0.1]{.lit}, can not be represented exactly. As a result, some simple
+`0.1]{.lit}, can not be represented exactly. As a result, some simple
 arithmetic operations, executed in the computer, will give us not
 exactly that result that we may expect. As we should really remember
 this important fact, we will investigate this behavior with a small
 example program where we divide a few small integer numbers after
-conversion to [float]{.type} by another to [float]{.type} converted
-integer [j]{.var} and sum the result [j]{.var}
+conversion to `float]{.type} by another to `float]{.type} converted
+integer `j]{.var} and sum the result `j]{.var}
 times:^\[[22](#_footnotedef_22 "View footnote."){#_footnoteref_22
 .footnote}\]^
 
@@ -2030,40 +2030,40 @@ which generates this output:
 
 
 
-The [echo()]{.func} procedure prints up to 16 significant digits for a
-[float]{.type} value, and so the accumulated tiny arithmetic errors
+The `echo()]{.func} procedure prints up to 16 significant digits for a
+`float]{.type} value, and so the accumulated tiny arithmetic errors
 become visible. After our remarks above, that should be not surprising
 anymore, the general solution is to round results to less than 16
 decimal digits before printing. Various ways to do that will be shown
-later in the book. A related issue of [float]{.type} arithmetic is
+later in the book. A related issue of `float]{.type} arithmetic is
 caused by scaling and extinction. When we add numbers with very
 different magnitudes, the result may be just the value of the largest
-number, as in [echo 1.0 == 1.0 + 1e-16]{.code}, which prints
-[true]{.lit}. The tiny summand is just too small to actually change the
+number, as in `echo 1.0 == 1.0 + 1e-16]{.code}, which prints
+`true]{.lit}. The tiny summand is just too small to actually change the
 result, that is as when you switch on a torch on a sunny day, it will
 not really become brighter. Maybe more surprising is, that calling
-[echo()]{.func} with some simple [float]{.type} literals will print a
-different value, like [echo 66.04]{.code} which gives
-[66.04000000000001]{.lit} for Nim v1.6, while with Python3 we get
-[66.04]{.lit} exactly. But indeed that is only surprising for people who
-do not understand well what a statement like [echo 66.04]{.code} really
-does: We know already, that the value [66.04]{.lit} is converted by the
+`echo()]{.func} with some simple `float]{.type} literals will print a
+different value, like `echo 66.04]{.code} which gives
+`66.04000000000001]{.lit} for Nim v1.6, while with Python3 we get
+`66.04]{.lit} exactly. But indeed that is only surprising for people who
+do not understand well what a statement like `echo 66.04]{.code} really
+does: We know already, that the value `66.04]{.lit} is converted by the
 compiler to an internally binary representation, and then converted back
-to a decimal [string]{.str} when we run the program. So it is not that
+to a decimal `string]{.str} when we run the program. So it is not that
 surprising that in this process some tiny inaccuracies can accumulate.
 Actually, it may be possible to get exact 16 digits precision when a
-very smart conversion routine like the [ryu]{.ndef} or
-[dragonbox]{.ndef} algorithm is used. We may still wonder why Python
+very smart conversion routine like the `ryu]{.ndef} or
+`dragonbox]{.ndef} algorithm is used. We may still wonder why Python
 just seems to get it right --- well there are rumors that Python is
-cheating, maybe some past-processing to guess the [string]{.str} that
+cheating, maybe some past-processing to guess the `string]{.str} that
 the user may like.
 
 
 
 From the discussions above, it should be clear that testing two
-[floats]{.type} for equality is regularly problematic. Instead of just
+`floats]{.type} for equality is regularly problematic. Instead of just
 testing for equality, we may better define a small \[\]epsilon value
-like [eps = 1e-14]{.code} and then write [(a - b).abs \< eps]{.code}.
+like `eps = 1e-14]{.code} and then write `(a - b).abs \< eps]{.code}.
 Seems to be not bad, and can be seen frequently and often works, but not
 always. Imagine you write a program which processes chemical elements,
 and you work with atomic mass and radii. So maybe the result with the
@@ -2091,33 +2091,33 @@ tests --- the code above are just untested possible examples.
 
 
 At the end of this section some remarks about the performance of
-[float]{.type} data types compared to plain [ints]{.type}: On modern
+`float]{.type} data types compared to plain `ints]{.type}: On modern
 hardware like the popular x86 systems for the basic operations
-performance of [floats]{.type} and [ints]{.type} is very similar,
+performance of `floats]{.type} and `ints]{.type} is very similar,
 addition, subtraction and even multiplication is basically done in only
 one clock cycle, and division may be a bit slower. Even operations like
-[sqrt()]{.func} which have been regarded as slow in the past, are now
+`sqrt()]{.func} which have been regarded as slow in the past, are now
 close to a plain addition on modern hardware. As the CPU does its
-[float]{.type} arithmetic internally with 64 or even with 80 bits,
-[float32]{.type} is not faster than [float64]{.type}, as long as the
+`float]{.type} arithmetic internally with 64 or even with 80 bits,
+`float32]{.type} is not faster than `float64]{.type}, as long as the
 operations are not memory bound, that is large data sets are processed,
 so that it is an advantage when the data types are smaller so that more
 of it fits into the cache. For tiny microcontrollers and embedded
 devices, things are very different, as these devices typically have no
 floating point units. So the compiler has to emulate all the
-[float]{.type} arithmetic, maybe by use of libraries. This is very slow
+`float]{.type} arithmetic, maybe by use of libraries. This is very slow
 and produces large executables. So when writing software for modern
-desktop PCs, there is no reason to try to avoid [float]{.type} math,
-when solving the problem with [float]{.type} is easier. When the data
+desktop PCs, there is no reason to try to avoid `float]{.type} math,
+when solving the problem with `float]{.type} is easier. When the data
 extends a very width range, e.g. from nm to millions of km, or when
 operations like square root or trigonometric functions are needed, then
-there is typically no way and reason to avoid [float]{.type}. In the
-case that [floats]{.type} or [ints]{.type} may work both, it is
-generally a good strategy to try to use [ints]{.type} as first try.
-[Ints]{.type} may still provide better performance for SIMD, threading
-and parallel processing, as [ints]{.type} may avoid the expensive saving
+there is typically no way and reason to avoid `float]{.type}. In the
+case that `floats]{.type} or `ints]{.type} may work both, it is
+generally a good strategy to try to use `ints]{.type} as first try.
+`Ints]{.type} may still provide better performance for SIMD, threading
+and parallel processing, as `ints]{.type} may avoid the expensive saving
 of floating point CPU registers. For restricted hardware, we should
-better try to avoid [float]{.type} math. But all this is a difficult
+better try to avoid `float]{.type} math. But all this is a difficult
 topic, and these advises can give you only some simple recommendations,
 which may be wrong for a concrete case. So finally you have to decide
 yourself, and as always it is a good idea to do some performance tests.
@@ -2128,11 +2128,11 @@ References:
 
 
 
--   [https://en.wikipedia.org/wiki/Floating-point_arithmetic](https://en.wikipedia.org/wiki/Floating-point_arithmetic){.bare}
+-   `https://en.wikipedia.org/wiki/Floating-point_arithmetic`
 
--   [https://stackoverflow.com/questions/2100490/floating-point-inaccuracy-examples](https://stackoverflow.com/questions/2100490/floating-point-inaccuracy-examples){.bare}
+-   `https://stackoverflow.com/questions/2100490/floating-point-inaccuracy-examples`
 
--   [https://forum.nim-lang.org/t/5983](https://forum.nim-lang.org/t/5983){.bare}
+-   `https://forum.nim-lang.org/t/5983`
 
 
 
@@ -2145,14 +2145,14 @@ types. In the real world, we have a lot of quantities for which the set
 of meaningful math operations is restricted and which should not be
 mixed with quantities of other types. For example, we may have the
 quantities time and distance measured in seconds and meters and mapped
-to the [float]{.type} or [int]{.int} data type. While adding seconds and
+to the `float]{.type} or `int]{.int} data type. While adding seconds and
 adding meters is a valid operation, adding seconds to meters makes no
 sense and would be a program bug if it should occur in the program code.
 But again, dividing a distance by a time period resulting in the average
-speed would be a valid operation. Nim provides the [distinct]{.key}
+speed would be a valid operation. Nim provides the `distinct]{.key}
 keyword, which allows us to define new data types that are based on
 existing types, but that are not compatible with them or with other
-[distinct]{.key} types. And the new defined [distinct]{.key} types have
+`distinct]{.key} types. And the new defined `distinct]{.key} types have
 no predefined operations, we have to define all desired operations our
 self.
 
@@ -2172,9 +2172,9 @@ var t: Time = Time(0.2)
 
 
 For distinct types, we have to define all the allowed operations our
-self. We can convert [distinct]{.key} types to the base types and then
+self. We can convert `distinct]{.key} types to the base types and then
 use operations of the base type, or we can borrow operations from the
-base type by use of the {.borrow.} pragma. Using [distinct]{.key} types
+base type by use of the {.borrow.} pragma. Using `distinct]{.key} types
 can be complicated when the new type should support many operations, but
 it can make our code more save. For some data type with a very limited
 set of operations, distinct types can be used easily. Distinct types are
@@ -2189,11 +2189,11 @@ existence.
 
 
 Sometimes it makes sense to limit the range of numeric variables to only
-a sub-range. For this, Nim uses the [range]{.key} keyword with this
-notation: [range\[LowVal .. HighVal\]]{.code}. Values of this type can
+a sub-range. For this, Nim uses the `range]{.key} keyword with this
+notation: `range[LowVal .. HighVal]`. Values of this type can
 never be smaller than LowVal or larger than HighVal. For Nim v1.6 we can
-define range types also by leaving out the [range\[\]]{.code}, that is,
-by just two constants separated by [..]{.code}.
+define range types also by leaving out the `range\[\]]{.code}, that is,
+by just two constants separated by `..]{.code}.
 
 
 
@@ -2215,34 +2215,34 @@ echo d
 
 
 For the above example, the base type of the defined ranges is
-[int]{.type}, so the ranges are compatible with the predefined
-[int]{.type} type, we can assign values of [int]{.type} type to our
+`int]{.type}, so the ranges are compatible with the predefined
+`int]{.type} type, we can assign values of `int]{.type} type to our
 range types and vice versa. In our example the size of the range types
-is the size of the [int]{.type} base type, but of course we could use
-other base types, like [type Weekday = 1.int8 .. 7.int8]{.code}. If we
+is the size of the `int]{.type} base type, but of course we could use
+other base types, like `type Weekday = 1.int8 .. 7.int8]{.code}. If we
 try to assign to a range type a value that falls not into the allowed
 range, then we get a compile-time or run-time range error. This can help
 us to prevent or to discover errors in our programs. Note that whenever
 we use range types, the compiler may have to add additional checks to
 ensure that variables are always restricted to the specified range. This
 check is active in debug mode and also when we compile with option
-[-d:release]{.term}, and is only ignored when we compile with
-[-d:danger]{.term} or explicitly disable range checks. So using a lot of
+`-d:release]{.term}, and is only ignored when we compile with
+`-d:danger]{.term} or explicitly disable range checks. So using a lot of
 range types may increase code size and decrease performance. For the
-example above, the line with the assignment [d = a]{.code} generates a
+example above, the line with the assignment `d = a]{.code} generates a
 runtime check. An important and often used range type is the data type
-[Natural]{.type}, defined as [range\[0 .. int.high\]]{.code}. That type
-is compatible with the [int]{.type} type and does not wrap around as
-[uint]{.type} would do. It is regularly used as type for procedure
+`Natural]{.type}, defined as `range[0 .. int.high]`. That type
+is compatible with the `int]{.type} type and does not wrap around as
+`uint]{.type} would do. It is regularly used as type for procedure
 parameters when the arguments have to be not negative. In the
-[proc]{.proc} body we sometimes copy arguments of natural type to an
+`proc]{.proc} body we sometimes copy arguments of natural type to an
 ordinary integer --- that way we can ensure a none negative start value,
 and can avoid many range checks in the procedure body.
 
 
 
-We can also declare sub-range types with [float]{.type} base types like
-[type Probability = range\[0.0 .. 1.0\]]{.term}.
+We can also declare sub-range types with `float]{.type} base types like
+`type Probability = range[0.0 .. 1.0]`.
 
 
 
@@ -2271,20 +2271,20 @@ type.
 ### Enumeration types
 
 
-Enumeration types are shortened as [enum]{.key} in Nim. While
-[enums]{.type} in C are nothing more than integers with some special
-syntax for creation, Nim's [enums]{.type} are more complex.
+Enumeration types are shortened as `enum]{.key} in Nim. While
+`enums]{.type} in C are nothing more than integers with some special
+syntax for creation, Nim's `enums]{.type} are more complex.
 
 
 
-In Nim [enums]{.type} can be used whenever some form of symbols are
-needed like the colors [red]{.lit}, [yellow]{.lit} and [green]{.lit} of
-a traffic light, or the directions [north]{.lit}, [south]{.lit},
-[east]{.lit} and [west]{.lit} for a map or a game.
+In Nim `enums]{.type} can be used whenever some form of symbols are
+needed like the colors `red]{.lit}, `yellow]{.lit} and `green]{.lit} of
+a traffic light, or the directions `north]{.lit}, `south]{.lit},
+`east]{.lit} and `west]{.lit} for a map or a game.
 
 
 
-Most of the time, we declare an [enum]{.type} type and the corresponding
+Most of the time, we declare an `enum]{.type} type and the corresponding
 values by simple listing them like
 
 
@@ -2314,13 +2314,13 @@ if tl == red:
 
 
 
-[Enums]{.type} support assignment, plain tests for (in)-equality and for
-smaller or greater. Additionally, the functions [succ()]{.func} and
-[pred()]{.func} are defined for [enums]{.type} to get the successor or
-predecessor of an enum, [ord()]{.func} or [int()]{.func} deliver the
-corresponding integer number and the [\$]{.op} operator can be used to
-get the name of an [enum]{.type}. We can also iterate over
-[enums]{.type}, so we can print all the colors of our TrafficLight by
+`Enums]{.type} support assignment, plain tests for (in)-equality and for
+smaller or greater. Additionally, the functions `succ()]{.func} and
+`pred()]{.func} are defined for `enums]{.type} to get the successor or
+predecessor of an enum, `ord()]{.func} or `int()]{.func} deliver the
+corresponding integer number and the `$]{.op} operator can be used to
+get the name of an `enum]{.type}. We can also iterate over
+`enums]{.type}, so we can print all the colors of our TrafficLight by
 
 
 
@@ -2333,9 +2333,9 @@ for el in TrafficLight:
 
 
 
-Ordinary [enums]{.type} start at [0]{.lit} and uses continues numbers
-for the internal numeric value, so that [enums]{.type} can be used as
-[array]{.type}
+Ordinary `enums]{.type} start at `0]{.lit} and uses continues numbers
+for the internal numeric value, so that `enums]{.type} can be used as
+`array]{.type}
 indices.^\[[23](#_footnotedef_23 "View footnote."){#_footnoteref_23
 .footnote}\]^
 
@@ -2370,13 +2370,13 @@ type
 
 We should avoid that, as these \"enums with holes\" generate some
 problems for the compiler and may be later deprecated. For example,
-[array]{.type} indexing or iterating is obviously not possible for
-[enums]{.type} with holes.
+`array]{.type} indexing or iterating is obviously not possible for
+`enums]{.type} with holes.
 
 
 
-It is also possible to set the [string]{.str} that the stringify
-operator [\$]{.op} returns, like in
+It is also possible to set the `string]{.str} that the stringify
+operator `$]{.op} returns, like in
 
 
 
@@ -2397,9 +2397,9 @@ enum's numerical values must always be specified in ascending order.
 
 
 
-When we have many [enums]{.type} in a program, then name conflicts may
-occur, for example we may have an additional [enum]{.type} type named
-[BaseColor]{.type}, which also has [red]{.lit} and [green]{.lit}
+When we have many `enums]{.type} in a program, then name conflicts may
+occur, for example we may have an additional `enum]{.type} type named
+`BaseColor]{.type}, which also has `red]{.lit} and `green]{.lit}
 members. For that case, the {.pure.} pragma exists:
 
 
@@ -2415,8 +2415,8 @@ type
 
 
 With the pure pragma applied, we can use the full qualified enum name
-when necessary, like [BaseColor.red]{.lit}. But we can still use
-unqualified names like [blue]{.lit} when there is no name conflict.
+when necessary, like `BaseColor.red]{.lit}. But we can still use
+unqualified names like `blue]{.lit} when there is no name conflict.
 
 
 
@@ -2425,15 +2425,15 @@ unqualified names like [blue]{.lit} when there is no name conflict.
 
 
 Boolean types are used to store the result of logic operations. The type
-is called [bool]{.type} in Nim and can store only two values,
-[false]{.lit} and [true]{.lit}. Although we have only two distinct
+is called `bool]{.type} in Nim and can store only two values,
+`false]{.lit} and `true]{.lit}. Although we have only two distinct
 states for a boolean variable and so one single bit would suffice to
-store a [bool]{.type}, generally a whole byte (8 bits) is used for
+store a `bool]{.type}, generally a whole byte (8 bits) is used for
 storing a boolean variable. Most other programming languages, including
 C, do the same. The reason is that most CPUs can not access single bits
 in the RAM --- the smallest entity that can be directly accessed in RAM
 is a byte. The default initial state of a boolean variable is
-[false]{.lit}, corresponding to a byte with all bits cleared.
+`false]{.lit}, corresponding to a byte with all bits cleared.
 
 
 
@@ -2449,41 +2449,41 @@ var
 
 
 
-In line three, we assign to the variable [adult]{.var} the result of a
+In line three, we assign to the variable `adult]{.var} the result of a
 logical comparison. The next two lines assign the boolean constants
-[true]{.lit} and [false]{.lit} to the variables, with their type
-[bool]{.type} inferred.
+`true]{.lit} and `false]{.lit} to the variables, with their type
+`bool]{.type} inferred.
 
 
 
-Variables of type [bool]{.type} support the operators [not]{.op},
-[and]{.op}, [or]{.op} and [xor]{.op}. [Not]{.op} inverts the logic
-value, [a and b]{.code} is only [true]{.lit} when both values are
-[true]{.lit}, and [false]{.lit} otherwise. And [a or b]{.code} is
-[true]{.lit} when at least one of the values is [true]{.lit}, and only
-[false]{.lit} when both values are [false]{.lit}. [Xor]{.op} is not used
-that often. It is called [exclusive or]{.ndef}, [a xor b]{.code} is
-[false]{.lit} when both values have the same logic state, that is when
-both are [true]{.lit}, or both are [false]{.lit}. When the values are
-not the same, then the result of the [xor]{.op} operator is
-[true]{.lit}. The [xor]{.op} operator makes more sense for bit
-operations, which we will learn later --- for the boolean type, [a xor
-b]{.code} is identical to [a != b]{.code}.
+Variables of type `bool]{.type} support the operators `not]{.op},
+`and]{.op}, `or]{.op} and `xor]{.op}. `Not]{.op} inverts the logic
+value, `a and b]{.code} is only `true]{.lit} when both values are
+`true]{.lit}, and `false]{.lit} otherwise. And `a or b]{.code} is
+`true]{.lit} when at least one of the values is `true]{.lit}, and only
+`false]{.lit} when both values are `false]{.lit}. `Xor]{.op} is not used
+that often. It is called `exclusive or]{.ndef}, `a xor b]{.code} is
+`false]{.lit} when both values have the same logic state, that is when
+both are `true]{.lit}, or both are `false]{.lit}. When the values are
+not the same, then the result of the `xor]{.op} operator is
+`true]{.lit}. The `xor]{.op} operator makes more sense for bit
+operations, which we will learn later --- for the boolean type, `a xor
+b]{.code} is identical to `a != b]{.code}.
 
 
 
 When using conditional execution, some people like to write expressions
-like [if myBoolExp == false:]{.code}, which is identical to [if not
-myBoolExp:]{.code}. Well they may do, but please never write [if
+like `if myBoolExp == false:]{.code}, which is identical to `if not
+myBoolExp:]{.code}. Well they may do, but please never write `if
 myBoolExp == true:]{.code}, that looks really too stupid.
 
 
 
-Sometimes it is useful to know that [false]{.lit} is mapped to the
-[int]{.type} value [0]{.lit}, and [true]{.lit} to the [int]{.type} value
-[1]{.lit}. That is similar to the C language, but C has no real boolean
-type, instead the numerical value [0]{.lit} is interpreted as
-[false]{.lit} in conditional expressions, and all none zero values are
+Sometimes it is useful to know that `false]{.lit} is mapped to the
+`int]{.type} value `0]{.lit}, and `true]{.lit} to the `int]{.type} value
+`1]{.lit}. That is similar to the C language, but C has no real boolean
+type, instead the numerical value `0]{.lit} is interpreted as
+`false]{.lit} in conditional expressions, and all none zero values are
 interpreted as true.
 
 
@@ -2500,11 +2500,11 @@ a = 7 * cond.int
 
 
 
-The effect of the last line is identical to the [if]{.key} statement
-above. In very, very rare cases, working with the actual [int]{.type}
+The effect of the last line is identical to the `if]{.key} statement
+above. In very, very rare cases, working with the actual `int]{.type}
 value of boolean variables may make sense, but generally we should avoid
-that. Later in the book there is a section about [branchless
-code]{.ndef} where we will present a [proc]{.proc} that actually may get
+that. Later in the book there is a section about `branchless
+code]{.ndef} where we will present a `proc]{.proc} that actually may get
 faster by using such a trick.
 
 
@@ -2513,19 +2513,19 @@ faster by using such a trick.
 ### Characters
 
 
-The data type for single characters is called [char]{.type} in Nim. A
-variable of type [char]{.type} has 8 bits and can store single
+The data type for single characters is called `char]{.type} in Nim. A
+variable of type `char]{.type} has 8 bits and can store single
 characters. Indeed, it stores 8-bit integers which are mapped to
 characters. The mapping is described by the ASCII table. For example,
-the integer value [65]{.lit} in decimal is mapped to the character
-[A]{.lit}. When we use single character literals, then we have to
+the integer value `65]{.lit} in decimal is mapped to the character
+`A]{.lit}. When we use single character literals, then we have to
 enclose the letter in single quotes. As only 8 bits are used to store
 characters, we only have 256 different values, including upper and lower
 case letters, punctuation characters, and some characters with a special
 meaning like a newline character to move the cursor in the terminal to
 the next line, or a backspace character to move the cursor one position
 backwards. Single characters are not used that often, since we generally
-group them in sequences called [strings]{.type} to build text.
+group them in sequences called `strings]{.type} to build text.
 
 
 
@@ -2552,25 +2552,25 @@ the appendix:
 
 
 The position in the table is the sum of the number on the left and the
-number on the top, i.e, character [A]{.lit} has position
-[64+1=65]{.code}, which is the value the Nim standard function
-[ord(\'A\')]{.code} or [int(\'A\')]{.code} would return. The characters
+number on the top, i.e, character `A]{.lit} has position
+`64+1=65]{.code}, which is the value the Nim standard function
+`ord(\'A\')]{.code} or `int(\'A\')]{.code} would return. The characters
 with a decimal value less than 32 can not be printed and are called
-[control characters]{.ndef}, like linefeed, carriage return, backspace,
+`control characters]{.ndef}, like linefeed, carriage return, backspace,
 audible beep and such. Character 127 is also not printable, and is
 called DEL. An important property of this table is the fact that decimal
 digits and upper- and lower-case letters form contiguous blocks. So to
 test for example if a characters is an uppercase letter, we can use this
-simple condition: [c \>= \'A\' and c \<= \'Z\']{.code}.
+simple condition: `c \>= \'A\' and c \<= \'Z\']{.code}.
 
 
 
-Characters with [ord() \> 127]{.code} are so-called umlauts, exotic
+Characters with `ord() \> 127]{.code} are so-called umlauts, exotic
 characters of other languages, and some special characters. But these
 characters may be different on different computers, as the characters
-depend on the active [code-page]{.ndef}, which maps position to actual
+depend on the active `code-page]{.ndef}, which maps position to actual
 character, and there are multiple code pages. When we need more than the
-plain ASCII characters, then we use [strings]{.type} in Nim, which
+plain ASCII characters, then we use `strings]{.type} in Nim, which
 display many more glyphs by using UTF-8 encoding.
 
 
@@ -2586,7 +2586,7 @@ encoding, or a letter, which is interpreted in a special way. We
 mentioned already that the character \'A\' is mapped to the decimal
 value 65, which is its position in the ASCII table. So instead of \'A\'
 we could use the escape sequence \'\\65\' for this character. Or, as
-decimal 65 is 41 in hexadecimal notation [(4 \* 16\^1 + 1 \*
+decimal 65 is 41 in hexadecimal notation `(4 \* 16\^1 + 1 \*
 16\^0)]{.term} we can use \'\\x41\' where the x indicates that the
 following digits are hexadecimal. For common, often used control
 characters it is not easy to remember their numeric value, so another
@@ -2598,7 +2598,7 @@ Here, the letter n stands for newline.
 
 
 We can regard the backslash character, which introduces escape
-sequences, as a special hinting symbol for the compiler: [Caution, the
+sequences, as a special hinting symbol for the compiler: `Caution, the
 following characters must be interpreted in a special way]{.italic}.
 
 
@@ -2636,11 +2636,11 @@ The following table lists a few important control characters:
   39        x27           \\\'       single quote, apostrophe
   7         x7            \\a        alert, audible beep
   8         x8            \\b        backspace
-  27        x1B           \\e        Escape, \[ESC\]
+  27        x1B           \\e        Escape, [ESC]
   13        xD            \\r, \\c   return or carriage return --- move cursor at the beginning of the line
 
 
-The hexadecimal numbers after the [\\x]{.term} character can be upper or
+The hexadecimal numbers after the `\x]{.term} character can be upper or
 lower case and can have one or two hexadecimal digits. For symbolic
 control characters like \'\\a\' for alert, the upper case variant
 \'\\A\' seems to be identical currently. The single quote entered as
