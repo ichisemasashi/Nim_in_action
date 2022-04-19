@@ -690,75 +690,14 @@ Don't worry if you have not understood much of this short explanation, we will e
 
 
 
-If you should decide to try the above program, maybe in a playground
-internet page or already on your local computer, then it is best to copy
-the source code verbatim instead to type it in from scratch, as for
-beginners tiny typos can generate a lot of trouble. For the case that
-you should decide to type it in with your keyboard, you should try to
-type it exactly as displayed above. All the program code should start
-directly at the first column, but the two lines after the [while]{.key}
-keyword should start with two spaces. This strict indentation is used in
-Nim and some other programming languages like Python or Haskell to
-structure the program code and to mark the extent of code blocks. Some
-other programming languages like C do a similar alignment of the source
-code for readability, but that alignment is ignored by the C
-compiler --- instead blocks have to be enclosed in curly braces
-[{}]{.term}. Note that you have to do the indentation really with
-spaces, as Nim does not accept tabulator characters in its source files.
-Also note that the Nim compiler does distinguish between words starting
-with a lower or an upper case letter. Nim keywords are written always in
-lower case, and when we define a variable as [sum]{.var} then we should
-always refer to it in exactly this
-notion.^\[[11](#_footnotedef_11 "View footnote."){#_footnoteref_11
-.footnote}\]^ Also note that spaces in the Nim source code are important
-and can change the semantic: While in C spaces are mostly only used to
-separate distinct symbols, in Nim spaces have some more functionality.
-For instance, in mathematically expressions, [a - b]{.code} or
-[a-b]{.code} is both a valid subtraction in the case when [a]{.var} and
-[b]{.var} both have a numeric type for which an infix subtraction
-operator is defined, but the code segment [a -b]{.code} may give us an
-error message from the compiler. The reason is, that in this case, the
-[-]{.op} sign is directly attached to [b]{.var} but separated from
-[a]{.var} by at least one space. In this case, the Nim compiler would
-interpret the [-]{.op} sign as a unary operator attached to [b]{.var}.
-Even in the case that such a unary [-]{.op} may have been defined
-before, then the operands [a]{.var} and [b]{.var} would be not separated
-by an infix operator, which is an invalid syntax in Nim. An expression
-like [a - -b]{.code} would be a valid syntax instead --- unary minus
-attached to [b]{.var}, and [a]{.var} and [(-b)]{.var} separated by an
-infix [-]{.op} operator. In this example, we have learned already that
-the same symbol can have a different meaning in the Nim language,
-depending on the context. For operators or functions, this is called
-overloading, which most modern programming languages use. This
-sensitivity to the asymmetric use of spaces applies also to the [less
-than]{.term} operator that we used in the above example: [a \< b]{.code}
-or [a\<b]{.code} is the infix notation that we generally intend for a
-comparison operation, while [a \<b]{.code} would be mostly invalid code.
-For infix operators, we typically put a space on each side, as this
-improves readability, but it is not really needed and so some people do
-not insert these spaces. Unary operators, like the unary [-]{.op} sign,
-should always precede a variable or a literal without a space.
+If you should decide to try the above program, maybe in a playground internet page or already on your local computer, then it is best to copy the source code verbatim instead to type it in from scratch, as for beginners tiny typos can generate a lot of trouble. For the case that you should decide to type it in with your keyboard, you should try to type it exactly as displayed above. All the program code should start directly at the first column, but the two lines after the `while` keyword should start with two spaces. This strict indentation is used in Nim and some other programming languages like Python or Haskell to structure the program code and to mark the extent of code blocks. Some other programming languages like C do a similar alignment of the source code for readability, but that alignment is ignored by the C compiler --- instead blocks have to be enclosed in curly braces `{}`. Note that you have to do the indentation really with spaces, as Nim does not accept tabulator characters in its source files.  Also note that the Nim compiler does distinguish between words starting with a lower or an upper case letter. Nim keywords are written always in lower case, and when we define a variable as `sum` then we should always refer to it in exactly this notion.^\[[11](#_footnotedef_11 "View footnote.") \]^ Also note that spaces in the Nim source code are important and can change the semantic: While in C spaces are mostly only used to separate distinct symbols, in Nim spaces have some more functionality.  For instance, in mathematically expressions, `a - b` or `a-b` is both a valid subtraction in the case when `a` and `b` both have a numeric type for which an infix subtraction operator is defined, but the code segment `a -b` may give us an error message from the compiler. The reason is, that in this case, the `-` sign is directly attached to `b` but separated from `a` by at least one space. In this case, the Nim compiler would interpret the `-` sign as a unary operator attached to `b`.  Even in the case that such a unary `-` may have been defined before, then the operands `a` and `b` would be not separated by an infix operator, which is an invalid syntax in Nim. An expression like `a - -b` would be a valid syntax instead --- unary minus attached to `b`, and `a` and `(-b)` separated by an infix `-` operator. In this example, we have learned already that the same symbol can have a different meaning in the Nim language, depending on the context. For operators or functions, this is called overloading, which most modern programming languages use. This sensitivity to the asymmetric use of spaces applies also to the `less than` operator that we used in the above example: `a < b` or `a<b` is the infix notation that we generally intend for a comparison operation, while `a <b` would be mostly invalid code.  For infix operators, we typically put a space on each side, as this improves readability, but it is not really needed and so some people do not insert these spaces. Unary operators, like the unary `-` sign, should always precede a variable or a literal without a space.
+
+
+All this may sound a bit complicated, and for beginners the compiler error messages about this formatting rules may be not always fully clear. But finally it is just how we would write the code with paper and pencil, and after the initial learning phase, you just will do it right without thinking about it.
 
 
 
-All this may sound a bit complicated, and for beginners the compiler
-error messages about this formatting rules may be not always fully
-clear. But finally it is just how we would write the code with paper and
-pencil, and after the initial learning phase, you just will do it right
-without thinking about it.
-
-
-
-Note that you can easily verify the result of our tiny program: Instead
-of summing up the first 100 natural numbers, we can just sum up 50
-pairs, built from the first and last summand, from the second and the
-one before the last, and so on. The sum of each pair is always 101, so
-for the sum of fifty pairs we get [50 \* 101 = 5050]{.term}. This trick
-is attributed to the famous German mathematician Johann Carl Friedrich
-Gauss (1777 -- 1855), who should have used it as a young school boy to
-solve this task given by a
-teacher.^\[[12](#_footnotedef_12 "View footnote."){#_footnoteref_12
-.footnote}\]^
+Note that you can easily verify the result of our tiny program: Instead of summing up the first 100 natural numbers, we can just sum up 50 pairs, built from the first and last summand, from the second and the one before the last, and so on. The sum of each pair is always 101, so for the sum of fifty pairs we get `50 * 101 = 5050`. This trick is attributed to the famous German mathematician Johann Carl Friedrich Gauss (1777 -- 1855), who should have used it as a young school boy to solve this task given by a teacher.^\[[12](#_footnotedef_12 "View footnote.") \]^
 
 
 
@@ -770,214 +709,53 @@ teacher.^\[[12](#_footnotedef_12 "View footnote."){#_footnoteref_12
 
 
 
-When we write numbers in ordinary life we typically use the decimal
-system with base 10 and the 10 available digits 0, 1, ...​ 9. To get the
-value of a decimal number, we multiply each digit with powers of 10
-depending on the position of the digit and sum the individual terms. The
-rightmost digit is multiplied with 10\^0, the next digit with 10\^1, and
-so on. A literal decimal number like 7382 has then the numerical value
-[2 \* 10\^0 + 8 \* 10\^1 + 3 \* 10\^2 + 7 \* 10\^3]{.term}. We have used
-here the exponential operator [\^]{.term} --- with [10\^3 = 10 \* 10 \*
-10]{.term}. Current computers use binary representation internally for
-numbers. Generally, we do not care much about that fact, but it is good
-to know some facts about binary numbers. Binary numbers work nearly
-identically to decimal numbers. The distinction is that we have only two
-available digits, which we write as [0]{.term} and [1]{.term}. A number
-in binary representation is a sequence of these two digits. Like in the
-decimal system, the numerical value results from the individual digits
-and their position: The binary number [1011]{.term} has the numerical
-value [1 \* 2\^0 + 1 \* 2\^1 + 0 \* 2\^2 + 1 \* 2\^3]{.term}, which is
-11 in decimal notation. For binary numbers, the base is 2, so we
-multiply the binary digits by powers of two. Formally, addition of two
-binary numbers works like we know it from the decimal system: we add the
-matching digits and take carry into account: [1001 + 1101 =
-10110]{.term} because we start by adding the two least significant
-digits of each number, which are both 1. That addition 1+1 results in a
-carry and result 0. The next two digits are both zero, but we have to
-take the carry from the former operation into account, so the result
-is 1. For the next position, we have to add 0 and 1, which is just 1
-without a carry. And finally we have 1 + 1, which results in 0 with a
-carry. The carry generates one more digit, and we are done. In the
-decimal system with base 10 a multiplication with 10 is easily
-calculated by just shifting all digits one place to the left and writing
-a 0 at the now empty rightmost position. For binary numbers it is very
-similar: a multiplication by the base, which is two in the binary
-system, is just a shift left, with the rightmost position getting digit
-0.^\[[13](#_footnotedef_13 "View footnote."){#_footnoteref_13
-.footnote}\]^
+When we write numbers in ordinary life we typically use the decimal system with base 10 and the 10 available digits 0, 1, ..., 9. To get the value of a decimal number, we multiply each digit with powers of 10 depending on the position of the digit and sum the individual terms. The rightmost digit is multiplied with 10\^0, the next digit with 10\^1, and so on. A literal decimal number like 7382 has then the numerical value `2 * 10^0 + 8 * 10^1 + 3 * 10^2 + 7 * 10^3`. We have used here the exponential operator `^` --- with `10^3 = 10 * 10 * 10`. Current computers use binary representation internally for numbers. Generally, we do not care much about that fact, but it is good to know some facts about binary numbers. Binary numbers work nearly identically to decimal numbers. The distinction is that we have only two available digits, which we write as `0` and `1`. A number in binary representation is a sequence of these two digits. Like in the decimal system, the numerical value results from the individual digits and their position: The binary number `1011` has the numerical value `1 * 2^0 + 1 * 2^1 + 0 * 2^2 + 1 * 2^3`, which is 11 in decimal notation. For binary numbers, the base is 2, so we multiply the binary digits by powers of two. Formally, addition of two binary numbers works like we know it from the decimal system: we add the matching digits and take carry into account: `1001 + 1101 = 10110` because we start by adding the two least significant digits of each number, which are both 1. That addition 1+1 results in a carry and result 0. The next two digits are both zero, but we have to take the carry from the former operation into account, so the result is 1. For the next position, we have to add 0 and 1, which is just 1 without a carry. And finally we have 1 + 1, which results in 0 with a carry. The carry generates one more digit, and we are done. In the decimal system with base 10 a multiplication with 10 is easily calculated by just shifting all digits one place to the left and writing a 0 at the now empty rightmost position. For binary numbers it is very similar: a multiplication by the base, which is two in the binary system, is just a shift left, with the rightmost position getting digit 0.^\[[13](#_footnotedef_13 "View footnote.") \]^
+
+In the binary system we call the digits typically `bits`, and we number the bits from right to left, starting with 0 for the rightmost bit --- we say that the binary number 10010101 is an 8-bit number because writing that number in binary representation needs 8 digits.  Often we imagine the individual bits as small bulbs, a 1 bit is imagined as a lit bulb, and a 0 bit is imagined as a dark bulb. For lit bulbs we say also that the bit is set, meaning that in the binary number 10010101, bits 0, 2, 4 and 7 are set, and the other bits are unset or cleared.
 
 
 
-In the binary system we call the digits typically [bits]{.ndef}, and we
-number the bits from right to left, starting with 0 for the rightmost
-bit --- we say that the binary number 10010101 is an 8-bit number
-because writing that number in binary representation needs 8 digits.
-Often we imagine the individual bits as small bulbs, a 1 bit is imagined
-as a lit bulb, and a 0 bit is imagined as a dark bulb. For lit bulbs we
-say also that the bit is set, meaning that in the binary number
-10010101, bits 0, 2, 4 and 7 are set, and the other bits are unset or
-cleared.
+Groups of 8 bits are called a `byte`, and sometimes 4 bits are called a `nibble`.
 
 
 
-Groups of 8 bits are called a [byte]{.ndef}, and sometimes 4 bits are
-called a [nibble]{.ndef}.
+One, two, four or 8 bytes are sometimes called a `word`, where a word is an entity which the computer can process in one single instruction. When we have a CPU with 8 byte word size, this means that the computer can for example add two variables, each 8 byte in size, in one single instruction.
 
 
 
-One, two, four or 8 bytes are sometimes called a [word]{.ndef}, where a
-word is an entity which the computer can process in one single
-instruction. When we have a CPU with 8 byte word size, this means that
-the computer can for example add two variables, each 8 byte in size, in
-one single instruction.
+Let us investigate some basic properties of binary numbers. Let us assume that we have an 8-bit word (a byte). An 8-bit word can have 2^8 different states, as each bit can be set or unset independently of the other bits. That corresponds to numbers 0 up to 255 --- we assume that we work with positive numbers only for now, we will come to negative numbers soon. An important property of binary numbers in computers is the wrapping around, which is a consequence of the fact that we have only a limited set of bits available to store the number. So when we continuously add 1 to a number, at some point all bits are set, which corresponds to the largest number that can be stored with that number of bits. When we then add again 1, we get an overflow. The run-time system may catch that overflow, so we get an overflow error, or the number is just reset to zero, as it may happen in our car when we manage to drive one million miles, or when the ordinary clock jumps from 23:59 to 00:00 of the next day. A useful property of binary numbers is the fact that we can easily invert all bits, that is, replace set bits by unset ones and vice versa. Let us use the prefix `!` to indicate the operation of bit inversion, then `!01001100` is `10110011`. It is an obvious and useful fact that for each number x we get a number with all bits set when we add x and !x. That is `x + !x = 11111111` when we consider an 8 bit word. And when we ignore overflow, then it follows that `x + !x + 1 = 0` for each number x. That is a useful property, which we can use when we consider negative numbers.
 
 
 
-Let us investigate some basic properties of binary numbers. Let us
-assume that we have an 8-bit word (a byte). An 8-bit word can have 2\^8
-different states, as each bit can be set or unset independently of the
-other bits. That corresponds to numbers 0 up to 255 --- we assume that
-we work with positive numbers only for now, we will come to negative
-numbers soon. An important property of binary numbers in computers is
-the wrapping around, which is a consequence of the fact that we have
-only a limited set of bits available to store the number. So when we
-continuously add 1 to a number, at some point all bits are set, which
-corresponds to the largest number that can be stored with that number of
-bits. When we then add again 1, we get an overflow. The run-time system
-may catch that overflow, so we get an overflow error, or the number is
-just reset to zero, as it may happen in our car when we manage to drive
-one million miles, or when the ordinary clock jumps from 23:59 to 00:00
-of the next day. A useful property of binary numbers is the fact that we
-can easily invert all bits, that is, replace set bits by unset ones and
-vice versa. Let us use the prefix [!]{.term} to indicate the operation
-of bit inversion, then [!01001100]{.term} is [10110011]{.term}. It is an
-obvious and useful fact that for each number x we get a number with all
-bits set when we add x and !x. That is [x + !x = 11111111]{.term} when
-we consider an 8 bit word. And when we ignore overflow, then it follows
-that [x + !x + 1 = 0]{.term} for each number x. That is a useful
-property, which we can use when we consider negative numbers.
+Now let us investigate how we can encode negative numbers in binary form. In the binary representation we have only two states available, 0 or 1, a set bit or an unset bit. But we have no unitary minus sign. We could encode the sign of a number in the topmost bit of a word --- when the topmost bit is set, that indicates that the number is regarded as negative. Generally, a modified version of this encoding is used, called `two's complement`: a negative number is constructed by first inverting all the bits --- a 0 bit is transferred into a 1 bit and vice versa --- and finally the number 1 is added. That encoding simplifies the CPU construction, as subtraction can be replaced by addition in this way:
 
 
 
-Now let us investigate how we can encode negative numbers in binary
-form. In the binary representation we have only two states available, 0
-or 1, a set bit or an unset bit. But we have no unitary minus sign. We
-could encode the sign of a number in the topmost bit of a word --- when
-the topmost bit is set, that indicates that the number is regarded as
-negative. Generally, a modified version of this encoding is used, called
-[two's complement]{.ndef}: a negative number is constructed by first
-inverting all the bits --- a 0 bit is transferred into a 1 bit and vice
-versa --- and finally the number 1 is added. That encoding simplifies
-the CPU construction, as subtraction can be replaced by addition in this
-way:
+Consider the case that we want to do a subtraction of two binary encoded numbers. The operation has the symbolic notation A - B for arbitrary numbers A and B. The subtraction is by definition the inverse operation of the addition, that is A + B - B = A for each number A and B, or in other words, B - B = 0 for each number B.
 
 
 
-Consider the case that we want to do a subtraction of two binary encoded
-numbers. The operation has the symbolic notation A - B for arbitrary
-numbers A and B. The subtraction is by definition the inverse operation
-of the addition, that is A + B - B = A for each number A and B, or in
-other words, B - B = 0 for each number B.
+Assume we have a CPU that can do additions and that can invert all the bits of a number. Can we do subtraction with that CPU? Indeed, we can.  Remember the fact that for each number X `X + !X + 1 = 0` as long as we ignore overflow. If that relation is true for each number, then it is obviously true for each B in the expression A - B, and we can write A - B = A + (B + !B + 1) - B = A + (!B + 1) when we use the fact that in mathematics addition and subtraction is associative, that is we can group the terms as we want. But the term in the parenthesis is just the two's complement, which we get when we invert all bits of B and add 1.  So to do a subtraction we have to invert the bits of B, and then add A and !B and 1 ignoring overflow. That may sound complicated, but a bit inversion is a very cheap operation in a CPU, which is always available, and adding 1 is also a very simple operation. The advantage is that we do not need separate hardware for the subtraction operation. Typically, subtraction in this way is not slower than addition because the bit inversion and the addition of 1 can be performed at the same time in the CPU as an ordinary addition.
 
 
 
-Assume we have a CPU that can do additions and that can invert all the
-bits of a number. Can we do subtraction with that CPU? Indeed, we can.
-Remember the fact that for each number X [X + !X + 1 = 0]{.term} as long
-as we ignore overflow. If that relation is true for each number, then it
-is obviously true for each B in the expression A - B, and we can write
-A - B = A + (B + !B + 1) - B = A + (!B + 1) when we use the fact that in
-mathematics addition and subtraction is associative, that is we can
-group the terms as we want. But the term in the parenthesis is just the
-two's complement, which we get when we invert all bits of B and add 1.
-So to do a subtraction we have to invert the bits of B, and then add A
-and !B and 1 ignoring overflow. That may sound complicated, but a bit
-inversion is a very cheap operation in a CPU, which is always available,
-and adding 1 is also a very simple operation. The advantage is that we
-do not need separate hardware for the subtraction operation. Typically,
-subtraction in this way is not slower than addition because the bit
-inversion and the addition of 1 can be performed at the same time in the
-CPU as an ordinary addition.
+From the equation above, indicating A - B = A + (!B + 1) it is obvious that we consider the two's complement (!B + 1) as the negative of B.  Note that the two's complement of zero is again zero, and two's complement of 00000001 is 11111111. All negative numbers in this system have a bit set to 1 at the leftmost position. This restricts all positive numbers to all the bit combinations where the leftmost bit is unset. For an 8-bit word, this means that positive numbers are restricted to the bits 00000000 to 01111111, which is the range 0 to 127 in decimal notation. The two's complement of decimal 127 is 10000001.  Seems to be fine so far, but note that there exists also the bit pattern 10000000, which is -128 in decimal. For that bit pattern, there exists no positive value. If we try to build the two's complement of that bit pattern, we would get the same pattern again. This is an asymmetry of two's complement representation, which can not be avoided. It generally is no problem, with one exception. We can never invert the sign of the smallest available integer; that operation would result in a run-time error.^\[[14](#_footnotedef_14 "View footnote.") \]^
 
 
 
-From the equation above, indicating A - B = A + (!B + 1) it is obvious
-that we consider the two's complement (!B + 1) as the negative of B.
-Note that the two's complement of zero is again zero, and two's
-complement of 00000001 is 11111111. All negative numbers in this system
-have a bit set to 1 at the leftmost position. This restricts all
-positive numbers to all the bit combinations where the leftmost bit is
-unset. For an 8-bit word, this means that positive numbers are
-restricted to the bits 00000000 to 01111111, which is the range 0 to 127
-in decimal notation. The two's complement of decimal 127 is 10000001.
-Seems to be fine so far, but note that there exists also the bit pattern
-10000000, which is -128 in decimal. For that bit pattern, there exists
-no positive value. If we try to build the two's complement of that bit
-pattern, we would get the same pattern again. This is an asymmetry of
-two's complement representation, which can not be avoided. It generally
-is no problem, with one exception. We can never invert the sign of the
-smallest available integer; that operation would result in a run-time
-error.^\[[14](#_footnotedef_14 "View footnote."){#_footnoteref_14
-.footnote}\]^
+Summary: when we work only with positive numbers, we can store in an 8-bit word, which is called a byte, numbers from 0 up to 255. In a 16-bit word we could store values from 0 up to 2^16 - 1, which is 65535. When we need numbers which can be also negative, we have for 8-bit words the range from -128 to 127 available, which is -2^7 up to 2^7 - 1. For a signed 16-bit word, the range would be -2^15 up to 2^15 - 1.
 
 
 
-Summary: when we work only with positive numbers, we can store in an
-8-bit word, which is called a byte, numbers from 0 up to 255. In a
-16-bit word we could store values from 0 up to 2\^16 - 1, which is
-65535. When we need numbers which can be also negative, we have for
-8-bit words the range from -128 to 127 available, which is -2\^7 up to
-2\^7 - 1. For a signed 16-bit word, the range would be -2\^15 up to
-2\^15 - 1.
+While we can work with 8 or 16-bit words, for PC programming the CPU usually supports 32 or 64-bit words, so we have a much larger number range available. But when we program microcontrollers or embedded devices we may indeed have only 8 or 16-bits words available, or we may use such small words size intentionally on a PC to fit all of our data into a smaller memory area.
 
 
 
-While we can work with 8 or 16-bit words, for PC programming the CPU
-usually supports 32 or 64-bit words, so we have a much larger number
-range available. But when we program microcontrollers or embedded
-devices we may indeed have only 8 or 16-bits words available, or we may
-use such small words size intentionally on a PC to fit all of our data
-into a smaller memory area.
+One important note at the end of this section: whenever we have a word with a specific bit pattern stored in the memory of our computer, then we can not decide from the bit pattern directly what type of data it is.  It can be a positive or a negative number, but maybe it is not a number at all but a letter or maybe something totally different. As an example, consider this 8 bit word: 10000001. It could be 129 if we have stored intentionally positive numbers in that storage location, or could be -127 if we intentionally stored a negative value. Or it could be not a number at all. Is that a problem? No, it is not as long as we use a programming language like Nim which use static typing. Whenever we are using variables, we declare their type first, and so the compiler can do bookkeeping about the type of each variable stored in the computer memory. The benefit is, that we can use all the available bits to encode our actual data, and we do not have to reserve a few bits to encode the actual data type of variables. For languages without static typing, that is not the case. In languages like Python or Ruby, we can use variables without a static type, so we can assign whatever we want to it. That seems to be comfortable at first, but can be confusing when we write larger programs and the Python or Ruby interpreter has to do all the bookkeeping at run-time, which is slow and wastes memory for the bookkeeping.
 
 
 
-One important note at the end of this section: whenever we have a word
-with a specific bit pattern stored in the memory of our computer, then
-we can not decide from the bit pattern directly what type of data it is.
-It can be a positive or a negative number, but maybe it is not a number
-at all but a letter or maybe something totally different. As an example,
-consider this 8 bit word: 10000001. It could be 129 if we have stored
-intentionally positive numbers in that storage location, or could be
--127 if we intentionally stored a negative value. Or it could be not a
-number at all. Is that a problem? No, it is not as long as we use a
-programming language like Nim which use static typing. Whenever we are
-using variables, we declare their type first, and so the compiler can do
-bookkeeping about the type of each variable stored in the computer
-memory. The benefit is, that we can use all the available bits to encode
-our actual data, and we do not have to reserve a few bits to encode the
-actual data type of variables. For languages without static typing, that
-is not the case. In languages like Python or Ruby, we can use variables
-without a static type, so we can assign whatever we want to it. That
-seems to be comfortable at first, but can be confusing when we write
-larger programs and the Python or Ruby interpreter has to do all the
-bookkeeping at run-time, which is slow and wastes memory for the
-bookkeeping.
-
-
-
-To say it again in other words: for deciding if an operation is valid,
-it is generally sufficient to know the data type of the operands only.
-We do not have to know the actual content. The only exception is if we
-invert the sign of the most negative integer number or if we do an
-operation with causes an overflow, as there are not enough bits
-available to store the result --- we may get a run-time error for that
-case.^\[[15](#_footnotedef_15 "View footnote."){#_footnoteref_15
-.footnote}\]^ In a statically-typed language each variable has a
-well-defined type, and the compiler can ensure at compile time that all
-operations on that variables are valid. If an operation is not valid,
-then the compiler will give an error message. Then when these operations
-are executed at run-time they are always valid operations, and the
-actual content, like the actual numeric value, does not matter.
+To say it again in other words: for deciding if an operation is valid, it is generally sufficient to know the data type of the operands only.  We do not have to know the actual content. The only exception is if we invert the sign of the most negative integer number or if we do an operation with causes an overflow, as there are not enough bits available to store the result --- we may get a run-time error for that case.^\[[15](#_footnotedef_15 "View footnote.") \]^ In a statically-typed language each variable has a well-defined type, and the compiler can ensure at compile time that all operations on that variables are valid. If an operation is not valid, then the compiler will give an error message. Then when these operations are executed at run-time they are always valid operations, and the actual content, like the actual numeric value, does not matter.
 
 
 
@@ -987,17 +765,7 @@ actual content, like the actual numeric value, does not matter.
 
 
 
-These number type with base 16 is by far not that important than the
-binary numbers, and it has not really a technical justification to
-exist, but you may get in touch with these numbers from time to time.
-Hexadecimal numbers are mostly a legacy from early days of computers,
-where computer programming was done not in real programming languages
-but with numeric codes. To represent the 16 hexadecimal digits, the 10
-decimal digits are supported by the characters \'A\' .. \'F\'. The most
-significant property of a hexadecimal digit is that it can represent
-four bits, a unit half of a byte, which is called sometimes a nibble. In
-old times, when it was necessary to type in binary numbers, it was
-sometimes easier to encode a nibble with a hexadecimal digit:
+These number type with base 16 is by far not that important than the binary numbers, and it has not really a technical justification to exist, but you may get in touch with these numbers from time to time.  Hexadecimal numbers are mostly a legacy from early days of computers, where computer programming was done not in real programming languages but with numeric codes. To represent the 16 hexadecimal digits, the 10 decimal digits are supported by the characters 'A' .. 'F'. The most significant property of a hexadecimal digit is that it can represent four bits, a unit half of a byte, which is called sometimes a nibble. In old times, when it was necessary to type in binary numbers, it was sometimes easier to encode a nibble with a hexadecimal digit:
 
 
 +----------------------+----------------------+-----------------------+
@@ -1037,11 +805,7 @@ sometimes easier to encode a nibble with a hexadecimal digit:
 +----------------------+----------------------+-----------------------+
 
 
-The only location where we hear about hexadecimal characters again in
-this book should be when we introduce the character and [string]{.str}
-data types --- there control characters like a newline character are
-sometimes specified in hexadecimal form like \"\\x0A\" for a newline
-character.
+The only location where we hear about hexadecimal characters again in this book should be when we introduce the character and `string` data types --- there control characters like a newline character are sometimes specified in hexadecimal form like "\x0A" for a newline character.
 
 
 
@@ -1051,50 +815,23 @@ character.
 
 
 
-We will not describe in too much detail how you can install the Nim
-compiler, because that strongly depends on your operating system, and
-because the installation instructions may change in the future. We
-assume that you have a computer with an installed operating system and
-internet access, and you are able to do at least very basic operations
-with your computer, such as switching it on, log in and opening a web
-browser or a terminal window. If that is not the case, then you really
-should ask someone for help for this basic step, and maybe for some more
-help for other basic tasks.
+We will not describe in too much detail how you can install the Nim compiler, because that strongly depends on your operating system, and because the installation instructions may change in the future. We assume that you have a computer with an installed operating system and internet access, and you are able to do at least very basic operations with your computer, such as switching it on, log in and opening a web browser or a terminal window. If that is not the case, then you really should ask someone for help for this basic step, and maybe for some more help for other basic tasks.
 
 
 
-Detailed installation instructions are available on the Nim internet
-homepage at [To visit and read that
-page](https://nim-lang.org/install.html.footnote:) Try to follow those
-instructions, and when they are not sufficient, then please ask at the
-Nim forum for help:
-[https://forum.nim-lang.org/](https://forum.nim-lang.org/){.bare}
+Detailed installation instructions are available on the Nim internet homepage at `To visit and read that page`. Try to follow those instructions, and when they are not sufficient, then please ask at the Nim forum for help: `https://forum.nim-lang.org/`
 
 
 
-If you are using a Linux operating system, then your system usually
-provides a package manager, which should make the installation very
-easy.
+If you are using a Linux operating system, then your system usually provides a package manager, which should make the installation very easy.
 
 
 
-For example, for a Gentoo Linux system, you would open a root terminal
-and simply type [emerge -av nim]{.term}. That command would install Nim,
-including all necessary dependencies, for you. It may take a few minutes
-as Gentoo compiles all packages fresh from source code, but then you are
-done. Similar commands exist for most other Linux distributions. This
-installation by a package manager installs Nim system-wide, so all users
-of the computer can now use Nim.
+For example, for a Gentoo Linux system, you would open a root terminal and simply type `emerge -av nim`. That command would install Nim, including all necessary dependencies, for you. It may take a few minutes as Gentoo compiles all packages fresh from source code, but then you are done. Similar commands exist for most other Linux distributions. This installation by a package manager installs Nim system-wide, so all users of the computer can now use Nim.
 
 
 
-Another solution, which is preferable when you want to ensure that you
-get the most recent Nim compiler, is compiling directly from the latest
-git sources. That process is also easy and is described here:
-[https://github.com/nim-lang/Nim](https://github.com/nim-lang/Nim){.bare}.
-But before you can follow those instructions, you have to ensure that
-the git software and a working C compiler is available on your computer.
-
+Another solution, which is preferable when you want to ensure that you get the most recent Nim compiler, is compiling directly from the latest git sources. That process is also easy and is described here: `https://github.com/nim-lang/Nim`.  But before you can follow those instructions, you have to ensure that the git software and a working C compiler is available on your computer.
 
 
 
@@ -1103,94 +840,48 @@ the git software and a working C compiler is available on your computer.
 
 
 
-Nim source code, as most source code of other programming languages, is
-based on text files. Text files are documents saved on your computer
-that contain only ordinary letters, which you can type on your keyboard.
-No images or videos, no HTML content with fancy CSS styling. Generally,
-source code should contain only ordinary ASCII text, that is, no umlauts
-or Unicode characters.
+Nim source code, as most source code of other programming languages, is based on text files. Text files are documents saved on your computer that contain only ordinary letters, which you can type on your keyboard.  No images or videos, no HTML content with fancy CSS styling. Generally, source code should contain only ordinary ASCII text, that is, no umlauts or Unicode characters.
 
 
 
-To create source code, we typically use a [text editor]{.ndef}, which is
-a tool designed for creating and modifying of plain text files. If you
-do not have a text editor yet, you may also use a word processor for
-writing some source code, but then you have to ensure that the file is
-finally saved as plain ASCII text. Editors typically support [syntax
-highlighting]{.ndef}, that is keywords, numbers and such are displayed
-with a unique color or style to make it easier to recognize the content.
-Some editors support advanced features like checking for errors while
-you type the program source code.
+To create source code, we typically use a `text editor`, which is a tool designed for creating and modifying of plain text files. If you do not have a text editor yet, you may also use a word processor for writing some source code, but then you have to ensure that the file is finally saved as plain ASCII text. Editors typically support `syntax highlighting`, that is keywords, numbers and such are displayed with a unique color or style to make it easier to recognize the content.  Some editors support advanced features like checking for errors while you type the program source code.
 
 
 
-A list of recommended editors is available at
-[https://nim-lang.org/faq.html](https://nim-lang.org/faq.html){.bare}
+A list of recommended editors is available at `https://nim-lang.org/faq.html`
 
 
 
-If you do not want to use a special editor now, then for Linux
-[gedit]{.term} or at least [nano]{.term} should be available. For
-Windows, maybe something like [notepad]{.ndef}.
+If you do not want to use a special editor now, then for Linux `gedit` or at least `nano` should be available. For Windows, maybe something like `notepad`.
 
 
 
-Typically, we store our Nim source code files in its own directory, that
-is a separate section of your hard-disk. If you work on Linux in a
-terminal window, then you can type
+Typically, we store our Nim source code files in its own directory, that is a separate section of your hard-disk. If you work on Linux in a terminal window, then you can type
+
+
+
+```
+cd
+mkdir mynimfiles
+cd mynimfiles
+gedit test.nim
+```
 
 
 
 
-    cd
-    mkdir mynimfiles
-    cd mynimfiles
-    gedit test.nim
+You type these commands in the terminal window and press the `return` key after each of the above lines --- that is, you type `cd` on your keyboard and then press the `return` key to execute that command. The same for the next three commands. What you have done is this: you went to your default working area (home directory), then created a subarea named `mynimfiles`, then you went into that subarea, and finally you launched the `gedit` editor --- the argument `test.nim` tells `gedit` that you want to create a new file called `test.nim`. If `gedit` is not available, or if you work on a computer without a graphical user interface, then you may replace the `gedit` command by `nano`. While `gedit` opens a new window with a graphical interface, `nano` opens only a very simple interface in the current terminal. An interesting editor without a GUI is `Vim` or `NeoVim`. That is a very powerful editor, but it is difficult to learn, and it is a bit strange as you have a `command mode` and an ordinary `text input mode` available. For NeoVim there is very good Nim support available.
 
 
 
+If you do not want to work from a terminal, or if you are using Windows or macOS, then you should have a graphical user interface which enables you also to create a directory and to launch an editor.
 
-You type these commands in the terminal window and press the
-[return]{.term} key after each of the above lines --- that is, you type
-[cd]{.term} on your keyboard and then press the [return]{.term} key to
-execute that command. The same for the next three commands. What you
-have done is this: you went to your default working area (home
-directory), then created a subarea named [mynimfiles]{.term}, then you
-went into that subarea, and finally you launched the [gedit]{.term}
-editor --- the argument [test.nim]{.term} tells [gedit]{.term} that you
-want to create a new file called [test.nim]{.term}. If [gedit]{.term} is
-not available, or if you work on a computer without a graphical user
-interface, then you may replace the [gedit]{.term} command by
-[nano]{.term}. While [gedit]{.term} opens a new window with a graphical
-interface, [nano]{.term} opens only a very simple interface in the
-current terminal. An interesting editor without a GUI is [Vim]{.ndef} or
-[NeoVim]{.ndef}. That is a very powerful editor, but it is difficult to
-learn, and it is a bit strange as you have a [command mode]{.ndef} and
-an ordinary [text input mode]{.ndef} available. For NeoVim there is very
-good Nim support available.
+
+When the editor is opened, you can type in the Nim source code from our previous example and save it to a file named `test.nim`. Then you can terminate the editor.
 
 
 
-If you do not want to work from a terminal, or if you are using Windows
-or macOS, then you should have a graphical user interface which enables
-you also to create a directory and to launch an editor.
-
-
-
-When the editor is opened, you can type in the Nim source code from our
-previous example and save it to a file named [test.nim]{.term}. Then you
-can terminate the editor.
-
-
-
-Note that the [return]{.term} key behaves differently in editors than in
-the terminal window: In the terminal window, you type in a command and
-finally press the return key to \"launch\" or execute the command. In an
-editor, the return key is not that special: if you press ordinary keys
-in your editor, then that key is inserted and the cursor moves one
-position to the right. And when you press the return key, then an
-invisible newline character is inserted and the cursor moves to the
-start of the next line.
+Note that the `return` key behaves differently in editors than in the terminal window: In the terminal window, you type in a command and finally press the return key to "launch" or execute the command. In an editor, the return key is not that special: if you press ordinary keys in your editor, then that key is inserted and the cursor moves one position to the right. And when you press the return key, then an invisible newline character is inserted and the cursor moves to the start of the next line.
 
 
 
@@ -1204,16 +895,14 @@ If you are working from a Linux terminal, then you can type
 
 
 
+```
+ls -lt
+cat test.nim
+```
 
-    ls -lt
-    cat test.nim
 
 
-
-
-That is, you first show the content of your directory with the
-[ls]{.term} command, and then display the content of the Nim source code
-file that you just have typed in with the [cat]{.term} command.
+That is, you first show the content of your directory with the `ls` command, and then display the content of the Nim source code file that you just have typed in with the `cat` command.
 
 
 
@@ -1222,67 +911,43 @@ Now type
 
 
 
-    nim c test.nim
+```
+nim c test.nim
+```
 
 
 
 
-That invokes the Nim compiler and instructs it to compile your source
-code. The \"c\" letter is called an option or a sub-command, it tells
-the Nim compiler to compile your program and to use the C backend to
-generate an executable.
+That invokes the Nim compiler and instructs it to compile your source code. The "c" letter is called an option or a sub-command, it tells the Nim compiler to compile your program and to use the C backend to generate an executable.
 
 
 
-The compiler should display nearly immediately a success message. If it
-displays some error messages instead, then you launch Gedit or Nano
-again, fix your typing error, save the modified file and call the
-compiler again.
+The compiler should display nearly immediately a success message. If it displays some error messages instead, then you launch Gedit or Nano again, fix your typing error, save the modified file and call the compiler again.
 
 
 
-Finally, when the source text is successfully compiled, you can run your
-program by typing
+Finally, when the source text is successfully compiled, you can run your program by typing
 
 
 
+```
+./test
+```
 
-    ./test
 
-
-
-
-In your terminal window, you see a number now, which is the sum of the
-numbers 1 to 100.
+In your terminal window, you see a number now, which is the sum of the numbers 1 to 100.
 
 
 
 
 
-You may wonder why you have to type the prefix [./]{.term} in front of
-the name of your generated executable program, as you can launch most
-other executables on your computer without such a prefix. The prefix is
-generally needed to protect you and your computer from erroneously
-launching a program in the current directory while you intended to
-launch a system command. Imagine you downloaded a zip file from
-internet, extract it, [cd]{.term} into the extracted directory and type
-[ls]{.term} to see the directory content. Imagine now that the directory
-contains an executable named [ls]{.italic}, which is executed instead of
-system [ls]{.term}. That foreign ls command may damage your system. So
-to execute non system commands, you generally have to use the prefix
-[./]{.term} where the period refers to the current directory. Of course,
-you can install your own programs in a way that you don't need such a
-prefix anymore --- just ask your Mom or Grandma if you don't know
-yourself already.
+You may wonder why you have to type the prefix `./` in front of the name of your generated executable program, as you can launch most other executables on your computer without such a prefix. The prefix is generally needed to protect you and your computer from erroneously launching a program in the current directory while you intended to launch a system command. Imagine you downloaded a zip file from internet, extract it, `cd` into the extracted directory and type `ls` to see the directory content. Imagine now that the directory contains an executable named `ls`, which is executed instead of system `ls`. That foreign ls command may damage your system. So to execute non system commands, you generally have to use the prefix `./` where the period refers to the current directory. Of course, you can install your own programs in a way that you don't need such a prefix anymore --- just ask your Mom or Grandma if you don't know yourself already.
 
 
 
 
 
-If you have not managed to open a terminal where you can invoke the
-compiler --- well, maybe then you should install some advanced editors
-like VS-Code. They should be able to launch the compiler and run the
-program from within the editor directly.
+If you have not managed to open a terminal where you can invoke the compiler --- well, maybe then you should install some advanced editors like VS-Code. They should be able to launch the compiler and run the program from within the editor directly.
 
 
 
@@ -1291,88 +956,39 @@ The command
 
 
 
-    nim c test.nim
+```
+nim c test.nim
+```
 
 
 
 
-is the most basic compiler invocation. The extension [.nim]{.ndef} is
-optional, the compiler can infer that file extension. This command
-compiles our program in default [debug mode]{.ndef}, it uses the C
-compiler back end and generates a native executable. Debug mode means,
-that the generated executable contains a lot of checks, like
-[array]{.type} index checks, range checks, [nil]{.lit} dereference
-checks and many more. The generated executable will run not very fast,
-and it will be large, but when your program has bugs, then the program
-will give you a meaningful error message in most cases. Only after you
-have tested your program carefully, you may consider compiling it
-without debug mode. You may do that with
+is the most basic compiler invocation. The extension `.nim` is optional, the compiler can infer that file extension. This command compiles our program in default `debug mode`, it uses the C compiler back end and generates a native executable. Debug mode means, that the generated executable contains a lot of checks, like `array` index checks, range checks, `nil` dereference checks and many more. The generated executable will run not very fast, and it will be large, but when your program has bugs, then the program will give you a meaningful error message in most cases. Only after you have tested your program carefully, you may consider compiling it without debug mode. You may do that with
 
 
 
+```
+nim c -d:release test.nim
 
-    nim c -d:release test.nim
-
-    nim c -d:danger test.nim
-
-
-
-
-The compiler option [-d:release]{.term} removes most checks and
-debugging code and enables the backend optimization by passing the
-option \"-O3\" to the C compiler backend, giving a very fast and small
-executable file. The option [-d:danger]{.term} removes all checks, it
-includes [-d:release]{.term}. You should be aware that compiling with
-[-d:danger]{.term} means that your program may crash without any useful
-information, or even bad, may run, but contain uncatched errors like
-overflows and so may give you wrong results. Generally, you should
-compile your program with plain [nim c]{.term} first. When you have
-tested it well, and you may need the additional performance, you may
-switch to [-d:release]{.term} option. For games, benchmarks or other
-uncritical stuff you may try [-d:danger]{.term}.
+nim c -d:danger test.nim
+```
 
 
 
-There exists many more compiler options, you can find them explained in
-the Nim manual, or you may use the command [nim \--help]{.term} and [nim
-\--fullhelp]{.term} to get them displayed. One important new option is
-[\--gc:arc]{.term} to enable the new deterministic memory management.
-You may combine [\--gc:arc]{.term} with [-d:useMalloc]{.term} to disable
-Nim's own memory allocator, this reduces the executable size and enables
-the use of [Valgrind]{.ndef} to detect memory leaks. Similar to
-[\--gc:arc]{.term} is the option [\--gc:orc]{.term}, which can deal with
-cyclic data structures. Finally, a very powerful option is
-[\--passC:-flto]{.term}. This option is for the C compiler backend and
-enables [link time optimization]{.ndef} (LTO). LTO enables inlining for
-all procedure calls and can significantly reduce the final program size.
-For a recent Nim compiler version, instead of [\--passC:-flto]{.term}
-also [-d:lto]{.term} can be used. We should mention that you can also
-try the C++ compiler backend with the [cpp]{.term} sub-command instead
-of plain [c]{.term} command, and that you may compile with the
-[CLang]{.ndef} backend instead of default GCC backend with the
-[\--cc:clang]{.term} option. You can additional specify the option
-[-r]{.term} to immediately run the program after successful build. For
-testing small scripts, the compiler invocation in the form [nim r
-myfile.nim]{.term} can be used to compile and run a program without
-generation of a permanent executable file. Here is an example how we use
-all these options:
+The compiler option `-d:release` removes most checks and debugging code and enables the backend optimization by passing the option "-O3" to the C compiler backend, giving a very fast and small executable file. The option `-d:danger` removes all checks, it includes `-d:release`. You should be aware that compiling with `-d:danger` means that your program may crash without any useful information, or even bad, may run, but contain uncatched errors like overflows and so may give you wrong results. Generally, you should compile your program with plain `nim c` first. When you have tested it well, and you may need the additional performance, you may switch to `-d:release` option. For games, benchmarks or other uncritical stuff you may try `-d:danger`.
 
 
 
-
-    nim c -d:release --gc:arc -d:useMalloc --passC:-flto --passC:-march=native board.nim
-
+There exists many more compiler options, you can find them explained in the Nim manual, or you may use the command `nim --help` and `nim --fullhelp` to get them displayed. One important new option is `--gc:arc` to enable the new deterministic memory management.  You may combine `--gc:arc` with `-d:useMalloc` to disable Nim's own memory allocator, this reduces the executable size and enables the use of `Valgrind` to detect memory leaks. Similar to `--gc:arc` is the option `--gc:orc`, which can deal with cyclic data structures. Finally, a very powerful option is `--passC:-flto`. This option is for the C compiler backend and enables `link time optimization` (LTO). LTO enables inlining for all procedure calls and can significantly reduce the final program size.  For a recent Nim compiler version, instead of `--passC:-flto` also `-d:lto` can be used. We should mention that you can also try the C++ compiler backend with the `cpp` sub-command instead of plain `c` command, and that you may compile with the `CLang` backend instead of default GCC backend with the `--cc:clang` option. You can additional specify the option `-r` to immediately run the program after successful build. For testing small scripts, the compiler invocation in the form `nim r myfile.nim` can be used to compile and run a program without generation of a permanent executable file. Here is an example how we use all these options:
 
 
 
-In this example, we additionally pass [-march=native]{.term} to the C
-compiler backend to enable use of the most efficient CPU instructions of
-our computer, which may result in an executable that will not run on
-older hardware. Of course, we can save all these parameters in
-configuration files, so that we don't have to actually type then for
-each compiler invocation. You may find more explanations to all the
-compiler options in the Nim manual, or in later sections of this book,
-this includes the options for the JavaScript backend.
+```
+nim c -d:release --gc:arc -d:useMalloc --passC:-flto --passC:-march=native board.nim
+```
+
+
+In this example, we additionally pass `-march=native` to the C compiler backend to enable use of the most efficient CPU instructions of our computer, which may result in an executable that will not run on older hardware. Of course, we can save all these parameters in configuration files, so that we don't have to actually type then for each compiler invocation. You may find more explanations to all the compiler options in the Nim manual, or in later sections of this book, this includes the options for the JavaScript backend.
 
 
 
@@ -1381,12 +997,7 @@ this includes the options for the JavaScript backend.
 
 
 
-In this part of the book we will introduce the most essential constructs
-of the Nim programming language, like statements and expression,
-conditional and repeated code execution, functions and procedures,
-[iterators]{.key}, [templates]{.key}, exceptions, and we will discuss
-various basic data types including the container types [array]{.type},
-sequence and [string]{.str}.
+In this part of the book we will introduce the most essential constructs of the Nim programming language, like statements and expression, conditional and repeated code execution, functions and procedures, `iterators`, `templates`, exceptions, and we will discuss various basic data types including the container types `array`, sequence and `string`.
 
 
 
@@ -1395,20 +1006,15 @@ sequence and [string]{.str}.
 
 
 
-We can declare constants, variables, procedures or our custom data
-types. Declarations are used to give information to the compiler, for
-example, about the name and data type of a variable that we intend to
-use.
+We can declare constants, variables, procedures or our custom data types. Declarations are used to give information to the compiler, for example, about the name and data type of a variable that we intend to use.
 
 
 
-We will explain type and procedure declarations in later sections.
-Currently, only constant and variable declarations are important.
+We will explain type and procedure declarations in later sections. Currently, only constant and variable declarations are important.
 
 
 
-A constant declaration in its simplest form maps a symbolic name to a
-value, like
+A constant declaration in its simplest form maps a symbolic name to a value, like
 
 
 
@@ -1420,38 +1026,7 @@ const Pi = 3.1415
 
 
 
-We use the reserved word [const]{.key} to tell the compiler that we want
-to declare a constant which we have named Pi, and we assign it the
-numeric decimal value [3.1415]{.lit}. Nim has a small set of reserved
-words like [var]{.key}, [const]{.key}, [proc]{.key}, [while]{.key} and
-others, to tell the compiler that we want to declare a variable, a
-constant, a procedure or that we want to use a [while]{.key} loop for
-some repeated code execution. Reserved words in Nim are special symbols
-that have a special meaning for the compiler, and we should avoid using
-these symbols as names for other entities like variables, constants or
-functions, as that would confuse the compiler. The [=]{.op} is the
-assignment operator in Nim, it assigns the value or expression on the
-right side of it to the symbol on the left. You have to understand that
-it is different from the equal sign we may use in mathematics to express
-an equality relation. Some languages like Pascal initially used the
-compound operator [:=]{.op} for assignments, but that is not easy to
-type on the keyboard and looks a bit angry for sensible people. And
-source code usually contains a lot of assignments, so use of [=]{.op}
-makes some sense. For the actual equality test of two entities, which is
-not used that often, we use the compound [==]{.op} operator in Nim, as
-in most other programming languages including C and Python. We call
-[=]{.op} an operator. Operators are symbols which perform some basic
-operation, like [+]{.op} for the addition of two numbers, or [=]{.op}
-for the assignment of a value to a symbol. Most operators are used as
-infix operators in between two arguments, as in the expression [2 \*
-Pi]{.code} to denote the multiplication of the constant [Pi]{.var} with
-the literal number [2]{.lit}, resulting in the floating point value
-[6.29]{.lit}. But operators can also be used as unitary operators, like
-in [-Pi]{.code} to invert the sign of a numeric value. When we declare
-named constants, we must always assign a value immediately. That value
-can never change, but of course we can use the named constant in
-expressions to create different values as in
-
+We use the reserved word `const` to tell the compiler that we want to declare a constant which we have named Pi, and we assign it the numeric decimal value `3.1415`. Nim has a small set of reserved words like `var`, `const`, `proc`, `while` and others, to tell the compiler that we want to declare a variable, a constant, a procedure or that we want to use a `while` loop for some repeated code execution. Reserved words in Nim are special symbols that have a special meaning for the compiler, and we should avoid using these symbols as names for other entities like variables, constants or functions, as that would confuse the compiler. The `=` is the assignment operator in Nim, it assigns the value or expression on the right side of it to the symbol on the left. You have to understand that it is different from the equal sign we may use in mathematics to express an equality relation. Some languages like Pascal initially used the compound operator `:=` for assignments, but that is not easy to type on the keyboard and looks a bit angry for sensible people. And source code usually contains a lot of assignments, so use of `=` makes some sense. For the actual equality test of two entities, which is not used that often, we use the compound `==` operator in Nim, as in most other programming languages including C and Python. We call `=` an operator. Operators are symbols which perform some basic operation, like `+` for the addition of two numbers, or `=` for the assignment of a value to a symbol. Most operators are used as infix operators in between two arguments, as in the expression `2 * Pi` to denote the multiplication of the constant `Pi` with the literal number `2`, resulting in the floating point value `6.29`. But operators can also be used as unitary operators, like in `-Pi` to invert the sign of a numeric value. When we declare named constants, we must always assign a value immediately. That value can never change, but of course we can use the named constant in expressions to create different values as in
 
 
 
@@ -1464,42 +1039,23 @@ const MinusPi = -Pi
 
 
 
-We mentioned in part I of the book already, that we usually put a space
-on both sides of an operator when we use it in an infix notation between
-two operands, but this is only a convention to improve the readability
-of the source code. We also mentioned that in Nim spaces can in some
-cases change the interpretation of expression: Nim follows the
-traditional notations of handwritten text, e.g [a + -b]{.code} is very
-different from [a+-b]{.code}. We will discuss these notations in later
-sections of the book in more detail.
+We mentioned in part I of the book already, that we usually put a space on both sides of an operator when we use it in an infix notation between two operands, but this is only a convention to improve the readability of the source code. We also mentioned that in Nim spaces can in some cases change the interpretation of expression: Nim follows the traditional notations of handwritten text, e.g `a + -b` is very different from `a+-b`. We will discuss these notations in later sections of the book in more detail.
 
 
 
-With the above constant declaration, we can use the symbol [Pi]{.var} in
-our program's source code and don't have to remember or retype the exact
-sequence of digits. Using named constants like our [Pi]{.var} above
-makes it easy to modify the value --- if we notice that we need more
-precision, we can look up the exact value of [Pi]{.italic} and change
-the constant declaration at one place in our source code, we don't have
-to search for the digit sequence [3.14]{.lit} in all our source code
-files.
+With the above constant declaration, we can use the symbol `Pi` in our program's source code and don't have to remember or retype the exact sequence of digits. Using named constants like our `Pi` above makes it easy to modify the value --- if we notice that we need more precision, we can look up the exact value of `Pi` and change the constant declaration at one place in our source code, we don't have to search for the digit sequence `3.14` in all our source code files.
 
 
 
-For numeric constants like our [Pi]{.var} value the compiler will do a
-substitution in the source code when the program is compiled, so where
-we write the symbol [Pi]{.var} the actual numeric value is used.
+For numeric constants like our `Pi` value the compiler will do a substitution in the source code when the program is compiled, so where we write the symbol `Pi` the actual numeric value is used.
 
 
 
-For constant declarations, it must be possible to determine its value at
-compile time. Expressions assigned to constants can contain simple
-operations like basic math, but some functions calls may be not allowed.
+For constant declarations, it must be possible to determine its value at compile time. Expressions assigned to constants can contain simple operations like basic math, but some functions calls may be not allowed.
 
 
 
-Variable declarations are more complicated, as we ask the compiler to
-reserve a named storage location for us:
+Variable declarations are more complicated, as we ask the compiler to reserve a named storage location for us:
 
 
 
@@ -1511,31 +1067,15 @@ var velocity: int
 
 
 
-Here we put the reserved keyword [var]{.key} at the beginning of the
-line to tell the compiler that we want to declare a variable, then we
-give our chosen name for that variable followed by a colon and the data
-type of the variable. The [int]{.type} type is a predefined numeric data
-type indicating a signed integer. The storage capacity of an integer
-variable depends on the operating system of your computer. On 32-bit
-systems 32 bits are used, and on 64-bit systems 64 bits are used to
-store one single integer variable. That is enough for even large signed
-integer numbers: the range is [-2\^31]{.lit} up to [2\^31 - 1]{.lit} for
-32-bit systems and [-2\^63]{.lit} up to [2\^63 - 1]{.lit} for 64-bit
-systems.
+Here we put the reserved keyword `var` at the beginning of the line to tell the compiler that we want to declare a variable, then we give our chosen name for that variable followed by a colon and the data type of the variable. The `int` type is a predefined numeric data type indicating a signed integer. The storage capacity of an integer variable depends on the operating system of your computer. On 32-bit systems 32 bits are used, and on 64-bit systems 64 bits are used to store one single integer variable. That is enough for even large signed integer numbers: the range is `-2^31` up to `2^31 - 1` for 32-bit systems and `-2^63` up to `2^63 - 1` for 64-bit systems.
 
 
 
-For variables, we generally use lower case names, but names of constants
-may start with an upper case letter.
+For variables, we generally use lower case names, but names of constants may start with an upper case letter.
 
 
 
-Variables declared by use of the [var]{.key} keyword are some form of a
-simple container, they store a value, which we can access or change
-later. We can assign to the variable immediately an initial value when
-we declare it, in a similar way as we have to do it for constants, or we
-assign the value later. As long as we do not assign an actual value, the
-variable has the default value, which is zero for numeric variables:
+Variables declared by use of the `var` keyword are some form of a simple container, they store a value, which we can access or change later. We can assign to the variable immediately an initial value when we declare it, in a similar way as we have to do it for constants, or we assign the value later. As long as we do not assign an actual value, the variable has the default value, which is zero for numeric variables:
 
 
 
@@ -1550,39 +1090,13 @@ stop = 10 * start + 1
 
 
 
-In line one and two, we declare two variables called [start]{.var} and
-[stop]{.var}, which initially have the default integer value zero. In
-line three, we declare a different integer variable called
-[delta]{.var}, to which we assign an initial value [3]{.lit}. And
-finally, in line four, we assign to variable [stop]{.var} an integer
-expression. For variable declarations Nim offers some more variants,
-which we will discuss soon: We can use type inference, when we
-immediately assign an initial value, we can use [var]{.key} sections to
-introduce multiple variables without the need to type the [var]{.key}
-keyword multiple times, we can list multiple names of the same data type
-in front of the colon separated by commas, or we may use the [let]{.key}
-keyword to declare immutable variables.
+In line one and two, we declare two variables called `start` and `stop`, which initially have the default integer value zero. In line three, we declare a different integer variable called `delta`, to which we assign an initial value `3`. And finally, in line four, we assign to variable `stop` an integer expression. For variable declarations Nim offers some more variants, which we will discuss soon: We can use type inference, when we immediately assign an initial value, we can use `var` sections to introduce multiple variables without the need to type the `var` keyword multiple times, we can list multiple names of the same data type in front of the colon separated by commas, or we may use the `let` keyword to declare immutable variables.
 
 
 
 
 
-In some Nim documentation and in this book, the terms
-[declaration]{.ndef} and [definition]{.ndef} may be used alternately,
-which is not fully correct. Precisely, a declaration is a statement
-announcing that something exists, while a definition is a more detailed
-description. In the C programming language we differentiate between a
-function declaration, which describes only the name of the function and
-the number and data types of its parameters, and a function definition,
-which also has to specify the names of the function parameters as well
-as the source code of the function body. In Nim, function declarations
-are not used that often, as they are only really needed when two
-functions call each other. For that case we declare the first function,
-so that we can already use it in the definition of the other function,
-before we finally also define the first function. For other entities
-like constants, variables, data types or modules, a distinction between
-the terms declaration and definition makes not that much sense, that is
-why we may use both terms alternately.
+In some Nim documentation and in this book, the terms `declaration` and `definition` may be used alternately, which is not fully correct. Precisely, a declaration is a statement announcing that something exists, while a definition is a more detailed description. In the C programming language we differentiate between a function declaration, which describes only the name of the function and the number and data types of its parameters, and a function definition, which also has to specify the names of the function parameters as well as the source code of the function body. In Nim, function declarations are not used that often, as they are only really needed when two functions call each other. For that case we declare the first function, so that we can already use it in the definition of the other function, before we finally also define the first function. For other entities like constants, variables, data types or modules, a distinction between the terms declaration and definition makes not that much sense, that is why we may use both terms alternately.
 
 
 
@@ -1594,23 +1108,7 @@ why we may use both terms alternately.
 
 
 
-Statements, or instructions, are a core component of Nim programs: they
-tell the computer what it shall do. Often statements are procedure
-calls, like the call of the [echo()]{.func} or [inc()]{.func} procedure,
-which we have already seen in part I of the book. We will learn what
-procedures exactly are in later sections. For now, we just regard
-procedures as entities that perform a well-defined task for us when we
-call (or invoke) them. We call them by just writing their name in our
-source code file, followed by a list of parameters, also called
-arguments. When we write [echo 7]{.code} then echo is the procedure
-which we call, and 7 is the argument, an integer literal in this case.
-When the parameter list has more than one argument, then we separate the
-arguments with a comma each, and generally we put an optional space
-after that comma. The effect of our procedure call is that the decimal
-number 7 is written to the terminal when we run the program after
-compilation. While in languages like C the parameter list has to be
-always enclosed in brackets, in Nim we can frequently leave the brackets
-out, which is called command invocation syntax.
+Statements, or instructions, are a core component of Nim programs: they tell the computer what it shall do. Often statements are procedure calls, like the call of the `echo()` or `inc()` procedure, which we have already seen in part I of the book. We will learn what procedures exactly are in later sections. For now, we just regard procedures as entities that perform a well-defined task for us when we call (or invoke) them. We call them by just writing their name in our source code file, followed by a list of parameters, also called arguments. When we write `echo 7` then echo is the procedure which we call, and 7 is the argument, an integer literal in this case.  When the parameter list has more than one argument, then we separate the arguments with a comma each, and generally we put an optional space after that comma. The effect of our procedure call is that the decimal number 7 is written to the terminal when we run the program after compilation. While in languages like C the parameter list has to be always enclosed in brackets, in Nim we can frequently leave the brackets out, which is called command invocation syntax.
 
 
 
@@ -1624,27 +1122,11 @@ echo 5 * 5, SquareOfFive # command invocation syntax
 
 
 
-The command invocation syntax is often used with the [echo()]{.func}
-procedure, or when a procedure has only one single argument. For
-multiple arguments, or when the argument is a complicated expression,
-the use of brackets may be preferable. Some coding styles of other
-programming languages, like C, sometimes put a space between the
-procedure name and the opening bracket. For Nim, we should not do that,
-the reason will become clear when we later explain the [tuple]{.tup}
-data type. A few procedures have no parameters at all. When we call
-these functions, we have to use always the syntax [myProc()]{.func} with
-an empty pair of brackets, to make it for the compiler clear that we
-want to call that function. [res = myProc()]{.code} assigns the result
-of the [proc]{.proc} call to [res]{.var}, while [res = myProc]{.code}
-would assign the [proc]{.proc} itself to [res]{.var}, which is very
-different.
+The command invocation syntax is often used with the `echo()` procedure, or when a procedure has only one single argument. For multiple arguments, or when the argument is a complicated expression, the use of brackets may be preferable. Some coding styles of other programming languages, like C, sometimes put a space between the procedure name and the opening bracket. For Nim, we should not do that, the reason will become clear when we later explain the `tuple` data type. A few procedures have no parameters at all. When we call these functions, we have to use always the syntax `myProc()` with an empty pair of brackets, to make it for the compiler clear that we want to call that function. `res = myProc()` assigns the result of the `proc` call to `res`, while `res = myProc` would assign the `proc` itself to `res`, which is very different.
 
 
 
-A special form of procedures are functions, that are procedures which
-perform operations to return a value, or a result. In mathematics,
-[sin()]{.func} or [cos()]{.func} would be functions --- we pass an angle
-as argument and get the sine, or cosine as a result.
+A special form of procedures are functions, that are procedures which perform operations to return a value, or a result. In mathematics, `sin()` or `cos()` would be functions --- we pass an angle as argument and get the sine, or cosine as a result.
 
 
 
@@ -1663,38 +1145,14 @@ echo(cos(0) + 2)
 
 
 
-The Nim program above consists of a variable declaration and three
-statements: in the first line, we declare the variable we want to use.
-In the next line we assign the value [2 + 3]{.lit} to it, and finally in
-line 3 we use the procedure [echo()]{.func} to display the content of
-our variable in the terminal window. In the last line we use again the
-[echo]{.func} procedure with an ordinary parameter list enclosed in
-brackets. The parameter list has only one parameter, which is the sum of
-a function call and the literal value [2]{.lit}. Here the compiler would
-first call [cos(0)]{.func} and then add the literal value [2]{.lit} to
-that result, before finally the sum is passed to the [echo]{.func}
-[proc]{.proc} to print the
-value.^\[[16](#_footnotedef_16 "View footnote."){#_footnoteref_16
-.footnote}\]^
+The Nim program above consists of a variable declaration and three statements: in the first line, we declare the variable we want to use.  In the next line we assign the value `2 + 3` to it, and finally in line 3 we use the procedure `echo()` to display the content of our variable in the terminal window. In the last line we use again the `echo` procedure with an ordinary parameter list enclosed in brackets. The parameter list has only one parameter, which is the sum of a function call and the literal value `2`. Here the compiler would first call `cos(0)` and then add the literal value `2` to that result, before finally the sum is passed to the `echo` `proc` to print the value.^\[[16](#_footnotedef_16 "View footnote.") \]^
 
 
 
-Nim programs are generally processed from top to bottom by the compiler,
-and when we execute the program after successful compilation, then it
-also executes from top to button. A consequence of this is that we have
-to write the lines of the above program exactly in that order. If we
-moved the variable declaration down, then the compiler would complain
-about an undeclared variable because the variable is used before it has
-been declared. If we exchanged lines 2 and 3, then the compiler would be
-still satisfied, and we would be able to compile and run the program.
-But we would get a very different result, because we would first try to
-display the value of variable [a]{.var}, and later assign a value to it.
+Nim programs are generally processed from top to bottom by the compiler, and when we execute the program after successful compilation, then it also executes from top to button. A consequence of this is that we have to write the lines of the above program exactly in that order. If we moved the variable declaration down, then the compiler would complain about an undeclared variable because the variable is used before it has been declared. If we exchanged lines 2 and 3, then the compiler would be still satisfied, and we would be able to compile and run the program.  But we would get a very different result, because we would first try to display the value of variable `a`, and later assign a value to it.
 
 
-
-When we have to declare multiple constants or variables, then we can use
-a block, that is we write the keyword [var]{.key} or [const]{.key} on
-its own line, followed by the actual declarations like in
+When we have to declare multiple constants or variables, then we can use a block, that is we write the keyword `var` or `const` on its own line, followed by the actual declarations like in
 
 
 
@@ -1711,25 +1169,11 @@ var
 
 
 
-These blocks are also called sections, e.g. [const]{.key} section or
-[var]{.key} section, as known from the wirthian languages. Note the
-indentation --- the lines after [const]{.key} and [var]{.key} start with
-some space characters, so they build a block which allows the compiler
-to detect where the declaration ends. Typically, we use two spaces for
-each level of indentation. Other numbers would work also, but the
-indentation scheme should be consistent. Two spaces is the general
-recommendation, as it is clearly recognizable for humans in the source
-code, and because it doesn't waste too much space, that is, it would not
-generate long lines which may not fit onto the screen.
+These blocks are also called sections, e.g. `const` section or `var` section, as known from the wirthian languages. Note the indentation --- the lines after `const` and `var` start with some space characters, so they build a block which allows the compiler to detect where the declaration ends. Typically, we use two spaces for each level of indentation. Other numbers would work also, but the indentation scheme should be consistent. Two spaces is the general recommendation, as it is clearly recognizable for humans in the source code, and because it doesn't waste too much space, that is, it would not generate long lines which may not fit onto the screen.
 
 
 
-Also note that in Nim we generally write each statement onto its own
-line. The line break indicates to the compiler that the statement has
-ended. There are a few exceptions --- long mathematical expressions can
-continue on the next line (see the Nim manual for details). We can also
-put multiple statements on a single line when we separate them by a
-semicolon:
+Also note that in Nim we generally write each statement onto its own line. The line break indicates to the compiler that the statement has ended. There are a few exceptions --- long mathematical expressions can continue on the next line (see the Nim manual for details). We can also put multiple statements on a single line when we separate them by a semicolon:
 
 
 
@@ -1751,8 +1195,7 @@ a = 2 * a + (2)
 
 
 
-We can also declare multiple variables of the same type in one single
-declaration, like
+We can also declare multiple variables of the same type in one single declaration, like
 
 
 
@@ -1778,8 +1221,7 @@ var
 
 
 
-Currently, Nim allows also to initialize multiple variables with the
-same value:
+Currently, Nim allows also to initialize multiple variables with the same value:
 
 
 
@@ -1792,13 +1234,11 @@ var
 
 
 
-Here, [i]{.var} and [j]{.var} would both get the initial value
-[1]{.lit}. Most people avoid this notation, as it is not that clear.
+Here, `i` and `j` would both get the initial value `1`. Most people avoid this notation, as it is not that clear.
 
 
 
-Finally, for variable declarations we can use type inference when we
-assign an initial start value, that is we can write
+Finally, for variable declarations we can use type inference when we assign an initial start value, that is we can write
 
 
 
@@ -1811,27 +1251,11 @@ var
 
 
 
-The compiler recognizes in this case that we assign an integer literal
-to that variable, and so silently gives the variable the [int]{.type}
-type for us. Type inference can be comfortable, but may make it harder
-for readers to understand the code, or the type inference may not always
-do exactly what we want. For example, in the above code, [year]{.var}
-gets the data type [int]{.type}, which is a signed 4 or 8 byte number.
-But maybe we would prefer an unsigned number, or a number which occupies
-only two bytes in memory. So use type inference with some caution.
+The compiler recognizes in this case that we assign an integer literal to that variable, and so silently gives the variable the `int` type for us. Type inference can be comfortable, but may make it harder for readers to understand the code, or the type inference may not always do exactly what we want. For example, in the above code, `year` gets the data type `int`, which is a signed 4 or 8 byte number.  But maybe we would prefer an unsigned number, or a number which occupies only two bytes in memory. So use type inference with some caution.
 
 
 
-Note: For integral data, we mostly use the [int]{.type} data type in
-Nim, which is a signed type with 4 or 8 byte size. It usually does not
-make sense to use many different integral types --- signed, unsigned,
-and types of different byte size. Mixing them in numerical expressions
-can be confusing and potentially even decrease performance, because the
-computer may have to do type conversion before it can do the math
-operation. For unsigned types, another problem is that math operations
-on unsigned operands could have a negative result. Consider the
-following example, where we use a hypothetical data type \"unsigned
-int\" to indicate unsigned integers:
+Note: For integral data, we mostly use the `int` data type in Nim, which is a signed type with 4 or 8 byte size. It usually does not make sense to use many different integral types --- signed, unsigned, and types of different byte size. Mixing them in numerical expressions can be confusing and potentially even decrease performance, because the computer may have to do type conversion before it can do the math operation. For unsigned types, another problem is that math operations on unsigned operands could have a negative result. Consider the following example, where we use a hypothetical data type "unsigned int" to indicate unsigned integers:
 
 
 
@@ -1846,17 +1270,11 @@ a = a - b
 
 
 
-The true result would be [-4]{.lit}, but [a]{.var} is of unsigned type
-and can never contain a negative content. So what should happen --- an
-incorrect result or a program termination?
+The true result would be `-4`, but `a` is of unsigned type and can never contain a negative content. So what should happen --- an incorrect result or a program termination?
 
 
 
-Related to variable declarations is the initial start value of
-variables. Nim clears for us all the bits of our variables when we
-declare them, that is, numbers always get the initial start value zero
-if we do not assign a different value in the variable declaration.
-
+Related to variable declarations is the initial start value of variables. Nim clears for us all the bits of our variables when we declare them, that is, numbers always get the initial start value zero if we do not assign a different value in the variable declaration.
 
 
 In this declaration
@@ -1877,46 +1295,18 @@ both variables get the initial value zero.
 
 
 
-There exists a variant for variable declarations which uses the
-[let]{.key} keyword instead of the [var]{.key} keyword. [Let]{.key} is
-used when we need a variable which only once gets a value assigned,
-while [var]{.key} is used when we want to change the content of the
-variable during program execution. Let seems to be similar to
-[const]{.key}, but in [const]{.key} declarations we can use only values
-that are known at compile time. Let allows us to assign to variables
-values that are only available at program run time, maybe because the
-value is a result of a prior calculation. But [let]{.key} indicates, at
-the same time, that the assignment occurs only once, the content does
-not change later, during the program's execution. We say that the
-variable is [immutable]{.ndef}. Use of the [let]{.key} keyword may help
-the human reader of the source code with understanding what is going on,
-and it may also help the compiler doing optimizations to get faster, or
-more compact code. For now, we can just ignore [let]{.key} declarations
-and use [var]{.key} instead --- later, we may use [let]{.key} where
-appropriate, and the compiler will tell us when [let]{.key} will not
-work, and we have to use [var]{.key}.
+There exists a variant for variable declarations which uses the `let` keyword instead of the `var` keyword. `Let` is used when we need a variable which only once gets a value assigned, while `var` is used when we want to change the content of the variable during program execution. Let seems to be similar to `const`, but in `const` declarations we can use only values that are known at compile time. Let allows us to assign to variables values that are only available at program run time, maybe because the value is a result of a prior calculation. But `let` indicates, at the same time, that the assignment occurs only once, the content does not change later, during the program's execution. We say that the variable is `immutable`. Use of the `let` keyword may help the human reader of the source code with understanding what is going on, and it may also help the compiler doing optimizations to get faster, or more compact code. For now, we can just ignore `let` declarations and use `var` instead --- later, we may use `let` where appropriate, and the compiler will tell us when `let` will not work, and we have to use `var`.
+
+
+
+
+The way how we declare constants, variables, types and procedures in Nim is very similar as it was done in the wirthian languages Pascal, Modula and Oberon. People coming from languages like C sometimes argue that C uses a shorter and better variable declaration of the form `int velocity;` instead of Nim's `var velocity: int`. Indeed, that declaration is shorter in this case. And some people like it better that the data type is written first, they consider the data type more important than the name of the variable. That is a matter of taste, and the C notation would not work well for var/let/const distinction and for type declarations.
 
 
 
 
 
-The way how we declare constants, variables, types and procedures in Nim
-is very similar as it was done in the wirthian languages Pascal, Modula
-and Oberon. People coming from languages like C sometimes argue that C
-uses a shorter and better variable declaration of the form [int
-velocity;]{.code} instead of Nim's [var velocity: int]{.code}. Indeed,
-that declaration is shorter in this case. And some people like it better
-that the data type is written first, they consider the data type more
-important than the name of the variable. That is a matter of taste, and
-the C notation would not work well for var/let/const distinction and for
-type declarations.
-
-
-
-
-
-With what we have learned in this section, we can rewrite our initial
-Nim example from part I in this form:
+With what we have learned in this section, we can rewrite our initial Nim example from part I in this form:
 
 
 
@@ -1935,19 +1325,7 @@ echo sum
 
 
 
-In the code above, we declare both variables of type [int]{.type} in a
-single line and take advantage of the fact that the compiler will
-initialize them with [0]{.lit} for us. And we use a named constant for
-the upper loop boundary. Another tiny fix is that we write
-[inc(i)]{.code} instead of [inc(i, 1)]{.code}. We can do that because
-there exists multiple procedures with the name [inc()]{.func} --- one
-which takes two arguments, and one which takes only one argument and
-always increases that argument by one. Procedures with the same name,
-but different parameter lists, are called overloaded procedures. Instead
-of [inc(i)]{.code} we could have written also [i = i + 1]{.code} and
-instead of [inc(sum, i)]{.code} we could write [sum = sum + i]{.code}.
-That would generate identical code in the executable, so we can use
-whatever we like better.
+In the code above, we declare both variables of type `int` in a single line and take advantage of the fact that the compiler will initialize them with `0` for us. And we use a named constant for the upper loop boundary. Another tiny fix is that we write `inc(i)` instead of `inc(i, 1)`. We can do that because there exists multiple procedures with the name `inc()` --- one which takes two arguments, and one which takes only one argument and always increases that argument by one. Procedures with the same name, but different parameter lists, are called overloaded procedures. Instead of `inc(i)` we could have written also `i = i + 1` and instead of `inc(sum, i)` we could write `sum = sum + i`.  That would generate identical code in the executable, so we can use whatever we like better.
 
 
 
@@ -1957,44 +1335,10 @@ whatever we like better.
 
 
 
-We have already used the [echo()]{.func} procedure for displaying
-textual output in the terminal window. In the code examples of the
-previous sections, we always passed arguments of integer type to the
-[echo()]{.func} [proc]{.proc}, and the [echo()]{.func} [proc]{.proc}
-automatically converted the integer numbers to a textual sequence of
-decimal digits, so that we could read it in the terminal. In the Nim
-programming language, text is a predefined, built-in data type that is
-called [string]{.ndef}. We will learn all the details of the
-[string]{.str} data type in the next section, for now it is sufficient
-that it exists and that we can use the [echo()]{.func} [proc]{.proc} to
-print text [strings]{.str}. The [echo()]{.func} [proc]{.proc} has the
-ability to convert other data types like numbers or the boolean data
-type (true/false) automatically to human-readable text [strings]{.str},
-so that we can read the output in the terminal. Recall that most data
-types are stored internally in our computer as bits and bytes, which
-have no true human-readable representation by default. Numbers, as most
-other data types stored in the computer, are actual abstract entities.
-We have learned already that all data in the computer is internally
-stored in binary form, that is, as a bit pattern of [0]{.lit} and
-[1]{.lit}. But even that bit pattern is still an abstraction, we would
-require a procedure that prints a [0]{.lit} for each unset bit and a
-[1]{.lit} for each set bit to display the content of an internally
-stored number in binary form in the terminal or elsewhere. In the same
-way, we require a procedure to print an internally stored number as a
-human-readable sequence of decimal digits. Even text [strings]{.str} are
-internally stored as abstract bit patterns, and we need conversion
-[procs]{.proc} to print the content for us as ordinary text. All that
-can be done by the [echo()]{.func} [proc]{.proc}, but we do not care for
-the actual details at this point of the book.
+We have already used the `echo()` procedure for displaying textual output in the terminal window. In the code examples of the previous sections, we always passed arguments of integer type to the `echo()` `proc`, and the `echo()` `proc` automatically converted the integer numbers to a textual sequence of decimal digits, so that we could read it in the terminal. In the Nim programming language, text is a predefined, built-in data type that is called `string`. We will learn all the details of the `string` data type in the next section, for now it is sufficient that it exists and that we can use the `echo()` `proc` to print text `strings`. The `echo()` `proc` has the ability to convert other data types like numbers or the boolean data type (true/false) automatically to human-readable text `strings`, so that we can read the output in the terminal. Recall that most data types are stored internally in our computer as bits and bytes, which have no true human-readable representation by default. Numbers, as most other data types stored in the computer, are actual abstract entities.  We have learned already that all data in the computer is internally stored in binary form, that is, as a bit pattern of `0` and `1`. But even that bit pattern is still an abstraction, we would require a procedure that prints a `0` for each unset bit and a `1` for each set bit to display the content of an internally stored number in binary form in the terminal or elsewhere. In the same way, we require a procedure to print an internally stored number as a human-readable sequence of decimal digits. Even text `strings` are internally stored as abstract bit patterns, and we need conversion `procs` to print the content for us as ordinary text. All that can be done by the `echo()` `proc`, but we do not care for the actual details at this point of the book.
 
 
-
-For our further experiments, we may also want to be able to enter some
-user data in the terminal. As we do not know much about the various
-available data types and the [procs]{.proc} that can be used to read
-them in, we will just present a procedure that can read in a text
-[string]{.str} that the user has typed in the terminal window. We use a
-function with the name [readLine()]{.func} for this task.
+For our further experiments, we may also want to be able to enter some user data in the terminal. As we do not know much about the various available data types and the `procs` that can be used to read them in, we will just present a procedure that can read in a text `string` that the user has typed in the terminal window. We use a function with the name `readLine()` for this task.
 
 
 
@@ -2008,35 +1352,11 @@ echo "you entered: ", mytext
 
 
 
-Note that you have to press the [return]{.term} key after you have
-entered your text.
+Note that you have to press the `return` key after you have entered your text.
 
 
 
-The first line of our program shows how we can print a text literal
-[string]{.str} with the [echo()]{.func} [proc]{.proc}. To mark text
-literals unambiguously and to separate them from other literals like
-numeric literals or from variables, the [string]{.str} literals have to
-be enclosed in quotation marks. In the second line of our example
-program, we use the [readLine()]{.func} function to read textual user
-input. Note that we call [readLine()]{.func} a function, not a
-procedure, to emphasize that it returns a value. The [readLine()]{.func}
-function needs one parameter to know from where it should read --- from
-the terminal window or from a file, for example. The [stdin]{.var}
-parameter indicates that it should read from the current terminal
-window --- [stdin]{.var} is a global variable of the [system]{.mod}
-([io]{.mod}) module and indicates the standard input stream. Finally, in
-line 3 we use again the [echo()]{.func} procedure to print some text. In
-this case we pass two arguments to [echo()]{.func}, a literal text
-enclosed in quotes, and then separated by a comma, the [mytext]{.var}
-variable. The [mytext]{.var} variable has the data type [string]{.type}.
-We used type inference in this example to declare that data type: the
-[readLine()]{.func} procedure always returns a [string]{.type}, the
-compiler knows that, so our [mytext]{.var} variable is automatically
-declared with type [string]{.type}. We will learn more about the data
-type [string]{.type} and other useful predefined data types in the next
-section.
-
+The first line of our program shows how we can print a text literal `string` with the `echo()` `proc`. To mark text literals unambiguously and to separate them from other literals like numeric literals or from variables, the `string` literals have to be enclosed in quotation marks. In the second line of our example program, we use the `readLine()` function to read textual user input. Note that we call `readLine()` a function, not a procedure, to emphasize that it returns a value. The `readLine()` function needs one parameter to know from where it should read --- from the terminal window or from a file, for example. The `stdin` parameter indicates that it should read from the current terminal window --- `stdin` is a global variable of the `system` (`io`) module and indicates the standard input stream. Finally, in line 3 we use again the `echo()` procedure to print some text. In this case we pass two arguments to `echo()`, a literal text enclosed in quotes, and then separated by a comma, the `mytext` variable. The `mytext` variable has the data type `string`.  We used type inference in this example to declare that data type: the `readLine()` procedure always returns a `string`, the compiler knows that, so our `mytext` variable is automatically declared with type `string`. We will learn more about the data type `string` and other useful predefined data types in the next section.
 
 
 
