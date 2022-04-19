@@ -1,3 +1,6 @@
+https://ssalewski.de/nimprogramming.htm
+
+
 
 # Computer Programming with the Nim Programming Language
 
