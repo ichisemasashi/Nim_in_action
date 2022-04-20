@@ -1373,8 +1373,7 @@ know about the existence of that syntax, as we may use it at some places
 in the following sections. For example, for the length of text
 `strings]{.str}, we generally write `myTextString.len]{.code} instead of
 `len(myTextString)]{.code}. Both notations are fully
-equivalent.^\[[17](#_footnotedef_17 "View footnote."){#_footnoteref_17
-.footnote}\]^
+equivalent.^\[[17](#_footnotedef_17 "View footnote.") \]^
 
 
 
@@ -1541,8 +1540,7 @@ the type name is the bit size; we get the byte size when we divide that
 value by `8]{.lit}. Additionally, we have the type `uint]{.type}, which
 corresponds to `int]{.type} and has the same size, but stores unsigned
 numbers only.
-^\[[18](#_footnotedef_18 "View footnote."){#_footnoteref_18
-.footnote}\]^ Generally, we should try to use the `int]{.type} type for
+^\[[18](#_footnotedef_18 "View footnote.") }\]^ Generally, we should try to use the `int]{.type} type for
 all integral numbers, but sometimes it can make sense to use the other
 types. For example, when you have to work with a large collection of
 numbers, you know that each number is not very big, and your RAM is not
@@ -1837,8 +1835,7 @@ or we may use math.isNaN(). More useful constants and functions for the
 `float]{.type} data types can be found in the `std/fenv]{.mod} module,
 and functions working with `floats]{.type} like the trigonometric ones
 are available from the `std/math]{.mod}
-module.^\[[21](#_footnotedef_21 "View footnote."){#_footnoteref_21
-.footnote}\]^
+module.^\[[21](#_footnotedef_21 "View footnote.") \]^
 
 
 
@@ -1935,8 +1932,7 @@ this important fact, we will investigate this behavior with a small
 example program where we divide a few small integer numbers after
 conversion to `float]{.type} by another to `float]{.type} converted
 integer `j]{.var} and sum the result `j]{.var}
-times:^\[[22](#_footnotedef_22 "View footnote."){#_footnoteref_22
-.footnote}\]^
+times:^\[[22](#_footnotedef_22 "View footnote.") \]^
 
 
 
@@ -2195,7 +2191,7 @@ Sometimes it makes sense to limit the range of numeric variables to only
 a sub-range. For this, Nim uses the `range]{.key} keyword with this
 notation: `range[LowVal .. HighVal]`. Values of this type can
 never be smaller than LowVal or larger than HighVal. For Nim v1.6 we can
-define range types also by leaving out the `range\[\]]{.code}, that is,
+define range types also by leaving out the `range[]`, that is,
 by just two constants separated by `..]{.code}.
 
 
@@ -2339,8 +2335,7 @@ for el in TrafficLight:
 Ordinary `enums]{.type} start at `0]{.lit} and uses continues numbers
 for the internal numeric value, so that `enums]{.type} can be used as
 `array]{.type}
-indices.^\[[23](#_footnotedef_23 "View footnote."){#_footnoteref_23
-.footnote}\]^
+indices.^\[[23](#_footnotedef_23 "View footnote.") \]^
 
 
 
@@ -2643,25 +2638,25 @@ The following table lists a few important control characters:
   13        xD            \\r, \\c   return or carriage return --- move cursor at the beginning of the line
 
 
-The hexadecimal numbers after the `\x]{.term} character can be upper or
+The hexadecimal numbers after the `\x` character can be upper or
 lower case and can have one or two hexadecimal digits. For symbolic
-control characters like \'\\a\' for alert, the upper case variant
-\'\\A\' seems to be identical currently. The single quote entered as
-[\'\'\']{.lit} does give an error message, so you have to escape it as
-[\'\\\'\']{.lit}. Unfortunately, by supporting this form of escaping it
+control characters like `'\a'` for alert, the upper case variant
+`'\A'` seems to be identical currently. The single quote entered as
+`'''` does give an error message, so you have to escape it as
+`'\''`. Unfortunately, by supporting this form of escaping it
 becomes impossible to enter a backslash character directly, so we have
-to escape the backslash character as [\'\\\\\']{.lit} to print a single
+to escape the backslash character as `'\\'` to print a single
 backslash.
 
 
 
-For Nim the most important control character is [\'\\n\']{.lit}, which
+For Nim the most important control character is `'\n'`, which
 is used to start the output in a terminal window at the beginning of a
-new line. But [\'\\n\']{.lit} is generally not used as a single
-character but embedded in [strings]{.type}, that is, sequences of
-characters. We will learn more about [strings]{.str} soon. Note that the
-[echo()]{.func} function inserts a newline character automatically after
-each printed line, but the [write()]{.func} function does not:
+new line. But `'\n'` is generally not used as a single
+character but embedded in `strings]{.type}, that is, sequences of
+characters. We will learn more about `strings]{.str} soon. Note that the
+`echo()]{.func} function inserts a newline character automatically after
+each printed line, but the `write()]{.func} function does not:
 
 
 
@@ -2676,8 +2671,8 @@ stdout.write 'N', 'i', 'm', '\n'
 
 What may be a bit confusing is the fact that we use the backslash
 character as an escape symbol, and at the same time the above table has
-an entry [\'\\e\']{.lit}, which is also called \[ESC\]. These
-[\'\\e\']{.lit} control character with decimal value [27]{.lit} is fully
+an entry `'\e'`, which is also called \[ESC\]. These
+`'\e'` control character with decimal value `27` is fully
 unrelated to the backslash character that we use to type in control
 characters. \[ESC\] is a different special character to start control
 sequences, it was used in the past to send special commands to printers
@@ -2699,11 +2694,11 @@ literature for more details.
 In Nim integers, enumerations, characters and the boolean types are
 ordinal types. Ordinal types are countable and ordered, and for each of
 these types a lowest and largest member exists. The integer ordinal
-types support the [inc()]{.func} and [dec()]{.func} operations to get
+types support the `inc()` and `dec()` operations to get
 the next larger or next smaller value, and the other ordinal types use
-[succ()]{.func} and [pred()]{.func} for this operation. These operations
+`succ()` and `pred()` for this operation. These operations
 can produce overflow or underflow like errors if applied to largest or
-smallest value. The function [ord()]{.func} can be used on ordinal types
+smallest value. The function `ord()` can be used on ordinal types
 to get the corresponding integer value. Note that unsigned integers are
 currently not called ordinal types in Nim, and that these unsigned types
 wrap around instead of generating overflow and underflow errors.
@@ -2728,31 +2723,31 @@ contained in a set or is not contained in it. Sets are unordered data
 types, that is sets containing the same elements are always equal, it
 does not matter in which sequence we added the elements. Important set
 operations are building the union and building the difference of two
-sets with the same base type: The union of [set]{.type} [a]{.var} and
-[set]{.type} [b]{.var} is a set which contains all the elements that are
-contained in [set]{.type} [a]{.var} or in [set]{.type} [b]{.var} (or in
-both). The intersection of [set]{.type} [a]{.var} and [set]{.type}
-[b]{.var} is a [set]{.type} which contains only elements which are
-contained in [set]{.type} [a]{.var} and in [set]{.type} [b]{.var}.
+sets with the same base type: The union of `set]{.type} `a]{.var} and
+`set]{.type} `b]{.var} is a set which contains all the elements that are
+contained in `set]{.type} `a]{.var} or in `set]{.type} `b]{.var} (or in
+both). The intersection of `set]{.type} `a]{.var} and `set]{.type}
+`b]{.var} is a `set]{.type} which contains only elements which are
+contained in `set]{.type} `a]{.var} and in `set]{.type} `b]{.var}.
 
 
 
-The mathematical concept of [sets]{.type} maps well to words and bits of
+The mathematical concept of `sets]{.type} maps well to words and bits of
 computers, as most CPU's have instructions to set and clear single bits
-and to test if a bit is set or unset. And CPUs can do [and]{.op},
-[or]{.op} and [xor]{.op} operations which corresponds to the union and
+and to test if a bit is set or unset. And CPUs can do `and]{.op},
+`or]{.op} and `xor]{.op} operations which corresponds to the union and
 intersection operation in mathematical set.
 
 
 
-Nim supports sets with base type [bool]{.type}, [enum]{.type},
-[char]{.type}, [int8]{.type}, [uint8]{.type}, [int16]{.type} and
-[uint16]{.type}. Note that we need a bit in the computer memory for each
-member of the base type. The types [char]{.type}, [int8]{.type} and
-[uint8]{.type} are 8 bit types and can have [2\^8 = 256]{.lit} distinct
+Nim supports sets with base type `bool]{.type}, `enum]{.type},
+`char]{.type}, `int8]{.type}, `uint8]{.type}, `int16]{.type} and
+`uint16]{.type}. Note that we need a bit in the computer memory for each
+member of the base type. The types `char]{.type}, `int8]{.type} and
+`uint8]{.type} are 8 bit types and can have `2^8 = 256` distinct
 values, so we require 256 bits in the computer memory to represent such
 a set. That would be 32 bytes or four 64-bit words. To represent a set
-of the base type [uint16]{.type} or [int16]{.type}, we need already
+of the base type `uint16]{.type} or `int16]{.type}, we need already
 2\^16 bits, that is 2\^13 bytes or 2\^10 words on a 64-bit CPU. So it
 becomes clear that supporting base types with more than 16 bit makes not
 much sense.
@@ -2760,21 +2755,20 @@ much sense.
 
 
 While testing if an element is included or is not included in a
-[set]{.type} with the [in]{.op} or [notin]{.op} operators is always a
+`set]{.type} with the `in]{.op} or `notin]{.op} operators is always a
 very fast operation, other operations like building the intersection or
 union and set comparison operations may be not that fast when we use the
-[int16]{.type} or [uint16]{.type} base types, as for these operations
+`int16]{.type} or `uint16]{.type} base types, as for these operations
 the whole set, that is 2\^10 words on a 64-bit CPU, has to be processed.
 
 
 
-We will start our explanation with [sets]{.type} with character base
-type, as these [sets]{.type} are very easy to understand and at the same
+We will start our explanation with `sets]{.type} with character base
+type, as these `sets]{.type} are very easy to understand and at the same
 time very useful. Let us assume that we have a variable of character
 type, and we want to test if that variable is alphanumeric, that is, if
 it is a lower or upper case letter or a digit. A traditional test would
-be [(x \>= a and x \<=+z) or (x +\>= A and x \<= Z) or (x \>= 0 and x
-\<= 9)]{.code}. Using Nim's set notation, we can write that in a simpler
+be `(x >= a and x <=+z) or (x +>= A and x <= Z) or (x >= 0 and x <= 9)`. Using Nim's set notation, we can write that in a simpler
 form:
 
 
@@ -2791,7 +2785,7 @@ echo x in AlphaNum
 
 
 
-Here we defined a constant of [set\[char\]]{.type} type which contains
+Here we defined a constant of `set[char]` type which contains
 lower and upper case letters and the decimal digits. We used the range
 notation to save us a lot of typing ({\'a\', \'b\', \'c\', ...​}). It
 works in this case only, as we know that all the lowercase letters, the
@@ -2800,7 +2794,7 @@ in the ASCII table.
 
 
 
-With that definition, we can use a simple test with the [in]{.key}
+With that definition, we can use a simple test with the `in]{.key}
 keyword. These test is equivalent to the procedure call
 AlphaNum.contains(x). In compiled languages (most) set operations are
 generally very fast as they map well to CPU instructions.
@@ -2809,7 +2803,7 @@ generally very fast as they map well to CPU instructions.
 
 Older languages like C have not a dedicated set data type, but as sets
 are so useful and efficient, C emulates these operations by using
-bit-wise [and]{.op} and [or]{.op} operations in conjunction with bit
+bit-wise `and]{.op} and `or]{.op} operations in conjunction with bit
 shifts.
 
 
@@ -2832,14 +2826,14 @@ const
 
 
 
-The constant [ANMO]{.var} would now contain all the characters from
-[AlphaNum]{.var} and from [MathOp]{.var}, that is letters, digits and
-math operators. The constant [Empty]{.var} would get all the characters
-that are at the same time contained in [set]{.type} [AlphaNum]{.var} and
-in [set]{.type} [MathOp]{.var}. As there is not a single common
-character, the [set]{.type} [Empty]{.var} is indeed empty. Remembering
-the two operators [+]{.op} and [\*]{.op} for union and intersection is
-not easy. For the intersection operator [\*]{.op} it may help when we
+The constant `ANMO]{.var} would now contain all the characters from
+`AlphaNum]{.var} and from `MathOp]{.var}, that is letters, digits and
+math operators. The constant `Empty]{.var} would get all the characters
+that are at the same time contained in `set]{.type} `AlphaNum]{.var} and
+in `set]{.type} `MathOp]{.var}. As there is not a single common
+character, the `set]{.type} `Empty]{.var} is indeed empty. Remembering
+the two operators `+]{.op} and `*]{.op} for union and intersection is
+not easy. For the intersection operator `*]{.op} it may help when we
 imagine the set members as bits, and we assume that we multiply the bits
 of both operands bitwise, that is we multiply the set or unset bits at
 corresponding position each. The resulting bit pattern would get set
@@ -2847,7 +2841,7 @@ bits only for positions where both arguments have set bits.
 
 
 
-We can use the functions [incl()]{.func} and [excl()]{.func} to add or
+We can use the functions `incl()]{.func} and `excl()]{.func} to add or
 remove single set members:
 
 
@@ -2864,46 +2858,43 @@ s.incl('?')
 
 
 
-The result is a [set]{.type} with letters [a]{.lit}, [b]{.lit},
-[c]{.lit} and the characters [\_]{.lit} and [?]{.lit}. Note that calling
-[incl()]{.func} has no effect when the value is already included in the
-[set]{.type}, and calling [excl()]{.func} has no effect when the value
-is not contained in the [set]{.type} at all.
+The result is a `set]{.type} with letters `a]{.lit}, `b]{.lit},
+`c]{.lit} and the characters `\_]{.lit} and `?]{.lit}. Note that calling
+`incl()]{.func} has no effect when the value is already included in the
+`set]{.type}, and calling `excl()]{.func} has no effect when the value
+is not contained in the `set]{.type} at all.
 
 
 
-Another operation is the difference of two [sets]{.type} --- [a -
-b]{.code} is a [set]{.type} which contains only the elements of
-[a]{.var} which are not contained in [b]{.var}. In Nim there is
+Another operation is the difference of two `sets]{.type} --- `a - b` is a `set]{.type} which contains only the elements of
+`a]{.var} which are not contained in `b]{.var}. In Nim there is
 currently no operator for the complement or the symmetric difference of
-[sets]{.type} available. We can produce a [set]{.type} complement by
-using a fully filled [set]{.type} and then removing the elements of
-which we want the complement. For a character [set]{.type} that would
-look like [{\'\\0\'..\'\\255\'} - s]{.code}, where [s]{.var} is the set
-to complement. And the symmetric difference of [set]{.type} [a]{.var}
-and set [b]{.var} can be generated by the operation [(a+b) -
-(a\*b)]{.code} or by [(a-b) + (b-a)]{.code}.
+`sets]{.type} available. We can produce a `set]{.type} complement by
+using a fully filled `set]{.type} and then removing the elements of
+which we want the complement. For a character `set]{.type} that would
+look like `{'\0'..'\255'} - s`, where `s` is the set
+to complement. And the symmetric difference of `set]{.type} `a]{.var}
+and set `b]{.var} can be generated by the operation `(a+b) - (a*b)` or by `(a-b) + (b-a)`.
 
 
 
-As the [not]{.op} operator binds more tightly than the [in]{.op}
+As the `not]{.op} operator binds more tightly than the `in]{.op}
 operator, we have to use brackets for the inverted membership test like
-[not(x in a)]{.code} or we can use the [notin]{.op} operator and write
-[x notin a]{.code}. We can test for equality of [sets]{.type} [a]{.var}
-and [b]{.var} like [a == b]{.code} and for subset relation [a \<
-b]{.code} or [a \<= b]{.code}. [a \<= b]{.code} indicates that [b]{.var}
-contains at least all members of [a]{.code}, and [a \< b]{.code} that
-[b]{.var} contains all members of [a]{.var} and at least one more
+`not(x in a)]{.code} or we can use the `notin]{.op} operator and write
+`x notin a]{.code}. We can test for equality of `sets]{.type} `a]{.var}
+and `b]{.var} like `a == b]{.code} and for subset relation `a < b` or `a <= b`. `a <= b` indicates that `b`
+contains at least all members of `a]{.code}, and `a < b]{.code} that
+`b]{.var} contains all members of `a]{.var} and at least one more
 element.
 
 
 
-Finally, we can use the function [card()]{.func} to get the cardinality
-of a [set]{.type} variable, that is the number of contained members.
+Finally, we can use the function `card()]{.func} to get the cardinality
+of a `set]{.type} variable, that is the number of contained members.
 
 
 
-We should also mention that we can have character [sets]{.type} which
+We should also mention that we can have character `sets]{.type} which
 are restricted to a range of characters:
 
 
@@ -2923,15 +2914,15 @@ echo 'c' in y
 
 
 In the code above, the compiler detects the first assignment to variable
-[y]{.var} as invalid.
+`y]{.var} as invalid.
 
 
 
-[Sets]{.type} of numbers work in principle in the same way as
-[sets]{.type} of characters. One problem is that in Nim integer numbers
-are generally 4 or 8 bytes large, but [sets]{.type} can contain only
+`Sets]{.type} of numbers work in principle in the same way as
+`sets]{.type} of characters. One problem is that in Nim integer numbers
+are generally 4 or 8 bytes large, but `sets]{.type} can contain only
 numbers with 1 or 2 byte size. So we have to specify the type of
-[set]{.type} members explicitly:
+`set]{.type} members explicitly:
 
 
 
@@ -2948,12 +2939,12 @@ echo p in baseLine
 
 
 
-In the code above, we defined a [set]{.type} type which can contain
-[int8]{.type} numbers in the range [0]{.lit} to [63]{.lit}.
+In the code above, we defined a `set]{.type} type which can contain
+`int8]{.type} numbers in the range `0]{.lit} to `63]{.lit}.
 
 
 
-We can use also another notation for numeric [sets]{.type} when we
+We can use also another notation for numeric `sets]{.type} when we
 define an explicit range type like in
 
 
@@ -2973,7 +2964,7 @@ assert baseLine == baseLineExplicit
 
 
 
-What may be a bit surprising is the fact that Nim's [sets]{.type} work
+What may be a bit surprising is the fact that Nim's `sets]{.type} work
 also for negative numbers:
 
 
@@ -2990,8 +2981,8 @@ var pp: int8 = -1
 
 
 
-[Enum]{.type} [sets]{.type} are also very useful and can be used to
-represent multiple boolean properties in a single [set]{.type} variable
+`Enum]{.type} `sets]{.type} are also very useful and can be used to
+represent multiple boolean properties in a single `set]{.type} variable
 instead of using multiple boolean variables for this purpose:
 
 
@@ -3009,8 +3000,8 @@ const NimProp:  CompLangProp = {compiled, hasGC, isOpenSource, isSelfHosted}
 
 
 
-[Enum]{.type} [sets]{.type} can be used to interact with functions of C
-libraries where for flag variables often or'ed [ints]{.type} are used.
+`Enum]{.type} `sets]{.type} can be used to interact with functions of C
+libraries where for flag variables often or'ed `ints]{.type} are used.
 For example, for the gintro C bindings there is this definition:
 
 
@@ -3030,12 +3021,12 @@ type
 
 
 Here, the {.size.} pragma is used to ensure that the byte size of that
-[set]{.type} type matches the size of integers in C languages.
+`set]{.type} type matches the size of integers in C languages.
 
 
 
-When we define a [set]{.type} of [enums]{.type} in this way to generate
-bindings to C libraries, then we have to ensure that the [enum]{.type}
+When we define a `set]{.type} of `enums]{.type} in this way to generate
+bindings to C libraries, then we have to ensure that the `enum]{.type}
 values start with zero, otherwise Nim's definition will not match with
 the C definition. For example, in the gdk.nim module we have
 
@@ -3062,20 +3053,20 @@ type
 
 
 
-The first [enum]{.type} with ordinal value zero was automatically added
+The first `enum]{.type} with ordinal value zero was automatically added
 by the bindings generator script to ensure type matching. Nim's devs
 sometimes recommend to use plain (distinct) integer constants for C
 enums. That may be easier, but integer constants provide no name spaces,
 so names may be aFlagWheel instead of AxisFlag.wheel or plain wheel when
-there is no name conflict for pure [enums]{.type}. And with integer
+there is no name conflict for pure `enums]{.type}. And with integer
 constants we have to combine flags by or operation like (aFlagWheel or
 aFlagSlider) instead of clean {AxisFlag.wheel, slider}.
 
 
 
-Can we print [sets]{.type} easily? As [sets]{.type} are an unordered
+Can we print `sets]{.type} easily? As `sets]{.type} are an unordered
 type, it is not fully trivial, but we can iterate over the full base
-type and check if the element is contained in our [set]{.type} like
+type and check if the element is contained in our `set]{.type} like
 
 
 
@@ -3099,8 +3090,8 @@ echo ' '
 
 
 We will learn how the for loop work soon. Note that the sequence in
-which the [set]{.type} members are printed is determined by our query
-loop, not by the [set]{.type} content itself, as [sets]{.type} are
+which the `set]{.type} members are printed is determined by our query
+loop, not by the `set]{.type} content itself, as `sets]{.type} are
 unordered types.
 
 
@@ -3109,27 +3100,27 @@ unordered types.
 ### Strings
 
 
-The [string]{.type} data type is a sequence of characters. It is used
+The `string]{.type} data type is a sequence of characters. It is used
 whenever a textual input or output operation is performed. Usually, it
 is a sequence of ASCII-only characters, but multiple characters in the
-[string]{.type} can be interpreted as so called utf-8 Unicode
+`string]{.type} can be interpreted as so called utf-8 Unicode
 characters, that allow displaying nearly unlimited symbols as long as
 all the needed fonts are installed on your computer, and you manage to
 enter them --- Unicode characters may be not accessible by a simple
 keystroke. For now, we will only use ASCII characters, as they are
-simpler and work everywhere. [String]{.type} literals must be enclosed
-in double quotes. Nim's [strings]{.type} are similar to the Nim
-[seq]{.type} data types: both are homogeneous variable-size containers.
-That means that a [string]{.type} or a [seq]{.type} expands
+simpler and work everywhere. `String]{.type} literals must be enclosed
+in double quotes. Nim's `strings]{.type} are similar to the Nim
+`seq]{.type} data types: both are homogeneous variable-size containers.
+That means that a `string]{.type} or a `seq]{.type} expands
 automatically when you append or insert characters or other
-[strings]{.type}. Nim's [seq]{.type} data type is discussed later in the
-book in some detail. Don't confuse short [strings]{.type} with only one
-character with single characters: A [string]{.type} is a non-trivial
+`strings]{.type}. Nim's `seq]{.type} data type is discussed later in the
+book in some detail. Don't confuse short `strings]{.type} with only one
+character with single characters: A `string]{.type} is a non-trivial
 entity with internal state like data buffer (the actual contained
 characters), length and storage capacity, while a variable of
-[char]{.type} type is nothing more than a single byte interpreted in a
-special way. So a [string]{.type} like [\"x\"]{.lit} is fully different
-from [\'x\']{.lit}.
+`char]{.type} type is nothing more than a single byte interpreted in a
+special way. So a `string]{.type} like `"x"` is fully different
+from `'x'`.
 
 
 
@@ -3147,19 +3138,19 @@ echo str, name
 
 
 
-In the above example code, we declare a variable called [str]{.var} and
-assign it the initial literal value [\"Hello\"]{.lit}. We use the
-[echo()]{.func} procedure to ask the user for his name, and use the
-[readLine()]{.func} procedure to read the user input from the terminal.
-To show how we can add characters to existing [string]{.type} variables,
-we call the [add()]{.func} procedure to append a space character to our
-[str]{.var} variable, and finally call the [echo()]{.func} procedure to
+In the above example code, we declare a variable called `str]{.var} and
+assign it the initial literal value `"Hello"]{.lit}. We use the
+`echo()]{.func} procedure to ask the user for his name, and use the
+`readLine()]{.func} procedure to read the user input from the terminal.
+To show how we can add characters to existing `string]{.type} variables,
+we call the `add()]{.func} procedure to append a space character to our
+`str]{.var} variable, and finally call the `echo()]{.func} procedure to
 print the hello message and the name to the screen. Note that the
-[echo()]{.func} procedure automatically terminates each output operation
+`echo()]{.func} procedure automatically terminates each output operation
 with a jump to the next line. If you want an output operation without a
-newline, you can use the similar [write()]{.func} procedure. But
-[write()]{.func} needs an additional first parameter, for which we use
-the special variable [stdout]{.var} when we want to write to the
+newline, you can use the similar `write()]{.func} procedure. But
+`write()]{.func} needs an additional first parameter, for which we use
+the special variable `stdout]{.var} when we want to write to the
 terminal window.
 
 
@@ -3179,32 +3170,32 @@ echo name
 
 
 The Nim standard library provides a lot of functions for creating and
-modifying [strings]{.type}, most of these functions are collected in the
-[system]{.mod} and in the [strutils]{.mod} module. The most important
-procedures for [strings]{.type} are [len()]{.func} and [high()]{.func}.
-The [len()]{.func} procedure returns the length of a [string]{.type},
+modifying `strings]{.type}, most of these functions are collected in the
+`system]{.mod} and in the `strutils]{.mod} module. The most important
+procedures for `strings]{.type} are `len()]{.func} and `high()]{.func}.
+The `len()]{.func} procedure returns the length of a `string]{.type},
 that is, the number of ASCII characters or bytes that the
-[string]{.type} currently contains. The empty [string]{.type}
-[\"\"]{.lit} has length zero. Note that the plain [len()]{.func}
+`string]{.type} currently contains. The empty `string]{.type}
+`""`{.lit} has length zero. Note that the plain `len()]{.func}
 function returns the number of 8-bit characters, not the number of
-Unicode glyphs, when the [string]{.type} should be interpreted as
+Unicode glyphs, when the `string]{.type} should be interpreted as
 Unicode text. To determine the number of glyphs of Unicode
-[strings]{.type}, you should use some of the [unicode]{.mod} modules.
-The [high()]{.func} function is very similar to the [len()]{.func}
+`strings]{.type}, you should use some of the `unicode]{.mod} modules.
+The `high()]{.func} function is very similar to the `len()]{.func}
 function, it returns the index of the last character in the
-[string]{.str}. For each [string]{.type} [s]{.var} [high(s) == len(s)
--1]{.code}, so [high(\"\")]{.func} is [-1]{.lit}. Remember that Nim
-supports method call syntax, so we can also write [s.len]{.code} instead
-of [len(s)]{.code}.
+`string]{.str}. For each `string]{.type} `s]{.var} `high(s) == len(s)
+-1]{.code}, so `high("")` is `-1`. Remember that Nim
+supports method call syntax, so we can also write `s.len]{.code} instead
+of `len(s)]{.code}.
 
 
 
-The most important operators for [strings]{.type} are the subscript
-operator [\[\]]{.op} which allows access to individual characters of
-[strings]{.type}, and the [..]{.op} slice operator, which allows access
-to sub-strings. The first character in a [string]{.str} has always the
-index zero. For concatenation of [string]{.type} literals or
-[string]{.type} variables, Nim uses the [&]{.op} operator.
+The most important operators for `strings]{.type} are the subscript
+operator `[]` which allows access to individual characters of
+`strings]{.type}, and the `..]{.op} slice operator, which allows access
+to sub-strings. The first character in a `string]{.str} has always the
+index zero. For concatenation of `string]{.type} literals or
+`string]{.type} variables, Nim uses the `&]{.op} operator.
 
 
 
@@ -3218,82 +3209,82 @@ s[s.high] = '!'
 
 
 
-In the example above, we define the [string]{.type} variable [s]{.var}
-by use of two literal [strings]{.type} to show the use of the
+In the example above, we define the `string]{.type} variable `s]{.var}
+by use of two literal `strings]{.type} to show the use of the
 concatenation operator. In line two we use the slice operator to replace
-the sub-string [\"hate\"]{.lit}, that is, the characters with index
-position 3 up to 6, with the [string]{.str} literal [\"like\"]{.lit}. In
+the sub-string `"hate"`, that is, the characters with index
+position 3 up to 6, with the `string]{.str} literal `"like"`. In
 this case the replacement has exactly that many characters as the text
 to replace, but that is not necessary: We can replace sub-strings with
-longer or shorter [strings]{.type}, which includes the empty
-[string]{.str} [\"\"]{.lit} to delete a text area. In the last line of
-the above example, we use the subscript operator [\[\]]{.op} to replace
-the single character [\'?\']{.lit} at the end of our [string]{.type}
+longer or shorter `strings]{.type}, which includes the empty
+`string]{.str} `""` to delete a text area. In the last line of
+the above example, we use the subscript operator `[]` to replace
+the single character `'?'` at the end of our `string]{.type}
 with an exclamation mark. For subscript and slice operators, Nim
 supports also a special notation which indicates indexing from the end
-of the [string]{.type}. Python and Ruby use negative integers for this
-purpose, while Nim uses the [\^]{.op} character. So [\[\^1\]]{.code} is
-the last character, [\[\^2\]]{.code} the one before the last. So we
-could have written [s\[\^1\] = \'!\']{.code} for the last line of our
+of the `string]{.type}. Python and Ruby use negative integers for this
+purpose, while Nim uses the `^` character. So `[^1]` is
+the last character, `[^2]` the one before the last. So we
+could have written `s[^1] = '!'` for the last line of our
 code fragment above. The reason that Nim does not use negative integers
-for this purpose is that Nim [arrays]{.type} don't have to start at
+for this purpose is that Nim `arrays]{.type} don't have to start at
 index zero, but can start with an arbitrary index including negative
 indices, so for negative indices it may be not always clear if a regular
-index or a position from the end of the [string]{.str} is desired. The
-term [s\[\^x\]]{.code} is equivalent to [s\[s.len - x\]]{.code}. We will
+index or a position from the end of the `string]{.str} is desired. The
+term `s[^x]` is equivalent to `s[s.len - x]`. We will
 learn some more details about the slice operator in a later section,
-when we have introduced [arrays]{.type} and sequences.
+when we have introduced `arrays]{.type} and sequences.
 
 
 
-Another important operator for [strings]{.type} is the \"toString\" or
-[stringify]{.ndef} operator [\$]{.op}. It can be applied to variables of
-nearly all data types and returns its [string]{.str} representation,
-which can then be printed. Some procedures like [echo()]{.func} apply
+Another important operator for `strings]{.type} is the "toString" or
+`stringify]{.ndef} operator `$`. It can be applied to variables of
+nearly all data types and returns its `string]{.str} representation,
+which can then be printed. Some procedures like `echo()]{.func} apply
 this operator on its arguments automatically. When we define our own
-data types, then it can make some sense to define the [\$]{.op} for
+data types, then it can make some sense to define the `$` for
 them, in case we need a textual representation of our data --- maybe
-only for debugging purpose. Note that applying the [\$]{.op} operator on
-a [string]{.type} directly has no effect and is ignored, as the result
+only for debugging purpose. Note that applying the `$` operator on
+a `string]{.type} directly has no effect and is ignored, as the result
 would not change.
 
 
 
-[Strings]{.type} can contain all characters of the [char]{.type} data
+`Strings]{.type} can contain all characters of the `char]{.type} data
 type, including the control characters. The most essential control
-character for [strings]{.type} is the newline character [\'\\n\']{.lit},
+character for `strings]{.type} is the newline character `'\n'`,
 which is used at the end or sometimes also in the middle of
-[strings]{.type} to start a new line. For [strings]{.type}, Nim also
-supports the virtual character [\"\\p\"]{.lit} to encode an OS dependent
-line break. When compiled for Windows, [\"\\p\"]{.lit} is automatically
-converted to [\"\\r\\n\"]{.lit}, and to a plain [\'\\n\']{.lit} on
-Linux. Note that [\"\\p\"]{.lit} can be used in [strings]{.type}, but
-not as a single character, as it is two byte on Windows. [\"\\p\"]{.lit}
+`strings]{.type} to start a new line. For `strings]{.type}, Nim also
+supports the virtual character `"\p"` to encode an OS dependent
+line break. When compiled for Windows, `"\p"` is automatically
+converted to `"\r\n"`, and to a plain `'\n'` on
+Linux. Note that `"\p"` can be used in `strings]{.type}, but
+not as a single character, as it is two byte on Windows. `"\p"`
 is only needed to support very old Windows version or potentially other
 exotic operating system, as modern Windows recognizes plain
-[\'\\n\']{.lit} well.
+`'\n'` well.
 
 
 
-As [strings]{.type} support utf-8 Unicode, an escape sequence starting
-with [\"\\u\"]{.lit} is supported to insert Unicode code points. The
-[\"\\u\"]{.lit} follows exactly 4 hexadecimal digits or an arbitrary
+As `strings]{.type} support utf-8 Unicode, an escape sequence starting
+with `"\u"` is supported to insert Unicode code points. The
+`"\u"` follows exactly 4 hexadecimal digits or an arbitrary
 number of hex digits enclosed in curly braces {}.
 
 
 
-As [string]{.type} literals are enclosed in quotation marks, it follows
-that [strings]{.type} can not directly contain this character, we have
-to escape it as in [\"\\\"Hello\\\", she said\"]{.code}.
+As `string]{.type} literals are enclosed in quotation marks, it follows
+that `strings]{.type} can not directly contain this character, we have
+to escape it as in `"\"Hello\", she said"`.
 
 
 
-Perhaps we should mention that Nim [strings]{.type} use copy semantics
+Perhaps we should mention that Nim `strings]{.type} use copy semantics
 for assignment. As we have not yet introduced references or
-[pointers]{.type}, copy semantics is what you should
-expect --- [strings]{.type} behave just like all the other simple data
-types we used before like integer or [float]{.type} numbers or
-[enums]{.type} and characters:
+`pointers]{.type}, copy semantics is what you should
+expect --- `strings]{.type} behave just like all the other simple data
+types we used before like integer or `float]{.type} numbers or
+`enums]{.type} and characters:
 
 
 
@@ -3322,14 +3313,14 @@ The output is
 
 
 
-The assignment [s2 = s1]{.code} creates a copy of [s1]{.var}, so the
-subsequent [add()]{.func} operation does only modify [s1]{.var}, but not
-[s2]{.var}. Probably not surprising for you, but other programming
+The assignment `s2 = s1]{.code} creates a copy of `s1]{.var}, so the
+subsequent `add()]{.func} operation does only modify `s1]{.var}, but not
+`s2]{.var}. Probably not surprising for you, but other programming
 languages may behave differently, i.e. the assignment may not copy the
 textual content, but create only a reference to the first
-[string]{.str}, so that modifying one of them also affect the other. We
+`string]{.str}, so that modifying one of them also affect the other. We
 will learn more about the concept of references when we introduce the
-[object]{.key} data type.
+`object]{.key} data type.
 
 
 
@@ -3338,7 +3329,7 @@ will learn more about the concept of references when we introduce the
 
 UTF-8 is a variable-width character encoding. To cite the introducing
 section from
-[https://en.wikipedia.org/wiki/UTF-8](https://en.wikipedia.org/wiki/UTF-8){.bare}:
+`https://en.wikipedia.org/wiki/UTF-8`:
 
 
 
@@ -3385,12 +3376,12 @@ white king of a chess game. In the first line, we typed the Unicode
 sequence directly as hexadecimal digits, this method is rarely used
 today. In the second line, we used \"\\u\" to enter the code point
 directly, we get the code from
-[https://en.wikipedia.org/wiki/List_of_Unicode_characters](https://en.wikipedia.org/wiki/List_of_Unicode_characters){.bare}.
+`https://en.wikipedia.org/wiki/List_of_Unicode_characters`.
 And finally we entered the glyph directly in an editor. For some Linux
 editors like gedit we can hold down shift and control key and then type
 u, release all keys and type the Unicode digits like 265a and a space.
 See
-[https://en.wikipedia.org/wiki/Unicode_input](https://en.wikipedia.org/wiki/Unicode_input){.bare}
+`https://en.wikipedia.org/wiki/Unicode_input`
 for details and other operating system.
 
 
@@ -3399,38 +3390,38 @@ for details and other operating system.
 #### The CString data type
 
 
-In the C programming language, [strings]{.str} are just
-[pointers]{.type} to sequences of characters of fixed
-length.^\[[24](#_footnotedef_24 "View footnote."){#_footnoteref_24
-.footnote}\]^ The end of such a C [string]{.str} is generally marked
-with the character [\'\\x0\']{.lit} --- a null byte with all bits
-cleared. C functions like [printf()]{.func} needs these [\"\\x0\"]{.lit}
-characters to determine the end of the C [string]{.str}. While Nim
-[strings]{.type} are complex entities that store its current size and
+In the C programming language, `strings]{.str} are just
+`pointers]{.type} to sequences of characters of fixed
+length.^\[[24](#_footnotedef_24 "View footnote.")
+\]^ The end of such a C `string]{.str} is generally marked
+with the character `'\x0'` --- a null byte with all bits
+cleared. C functions like `printf()]{.func} needs these `"\x0"`
+characters to determine the end of the C `string]{.str}. While Nim
+`strings]{.type} are complex entities that store its current size and
 other properties, and can grow dynamically, the character sequence of
-Nim [strings]{.type} has also a hidden terminating [\'\\x0\']{.lit}
+Nim `strings]{.type} has also a hidden terminating `'\x0'`
 character at the end to make them compatible with C strings. Nim has
-also the data type [cstring]{.type}, called \"compatible
-[string]{.str}\" in modern Nim, which matches the [strings]{.type} in C
-language if we compile as usual with the C backend. [Cstrings]{.type}
+also the data type `cstring]{.type}, called "compatible
+`string`" in modern Nim, which matches the `strings` in C
+language if we compile as usual with the C backend. `Cstrings]{.type}
 are used in bindings definitions for C libraries, but as
-[cstrings]{.type} can not grow and do support only few [string]{.type}
+`cstrings]{.type} can not grow and do support only few `string]{.type}
 operations, they are only used in rare cases in ordinary Nim source
 code. The Nim compiler passes automatically the zero terminated data
-buffer of Nim [strings]{.type} to C libraries whenever we call a C
+buffer of Nim `strings]{.type} to C libraries whenever we call a C
 library, so there is no expensive type conversion involved. But the
 other way is much more expensive: When you have an existing
-[cstring]{.type} and need a Nim [string]{.type} with the same content,
-then a simple conversion is not possible as a Nim [string]{.type} is a
+`cstring]{.type} and need a Nim `string]{.type} with the same content,
+then a simple conversion is not possible as a Nim `string]{.type} is a
 different, more complex entity. So we have to create a Nim
-[string]{.type} and copy the content, you can use the stringify operator
-[\$]{.op} for this like in [myNimStr = \$myCString]{.code}. Generally,
-[string]{.type} creation is an expensive operation compared to plain
+`string]{.type} and copy the content, you can use the stringify operator
+`$` for this like in `myNimStr = $myCString`. Generally,
+`string]{.type} creation is an expensive operation compared to plain
 operations like adding two numbers, so when performance matters one
-should try to avoid unnecessary [string]{.type} creation and also
-unnecessary [string]{.type} operations. This is mostly important in
+should try to avoid unnecessary `string]{.type} creation and also
+unnecessary `string]{.type} operations. This is mostly important in
 loops, which are executed often. We will explain more about the
-internals of [strings]{.type} and why [string]{.type} creation and
+internals of `strings]{.type} and why `string]{.type} creation and
 dynamically allocating memory is expensive in later sections of the
 book.
 
@@ -3442,36 +3433,35 @@ When we access text ranges with the slice operator or single characters
 with the subscript operator, we should never access indices below the
 currently last index, which is the index mystr.high or \^1. If we do
 that, we get an exception, as that index would contain undefined data or
-would not exist at all. We said earlier that Nim [strings]{.type} grow
+would not exist at all. We said earlier that Nim `strings]{.type} grow
 automatically if we insert or append data. But that does not mean that
 we can use the subscript or slice operator to access characters after
-the current end of the [string]{.type}. Such an operation would really
-make not much sense: Imagine we have a [string]{.type} [var str =
-\"Nim\"]{.code} and now use the subscript operator and assign a
-character at position 10 with [str\[10\] = \'!\']{.code}. What should
+the current end of the `string]{.type}. Such an operation would really
+make not much sense: Imagine we have a `string]{.type} `var str =
+"Nim"` and now use the subscript operator and assign a
+character at position 10 with `str[10] = '!'`. What should
 become the content of characters 4 .. 9? Well, maybe spaces would make
 some sense, but in fact such access after the currently last valid
-character of the [string]{.type} is forbidden. You could do [str.add(\"
-!\")]{.code} for this purpose.
+character of the `string]{.type} is forbidden. You could do `str.add("!")` for this purpose.
 
 
 
-Another operation you should avoid is inserting the [\'\\x0\']{.lit}
-null byte character somewhere in an existing Nim [string]{.type}. Nim
-stores the actual length of [strings]{.type} explicitly and additional
-terminates the end of the actual data with a [\'\\x0\']{.lit} to make
-the [string]{.code} compatible with C [strings]{.str} and allow passing
-the data buffer directly to C library functions. A [\'\\x0\']{.lit}
-character somewhere in the middle of a Nim [string]{.type} would
-generate an inconsistency, as C library functions like [printf()]{.func}
-would regard [\'\\x0\']{.lit} as the [string]{.type} end marker, while
-pure Nim functions may assume still a longer [string]{.type}.
-Intermediate [\'\\x0\']{.lit} bytes in [strings]{.type} can in very rare
+Another operation you should avoid is inserting the `'\x0'`
+null byte character somewhere in an existing Nim `string]{.type}. Nim
+stores the actual length of `strings]{.type} explicitly and additional
+terminates the end of the actual data with a `'\x0'` to make
+the `string]{.code} compatible with C `strings]{.str} and allow passing
+the data buffer directly to C library functions. A `'\x0'`
+character somewhere in the middle of a Nim `string]{.type} would
+generate an inconsistency, as C library functions like `printf()]{.func}
+would regard `'\x0'` as the `string]{.type} end marker, while
+pure Nim functions may assume still a longer `string]{.type}.
+Intermediate `'\x0'` bytes in `strings]{.type} can in very rare
 cases be a problem when we get the actual byte sequence from C
-libraries. For the same reason, a Nim [string]{.type} is not identical
-or fully compatible with s [seq\[char\]]{.type}, as a
-[seq\[char\]]{.type} may contain multiple zero byte data, while Nim
-[strings]{.type} should not.
+libraries. For the same reason, a Nim `string]{.type} is not identical
+or fully compatible with s `seq[char]`, as a
+`seq[char]` may contain multiple zero byte data, while Nim
+`strings]{.type} should not.
 
 
 
@@ -3483,19 +3473,19 @@ or fully compatible with s [seq\[char\]]{.type}, as a
 
 We learned about control characters already in the section about
 characters, and earlier in this section we mentioned that
-...[strings]{.type} can also contain control characters. As the use of
+...`strings` can also contain control characters. As the use of
 control characters may be not really easy to understand, we will explain
-their use in [strings]{.type} in some more detail and give a concrete
+their use in `strings]{.type} in some more detail and give a concrete
 example.
 
 
 
-The most important control character for [strings]{.type} is the newline
+The most important control character for `strings]{.type} is the newline
 character, which moves the cursor in the terminal window to the
-beginning of the next line. The [echo()]{.func} procedure prints that
+beginning of the next line. The `echo()]{.func} procedure prints that
 character automatically after each output operation. Indeed, it can be
 important, to terminate each output operation with that character, as
-the output can be buffered, and writing just a [string]{.type} without a
+the output can be buffered, and writing just a `string]{.type} without a
 termination newline may not appear at once on the screen, but can be
 delayed. That is bad when the user is asked something and should
 respond, but the message is still buffered and not yet visible.
@@ -3504,13 +3494,12 @@ respond, but the message is still buffered and not yet visible.
 
 The problem with special characters like backspace or newline is that we
 can not enter them directly with the
-keyboard.^\[[25](#_footnotedef_25 "View footnote."){#_footnoteref_25
-.footnote}\]^ To solve that problem, escape sequences were introduced
+keyboard.^\[[25](#_footnotedef_25 "View footnote.") \]^ To solve that problem, escape sequences were introduced
 for most programming languages. An escape sequence is a special sequence
-of characters, that the compiler can discover in [strings]{.str} and
+of characters, that the compiler can discover in `strings]{.str} and
 then replace with a single special character. Whenever we want a newline
-in a [string]{.str} we type it as [\"\\n\"]{.lit}, that is, the
-backslash character followed by an ordinary letter [n]{.lit}, [n]{.lit}
+in a `string]{.str} we type it as `"\n"`, that is, the
+backslash character followed by an ordinary letter `n`, `n`
 for newline.
 
 
@@ -3524,28 +3513,28 @@ echo "Hello\nHello\nHello"
 
 
 
-The first line prints two empty lines --- two because the [\\n]{.lit}
-generates a jump to next the line, and because [echo()]{.func} always
+The first line prints two empty lines --- two because the `\n`
+generates a jump to next the line, and because `echo()]{.func} always
 adds one more jump to the next line. The second line prints three lines,
-which each contains the word [Hello]{.lit}, and the cursor is moved
-below the last [Hello]{.lit}, because [echo()]{.func} automatically adds
+which each contains the word `Hello]{.lit}, and the cursor is moved
+below the last `Hello]{.lit}, because `echo()]{.func} automatically adds
 one more newline character.
 
 
 
 Older Windows versions used generally a sequence of two control
-characters to start a new line, one [\'\\r\']{.lit} (carriage-return) to
-move to the start of the line, and one [\'\\l\']{.lit} (linefeed) to
+characters to start a new line, one `'\r'` (carriage-return) to
+move to the start of the line, and one `'\l'` (linefeed) to
 move down. You may still find these two characters in old Windows text
 files at the end of each line. Old printers used this combination too,
 so it was possible to send that text files to old printers directly. Nim
-also has the special escape sequence [\"\\p\"]{.lit}, which is called
-platform dependent newline and maps to [\"\\c\\l\"]{.lit} on Windows.
+also has the special escape sequence `"\p"`, which is called
+platform dependent newline and maps to `"\c\l"` on Windows.
 That is, when we compile our program on Windows, then the compiler
-replaces [\"\\p\"]{.lit} in our [strings]{.type} with a carriage-return
+replaces `"\p"` in our `strings]{.type} with a carriage-return
 and a linefeed character, and when we compile on Linux then the compiler
-replaces [\"\\p\"]{.lit} only with a newline character. But modern
-Windows supports [\'\\n\']{.lit}, so we generally can use that.
+replaces `"\p"` only with a newline character. But modern
+Windows supports `'\n'`, so we generally can use that.
 
 
 
@@ -3554,14 +3543,14 @@ Windows supports [\'\\n\']{.lit}, so we generally can use that.
 
 
 In rare situations, you may want to print exactly what you have typed,
-so you do not want the compiler to replace a [\'\\n\']{.lit} by a
+so you do not want the compiler to replace a `'\n'` by a
 newline character. You can do that in two ways: You can
-[escape]{.italic} the escape character, that is, you put in front of the
-backslash one more backslash. When you print the [string]{.str}
-[\"\\\\n\"]{.lit} you will get a backslash and the [n]{.lit} character
-in your terminal. Or you can use so-called [raw strings]{.ndef}, that
-is, you put the character [r]{.lit} immediately in front of your
-[string]{.type} like
+`escape]{.italic} the escape character, that is, you put in front of the
+backslash one more backslash. When you print the `string]{.str}
+`"\\n"` you will get a backslash and the `n` character
+in your terminal. Or you can use so-called `raw strings]{.ndef}, that
+is, you put the character `r]{.lit} immediately in front of your
+`string]{.type} like
 
 
 
@@ -3574,9 +3563,9 @@ echo "\\n"
 
 
 
-Multi-line [strings]{.type} are also raw [strings]{.type}, that is,
+Multi-line `strings]{.type} are also raw `strings]{.type}, that is,
 contained escape-sequences are not interpreted by the compiler, and
-additional multi-line [strings]{.str}, as the name implies, can extend
+additional multi-line `strings]{.str}, as the name implies, can extend
 over multiple lines of the source text. Multi-line texts starts and ends
 with three quotes like in
 
@@ -3604,16 +3593,16 @@ Both echo() commands above generates exactly the same machine code!
 
 
 Comments are not really a data type, but they are also important.
-Ordinary comments starts with the hashtag character [\#]{.lit} and
-extend to the end of the line. The [\\]{.lit}\# character itself and all
+Ordinary comments starts with the hashtag character `#` and
+extend to the end of the line. The `\#` character itself and all
 following characters up to the line end are ignored by the compiler. You
-can also start the comment with [\\]{.lit}\\##, then it is a
+can also start the comment with `\\##`, then it is a
 documentation comment. It is also ignored by the compiler, but can be
 processed when you use tools to generate documentation for your code.
 Documentation comments are only allowed at certain places, often they
 are inserted at the beginning of a procedure body to explain its use.
 There are also multi-line comments, which starts with the two characters
-#\[ and ends with \]#. These form of comment can extend over multiple
+`#[` and ends with `]#`. These form of comment can extend over multiple
 lines and can be nested, that is, multi-line comments can contain again
 plain or multi-line comments.
 
@@ -3648,7 +3637,7 @@ proc even(i: int): bool =
 
 
 
-You can also use the #\[ comment \]# notation to insert comments
+You can also use the `#[` comment `]#` notation to insert comments
 everywhere in the source code at places where a white-space character is
 allowed, but these form of in source comments is rarely used.
 
@@ -3659,10 +3648,10 @@ allowed, but these form of in source comments is rarely used.
 
 
 There exists some more predefined types like the container types
-[array]{.type} and [seq]{.type}, which can contain multiple elements of
-the same type, or the [tuple]{.tup} and the [object]{.key} type which
-can contain data of different types. Nim [tuples]{.type} and
-[objects]{.key} are similar to C structs, they are not so verbose as
+`array]{.type} and `seq]{.type}, which can contain multiple elements of
+the same type, or the `tuple]{.tup} and the `object]{.key} type which
+can contain data of different types. Nim `tuples]{.type} and
+`objects]{.key} are similar to C structs, they are not so verbose as
 Java classes. We will learn more about all these types in later sections
 of the book.
 
@@ -3726,26 +3715,26 @@ var
 
 
 
-Generally, we use camel case like [leftMargin]{.var} for variable names,
-not snake case like [left_margin]{.var}.
+Generally, we use camel case like `leftMargin]{.var} for variable names,
+not snake case like `left_margin]{.var}.
 
 
 
 Current Nim has the special property that names are case-insensitive and
 that underscores are simply ignored by the compiler. The only exception
 is the first letter of a name, that letter is case-sensitive. So the
-names [leftMargin]{.var}, [leftmargin]{.var} and [left_margin]{.var} are
-identical for the compiler. But [LeftMargin]{.var} is different to all
+names `leftMargin]{.var}, `leftmargin]{.var} and `left_margin]{.var} are
+identical for the compiler. But `LeftMargin]{.var} is different to all
 the others, because it starts with a capital letter. This may sound a
 bit strange at first, but works well in practice. One advantage is, that
-a library author may use [snake_case]{.var} in his library for names,
+a library author may use `snake_case]{.var} in his library for names,
 but the users of the library can freely decide if they prefer
-[camelCase]{.var}. But still, you may think that all this generates
+`camelCase]{.var}. But still, you may think that all this generates
 confusion. In practice, it does not, it prevents confusion. Imagine a
 conventional programming language, fully case-sensitive and not ignoring
 underscores: In a larger program, we may then have names like
-[nextIteration]{.var} and [next_Iteration]{.var} or [keymap]{.var} and
-[keyMap]{.var}. What when both names are visible in current scope, and
+`nextIteration]{.var} and `next_Iteration]{.var} or `keymap]{.var} and
+`keyMap]{.var}. What when both names are visible in current scope, and
 we type the wrong one. The compiler may not detect it when types match,
 but the program may do strange things. Nim would not allow that similar
 looking names, as the compiler would regard them as identical and would
@@ -3755,8 +3744,8 @@ complain about a name redefinition.
 
 You may ask why the first letter is case-sensitive. That is to allow for
 user defined types to use capital type names and then write something
-like [var window: Window]{.code}. So we can declare a variable named
-[window]{.var} of a user defined data type named [Window]{.type}. That
+like `var window: Window]{.code}. So we can declare a variable named
+`window]{.var} of a user defined data type named `Window]{.type}. That
 is a common practice.
 
 
@@ -3776,7 +3765,7 @@ For that task, Nim provides a tool called nimgrep that does a case- and
 style-insensitive search. And possibly your editor supports that type of
 search also. You can also enforce a consistent naming scheme when you
 call the compiler with the command line argument
-[\--styleCheck:error]{.term} or [\--styleCheck:hint]{.term}.
+`--styleCheck:error]{.term} or `--styleCheck:hint]{.term}.
 
 
 
@@ -3822,21 +3811,21 @@ for some time just prefer it.
 ### Blocks, Scopes, Visibility, Locality and Shadowing
 
 
-Like most other programming languages, Nim has the concept of [code
+Like most other programming languages, Nim has the concept of `code
 blocks]{.ndef} or scopes. The body of procedures, functions,
-[iterators]{.key} and [templates]{.key}, as well as the body of various
+`iterators]{.key} and `templates]{.key}, as well as the body of various
 loop constructs or code following conditional statements, builds an
 indented block and creates a new scope. In this new scope, we can define
-variables, named constants, or types with the [var]{.key}, [let]{.key},
-[const]{.key} and [type]{.key} keywords which are local to this block.
+variables, named constants, or types with the `var]{.key}, `let]{.key},
+`const]{.key} and `type]{.key} keywords which are local to this block.
 These symbols are only visible in this scope, and local variables that
 need storage are actually created when the program executes the block,
 and destroyed when the block is left. Well, in principle, and at least
 for ordinary stack allocated value variables, for references and
-[pointer]{.type} variables, things are a bit more complicated, we will
+`pointer]{.type} variables, things are a bit more complicated, we will
 discuss that in more detail when we introduce references. Here we have
 used the term code block, to clearly separate them from the
-[const]{.key}, [var]{.key}, [type]{.key} and [import]{.key} sections,
+`const]{.key}, `var]{.key}, `type]{.key} and `import]{.key} sections,
 which are a different form of indented blocks. Remember that the
 compiler processes our program code from the top to the bottom, so we
 have always to define symbols before we can actually use them. When we
@@ -3870,47 +3859,47 @@ doSomething()
 
 While we have not officially introduced procedures as units to structure
 our program code yet, we have put the above code this time by intent
-into the body of a [proc]{.proc} called [doSomething()]{.func}.
+into the body of a `proc]{.proc} called `doSomething()]{.func}.
 
 
 
-This way, we can guarantee that the two variables [a]{.var} and
-[b]{.var} defined in that [proc]{.proc} are really stack allocated.
+This way, we can guarantee that the two variables `a]{.var} and
+`b]{.var} defined in that `proc]{.proc} are really stack allocated.
 Actually, in real life programs, nearly all the program code is embedded
-in [procs]{.proc}. We will discuss the peculiarity of global code later.
-In the [proc]{.proc} body from above the two variables [a]{.var} and
-[b]{.var} are local to the [proc]{.proc} [doSomething()]{.func} --- they
+in `procs]{.proc}. We will discuss the peculiarity of global code later.
+In the `proc]{.proc} body from above the two variables `a]{.var} and
+`b]{.var} are local to the `proc]{.proc} `doSomething()]{.func} --- they
 are created on the stack when the procedure is called, that is, when we
-ask to start it execution by a statement like [doSomething()]{.func}.
+ask to start it execution by a statement like `doSomething()]{.func}.
 These two variables are never visible in code outside this
-[proc]{.proc}, and the storage for these two variables is automatically
+`proc]{.proc}, and the storage for these two variables is automatically
 released when execution of that procedure ends, in this case when the
-last line of the [proc]{.proc} is reached. In the body of the
-[proc]{.proc}, we define although a new custom type and a named
+last line of the `proc]{.proc} is reached. In the body of the
+`proc]{.proc}, we define although a new custom type and a named
 constant --- just to show that it is possible. Both symbols are also
-local to this [proc]{.proc} and invisible outside.
+local to this `proc]{.proc} and invisible outside.
 
 
 
-The indented block following the [if b:]{.code} statement is sometimes
-called an [\"if then\"]{.ndef} block or just [if]{.key} block --- in
-that block we define two other variables called [a]{.var} and
-[sum]{.var} of [float]{.type} type, which are also stack allocated. If
-these two variables are already allocated when the [proc]{.proc} starts
-its execution, or only when the [then]{.ndef} block following the
-[if]{.key} statements is executed, is actually an implementation detail.
-As the variable [a]{.var} of [float]{.type} type in the [if]{.key} then
-block has the same name as the outer variable of [int]{.type} type, that
-integer variable is shadowed in the [if]{.key} block --- the outer value
+The indented block following the `if b:]{.code} statement is sometimes
+called an `"if then"` block or just `if]{.key} block --- in
+that block we define two other variables called `a]{.var} and
+`sum]{.var} of `float]{.type} type, which are also stack allocated. If
+these two variables are already allocated when the `proc]{.proc} starts
+its execution, or only when the `then]{.ndef} block following the
+`if]{.key} statements is executed, is actually an implementation detail.
+As the variable `a]{.var} of `float]{.type} type in the `if]{.key} then
+block has the same name as the outer variable of `int]{.type} type, that
+integer variable is shadowed in the `if]{.key} block --- the outer value
 gets temporary invisible as soon as the new symbol is declared. Other
-symbols of outer scopes remain visible. In the [if then block]{.ndef} as
+symbols of outer scopes remain visible. In the `if then block]{.ndef} as
 well as in most other indented code blocks we could also define named
 constants or custom types, these would be visible only in this block.
 Indented code blocks can be nested --- in one block we can have more
 indented block, for which all declared symbols are again local and
-invisible outside. The last [echo()]{.func} statement in our code
-example from above is already below the [if then block]{.ndef}, so the
-initial variable [a]{.var} of integer type becomes again visible.
+invisible outside. The last `echo()]{.func} statement in our code
+example from above is already below the `if then block]{.ndef}, so the
+initial variable `a]{.var} of integer type becomes again visible.
 
 
 
@@ -3919,37 +3908,37 @@ initial variable [a]{.var} of integer type becomes again visible.
 
 
 In the introducing sections of the book, we have generally used program
-code at a global level, not embedded in a [proc]{.proc} body. We did
-that for simplicity and as we had not already introduced [procs]{.proc}.
+code at a global level, not embedded in a `proc]{.proc} body. We did
+that for simplicity and as we had not already introduced `procs]{.proc}.
 Global code is sometimes used in small scripts or for special purposes,
 like program initialization. But for larger programs, most of the code
 is typically grouped in procedures. For variables defined in global code
 it is not that well-defined where they are stored, it may depend on the
 actual Nim compiler implementation and the compiler backend. The
 performance of global code can be worse than code enclosed in
-[proc]{.proc} bodies, so when performance maters we should put our code
-in [procs]{.proc}. One reason for the not optimal performance of global
+`proc]{.proc} bodies, so when performance maters we should put our code
+in `procs]{.proc}. One reason for the not optimal performance of global
 code is, that global variables are not located on the stack, but in the
 global BSS segment of the program, and that the backend can not optimize
 global code that well, e.g. global variables may not be cached in CPU
 registers. Note that variables that have to exist and keep it value for
 the whole runtime of the program, and not only for the duration of the
-execution of a single [proc]{.proc}, has to be defined as global. The
+execution of a single `proc]{.proc}, has to be defined as global. The
 same holds obviously for global variables that are used from code of
-different [procs]{.proc}, like the [stdout]{.var} and [stdin]{.var}
-variables of the [system]{.mod} module. An alternative to the use of
-global variables when a variable used in a [proc]{.proc} should keep its
-value between different [proc]{.proc} calls is to attach the {.global.}
-pragma to a [proc]{.proc} local variable. This way that variable is
-still only visible in that [proc]{.proc} where the variable is declared,
+different `procs]{.proc}, like the `stdout]{.var} and `stdin]{.var}
+variables of the `system]{.mod} module. An alternative to the use of
+global variables when a variable used in a `proc]{.proc} should keep its
+value between different `proc]{.proc} calls is to attach the {.global.}
+pragma to a `proc]{.proc} local variable. This way that variable is
+still only visible in that `proc]{.proc} where the variable is declared,
 but the variable is stored in the BSS segment instead on the stack and
-so its value is preserved between [proc]{.proc} calls.
+so its value is preserved between `proc]{.proc} calls.
 
 
 
-Note that structured named constants, e.g. constant [strings]{.type},
+Note that structured named constants, e.g. constant `strings]{.type},
 are stored also in the BSS segment, even when they are only defined
-local to a [proc]{.proc}. So large structured constants can increase the
+local to a `proc]{.proc}. So large structured constants can increase the
 executable size, as the BSS segment is a part of the program executable.
 
 
@@ -3958,30 +3947,30 @@ executable size, as the BSS segment is a part of the program executable.
 ### White space, punctuation and operators
 
 
-The space character with decimal ASCII value [32]{.lit} is used in Nim
+The space character with decimal ASCII value `32]{.lit} is used in Nim
 program code to indent code blocks and to separate different symbols
 from each other. Nim's keywords are always separated with leading and
 trailing white-space from other symbols, while other symbols are most
 often separated by punctuation and an additional optional space
 character. Whenever the syntax allows a space, we can also insert
-multiple spaces or a comment enclosed in #\[ \]# in the source code.
+multiple spaces or a comment enclosed in `#[` `]#` in the source code.
 Tabulator characters are not allowed in the Nim source code, but we can
-use them in comments and of course in [string]{.type} literals. We
+use them in comments and of course in `string]{.type} literals. We
 mentioned already, that spaces can make a difference how operators or
-function parameters are handled. In expressions like [a+b]{.code} or
-[a + b]{.code} the [+]{.op} operator is regarded as an infix operator,
-but in [a + -b]{.code} the minus sign is regarded as a unary operator
-bound to [b]{.var}. This way asymmetric expressions like [a +b]{.code}
-or [a \<b]{.code} would be invalid, as the operators are interpreted as
-unary ones attached to [b]{.var}, and then there is no infix operator
-between the two variables. A [proc]{.proc} call like [echo(1, 2)]{.code}
-is interpreted as a call of [echo()]{.func} with two integer literal
-arguments, while a call like [echo (1, 2)]{.code} with a space after the
-[proc]{.proc} name is interpreted in command invocation syntax as a call
-with a [tuple]{.tup} argument. While in C code it is not uncommon to
+function parameters are handled. In expressions like `a+b]{.code} or
+`a + b]{.code} the `+]{.op} operator is regarded as an infix operator,
+but in `a + -b]{.code} the minus sign is regarded as a unary operator
+bound to `b]{.var}. This way asymmetric expressions like `a +b]{.code}
+or `a <b` would be invalid, as the operators are interpreted as
+unary ones attached to `b]{.var}, and then there is no infix operator
+between the two variables. A `proc]{.proc} call like `echo(1, 2)]{.code}
+is interpreted as a call of `echo()]{.func} with two integer literal
+arguments, while a call like `echo (1, 2)]{.code} with a space after the
+`proc]{.proc} name is interpreted in command invocation syntax as a call
+with a `tuple]{.tup} argument. While in C code it is not uncommon to
 always insert a space between the function name and its parameter list,
 we should avoid that in Nim for the described reason. We will learn more
-about [proc]{.proc} calls and the [tuple]{.tup} data type later.
+about `proc]{.proc} calls and the `tuple]{.tup} data type later.
 
 
 
@@ -4003,7 +3992,7 @@ These symbols can be used as single entities or in combination, and we
 can define our own operators or redefine existing operators. All these
 symbols can be used as infix operators between two arguments, or as
 unary prefix operators, but Nim does not support unary postfix
-operators, so a notation like [i++]{.code} as known from the C language
+operators, so a notation like `i++]{.code} as known from the C language
 is not possible in Nim. There exists a few combinations of these
 punctuation characters that have a special meaning, we will learn more
 about that and how we can define our own operators later in the book.
@@ -4020,8 +4009,8 @@ In Nim, these keywords are also used as operators:
 
 
 
-Operators have different priorities, e.g. [\*]{.op} and [/]{.op} have a
-higher priority than [+]{.op} and [-]{.op}. In most cases, the priority
+Operators have different priorities, e.g. `*` and `/` have a
+higher priority than `+` and `-`. In most cases, the priority
 is just as we would expect, maybe with a few exceptions. If we are
 unsure, we can group terms with brackets, or consult the compiler manual
 for details.
@@ -4038,14 +4027,14 @@ should consult the compiler manual.
 ### Order of Execution
 
 
-Global program code or code in called [procs]{.proc} is generally
+Global program code or code in called `procs]{.proc} is generally
 executed from top to the bottom and from left to the right, as long as
 control structures do not enforce a different order. To demonstrate
-this, we use here a set of four different [procs]{.proc}, which contain
+this, we use here a set of four different `procs]{.proc}, which contain
 an echo() statement each, and return a numeric expression. Well, we have
 not yet formally introduced procedures, so if you should feel too
 uncomfortable with the code below, just skip this section for now and
-come back when you have read the section about [procs]{.proc}:
+come back when you have read the section about `procs]{.proc}:
 
 
 
@@ -4095,20 +4084,20 @@ produce this output:
 
 
 
-For the term [d(c(3))]{.code} it is obvious that the inner expression
+For the term `d(c(3))]{.code} it is obvious that the inner expression
 c(3) has to be evaluated first, before that result can be used to call
-[proc]{.proc} [d()]{.func}.
+`proc]{.proc} `d()]{.func}.
 
 
 
 The last two lines demonstrate the so called short-cut-evaluation for
-expressions with the boolean [and]{.op} or [or]{.op} operators. As the
-expression [a() and b()]{.code} is always [false]{.lit} when
-[a()]{.func} is [false]{.lit}, in this case [b()]{.func} has not to be
-evaluated at all. In a similar way, as the expression [a() or
-b()]{.code} is always [true]{.lit} when [a()]{.func} is [true]{.lit},
-for that case [b()]{.func} has not to be evaluated at all. So in the
-last two lines of above code [b()]{.func} is never called at all, and
+expressions with the boolean `and]{.op} or `or]{.op} operators. As the
+expression `a() and b()]{.code} is always `false]{.lit} when
+`a()]{.func} is `false]{.lit}, in this case `b()]{.func} has not to be
+evaluated at all. In a similar way, as the expression `a() or
+b()]{.code} is always `true]{.lit} when `a()]{.func} is `true]{.lit},
+for that case `b()]{.func} has not to be evaluated at all. So in the
+last two lines of above code `b()]{.func} is never called at all, and
 the output is just
 
 
@@ -4123,10 +4112,10 @@ the output is just
 
 
 Note that in Nim as in most other programming languages, the assignment
-operator [=]{.op} behaves different compared to ordinary operators like
-[+]{.op} or [\*]{.op}, as in assignments like [let a = b + c()]{.code}
+operator `=]{.op} behaves different compared to ordinary operators like
+`+]{.op} or `*]{.op}, as in assignments like `let a = b + c()]{.code}
 obviously the right side has to be evaluated before the result can be
-actually assigned to variable [a]{.var}.
+actually assigned to variable `a]{.var}.
 
 
 
@@ -4143,12 +4132,12 @@ execution.
 
 
 
-The most important control structures of Nim are the [if]{.key}
-statement for conditional execution, the related [case]{.key} statement
-and the [while]{.key} and [for]{.key} loops for repetitions. All these
+The most important control structures of Nim are the `if]{.key}
+statement for conditional execution, the related `case]{.key} statement
+and the `while]{.key} and `for]{.key} loops for repetitions. All these
 statements controls the actual program execution at program runtime.
-Syntactically very similar to the [if]{.key} statement is Nim's
-[when]{.key} statement, which is already evaluated at compile time, and
+Syntactically very similar to the `if]{.key} statement is Nim's
+`when]{.key} statement, which is already evaluated at compile time, and
 can be used to adapt our program code for various operating system or to
 compile our code with special options, e.g. for debugging or testing
 purposes.
@@ -4156,8 +4145,8 @@ purposes.
 
 
 All these control structures can be nested in arbitrary ways, so we can
-have in one [if]{.key} branch other [if]{.key} conditions or
-[while]{.key} loops, and in [while]{.key} loops again other control
+have in one `if]{.key} branch other `if]{.key} conditions or
+`while]{.key} loops, and in `while]{.key} loops again other control
 structures including other loops.
 
 
@@ -4165,17 +4154,17 @@ structures including other loops.
 ### If Statement and If Expression
 
 
-The [if]{.key} statement with multiple optional [elif]{.key} branches
-and an optional [else]{.key} branch evaluates a sequence of boolean
+The `if]{.key} statement with multiple optional `elif]{.key} branches
+and an optional `else]{.key} branch evaluates a sequence of boolean
 conditions at program runtime. As soon as one condition evaluates as
-[true]{.lit} the corresponding statement block is executed, and after
-that the program execution continues after the whole [if]{.key}
+`true]{.lit} the corresponding statement block is executed, and after
+that the program execution continues after the whole `if]{.key}
 construct. That is, at most one branch is executed. If none of the
-conditions after the [if]{.key} or [elif]{.key} keywords evaluates to
-[true]{.lit}, then the [else]{.key} branch is executed if it exists. A
-complete [if]{.key} statement consists of one [if]{.key} condition, an
-arbitrary number of [elif]{.key} conditions and one optional
-[else]{.key} part:
+conditions after the `if]{.key} or `elif]{.key} keywords evaluates to
+`true]{.lit}, then the `else]{.key} branch is executed if it exists. A
+complete `if]{.key} statement consists of one `if]{.key} condition, an
+arbitrary number of `elif]{.key} conditions and one optional
+`else]{.key} part:
 
 
 
@@ -4204,7 +4193,7 @@ else:
 
 
 
-The most simple form of an [if]{.key} statement is
+The most simple form of an `if]{.key} statement is
 
 
 
@@ -4228,7 +4217,7 @@ if age > 17:
 
 Note that the branches are indented by spaces, we use two spaces
 generally, but other numbers work as well. And note that it is
-[elif]{.key}, not elsif like in Ruby, and that there is a colon after
+`elif]{.key}, not elsif like in Ruby, and that there is a colon after
 the condition. Instead of a single statement, we can use multiple in
 each branch, all on its own line and all indented in the same way.
 
@@ -4247,7 +4236,7 @@ otherwise currently.
 
 
 
-When there is no [elif]{.key} and no [else]{.key} part, then we can also
+When there is no `elif]{.key} and no `else]{.key} part, then we can also
 write the conditional code direct after the colon, like
 
 
@@ -4260,7 +4249,7 @@ if age > 17: echo "you may drink and smoke, but better avoid it!"
 
 
 
-With an [elif]{.key} and an [else]{.key} branch, the example from above
+With an `elif]{.key} and an `else]{.key} branch, the example from above
 may look like
 
 
@@ -4282,18 +4271,18 @@ else:
 
 
 Note that we perform the age tests in ascending order --- it would not
-make much sense to first test for a condition [age \< 6]{.code}, and
-later to test for [age \< 4]{.code}, as the [if]{.key} statement is
+make much sense to first test for a condition `age < 6`, and
+later to test for `age < 4`, as the `if]{.key} statement is
 evaluated from top to bottom, and as soon as one condition is evaluated
-as [true]{.lit}, that branch is executed and then the program execution
-continues after the whole [if]{.key} construct. So a later test [age \<
-4]{.code} would be useless, when that condition is already covered by a
-prior test [age \< 6]{.code}.
+as `true]{.lit}, that branch is executed and then the program execution
+continues after the whole `if]{.key} construct. So a later test `age < 4` 
+would be useless, when that condition is already covered by a
+prior test `age < 6`.
 
 
 
-As the various conditions of the [if]{.key} statement are processed from
-top to bottom until one condition evaluates to [true]{.lit}, it can be a
+As the various conditions of the `if]{.key} statement are processed from
+top to bottom until one condition evaluates to `true]{.lit}, it can be a
 good idea to put the most likely conditions first for optional
 performance, as then the unlikely conditions have not to be evaluated in
 most cases. Another strategy for larger if/elif constructs is to put the
@@ -4317,7 +4306,7 @@ In C for a similar construct, the ternary ? operator is used.
 
 
 
-In languages like C or Ruby the assignment operator [=]{.op} is an
+In languages like C or Ruby the assignment operator `=]{.op} is an
 expression which returns the assigned value, so in C we can write code
 like
 
@@ -4348,15 +4337,15 @@ while (let c = getChar(); c != '\0'):
 
 
 
-If we declare a variable in this way using the [var]{.key} or
-[let]{.key} keyword, then that variable is only visible in the bracket
+If we declare a variable in this way using the `var]{.key} or
+`let]{.key} keyword, then that variable is only visible in the bracket
 expression itself and in the following indented block.
 
 
 
 Note that if-expressions must always return a well-defined value, so
-they must always contain an [else]{.key} branch. A plain [if]{.key},
-without an [else]{.key}, or an if/elif without an [else]{.key} does not
+they must always contain an `else]{.key} branch. A plain `if]{.key},
+without an `else]{.key}, or an if/elif without an `else]{.key} does not
 work. And as Nim is a statically typed language and all variables have a
 strictly well-defined type, the if-expression must return the same type
 for all branches!
@@ -4380,16 +4369,16 @@ a = if b: 1 else: 0.0 # invalid, different types!
 ### The When Statement
 
 
-The [when]{.key} statement is syntactically very similar to the
-[if]{.key} statement, but while all the boolean conditions are evaluated
-during the program run time for the [if]{.key} statement, for the
-[when]{.key} construct all the when/elif/else conditions have to be
+The `when]{.key} statement is syntactically very similar to the
+`if]{.key} statement, but while all the boolean conditions are evaluated
+during the program run time for the `if]{.key} statement, for the
+`when]{.key} construct all the when/elif/else conditions have to be
 constant expressions and are already evaluated at compile time. In
-ordinary program code, the [when]{.key} statement is not used that
+ordinary program code, the `when]{.key} statement is not used that
 often, but it is useful when we write bindings to C libraries and low
-level code. Common use cases for the [when]{.key} statement are the
-[isMainModule]{.lit} condition test and the test for defined symbols,
-like [defined(windows)]{.code}:
+level code. Common use cases for the `when]{.key} statement are the
+`isMainModule]{.lit} condition test and the test for defined symbols,
+like `defined(windows)]{.code}:
 
 
 
@@ -4404,7 +4393,7 @@ when isMainModule:
 
 
 
-The value [isMainModule]{.lit} is only true for a source code file, when
+The value `isMainModule]{.lit} is only true for a source code file, when
 that file is compiled directly as a main module, that is, when it is not
 indirectly compiled because it is imported by other modules. This way we
 can include easily test code to our library modules --- that test code
@@ -4413,14 +4402,14 @@ compile the module direct for testing.
 
 
 
-A [when defined()]{.code} construct can be used to test for predefined
+A `when defined()]{.code} construct can be used to test for predefined
 or our own custom options, e.g. we may give the optional option
-[-d:gintroDebug]{.-term} to the compiler and test in the code of that
-module for this option, like [when defined(gintroDebug):]{.code}.
+`-d:gintroDebug]{.-term} to the compiler and test in the code of that
+module for this option, like `when defined(gintroDebug):]{.code}.
 
 
 
-One difference of the [when]{.key} to the [if]{.key} statement is, that
+One difference of the `when]{.key} to the `if]{.key} statement is, that
 the \"then\" branches do not open a new scope, so variables which we
 define there are still visible after the construct has been processed:
 
@@ -4446,11 +4435,11 @@ echo intSize # variable is visible here!
 
 
 
-Another peculiarity of the [when]{.key} statement is, that it can be
-used inside [object]{.key} definitions --- we will show an example for
+Another peculiarity of the `when]{.key} statement is, that it can be
+used inside `object]{.key} definitions --- we will show an example for
 that in a later section of the book, when we introduce the
-[object]{.key} data type. In the same way as the [if]{.key} construct,
-[when]{.key} can also be used as an expression.
+`object]{.key} data type. In the same way as the `if]{.key} construct,
+`when]{.key} can also be used as an expression.
 
 
 
@@ -4480,34 +4469,34 @@ compared to a more flexible if/elif statement:
 
 
 
-The variable after the [case]{.term} keyword must have a so-called
-ordinal type like [int]{.type}, [char]{.type} or [string]{.type}, while
-[float]{.type} would not work. And the values after each [of]{.term}
+The variable after the `case]{.term} keyword must have a so-called
+ordinal type like `int]{.type}, `char]{.type} or `string]{.type}, while
+`float]{.type} would not work. And the values after each `of]{.term}
 keyword must be constant, that is, a single constant value, multiple
-constant values or a constant range like [\'a\' .. \'d\']{.term} for the
+constant values or a constant range like `'a' .. 'd'` for the
 4 first lower case letters. Of course, these constants must have a type
-compatible to the type of the variable after the [case]{.key} keyword. A
-[case]{.key} statement must cover all possible cases, so most of the
-time an [else]{.key} branch is necessary.
+compatible to the type of the variable after the `case]{.key} keyword. A
+`case]{.key} statement must cover all possible cases, so most of the
+time an `else]{.key} branch is necessary.
 
 
 
 For Nim version 1.6 the case statement can contain also optional
-[elif]{.key} branches with arbitrary boolean conditions. This was not
+`elif]{.key} branches with arbitrary boolean conditions. This was not
 the case in the wirthian languages Pascal, Modula and Oberon, and makes
 Nim's case construct now very similar to the ordinary if/elif/else.
 
 
 
 Unless the similar switch statement in C, the case statement needs no
-[break]{.key} after each branch. If a condition after an [of]{.term}
-keyword is [true]{.lit}, then the corresponding statement or statement
+`break]{.key} after each branch. If a condition after an `of]{.term}
+keyword is `true]{.lit}, then the corresponding statement or statement
 sequence is executed, and after that, program execution continues after
-the whole [case]{.key} construct.
+the whole `case]{.key} construct.
 
 
 
-The [case]{.key} construct can also be used as an expression like in
+The `case]{.key} construct can also be used as an expression like in
 
 
 
@@ -4525,8 +4514,8 @@ var i: int =
 
 
 
-Here, an [else]{.key} is necessary to cover all cases. And as you see,
-we can also indent the block after the [case]{.key} keyword if we want.
+Here, an `else]{.key} is necessary to cover all cases. And as you see,
+we can also indent the block after the `case]{.key} keyword if we want.
 
 
 
