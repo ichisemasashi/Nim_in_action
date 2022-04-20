@@ -1450,7 +1450,7 @@ The most fundamental data type --- in real life and in computer
 science --- are integer (whole) numbers. All other numeric data types,
 like fractional, floating point or complex numbers, and other
 fundamental types like the boolean type with its two values `true]
-and `false], or character and text `string]{.str} types, can be
+and `false], or character and text `string] types, can be
 represented as integers. For that reason, the early computers built in
 the 1950s as well as today's tiniest microcontrollers work internally
 only with integer numbers. The integer data type is not only very
@@ -1473,9 +1473,9 @@ multiple data).
 
 
 
-None numeric types like characters or text `strings]{.str} are
+None numeric types like characters or text `strings] are
 internally represented by integer numbers --- in the C language the data
-type to present text `strings]{.str} is called char, but it is indeed
+type to present text `strings] is called char, but it is indeed
 only an 8-bit integer type which supports all the mathematical
 operations defined for ordinary integer types. In Nim and the wirthian
 languages, most math operations are not directly allowed for the
@@ -1553,22 +1553,22 @@ OS.
 
 
 
-For integer numbers we have the predefined operators `+]{.op}, `-]{.op}
-and `*]{.op} available for addition, subtraction and multiplication.
+For integer numbers we have the predefined operators `+], `-]
+and `*] available for addition, subtraction and multiplication.
 Basically, these operations works as we may expect, but we have to
 remember that we may get overflows. For signed integers we get compile-
 or run-time errors in that case, while unsigned integers just wrap
 around, see the example at the end of this section. For division of
-integers we have the operators `div]{.op}, `mod]{.op}, and `/]{.op}
-available. The `div]{.op} operator does an integer division ignoring the
-remainder, `mod]{.op} is short for modulus and gives us the remainder of
-the division, and `/]{.op} finally is currently only predefined for the
+integers we have the operators `div], `mod], and `/]
+available. The `div] operator does an integer division ignoring the
+remainder, `mod] is short for modulus and gives us the remainder of
+the division, and `/] finally is currently only predefined for the
 signed `int] type and gives us a fractional result of data type
 `float]. That type is introduced in the next section.
 
 
 
-Remembering how `div]{.op} and `mod]{.op} behaves when the divisor or
+Remembering how `div] and `mod] behaves when the divisor or
 dividend are negative can be confusing, and it may differ for other
 programming languages. You may find a detailed justified explanation for
 the concrete behavior in the Nim manual and at Wikipedia.
@@ -1767,7 +1767,7 @@ assign the value `12]. We could use type inference if we assigned
 `12.0], because the compiler can recognize by the decimal point
 that we want a `float], not an `int] variable. In line 3
 we use scientific notation for the `float] literal that we assign
-to `y], and the assigned value is `1.2 \* 10\^3 = 1200.0]{.term}.
+to `y], and the assigned value is `1.2 \* 10\^3 = 1200.0].
 Literal values, like `2E3], are also valid `float]
 literals --- the value would be `2000.0]. But literals with a
 decimal point and no digits before or after the point --- `1.] or
@@ -1792,7 +1792,7 @@ decimal point, but possible leading zero digits would not be counted.
 The reason that leading zeros are not significant is just that in the
 ordinary notation of numbers, we always assume that there is just
 nothing before the first non-zero digit. For our car odometer `001234.5
-km]{.term} is identical to `1234.5 km]{.term}. And if we give our body
+km] is identical to `1234.5 km]. And if we give our body
 size as `1.80 m] or `180 cm] makes no difference, both
 values have 3 significant digits.
 
@@ -1807,7 +1807,7 @@ fractional value.
 
 
 The `float], `float32] and `float64] data types
-provides the `+]{.op}, `-]{.op}, `\*]{.op} and `/]{.op} operators for
+provides the `+], `-], `\*] and `/] operators for
 addition, subtraction, multiplication and division. Unlike for the
 `int] types, for the `float] types we never get overflow
 or underflow errors, and also no error for a division by zero. But the
@@ -1839,9 +1839,9 @@ module.^\[[21](#_footnotedef_21 "View footnote.") \]^
 
 
 
-For `floats], we have the operators `+]{.op}, `-]{.op}, `*]{.op}
-and `/]{.op} for addition, subtraction, multiplication and division. For
-powers with integral exponents, you can use the `^]{.op} operator, but
+For `floats], we have the operators `+], `-], `*]
+and `/] for addition, subtraction, multiplication and division. For
+powers with integral exponents, you can use the `^] operator, but
 you have to import it from the `std/math] module. The expression
 `x \^ 3] is the same as `x \* x \* x]. The `math]
 module contains many more functions like `sin()] or
@@ -1852,13 +1852,13 @@ when both operands have type `float]. For performance critical
 code you should always keep in mind that `pow()] is an actual
 function call, maybe a call of a dynamic library which can not be
 inlined, so a call of `pow(x, 2)] may be a lot slower than a
-plain `x \* x]. And even when using the `\^]{.op} operator as in
+plain `x \* x]. And even when using the `\^] operator as in
 `x \^ 3] we should be a bit critical. But of course, we always
 hope that the compiler will optimize all that for us.
 
 
 
-The operators `+]{.op}, `-]{.op}, `\*]{.op} and `/]{.op} can be used
+The operators `+], `-], `\*] and `/] can be used
 also when one operand is a `float] variable and the other operand
 is an integer literal. In that case, the compiler knows that we really
 intend to do a `float] operation and converts the integer literal
@@ -1924,7 +1924,7 @@ accurate. Recall that in our decimal system, some fractions like
 notation, while others like `1/3] can be only approximated as
 `0.3333...] As all data, `floats] are stored internally in
 binary form following the `IEEE Standard for Floating-Point Arithmetic
-(IEEE 754)]{.ndef}. In that format some values, e.g. the value
+(IEEE 754)]. In that format some values, e.g. the value
 `0.1], can not be represented exactly. As a result, some simple
 arithmetic operations, executed in the computer, will give us not
 exactly that result that we may expect. As we should really remember
@@ -2048,13 +2048,13 @@ different value, like `echo 66.04] which gives
 do not understand well what a statement like `echo 66.04] really
 does: We know already, that the value `66.04] is converted by the
 compiler to an internally binary representation, and then converted back
-to a decimal `string]{.str} when we run the program. So it is not that
+to a decimal `string] when we run the program. So it is not that
 surprising that in this process some tiny inaccuracies can accumulate.
 Actually, it may be possible to get exact 16 digits precision when a
-very smart conversion routine like the `ryu]{.ndef} or
-`dragonbox]{.ndef} algorithm is used. We may still wonder why Python
+very smart conversion routine like the `ryu] or
+`dragonbox] algorithm is used. We may still wonder why Python
 just seems to get it right --- well there are rumors that Python is
-cheating, maybe some past-processing to guess the `string]{.str} that
+cheating, maybe some past-processing to guess the `string] that
 the user may like.
 
 
@@ -2225,8 +2225,8 @@ us to prevent or to discover errors in our programs. Note that whenever
 we use range types, the compiler may have to add additional checks to
 ensure that variables are always restricted to the specified range. This
 check is active in debug mode and also when we compile with option
-`-d:release]{.term}, and is only ignored when we compile with
-`-d:danger]{.term} or explicitly disable range checks. So using a lot of
+`-d:release], and is only ignored when we compile with
+`-d:danger] or explicitly disable range checks. So using a lot of
 range types may increase code size and decrease performance. For the
 example above, the line with the assignment `d = a] generates a
 runtime check. An important and often used range type is the data type
@@ -2317,7 +2317,7 @@ if tl == red:
 smaller or greater. Additionally, the functions `succ()] and
 `pred()] are defined for `enums] to get the successor or
 predecessor of an enum, `ord()] or `int()] deliver the
-corresponding integer number and the `$]{.op} operator can be used to
+corresponding integer number and the `$] operator can be used to
 get the name of an `enum]. We can also iterate over
 `enums], so we can print all the colors of our TrafficLight by
 
@@ -2373,8 +2373,8 @@ problems for the compiler and may be later deprecated. For example,
 
 
 
-It is also possible to set the `string]{.str} that the stringify
-operator `$]{.op} returns, like in
+It is also possible to set the `string] that the stringify
+operator `$] returns, like in
 
 
 
@@ -2454,17 +2454,17 @@ logical comparison. The next two lines assign the boolean constants
 
 
 
-Variables of type `bool] support the operators `not]{.op},
-`and]{.op}, `or]{.op} and `xor]{.op}. `Not]{.op} inverts the logic
+Variables of type `bool] support the operators `not],
+`and], `or] and `xor]. `Not] inverts the logic
 value, `a and b] is only `true] when both values are
 `true], and `false] otherwise. And `a or b] is
 `true] when at least one of the values is `true], and only
-`false] when both values are `false]. `Xor]{.op} is not used
-that often. It is called `exclusive or]{.ndef}, `a xor b] is
+`false] when both values are `false]. `Xor] is not used
+that often. It is called `exclusive or], `a xor b] is
 `false] when both values have the same logic state, that is when
 both are `true], or both are `false]. When the values are
-not the same, then the result of the `xor]{.op} operator is
-`true]. The `xor]{.op} operator makes more sense for bit
+not the same, then the result of the `xor] operator is
+`true]. The `xor] operator makes more sense for bit
 operations, which we will learn later --- for the boolean type, `a xor
 b] is identical to `a != b].
 
@@ -2502,7 +2502,7 @@ The effect of the last line is identical to the `if] statement
 above. In very, very rare cases, working with the actual `int]
 value of boolean variables may make sense, but generally we should avoid
 that. Later in the book there is a section about `branchless
-code]{.ndef} where we will present a `proc] that actually may get
+code] where we will present a `proc] that actually may get
 faster by using such a trick.
 
 
@@ -2554,7 +2554,7 @@ number on the top, i.e, character `A] has position
 `64+1=65], which is the value the Nim standard function
 `ord(\'A\')] or `int(\'A\')] would return. The characters
 with a decimal value less than 32 can not be printed and are called
-`control characters]{.ndef}, like linefeed, carriage return, backspace,
+`control characters], like linefeed, carriage return, backspace,
 audible beep and such. Character 127 is also not printable, and is
 called DEL. An important property of this table is the fact that decimal
 digits and upper- and lower-case letters form contiguous blocks. So to
@@ -2566,7 +2566,7 @@ simple condition: `c \>= \'A\' and c \<= \'Z\'].
 Characters with `ord() \> 127] are so-called umlauts, exotic
 characters of other languages, and some special characters. But these
 characters may be different on different computers, as the characters
-depend on the active `code-page]{.ndef}, which maps position to actual
+depend on the active `code-page], which maps position to actual
 character, and there are multiple code pages. When we need more than the
 plain ASCII characters, then we use `strings] in Nim, which
 display many more glyphs by using UTF-8 encoding.
@@ -2585,7 +2585,7 @@ mentioned already that the character \'A\' is mapped to the decimal
 value 65, which is its position in the ASCII table. So instead of \'A\'
 we could use the escape sequence \'\\65\' for this character. Or, as
 decimal 65 is 41 in hexadecimal notation `(4 \* 16\^1 + 1 \*
-16\^0)]{.term} we can use \'\\x41\' where the x indicates that the
+16\^0)] we can use \'\\x41\' where the x indicates that the
 following digits are hexadecimal. For common, often used control
 characters it is not easy to remember their numeric value, so another
 notation with a letter following the backslash can be used. For the
@@ -2654,7 +2654,7 @@ For Nim the most important control character is `'\n'`, which
 is used to start the output in a terminal window at the beginning of a
 new line. But `'\n'` is generally not used as a single
 character but embedded in `strings], that is, sequences of
-characters. We will learn more about `strings]{.str} soon. Note that the
+characters. We will learn more about `strings] soon. Note that the
 `echo()] function inserts a newline character automatically after
 each printed line, but the `write()] function does not:
 
@@ -2734,8 +2734,8 @@ contained in `set] `a] and in `set] `b].
 
 The mathematical concept of `sets] maps well to words and bits of
 computers, as most CPU's have instructions to set and clear single bits
-and to test if a bit is set or unset. And CPUs can do `and]{.op},
-`or]{.op} and `xor]{.op} operations which corresponds to the union and
+and to test if a bit is set or unset. And CPUs can do `and],
+`or] and `xor] operations which corresponds to the union and
 intersection operation in mathematical set.
 
 
@@ -2755,7 +2755,7 @@ much sense.
 
 
 While testing if an element is included or is not included in a
-`set] with the `in]{.op} or `notin]{.op} operators is always a
+`set] with the `in] or `notin] operators is always a
 very fast operation, other operations like building the intersection or
 union and set comparison operations may be not that fast when we use the
 `int16] or `uint16] base types, as for these operations
@@ -2803,7 +2803,7 @@ generally very fast as they map well to CPU instructions.
 
 Older languages like C have not a dedicated set data type, but as sets
 are so useful and efficient, C emulates these operations by using
-bit-wise `and]{.op} and `or]{.op} operations in conjunction with bit
+bit-wise `and] and `or] operations in conjunction with bit
 shifts.
 
 
@@ -2832,8 +2832,8 @@ math operators. The constant `Empty] would get all the characters
 that are at the same time contained in `set] `AlphaNum] and
 in `set] `MathOp]. As there is not a single common
 character, the `set] `Empty] is indeed empty. Remembering
-the two operators `+]{.op} and `*]{.op} for union and intersection is
-not easy. For the intersection operator `*]{.op} it may help when we
+the two operators `+] and `*] for union and intersection is
+not easy. For the intersection operator `*] it may help when we
 imagine the set members as bits, and we assume that we multiply the bits
 of both operands bitwise, that is we multiply the set or unset bits at
 corresponding position each. The resulting bit pattern would get set
@@ -2878,9 +2878,9 @@ and set `b] can be generated by the operation `(a+b) - (a*b)` or by `(a-b) + (b-
 
 
 
-As the `not]{.op} operator binds more tightly than the `in]{.op}
+As the `not] operator binds more tightly than the `in]
 operator, we have to use brackets for the inverted membership test like
-`not(x in a)] or we can use the `notin]{.op} operator and write
+`not(x in a)] or we can use the `notin] operator and write
 `x notin a]. We can test for equality of `sets] `a]
 and `b] like `a == b] and for subset relation `a < b` or `a <= b`. `a <= b` indicates that `b`
 contains at least all members of `a], and `a < b] that
@@ -3183,7 +3183,7 @@ Unicode text. To determine the number of glyphs of Unicode
 `strings], you should use some of the `unicode] modules.
 The `high()] function is very similar to the `len()]
 function, it returns the index of the last character in the
-`string]{.str}. For each `string] `s] `high(s) == len(s)
+`string]. For each `string] `s] `high(s) == len(s)
 -1], so `high("")` is `-1`. Remember that Nim
 supports method call syntax, so we can also write `s.len] instead
 of `len(s)].
@@ -3192,10 +3192,10 @@ of `len(s)].
 
 The most important operators for `strings] are the subscript
 operator `[]` which allows access to individual characters of
-`strings], and the `..]{.op} slice operator, which allows access
-to sub-strings. The first character in a `string]{.str} has always the
+`strings], and the `..] slice operator, which allows access
+to sub-strings. The first character in a `string] has always the
 index zero. For concatenation of `string] literals or
-`string] variables, Nim uses the `&]{.op} operator.
+`string] variables, Nim uses the `&] operator.
 
 
 
@@ -3213,11 +3213,11 @@ In the example above, we define the `string] variable `s]
 by use of two literal `strings] to show the use of the
 concatenation operator. In line two we use the slice operator to replace
 the sub-string `"hate"`, that is, the characters with index
-position 3 up to 6, with the `string]{.str} literal `"like"`. In
+position 3 up to 6, with the `string] literal `"like"`. In
 this case the replacement has exactly that many characters as the text
 to replace, but that is not necessary: We can replace sub-strings with
 longer or shorter `strings], which includes the empty
-`string]{.str} `""` to delete a text area. In the last line of
+`string] `""` to delete a text area. In the last line of
 the above example, we use the subscript operator `[]` to replace
 the single character `'?'` at the end of our `string]
 with an exclamation mark. For subscript and slice operators, Nim
@@ -3230,7 +3230,7 @@ code fragment above. The reason that Nim does not use negative integers
 for this purpose is that Nim `arrays] don't have to start at
 index zero, but can start with an arbitrary index including negative
 indices, so for negative indices it may be not always clear if a regular
-index or a position from the end of the `string]{.str} is desired. The
+index or a position from the end of the `string] is desired. The
 term `s[^x]` is equivalent to `s[s.len - x]`. We will
 learn some more details about the slice operator in a later section,
 when we have introduced `arrays] and sequences.
@@ -3238,8 +3238,8 @@ when we have introduced `arrays] and sequences.
 
 
 Another important operator for `strings] is the "toString" or
-`stringify]{.ndef} operator `$`. It can be applied to variables of
-nearly all data types and returns its `string]{.str} representation,
+`stringify] operator `$`. It can be applied to variables of
+nearly all data types and returns its `string] representation,
 which can then be printed. Some procedures like `echo()] apply
 this operator on its arguments automatically. When we define our own
 data types, then it can make some sense to define the `$` for
@@ -3318,7 +3318,7 @@ subsequent `add()] operation does only modify `s1], but not
 `s2]. Probably not surprising for you, but other programming
 languages may behave differently, i.e. the assignment may not copy the
 textual content, but create only a reference to the first
-`string]{.str}, so that modifying one of them also affect the other. We
+`string], so that modifying one of them also affect the other. We
 will learn more about the concept of references when we introduce the
 `object] data type.
 
@@ -3390,13 +3390,13 @@ for details and other operating system.
 #### The CString data type
 
 
-In the C programming language, `strings]{.str} are just
+In the C programming language, `strings] are just
 `pointers] to sequences of characters of fixed
 length.^\[[24](#_footnotedef_24 "View footnote.")
-\]^ The end of such a C `string]{.str} is generally marked
+\]^ The end of such a C `string] is generally marked
 with the character `'\x0'` --- a null byte with all bits
 cleared. C functions like `printf()] needs these `"\x0"`
-characters to determine the end of the C `string]{.str}. While Nim
+characters to determine the end of the C `string]. While Nim
 `strings] are complex entities that store its current size and
 other properties, and can grow dynamically, the character sequence of
 Nim `strings] has also a hidden terminating `'\x0'`
@@ -3450,7 +3450,7 @@ Another operation you should avoid is inserting the `'\x0'`
 null byte character somewhere in an existing Nim `string]. Nim
 stores the actual length of `strings] explicitly and additional
 terminates the end of the actual data with a `'\x0'` to make
-the `string] compatible with C `strings]{.str} and allow passing
+the `string] compatible with C `strings] and allow passing
 the data buffer directly to C library functions. A `'\x0'`
 character somewhere in the middle of a Nim `string] would
 generate an inconsistency, as C library functions like `printf()]
@@ -3496,9 +3496,9 @@ The problem with special characters like backspace or newline is that we
 can not enter them directly with the
 keyboard.^\[[25](#_footnotedef_25 "View footnote.") \]^ To solve that problem, escape sequences were introduced
 for most programming languages. An escape sequence is a special sequence
-of characters, that the compiler can discover in `strings]{.str} and
+of characters, that the compiler can discover in `strings] and
 then replace with a single special character. Whenever we want a newline
-in a `string]{.str} we type it as `"\n"`, that is, the
+in a `string] we type it as `"\n"`, that is, the
 backslash character followed by an ordinary letter `n`, `n`
 for newline.
 
@@ -3546,9 +3546,9 @@ In rare situations, you may want to print exactly what you have typed,
 so you do not want the compiler to replace a `'\n'` by a
 newline character. You can do that in two ways: You can
 `escape]{.italic} the escape character, that is, you put in front of the
-backslash one more backslash. When you print the `string]{.str}
+backslash one more backslash. When you print the `string]
 `"\\n"` you will get a backslash and the `n` character
-in your terminal. Or you can use so-called `raw strings]{.ndef}, that
+in your terminal. Or you can use so-called `raw strings], that
 is, you put the character `r] immediately in front of your
 `string] like
 
@@ -3565,7 +3565,7 @@ echo "\\n"
 
 Multi-line `strings] are also raw `strings], that is,
 contained escape-sequences are not interpreted by the compiler, and
-additional multi-line `strings]{.str}, as the name implies, can extend
+additional multi-line `strings], as the name implies, can extend
 over multiple lines of the source text. Multi-line texts starts and ends
 with three quotes like in
 
@@ -3765,7 +3765,7 @@ For that task, Nim provides a tool called nimgrep that does a case- and
 style-insensitive search. And possibly your editor supports that type of
 search also. You can also enforce a consistent naming scheme when you
 call the compiler with the command line argument
-`--styleCheck:error]{.term} or `--styleCheck:hint]{.term}.
+`--styleCheck:error] or `--styleCheck:hint].
 
 
 
@@ -3812,7 +3812,7 @@ for some time just prefer it.
 
 
 Like most other programming languages, Nim has the concept of `code
-blocks]{.ndef} or scopes. The body of procedures, functions,
+blocks] or scopes. The body of procedures, functions,
 `iterators] and `templates], as well as the body of various
 loop constructs or code following conditional statements, builds an
 indented block and creates a new scope. In this new scope, we can define
@@ -3886,19 +3886,19 @@ called an `"if then"` block or just `if] block --- in
 that block we define two other variables called `a] and
 `sum] of `float] type, which are also stack allocated. If
 these two variables are already allocated when the `proc] starts
-its execution, or only when the `then]{.ndef} block following the
+its execution, or only when the `then] block following the
 `if] statements is executed, is actually an implementation detail.
 As the variable `a] of `float] type in the `if] then
 block has the same name as the outer variable of `int] type, that
 integer variable is shadowed in the `if] block --- the outer value
 gets temporary invisible as soon as the new symbol is declared. Other
-symbols of outer scopes remain visible. In the `if then block]{.ndef} as
+symbols of outer scopes remain visible. In the `if then block] as
 well as in most other indented code blocks we could also define named
 constants or custom types, these would be visible only in this block.
 Indented code blocks can be nested --- in one block we can have more
 indented block, for which all declared symbols are again local and
 invisible outside. The last `echo()] statement in our code
-example from above is already below the `if then block]{.ndef}, so the
+example from above is already below the `if then block], so the
 initial variable `a] of integer type becomes again visible.
 
 
@@ -3958,7 +3958,7 @@ Tabulator characters are not allowed in the Nim source code, but we can
 use them in comments and of course in `string] literals. We
 mentioned already, that spaces can make a difference how operators or
 function parameters are handled. In expressions like `a+b] or
-`a + b] the `+]{.op} operator is regarded as an infix operator,
+`a + b] the `+] operator is regarded as an infix operator,
 but in `a + -b] the minus sign is regarded as a unary operator
 bound to `b]. This way asymmetric expressions like `a +b]
 or `a <b` would be invalid, as the operators are interpreted as
@@ -4091,7 +4091,7 @@ c(3) has to be evaluated first, before that result can be used to call
 
 
 The last two lines demonstrate the so called short-cut-evaluation for
-expressions with the boolean `and]{.op} or `or]{.op} operators. As the
+expressions with the boolean `and] or `or] operators. As the
 expression `a() and b()] is always `false] when
 `a()] is `false], in this case `b()] has not to be
 evaluated at all. In a similar way, as the expression `a() or
@@ -4112,8 +4112,8 @@ the output is just
 
 
 Note that in Nim as in most other programming languages, the assignment
-operator `=]{.op} behaves different compared to ordinary operators like
-`+]{.op} or `*]{.op}, as in assignments like `let a = b + c()]
+operator `=] behaves different compared to ordinary operators like
+`+] or `*], as in assignments like `let a = b + c()]
 obviously the right side has to be evaluated before the result can be
 actually assigned to variable `a].
 
@@ -4306,7 +4306,7 @@ In C for a similar construct, the ternary ? operator is used.
 
 
 
-In languages like C or Ruby the assignment operator `=]{.op} is an
+In languages like C or Ruby the assignment operator `=] is an
 expression which returns the assigned value, so in C we can write code
 like
 
@@ -4469,9 +4469,9 @@ compared to a more flexible if/elif statement:
 
 
 
-The variable after the `case]{.term} keyword must have a so-called
+The variable after the `case] keyword must have a so-called
 ordinal type like `int], `char] or `string], while
-`float] would not work. And the values after each `of]{.term}
+`float] would not work. And the values after each `of]
 keyword must be constant, that is, a single constant value, multiple
 constant values or a constant range like `'a' .. 'd'` for the
 4 first lower case letters. Of course, these constants must have a type
@@ -4489,7 +4489,7 @@ Nim's case construct now very similar to the ordinary if/elif/else.
 
 
 Unless the similar switch statement in C, the case statement needs no
-`break] after each branch. If a condition after an `of]{.term}
+`break] after each branch. If a condition after an `of]
 keyword is `true], then the corresponding statement or statement
 sequence is executed, and after that, program execution continues after
 the whole `case] construct.
@@ -4523,7 +4523,7 @@ we can also indent the block after the `case] keyword if we want.
 ### The While Loop
 
 
-The [while]{.op} loop is used when we want to do conditional
+The [while] loop is used when we want to do conditional
 repetitions, that is, if we want to check a condition and want to
 execute a block of statements only as long, as the condition is
 [true]. If the condition is [false] in advance, or becomes
@@ -4594,8 +4594,8 @@ while input != "quit":
 
 
 
-The above code used the [==]{.op} and the [!=]{.op} operators. The
-[==]{.op} operator does a test for equality, and [!=]{.op} test for
+The above code used the [==] and the [!=] operators. The
+[==] operator does a test for equality, and [!=] test for
 inequality. Both operator work for most data types like integers,
 [floats], characters and [strings]. The literal value of
 an empty [string] is written [\"\"]. In line 2 we test if
@@ -4685,7 +4685,7 @@ ranges and many more entities. We have not discussed the important
 [array] and [seq] containers yet, but we know already the
 [string] container. The characters of an ASCII [string]
 are numbered starting at [0], and that we can access them by use
-of the subscript operator [\[\]]{.op}. So we could print the single
+of the subscript operator [\[\]]. So we could print the single
 characters of a [string] in this way:
 
 
@@ -4809,7 +4809,7 @@ we have learned all the details about procedures and functions.
 
 
 We have worked with basic data types like numbers, characters and
-[strings]{.str} already. Often it makes sense to join some variables of
+[strings] already. Often it makes sense to join some variables of
 these basic data types to more complex entities. Assume you want to
 build an online store to sell computers, and you want to build a
 database for them. The database should contain the most important data
@@ -5106,7 +5106,7 @@ procedure to append elements. After that we can iterate over the
 
 
 In the same way as we access single characters of a [string] with
-the subscript operator [\[\]]{.op}, we can use that operator to access
+the subscript operator [\[\]], we can use that operator to access
 single elements of an [array] or a [seq], like in
 a\[myPos\]. The slice operator is available for [arrays] and
 sequences too, and can be used to extract sub-ranges or to replace
@@ -5130,7 +5130,7 @@ works in this case.
 
 
 
-Note that in some languages like [Julia]{.ndef} [arrays] start at
+Note that in some languages like [Julia] [arrays] start at
 position
 [1].^\[[28](#_footnotedef_28 "View footnote."){#_footnoteref_28
 .footnote}\]^ Nim [arrays] can have an arbitrary integral start
@@ -5278,7 +5278,7 @@ somewhere. ^\[[31](#_footnotedef_31 "View footnote."){#_footnoteref_31
 
 
 
-In the section about [strings]{.str}, we said that [strings]{.str} have
+In the section about [strings], we said that [strings] have
 value semantic, that is, that an assignment like [str1 = str2]
 creates a copy of [str2] and that after that assignment
 [str1] and [str2] are fully independent
@@ -5292,10 +5292,10 @@ assignment like [seq1 = seq2] would not copy the data buffer but
 reuse the old one. In that case both sequences would be not independent,
 [seq2] would be an alias for [seq1]. This is called
 reference semantic, some languages like Ruby behave in this way. But in
-Nim [arrays], [strings]{.str} and sequences have value semantic,
+Nim [arrays], [strings] and sequences have value semantic,
 an assignment creates an independent copy. We will learn more details
 about reference semantic and the use of the stack or heap to store data
-soon when we discuss references to [objects]{.obj}.
+soon when we discuss references to [objects].
 
 
 
@@ -5403,13 +5403,13 @@ When we run the above code, we get:
 
 The first two lines of the output may confuse us, as a size of only 8
 bytes may indicate a plain [pointer] value on a 64-bit system.
-Indeed, the sequence is not a large [object]{.obj} that contains size
-and capacity fields, but only a tiny [object]{.obj} that contains a
+Indeed, the sequence is not a large [object] that contains size
+and capacity fields, but only a tiny [object] that contains a
 single [pointer] to the data storage of that sequence. We know
 that it is not a plain [pointer] or [ref] by the fact that
 we can not assign nil or test for nil for sequences. (But an
-[object]{.obj} which contains only a [pointer] is basically
-identically to a plain [pointer], as Nim [objects]{.obj} have no
+[object] which contains only a [pointer] is basically
+identically to a plain [pointer], as Nim [objects] have no
 overhead as long as we do not use inheritance and when no padding to
 word size is needed for tiny fields like int8.) Capacity and length are
 stored also in the memory block that is allocated for the elements, as
@@ -5419,7 +5419,7 @@ sequences (matrices). We use the dummy int variable in the code above as
 we know that plain ints are stored on the stack, and when we compare the
 addresses of our dummy variable and our sequence, then we see that the
 addresses indicate close neighborhood, so the [seq]
-[object]{.obj} is also stored on the stack. But the address of
+[object] is also stored on the stack. But the address of
 [s\[0\]] is very different, indicating that the data buffer is
 stored in a different memory region, which is the heap. If we would
 continuously add elements to the [seq], then the address
@@ -5539,7 +5539,7 @@ and so on.
 
 
 Nim [slices]{.plain} are [objects] of type [Slice] with two
-fields, a lower bound [a]{.ndef} and an upper bound [b]{.ndef}. The
+fields, a lower bound [a] and an upper bound [b]. The
 [system] module defines also the [HSlice] [object],
 called heterogeneous slice, for which the lower and upper bound can have
 different data types:
@@ -5561,7 +5561,7 @@ type
 As the [Slice] and [HSlice] [objects] are not
 built-in types, their names start with capital letters. [Slices]
 are not used that often directly, but mostly indirectly with the
-[..]{.op} range operator, e.g. to access sub-ranges of [strings]
+[..] range operator, e.g. to access sub-ranges of [strings]
 and other containers.
 
 
@@ -5583,7 +5583,7 @@ proc contains*[U, V, W](s: HSlice[U, V], value: W): bool {.noSideEffect, inline.
 defined functions to access sub-ranges of [strings],
 [arrays] and sequences. Typically, we do not use an explicit
 [Slice] [object], but we create the [Slice] by use
-of the infix [..]{.op} operator, which takes two integers and returns a
+of the infix [..] operator, which takes two integers and returns a
 [Slice] with these bounds:
 
 
@@ -5607,14 +5607,14 @@ echo "Indeed " & m[s] & "is much fun!" # the same as line four
 
 
 In line two we use the slice to replace the sub-string \"is
-difficult.\", which starts at position 19, with another [string]{.str}.
+difficult.\", which starts at position 19, with another [string].
 Note that the replacement can be a longer or a shorter [string],
 that is, the slice supports not only overwriting characters, but also
 inserting or deleting operations. In line two, the actual [Slice]
-[object] is constructed by the [..]{.op} operator and the two
+[object] is constructed by the [..] operator and the two
 integer bounds. In line four, we use the slice to access a sub-string
 and create a new [string] with it. As we learned earlier in the
-[Strings](#_strings) section already, we can use the [\^]{.op} operator
+[Strings](#_strings) section already, we can use the [\^] operator
 to access elements counted from the end of the container, so we could
 have written line two also as [m\[19 .. \^1\] = \"not easy.\"].
 The last two lines in the above example show that we could have used a
@@ -5623,7 +5623,7 @@ real [HSlice] [object] to access the sub-string instead.
 
 
 [Slices] can be used in a similar way for [arrays],
-[strings]{.str} and sequences. But we have to remember that
+[strings] and sequences. But we have to remember that
 [Slices] are only [objects] with a lower and an upper
 bound, so there must be always a procedure that accepts the container
 and the [Slice] as arguments to do the real work.
@@ -5656,7 +5656,7 @@ proc main =
 
 
 
-Here, we use the slice construction operator [..]{.op} to exclude the
+Here, we use the slice construction operator [..] to exclude the
 first element from our summing operation. Unfortunately, when we use the
 slice operation in this way, the Nim compiler may create a copy of our
 sequence, which increases the run-time and memory consumption. At least
@@ -5735,12 +5735,12 @@ But this is work in progress, so the situation may improve, see
 
 
 \+
-[https://forum.nim-lang.org/t/4823](https://forum.nim-lang.org/t/4823){.bare}
+[https://forum.nim-lang.org/t/4823](https://forum.nim-lang.org/t/4823)
 
 
 
 \+
-[https://forum.nim-lang.org/t/4582#28715](https://forum.nim-lang.org/t/4582#28715){.bare}
+[https://forum.nim-lang.org/t/4582#28715](https://forum.nim-lang.org/t/4582#28715)
 
 
 
@@ -5751,7 +5751,7 @@ But this is work in progress, so the situation may improve, see
 
 
 We have already used different types of variables --- integers,
-[floats], characters, or the custom Computer [object]{.obj}, and
+[floats], characters, or the custom Computer [object], and
 some more. We said that variables are named memory regions, where the
 content of our variables is stored. We call this type of variables also
 value types.
@@ -5778,8 +5778,8 @@ Here we have 3 assignments, first we assign the integer literal
 [7] to variable [i], then we assign the content of variable
 [i] to variable [j], and finally we overwrite the old
 content of variable [i] with the new literal value [3]. The
-output of the [echo()] statement should be [3]{.term} and
-[7]{.term}, because in line 3 we copy the content of variable [i],
+output of the [echo()] statement should be [3] and
+[7], because in line 3 we copy the content of variable [i],
 which is currently the value [7], into variable [j]. The new
 assignment in line 4 in no way touches the content of variable
 [j].
@@ -5789,10 +5789,10 @@ assignment in line 4 in no way touches the content of variable
 In section [Objects](#_objects) we saw that the fields of [object]
 types like our [Computer] data type behave in the same
 way --- assignments copy the content. The [tuple]{.tup} data type, which
-has some similarity to [objects]{.op}, and which we will introduce later
+has some similarity to [objects], and which we will introduce later
 in the book, behaves the same. All these data types are stack allocated,
 and we say that the data types have value or copy semantic. Even
-[strings]{.str} and sequences, which use actually a heap allocated data
+[strings] and sequences, which use actually a heap allocated data
 buffer, behave in the same way in Nim.
 
 
@@ -5805,8 +5805,8 @@ are fast and easy to use.
 Maybe that is not too surprising for you, but when we would have
 references instead of plain variables, then the situation would be
 different, as we will see soon. Actually, some other programming
-languages use reference semantic for entities like [strings]{.str} by
-default, for example in Ruby an assignment of a [string]{.str} variable
+languages use reference semantic for entities like [strings] by
+default, for example in Ruby an assignment of a [string] variable
 to another variable does not copy the content, so that both variables
 still use the same data buffer --- when we then modify one variable, the
 content of the other changes too.
@@ -5821,7 +5821,7 @@ some neighborhood relation, also called some one-to-many relation.
 
 
 
-Indeed, value [objects]{.obj} and references occur in real life also:
+Indeed, value [objects] and references occur in real life also:
 
 
 
@@ -5870,12 +5870,12 @@ to that storage location, then reads will give you that new value.
 
 Basically for all the data that you use in your program you need in some
 form its address in the RAM, without the address you can not access it.
-But what is with all the plain, value [object]{.obj} variables we have
+But what is with all the plain, value [object] variables we have
 used before, we have never used addresses? That is true --- we used only
 names to access our variables, and the compiler mapped our chosen name
 to the actual address of the variables in memory whenever we accessed
 the variable. For most simple cases, this is the best way to access
-variables. Now let us assume we have such value [object]{.obj} type of
+variables. Now let us assume we have such value [object] type of
 variable declared in our program, can we access it without using its
 name? When we have declared it, it should reside somewhere in the RAM
 when the program is executed. Well, when we do really not want to access
@@ -6029,15 +6029,15 @@ different room also.
 
 So when we have the [pointer] [ip] pointing to a valid
 address, can we recover the content of that memory region? Sure, we use
-the dereference operator [\[\]]{.op} for that purpose. Whenever we have
+the dereference operator [\[\]] for that purpose. Whenever we have
 a typed [pointer] [x] we can use [x\[\]] to get the
 content of the memory location where the [pointer] is pointing
-to. Note that the operator [\[\]]{.op} is not really related to the
-subscript operator [\[pos\]]{.op} which we used earlier for
+to. Note that the operator [\[\]] is not really related to the
+subscript operator [\[pos\]] which we used earlier for
 [array], [seq] and [string] access. Nim uses ASCII
 characters for its operators, and that set is not very large. And maybe
 it would even be confusing when we would have a different symbol for
-each operator. We can consider [\[\]]{.op} as some form of content
+each operator. We can consider [\[\]] as some form of content
 access operator --- [mystring\[pos\]] gives us the character at
 that position, and [ip\[\]] gives us the content of the memory
 location where [ip] points to.
@@ -6157,7 +6157,7 @@ References:
 
 
 
--   [https://github.com/kaushalmodi/ptr_math](https://github.com/kaushalmodi/ptr_math){.bare}
+-   [https://github.com/kaushalmodi/ptr_math](https://github.com/kaushalmodi/ptr_math)
 
 
 
@@ -6172,7 +6172,7 @@ practice not that often done, and it can be a bit dangerous, as it is
 not always guaranteed that the variable on which we applied
 [addr()] will exist as long as our [pointer] exist. So the
 [pointer] may point later to a memory location that is already
-freed or used by a totally different [object]{.obj}. So the use of
+freed or used by a totally different [object]. So the use of
 [addr()] is more reserved for advanced programmers, who know well
 what they do, and most of the time [addr()] is not necessary at
 all, or is only necessary for really low level code, maybe when
@@ -6242,14 +6242,14 @@ be a so-called double free error.
 As you see, using [pointers] is inconvenient and dangerous. But
 still there are situations where plain value type variables do not
 suffice. The solution of many higher level programming languages to this
-problem is a [Garbage-Collector]{.ndef} (GC). The GC does the dangerous
+problem is a [Garbage-Collector] (GC). The GC does the dangerous
 and inconvenient task of deallocating unused memory blocks for us
 automatically.
 
 
 
 To distinct the GC managed \"pointers\" cleanly from the manually
-managed ones, we call them in Nim [references]{.ndef}, in some other
+managed ones, we call them in Nim [references], in some other
 languages they are called traced [pointers]. References are
 always typed like [ptr], there is no equivalent to the untyped
 [pointer] type for references.
@@ -6272,8 +6272,8 @@ free, are not that obvious and more dangerous. In languages like C tools
 like Valgrind are used to check for errors like \"use after free\".
 Valgrind is a very helpful tool, but it can not find all errors that may
 occur, and it reports can be very verbose. We may use Valgrind as well
-when we compile our Nim program with [\--gc:arc]{.term} and
-[-d:useMalloc]{.term} --- this can be used to ensure that our program
+when we compile our Nim program with [\--gc:arc] and
+[-d:useMalloc] --- this can be used to ensure that our program
 really works perfectly, maybe when we have to use C libraries, and it
 may help us to find the cause for bugs.
 
@@ -6313,7 +6313,7 @@ freeing that block, the GC will do that when appropriate.
 
 
 To verify that in the example code above, both references really
-reference the same [object]{.obj} in memory, we could add two more lines
+reference the same [object] in memory, we could add two more lines
 of code:
 
 
@@ -6421,18 +6421,18 @@ The last card in the chain gets no entry in the next field.
 
 
 
-In languages like Nim or C [lists]{.ndef}, also called [linked
-lists]{.ndef}, are dynamically created data structures consisting of
+In languages like Nim or C [lists], also called [linked
+lists], are dynamically created data structures consisting of
 elements (called nodes), where each node has a field, which is a
 references or [pointer] to its successor or predecessor. When the
 nodes have only a successor field, then we call the list a [single
-linked list]{.ndef}, and when it also has a predecessor field, then we
-call it a [double linked list]{.ndef}. Contrary to [arrays] and
+linked list], and when it also has a predecessor field, then we
+call it a [double linked list]. Contrary to [arrays] and
 Nim's sequences, lists do not allow access to arbitrary elements, we can
 only traverse the list starting from its first element for single linked
 lists, or also from its last elements, for double linked lists. The
-first element of a list is also called its [head]{.ndef}, and the last
-element is called its [tail]{.ndef}. Often, the head and the tail
+first element of a list is also called its [head], and the last
+element is called its [tail]. Often, the head and the tail
 elements are just plain nodes, but the head can be also an extended node
 [object] with additional fields, carrying information for the
 whole list, maybe an additional [string] field for the list name.
@@ -6543,12 +6543,12 @@ case, we terminate the loop, as we are done. If [f] has not the
 value [nil], then [f] points to a valid content, that is,
 there is at least a valid name, which we access by the field access
 operator and print it with [echo f.name]. Note that in Nim the
-field access operator [.]{.op} works in the same way for value
-[objects]{.obj} types as well as for [ref] [objects]{.obj} types.
-For [ref] [objects]{.obj} types we could also write
+field access operator [.] works in the same way for value
+[objects] types as well as for [ref] [objects] types.
+For [ref] [objects] types we could also write
 [f\[\].name] instead of plain [f.name], that is we first
-apply [\[\]]{.op} to [f] to get the content, and then use the
-[.]{.op} operator to access the [name] field. In some other
+apply [\[\]] to [f] to get the content, and then use the
+[.] operator to access the [name] field. In some other
 languages like C we would have to use a special operator -\> to access
 fields of [pointer] or reference types.
 
@@ -6557,7 +6557,7 @@ fields of [pointer] or reference types.
 The most interesting statement in the output loop is [f =
 f.next]. We assign the content of [f.next] to [f] and
 proceed with that new content. The content could be a valid reference to
-one more [Friend] [object]{.obj}, or it could be [nil],
+one more [Friend] [object], or it could be [nil],
 indicating that our loop should terminate.
 
 
@@ -6586,7 +6586,7 @@ and we do not need [node] any-more. The [node] variable can
 be used in the next loop iteration again, but we have to allocate a new
 memory block for the [node] reference, as the previous memory
 block is still in use, it contains the name which we just entered and
-also a reference to the next [object]{.obj} in the list.
+also a reference to the next [object] in the list.
 
 
 
@@ -6670,12 +6670,12 @@ when we have more males than females?
 
 
 
-For references to [objects]{.obj}, the assignment operator [=]{.op}
-copies the references, but not the [object]{.obj}. In the same way, the
-operator [==]{.op} for equality test compares the references, but not
-the content of the [objects]{.obj} to which the references point. If you
-want to compare the content of the [objects]{.obj}, you can apply the
-dereference operator [\[\]]{.op} on both references:
+For references to [objects], the assignment operator [=]
+copies the references, but not the [object]. In the same way, the
+operator [==] for equality test compares the references, but not
+the content of the [objects] to which the references point. If you
+want to compare the content of the [objects], you can apply the
+dereference operator [\[\]] on both references:
 
 
 
@@ -6715,7 +6715,7 @@ group sequences of statements that perform a specific task. We can pass
 parameters to procedures, e.g. data that the procedure should process,
 and the procedure can return a result. Related sets of procedures can be
 grouped into library modules, e.g. procedures that perform various
-[string]{.str} operations. We will discuss the use and creation of
+[string] operations. We will discuss the use and creation of
 modules later in the book.
 
 
@@ -6756,7 +6756,7 @@ and do not modify the current state of the program. Modifying a global
 variable or performing an input/output operation would be examples for
 modifying the state. We have already used some predefined procedures
 like [echo()] for output operations, [add()] for appending
-single characters to [strings]{.str}, and [readLine()] for
+single characters to [strings], and [readLine()] for
 reading in textual user input. And we talked about math functions like
 [sin()], [cos()], [pow()] --- these are functions
 as they accept one or two arguments and return a result, but do not
@@ -6944,7 +6944,7 @@ digits seems to work for [float] parameters, but even on 64-bit
 systems the [int64] data type is not allowed for [int]
 parameters. As you see from the example above, it is possible to pass
 the same variable multiple times as a parameter, and empty
-[string]{.str} literals are of course allowed too.
+[string] literals are of course allowed too.
 
 
 
@@ -7064,7 +7064,7 @@ function.
 
 In the examples above, we have passed plain integers as parameters to
 procedures, but of course [proc] parameters can have any type, we
-can pass [strings]{.str}, [array], [objects]{.obj} and all that.
+can pass [strings], [array], [objects] and all that.
 The way we pass the parameters to the [procs] is sometimes called
 \"pass by value\", an old term introduced for the Pascal language, used
 to indicate that the passed parameter [seems]{.italic} to be copied to
@@ -7102,8 +7102,8 @@ modified and is available unchanged after the [proc]
 call.^\[[34](#_footnotedef_34 "View footnote."){#_footnoteref_34
 .footnote}\]^ But of course there are situations where we may want that
 a passed parameter is modified. Let us assume that we want to \"frame\"
-a passed [string]{.str}, for example we want to pass in the
-[string]{.str} \"Hello\" and want to change it to \"\* Hello \*\".
+a passed [string], for example we want to pass in the
+[string] \"Hello\" and want to change it to \"\* Hello \*\".
 Further, let us assume that we may sometimes want to use other
 characters instead of the asterisk, maybe a [+] sign.
 
@@ -7169,25 +7169,25 @@ parameter we pass and for which parameter we want a default value.
 
 To generate the frame around the passed in [string], we have to
 insert two characters at the front of the [string], and to append
-two more characters. Inserting in [strings]{.str} is not a very cheap
+two more characters. Inserting in [strings] is not a very cheap
 operation, as it involves moving all following characters. So we try not
 to insert two single characters, but we first create a short
 [string] consisting of the passed [c] character and a
 white-space character, and then insert that two character
-[string] at the front of the passed [string]{.str}. We use the
+[string] at the front of the passed [string]. We use the
 standard procedure [newString()] with parameter [2] to
 create a new [string] of length [2] with undefined content,
 and then fill in the content by using the subscript operator. We could
 have used the [add()] [proc] to add that two characters to
 an empty [string], but that is a bit slower. Then we use the
 standard procedure [insert()] to insert our two character
-[string] at the front of our passed [string]{.str}. Finally, we
+[string] at the front of our passed [string]. Finally, we
 add a white-space and the [c] character to the passed
-[string]{.str}. The passed [string]{.str} is now modified, it is 4
+[string]. The passed [string] is now modified, it is 4
 characters longer. That modification is noticeable for the caller of
 that [proc], that is, [echo()] will print the modified
 version. Actually, when we think about it, we may get the feeling that
-our strategy to first create the two characters [string]{.str}
+our strategy to first create the two characters [string]
 [cs] is a bad idea, as the allocation may cost more time than just
 inserting the individual characters directly.
 
@@ -7230,16 +7230,16 @@ should not modify the [string], but should return a new
 in the center. Generally, when creating [procs], we have to
 decide what is more useful --- modifying a passed value or returning a
 modified copy. And sometimes we have to regard efficiency too. Returning
-newly created large data types like [strings]{.str} may be expensive. A
+newly created large data types like [strings] may be expensive. A
 [string] is not a trivial structure, as it contains the dynamic
 buffer for the [string] content, which has to be allocated. On
 the other hand, for the passed [var] [string] we inserted
 characters, which involves moving characters and is also not a really
-cheap operation, and maybe when we insert a lot, the [string]{.str}
+cheap operation, and maybe when we insert a lot, the [string]
 buffer must be even enlarged, which is again expensive. So for this use
 case, it is not really clear what approach is better --- we used the
 [var] parameter mainly to introduce [var] parameters. OK,
-let us investigate how a function that returns a modified [string]{.str}
+let us investigate how a function that returns a modified [string]
 may look:
 
 
@@ -7271,7 +7271,7 @@ frame both as plain value parameters, and return a newly created framed
 version of the procedure [newString()] from the [system]
 module, called [newStringOfCap()]. Like [newString()] that
 procedure creates an empty [string] variable, but it ensures that
-the data buffer of the new [string]{.str} has exactly the specified
+the data buffer of the new [string] has exactly the specified
 size. That is an optimization, which makes sense in our use case, as we
 know that our newly created [string] will have [4]
 characters more than the passed [string]. So we can avoid that
@@ -7281,7 +7281,7 @@ space is wasted --- the data buffer size of the new [string] will
 be a perfect fit for the desired result. The rest of the function body
 is not really interesting, we just [add()] what is needed and
 return the result. Well, earlier we said that [add()] is not
-extremely fast. So when you have to frame millions of [strings]{.str}
+extremely fast. So when you have to frame millions of [strings]
 each day, you may consider avoiding [add()], and you know already
 enough about Nim to do it. Just try it. You may start with a
 [string] of right size containing undefined content created by
@@ -7469,10 +7469,10 @@ alias for the global variable [g].
 
 
 
-Actually used are [var return types]{.ndef} for [iterators] like
+Actually used are [var return types] for [iterators] like
 [mitems()] or [mpairs()], which allows modifying the
 yielded results. For details and restrictions of the [var return
-type]{.ndef}, you should consult the Nim compiler manual:
+type], you should consult the Nim compiler manual:
 
 
 
@@ -7480,7 +7480,7 @@ References:
 
 
 
--   [https://nim-lang.org/docs/manual.html#procedures-var-return-type](https://nim-lang.org/docs/manual.html#procedures-var-return-type){.bare}
+-   [https://nim-lang.org/docs/manual.html#procedures-var-return-type](https://nim-lang.org/docs/manual.html#procedures-var-return-type)
 
 
 
@@ -7537,9 +7537,9 @@ order of parameters or when we want to specify only a few.
 
 In the previous section, we learned that we have to pass [var]
 parameters when the procedure should be able to mutate the variable
-permanently. This is also valid when the parameters are [objects]{.obj}.
-When a procedure should modify fields of an [object]{.obj} parameter,
-then we have to pass that [object]{.obj} as a [var] parameter. In
+permanently. This is also valid when the parameters are [objects].
+When a procedure should modify fields of an [object] parameter,
+then we have to pass that [object] as a [var] parameter. In
 the following example, [proc] [t1] gives a compiler error
 because that procedure tries to modify a field of an [object]
 while the [object] instance is not passed as a [var]
@@ -7584,8 +7584,8 @@ The output is:
 
 [Proc] [t2] gets a [var] parameter and can modify
 fields of the passed [object]. Here we used the expression [echo
-x.repr] to print the whole [object]{.obj}. [Strings]{.str} and
-sequences are value [objects]{.obj} in Nim, so you have to pass them as
+x.repr] to print the whole [object]. [Strings] and
+sequences are value [objects] in Nim, so you have to pass them as
 [var] parameters when you want to change their length or when you
 want to modify elements. This code would give you compile errors, unless
 you add the [var] keyword to make the [proc] parameters
@@ -7614,7 +7614,7 @@ of type [ref object] and the procedure can modify fields of the
 passed instance. That can be indeed surprising. In this case, passing
 the [ref object] without use of the [var] keyword means only
 that we can not mutate the [ref] value itself in the procedure,
-but we are allowed to modify the fields of the [object]{.obj}. For
+but we are allowed to modify the fields of the [object]. For
 [proc] [t2], we pass a [var] parameter. As always, we
 can modify a [var] parameter in the procedure, so we can assign it
 a newly created instance.
@@ -7716,7 +7716,7 @@ Actually, since Nim version 1.6, it is possible to use the
 [openArray] type as result type of [procs] and even as
 local variables. But these [View types] are still experimental,
 see
-[https://nim-lang.org/docs/manual_experimental.html#view-types](https://nim-lang.org/docs/manual_experimental.html#view-types){.bare}.
+[https://nim-lang.org/docs/manual_experimental.html#view-types](https://nim-lang.org/docs/manual_experimental.html#view-types).
 
 
 
@@ -7757,7 +7757,7 @@ a parameter list.
 
 
 Finally, we may wonder if it makes sense to specify a parameter of type
-[var varargs]. If we try to pass a constant [string]{.str} this
+[var varargs]. If we try to pass a constant [string] this
 will obviously not work, and if the compiler generates an [array]
 for us, it does also not work, the automatically generated
 [array] seems to behave like a constant [array]. But may
@@ -7928,7 +7928,7 @@ of memory management is simple and fast, but it does only work when the
 total amount of memory that the local variables in a [proc] needs
 is known at compile time, so that the compiler can adjust the stack
 [pointer] accordingly. It does not work for dynamically sized
-data types like [strings]{.str} or sequences.
+data types like [strings] or sequences.
 
 
 
@@ -8133,7 +8133,7 @@ multiplication with itself.
 
 
 
-A slightly different notation is available by so called [or]{.op} types:
+A slightly different notation is available by so called [or] types:
 
 
 
@@ -8191,7 +8191,7 @@ as parameter. While the first line compiles fine, the
 [seq\[char\]] would be immutable. The correct notation is shown in
 the second line. This behavior was labeled \"won't fix\" in GitHub issue
 tracker, so we have to remember this case, see
-[https://github.com/nim-lang/Nim/issues/15063#issue-665553657](https://github.com/nim-lang/Nim/issues/15063#issue-665553657){.bare}.
+[https://github.com/nim-lang/Nim/issues/15063#issue-665553657](https://github.com/nim-lang/Nim/issues/15063#issue-665553657).
 
 
 
@@ -8243,7 +8243,7 @@ instantiated [proc].
 
 Generics can become a bit complicated, as we may use multiple different
 generic types for different [proc] parameters. And we can use
-generics also for [object]{.obj} types, we may for example create lists
+generics also for [object] types, we may for example create lists
 like we did for our names list that work not only for [strings],
 but that can work with other data types like numbers or sequences in a
 very similar way. We may explain that in more detail later.
@@ -8257,7 +8257,7 @@ very similar way. We may explain that in more detail later.
 Generics are used a lot in Nim's standard library. Most container types
 like sequences or tables accept generic types, and generic procedures
 like [sort()] are provided which can easily sort arbitrary data
-types and [objects]{.obj}. We have only to provide a [cmp()]
+types and [objects]. We have only to provide a [cmp()]
 [proc] for our user defined data types, which [sort()] can
 call to compare the values during the sorting process.
 
@@ -8275,7 +8275,7 @@ generic container type which can store only two values of arbitrary data
 type. The container allows sorting the elements by size. The following
 code example defines a generic container called
 [MyGenericContainer], a [proc] to [add()] data
-[objects]{.obj} into the container instance and a [sortBySize()]
+[objects] into the container instance and a [sortBySize()]
 [proc] to sort the two elements:
 
 
@@ -8321,11 +8321,11 @@ main()
 
 
 The [sortBySize()] [proc] of the above examples accesses
-the size field of our data [objects]{.obj} directly, so we can use the
+the size field of our data [objects] directly, so we can use the
 container for arbitrary data types as long as the data types have a size
-field and as long as a [\>]{.op} [proc] is defined for the data
+field and as long as a [\>] [proc] is defined for the data
 type of the size field. In the above example, we have defined a
-[\$]{.op} procedure to convert instances of our container to a
+[\$] procedure to convert instances of our container to a
 [string], which allows us to call the [echo()] function on
 it. The output of our program looks like
 
@@ -8501,7 +8501,7 @@ main()
 
 
 You may wonder why we do not have to export the [size] field of
-our [TestObj1] (or maybe the [object]{.obj} itself also) as it is
+our [TestObj1] (or maybe the [object] itself also) as it is
 used from code defined in a different module. The reason why we do not
 need export markers is that the [sortBySize()] is defined in the
 library module, but as it is a generic procedure, it is instantiated and
@@ -8513,8 +8513,8 @@ export the [size()] getter procedure before.
 Finally, one more way to use generic library modules is by passing
 procedure variables to the library functions. The passed in procedures
 may provide access to properties or attributes of the stored
-[objects]{.obj}, or they may offer relations between the
-[objects]{.obj}. The latter is often used for sorting purposes:
+[objects], or they may offer relations between the
+[objects]. The latter is often used for sorting purposes:
 
 
 
@@ -8570,7 +8570,7 @@ main()
 
 Here, we have modified the [sort()] [proc] of our library
 module in a way that it takes an additional procedure parameter. In this
-case, we use a procedure signature that takes two [object]{.obj}
+case, we use a procedure signature that takes two [object]
 instances and returns a boolean value indicating if the first parameter
 is smaller than the second. In our application module, we define a
 matching procedure and pass that one to the [sortBy()] procedure.
@@ -8586,7 +8586,7 @@ Again we get the desired sorted output:
 
 
 This last method is often used in Nim's standard library, e.g. for
-sorting sequences with custom [objects]{.obj}. Unfortunately, this way
+sorting sequences with custom [objects]. Unfortunately, this way
 can introduce some performance regression, as the procedure variable has
 to be passed to the called [proc], and so inlining of that passed
 [proc] is not possible for the compiler.
@@ -8601,8 +8601,8 @@ to be passed to the called [proc], and so inlining of that passed
 
 A useful coding style introduced by OOP languages is the method call
 syntax, which was initially used in the OOP programming style for
-[objects]{.obj}, and later applied by languages like Ruby to all data
-types. Ruby in some way regards all data as [objects]{.obj}.
+[objects], and later applied by languages like Ruby to all data
+types. Ruby in some way regards all data as [objects].
 
 
 
@@ -8620,8 +8620,8 @@ stands in front of the expression.
 
 
 Most OOP languages allows that notation only for a class, for example
-the [string]{.str} class may declare all possible operations that can be
-done with [strings]{.str}, and the method call syntax is used for that
+the [string] class may declare all possible operations that can be
+done with [strings], and the method call syntax is used for that
 operations. One problem is, that it can be difficult to add more
 operations which can be used in that style, as often all that operations
 are defined in the class scope. Ruby fixed that restriction by allowing
@@ -8631,7 +8631,7 @@ operations.
 
 
 Nim simple allows that notation generally, as did the D language, but D
-used the term [Uniform Function Call Syntax]{.ndef} (UFCS) for it.
+used the term [Uniform Function Call Syntax] (UFCS) for it.
 
 
 
@@ -8743,7 +8743,7 @@ module. The [sort()] [proc] accepts an [array] or a
 sequence, and a [cmp()] [proc] that gets two parameters of
 the same type as the elements in the passed [array], and that
 returns -1, 0, or 1 as the result of the comparison. We could easily
-sort other data types like [strings]{.str} or our custom [objects]{.obj}
+sort other data types like [strings] or our custom [objects]
 by an arbitrary key, as long as we can provide a matching [cmp()]
 [proc]. For the [cmp()] [proc] it is important that
 it returns a well-defined result based on the input, and when both
@@ -8804,7 +8804,7 @@ When you run this program, the output should be
 
 This program is not that easy, but when you think about it a bit, you
 should be able to understand it. The task is to extract from a
-[string]{.str} all the digits and to ignore the other characters.
+[string] all the digits and to ignore the other characters.
 
 
 
@@ -8822,15 +8822,15 @@ next check tests, if the current character is not a decimal digit. For
 that test we could use a series of compares like [if c == \'0\' or c ==
 \'1\' or ...​ or c == \'9\'.] But to make such tests easier and
 faster, Nim offers one more data type, the [set] type. And the
-[notin]{.op} operator tests, if a value is not contained in a
+[notin] operator tests, if a value is not contained in a
 [set] constant. An important point for the expression after the
 [while] statement is, that it is processed from left to right.
 That fact is here critical, because we have first to check if
 [pos] is still a valid position, before we can use the subscript
-operator [\[\]]{.op} to access the current character and test if it is
+operator [\[\]] to access the current character and test if it is
 not contained in the [set]. If the check for the valid position
 would not come first, then we may access an invalid position in the
-[string]{.str}, and we would get a runtime range error.
+[string], and we would get a runtime range error.
 
 
 
@@ -8840,7 +8840,7 @@ conditions: Either the current character is a digit, or we have reached
 the end of the [string], and we have to stop. For the last case,
 we use a special stop mark, we return a special character which we have
 entered in escape notation as [\'\\x0\']. That is a very special
-character, that is used in C to mark the end of [strings]{.str}. It is
+character, that is used in C to mark the end of [strings]. It is
 the first character in the ASCII table and has the decimal value
 [0]. We said earlier, that characters are encoded in 8 bit and
 correspond to the unsigned integer numbers [0] up to [255].
@@ -8898,7 +8898,7 @@ These functions get procedures as arguments that determine how container
 data types are converted. We can pass a regular named procedure as
 second argument to [procs] like [map()] and
 [filter], or in simple cases we can just pass an anonymous
-[proc] or use the [⇒]{.op} operator provided by the [sugar]
+[proc] or use the [⇒] operator provided by the [sugar]
 module:
 
 
@@ -8938,7 +8938,7 @@ to convert the data of our sequence. [Map()] expects as second
 argument a [proc] with a parameter of the seq's base type,
 returning a result of the same type. In the line before the last one, we
 specify an anonymous [proc] as parameter, while in the last line
-we use the [⇒]{.op} operator from the [sugar] module to just
+we use the [⇒] operator from the [sugar] module to just
 specify the actual conversion.
 
 
@@ -9007,7 +9007,7 @@ applying the {.inline.} pragma to tiny
 directly at the call site. This may increase the total executable size,
 when the [proc] is used often. So we should use the inline pragma
 with some care. Another option is to just compile the whole program with
-[link time optimization]{.ndef} passing the option -d:lto to the
+[link time optimization] passing the option -d:lto to the
 compiler, that way the C backend can automatically inline all
 [proc] code, even [procs] from imported modules. One more
 option is to use [templates] instead of tiny
@@ -9161,8 +9161,8 @@ of the last century support it, like C++, Ruby and Python.
 
 
 
-The idea of OOP is that [objects]{.obj} and procedures working on that
-[objects]{.obj} are grouped to classes, and that classes can be extended
+The idea of OOP is that [objects] and procedures working on that
+[objects] are grouped to classes, and that classes can be extended
 with additional data fields and with additional procedures. In OOP,
 procedures and function are often called methods and data fields are
 called members. Sometimes the members are completely hidden and are
@@ -9186,7 +9186,7 @@ matching method for each instance is called.
 
 A classical example is a drawing program, where we have different
 geometrical shapes like rectangle, circle and many more. All the
-geometrical [objects]{.obj} are stored is some form of a list, and when
+geometrical [objects] are stored is some form of a list, and when
 we want to draw all of them on the screen, then we have to call only an
 unspecific draw() method, and the compiler ensures that for each shape
 the matching draw method is called. In Nim, that may look like
@@ -9250,7 +9250,7 @@ The output of that program is
 So we can have a sequence of the base type, add various subtypes, and
 then iterate over the list to draw all the various subtypes. Of course,
 in the same way, we could do many more task like moving, rotating or
-storing all the [objects]{.obj} in one call. The compiler does the right
+storing all the [objects] in one call. The compiler does the right
 dynamic dispatching for us, we have just to provide all necessary
 methods. The need of the base method seems to be a bit strange, some
 other OOP languages do not need that. The base method is marked by a
@@ -9269,21 +9269,21 @@ applications, with code similar to our basic example.
 
 
 
-Note that the OOP style only works with [ref] [objects]{.obj}, but
-not with value [objects]{.obj}. The obvious reason is that we can have
+Note that the OOP style only works with [ref] [objects], but
+not with value [objects]. The obvious reason is that we can have
 collections of different subtypes stored in [arrays] or sequences
-only for [ref] [objects]{.obj}, as in [arrays] and
+only for [ref] [objects], as in [arrays] and
 sequences all element types have to have equal size. For references,
 that is the case, as references are basically [pointers]. But
 different value types would have different size. Linked lists would be
 no better solution, as again we can not build lists with value
-[objects]{.obj}.
+[objects].
 
 
 
-For maximum performance, OOP code with [ref] [objects]{.obj} is
+For maximum performance, OOP code with [ref] [objects] is
 generally not optimal, as the dispatching itself needs some time, and as
-the [ref] [objects]{.obj} are not contained in a single block of
+the [ref] [objects] are not contained in a single block of
 memory, but are distributed in the whole RAM, which is not cache
 friendly.
 
@@ -9301,27 +9301,27 @@ friendly.
 [Tuples] are heterogeneous container types similar to the struct
 type in C. As Nim's [object] type creates no overhead as long as
 we use no inheritance, and so also directly corresponds to the C struct
-type, [tuples]{.tup} are very similar to Nim's [objects]{.obj}. The
+type, [tuples]{.tup} are very similar to Nim's [objects]. The
 biggest advantage of [tuples]{.tup} is, that we can create anonymous
 [tuples]{.tup}, and that Nim supports the automatic unpacking of
 [tuple]{.tup} variables into ordinary unstructured variables.
 
 
 
-Compared to [objects]{.obj}, [tuples]{.tup} do support no inheritance at
+Compared to [objects], [tuples]{.tup} do support no inheritance at
 all, all the [tuple]{.tup} fields are always visible, and different
 [tuple]{.tup} types are regarded as identical, when all the field names
-and field data types match. Remember that two different [object]{.obj}
+and field data types match. Remember that two different [object]
 types are always distinct in Nim, even when the actual type definition
 looks identical.
 
 
 
 We can define [tuple]{.tup} types in the same way as we define
-[objects]{.obj}, or we can use the [tuple\[\]] constructor.
+[objects], or we can use the [tuple\[\]] constructor.
 Additionally, we can define anonymous [tuples]{.tup} just by enclosing
 its field types in round brackets. The fields of [tuple]{.tup} types can
-be accessed by field names as we do it for [objects]{.obj}, or we can
+be accessed by field names as we do it for [objects], or we can
 access the fields with constant indices starting at zero.
 
 
@@ -9404,7 +9404,7 @@ constant indices. Both [procs] are called with an anonymous
 ### Object Variants
 
 
-Nim's [object]{.obj} variants, sometimes also called sum types or
+Nim's [object] variants, sometimes also called sum types or
 abstract data types (ADT), are an advanced and type save variant of the
 union type known from C. The basic idea is that we may use value types
 that may store similar, but not identical data. Untyped languages like
@@ -9464,9 +9464,9 @@ the center coordinates in the circle variant.
 
 
 
-As you can see, we can store all the different [object]{.obj} variants
-as value [objects]{.obj} in a sequence and iterate over it. Note that
-[object]{.obj} variants may waste some storage, as all variants are
+As you can see, we can store all the different [object] variants
+as value [objects] in a sequence and iterate over it. Note that
+[object] variants may waste some storage, as all variants are
 silently enlarged to have the exact same size, so that all variant types
 can be stored in an [array] or sequences, and can be passed as
 [proc] parameters in the same way to the same [proc].
@@ -9913,7 +9913,7 @@ b)] with [(a+b)\*(a+b)].
 
 
 
-In Nim we would define a [const] for [PI]{.const} and use a
+In Nim we would define a [const] for [PI] and use a
 generic [proc] or a [template] for [SQR()]:
 
 
@@ -9934,7 +9934,7 @@ the [template] body, but that arbitrary data types are accepted.
 So [sqr1()] and [sqr2()] would work for all numeric types
 and also for other data types for which we have defined a
 
-operation. When there is no []{.op} operator defined for the passed data
+operation. When there is no [] operator defined for the passed data
 type, the compiler will give an error message.
 
 
@@ -9984,7 +9984,7 @@ may use a [template] instead, or we may use inlined
 [Proc] inlining can be done by the compiler automatically when
 the [proc] is defined in the source code file where it is used,
 or when we mark the [proc] with the [inline] pragma.
-Additionally, when we compile our program with [-d:lto]{.term}, the
+Additionally, when we compile our program with [-d:lto], the
 compiler can inline all procedures and functions. Generally, the
 compiler should know well when inlining makes sense, so in most cases it
 makes not much sense to just use [templates] instead of (small)
@@ -10052,8 +10052,8 @@ template `!=` (a, b: untyped): untyped =
 
 
 
-This way [!=]{.op} is always the opposite of [==]{.op}, so when we
-define the [==]{.op} operator for our own custom data types, [!=]{.op}
+This way [!=] is always the opposite of [==], so when we
+define the [==] operator for our own custom data types, [!=]
 is available for free.
 
 
@@ -10097,7 +10097,7 @@ replaced by the compiler with code like
 
 
 
-So when [debug]{.const} is set to [false], absolutely no code is
+So when [debug] is set to [false], absolutely no code is
 generated. For an ordinary, not inlined [proc], the situation is
 different, the expensive [string] concatenation operation would
 always have to be performed, but the [log()] [proc] would
@@ -10343,10 +10343,10 @@ but they are removed.\"
 
 In the [withFile()] example above, we showed that we can pass a
 block of statements as the last argument to a [template] following
-the special [:]{.op} syntax. To demonstrate the difference between code
+the special [:] syntax. To demonstrate the difference between code
 blocks of [typed] and [untyped] data type we will cite the
 compiler manual, see
-[https://nim-lang.org/docs/manual.html#templates-passing-a-code-block-to-a-template](https://nim-lang.org/docs/manual.html#templates-passing-a-code-block-to-a-template){.bare}:
+[https://nim-lang.org/docs/manual.html#templates-passing-a-code-block-to-a-template](https://nim-lang.org/docs/manual.html#templates-passing-a-code-block-to-a-template):
 
 
 
@@ -10536,8 +10536,8 @@ have support for bit manipulation operations, which includes querying
 and setting individual bits of variables, and combining the bits of two
 or more variables. As the CPU hardware supports these operations
 directly, these operations are very efficient. In the C programming
-language, operators like [&]{.op}, [\|]{.op}, [\<\<]{.op}, [\>\>]{.op},
-[\^]{.op}, [\~]{.op} are used for bit-wise [and]{.op} and [or]{.op}
+language, operators like [&], [\|], [\<\<], [\>\>],
+[\^], [\~] are used for bit-wise [and] and [or]
 operations, for shifting all the bits of a variable to the left or to
 the right, and for the process of inverting all the bits and for
 applying the exclusive-or operation on the bits of two operands.
@@ -10546,17 +10546,17 @@ a logical and an arithmetic shift: For a logical shift the bit pattern
 is only moved right, and the leftmost bit is always cleared. But for an
 arithmetic shift, the leftmost bit may stay set when it was set before,
 indicating a negative number in case of a numeric variable. In C the
-actual behavior for a [\>\>]{.op} shift right operation may be
+actual behavior for a [\>\>] shift right operation may be
 implementation dependent.
 
 
 
 Nim prefers to use textual operators instead of cryptic symbols, so the
-logical operators [and]{.op}, [or]{.op} and [not]{.op} have overloads to
+logical operators [and], [or] and [not] have overloads to
 work on the actual bit pattern of integer variables instead of on
 boolean values, and for logical left and right shifts the operators are
-called [shr]{.op} and [shl]{.op}. For [shl]{.op} shifted in bits from
-the right are always cleared, while [shr]{.op} shifts in cleared bits
+called [shr] and [shl]. For [shl] shifted in bits from
+the right are always cleared, while [shr] shifts in cleared bits
 from the left for unsigned arguments, but preserves the leftmost set bit
 for signed arguments, which corresponds to an arithmetic shift
 operation. The Nim standard library provides also an [ashr()]
@@ -10579,17 +10579,17 @@ echo j.int8.toBin(8)
 
 
 
-The bit-wise operators [and]{.op}, [or]{.op} and [not]{.op} behave very
+The bit-wise operators [and], [or] and [not] behave very
 similar to the boolean ones, but the operation is performed for all the
 bit values instead of two boolean operands. The shift operators require
 a right-hand operand specifying how many positions the bit pattern of
-the integer variable on the left should be moved. As the [shr]{.op}
+the integer variable on the left should be moved. As the [shr]
 operator preserves the leftmost sign bit for each individual shift when
 applied to a signed integer argument, we get a value with the three
 leftmost bits set in the above example. For showing the bit pattern, we
 used the [toBin()] function in the above code, the second
 parameter determines how many bits are actually printed. Remember, that
-for unsigned numbers, [shl]{.op} by one position is a multiplication by
+for unsigned numbers, [shl] by one position is a multiplication by
 two, and shr by one position is a division by two. Negative numbers are
 not allowed for the number of bits to shift --- [i = i shl -1]
 does compile, but the result is always zero. For all the shift
@@ -10602,7 +10602,7 @@ operation.
 
 
 
-We can use the [and]{.op} and the [or]{.op} operator to extract single
+We can use the [and] and the [or] operator to extract single
 bits, or to set single bits:
 
 
@@ -10620,8 +10620,8 @@ b = a or (4 + 8) # result is \b00001111, decimal 15
 
 This should be enough to teach you the most basic bit operations.
 Actually, we need these operations not that often, but we should be
-aware of their existence. The overloading of the [and]{.op}, the
-[or]{.op} and the [not]{.op} operator for signed and unsigned integer
+aware of their existence. The overloading of the [and], the
+[or] and the [not] operator for signed and unsigned integer
 numbers may be convenient, but it may sometimes lead to confusion, when
 we intend to do boolean operations, but instead actually do operations
 on bit patterns. It was suggested to call the operators bitand, bitor
@@ -10743,7 +10743,7 @@ signal and the OS will abort our program with SIGFPE. So to prevent the
 program abort by a possible DivByZeroDefect, we have always to ensure
 that for an integer division the denominator is not zero, or we let the
 Nim compiler do this check by compiling with option
-[\--checks:on]{.term}, which cost performance and increases code size,
+[\--checks:on], which cost performance and increases code size,
 as then for each division a check instructions is added.
 
 
@@ -10955,7 +10955,7 @@ except IOError as e:
 
 It is possible to [raise] and catch imported C++ exceptions. The
 Nim compiler manual has a detailed example for that, see
-[https://nim-lang.org/docs/manual.html#exception-handling-imported-exceptions](https://nim-lang.org/docs/manual.html#exception-handling-imported-exceptions){.bare}
+[https://nim-lang.org/docs/manual.html#exception-handling-imported-exceptions](https://nim-lang.org/docs/manual.html#exception-handling-imported-exceptions)
 
 
 
@@ -11012,9 +11012,9 @@ References:
 
 
 
--   [https://forum.nim-lang.org/t/7514](https://forum.nim-lang.org/t/7514){.bare}
+-   [https://forum.nim-lang.org/t/7514](https://forum.nim-lang.org/t/7514)
 
--   [https://en.wikipedia.org/wiki/Exception_handling](https://en.wikipedia.org/wiki/Exception_handling){.bare}
+-   [https://en.wikipedia.org/wiki/Exception_handling](https://en.wikipedia.org/wiki/Exception_handling)
 
 
 
@@ -11036,7 +11036,7 @@ Destructors and finalizers are used for automatic resource management.
 For example, files can be closed automatically when a file variable goes
 out of scope, or when we create high level Nim bindings to C libraries
 we can use finalizers or destructors to deallocate entities of the C
-libs when a corresponding Nim (proxy) [object]{.obj} is freed. Libraries
+libs when a corresponding Nim (proxy) [object] is freed. Libraries
 like the gintro GTK bindings make use of this.
 
 
@@ -11070,7 +11070,7 @@ like files are closed and released automatically by destructors when
 they go out of scope, and now this is also possible for Nim. To make use
 of destructors for our own data types, we have to define a [proc]
 called [=destroy] which gets an instance of our data type passed
-as a [var] value [object]{.obj}:
+as a [var] value [object]:
 
 
 
@@ -11104,7 +11104,7 @@ condition is evaluated to [true], and at the end of the [if]
 block, we leaf the scope and the destructor is called automatically.
 Inside the destructor [proc], we could do some cleanup tasks,
 close files and release resources. Destructors are also called, when
-[ref] [objects]{.obj} go out of scope:
+[ref] [objects] go out of scope:
 
 
 
@@ -11226,8 +11226,8 @@ now.
 
 
 When we use an object-oriented programming style with subclassing of
-[ref] [objects]{.obj}, then it is useful to know that for
-subclassed [ref] [objects]{.obj} the destructor of the parent
+[ref] [objects], then it is useful to know that for
+subclassed [ref] [objects] the destructor of the parent
 class is automatically invoked when we do not define our own one for our
 subclassed type. This works also when we import the parent type from
 another module, at least since Nim v1.6:
@@ -11300,8 +11300,8 @@ main()
 
 
 
-When we compile module [t.nim] with [\--gc:arc]{.term} or
-[\--gc:orc]{.term} and run it, we get this output:
+When we compile module [t.nim] with [\--gc:arc] or
+[\--gc:orc] and run it, we get this output:
 
 
 
@@ -11321,15 +11321,15 @@ When we compile module [t.nim] with [\--gc:arc]{.term} or
 
 So when our variables [o1] to [o5] go out of scope, then the
 destructors are called. Module [tt.nim] defines a [ref]
-[object]{.obj} type, but the destructor [proc] takes a
+[object] type, but the destructor [proc] takes a
 [var] value parameter. The destructor is called when a value
-[object]{.obj} or a [ref] [object]{.obj} goes out of scope. Our
+[object] or a [ref] [object] goes out of scope. Our
 variable [o1] has type [tt.O1], so it was indeed expected
 that its destructor from module [tt.nim] is called. Variable
-[o2] is a [ref] [object]{.obj} with parent [O1], as
+[o2] is a [ref] [object] with parent [O1], as
 we define no destructor for this type, the destructor of the parent type
 is called. The variables [o3] and [o4] are of [ref]
-[object]{.obj} and of value [object]{.obj} types, each with a field of
+[object] and of value [object] types, each with a field of
 type [O1], and for that field the destructor for [O1] is
 called. Finally, for type [O5] we define our own destructor,
 which then additional calls the destructor of module [tt].
@@ -11350,9 +11350,9 @@ References:
 
 
 
--   [https://forum.nim-lang.org/t/8013](https://forum.nim-lang.org/t/8013){.bare}
+-   [https://forum.nim-lang.org/t/8013](https://forum.nim-lang.org/t/8013)
 
--   [https://forum.nim-lang.org/t/7360](https://forum.nim-lang.org/t/7360){.bare}
+-   [https://forum.nim-lang.org/t/7360](https://forum.nim-lang.org/t/7360)
 
 
 
@@ -11527,8 +11527,8 @@ asterisk character to all names that should be exported. These
 restricted exports allow hiding implementation details --- all symbols
 not exported are private to that module and can be changed and improved
 at any time without noticing the importing module. Note, that when we
-append the asterisk to the name of an [object]{.obj} to export that
-type, the [object]{.obj}\'s fields are still hidden and can not be
+append the asterisk to the name of an [object] to export that
+type, the [object]\'s fields are still hidden and can not be
 accessed from within the importing module. You may append an asterisk to
 selected field names as well, or you may provide exported getter and
 setter [procs] for the field access. A read-only export, as known
@@ -11539,7 +11539,7 @@ from the Oberon language, is currently not possible with Nim.
 We can import whole modules, that is, all symbols that are marked for
 export by the asterisk, or we can import only the symbols that we need
 by specifying their names. Let us create a module that declares a single
-procedure to remove all characters from a [string]{.str} that are not
+procedure to remove all characters from a [string] that are not
 letters:
 
 
@@ -11808,10 +11808,10 @@ common operations like the serialization of Nim data types to write them
 to external nonvolatile storage and read them back into the program
 later, or handling command line options and parameters for programs
 launched from within a terminal window. Further, we will introduce you
-to important container data types like [hash tables]{.ndef} (sometimes
+to important container data types like [hash tables] (sometimes
 called hash maps in other programming languages) and various kinds of
-[set]{.ndef} data types. We will also introduce modules for working with
-[regular expressions]{.ndef}, and we will show how simple modules like
+[set] data types. We will also introduce modules for working with
+[regular expressions], and we will show how simple modules like
 the [times] or the [random] module can be used. Most modules
 mentioned in this part will be from the Nim standard library, so that
 you will not have to install external packages to use them. But there
@@ -11902,7 +11902,7 @@ int main( int argc, char *argv[] ) {
 
 Here [argc] is the number of available arguments, and [argv]
 is an [array] containing the actual arguments in form of C
-[strings]{.str}. These values are passed to each C program by the OS
+[strings]. These values are passed to each C program by the OS
 when the program is launched from inside a terminal. Actually, the value
 of [argc] is the number of passed arguments plus one, that is when
 we specify no arguments at all, [argc] has the value one. And
@@ -11967,7 +11967,7 @@ main()
 
 
 Using this plain API is OK when we expect one or two arguments, maybe a
-file name and an option, like the [-d]{.term} or [\--debug]{.term}
+file name and an option, like the [-d] or [\--debug]
 parameter used in the code above. For more command line arguments,
 things get complicated fast, as arguments can be passed in arbitrary
 orders and combinations. So you should try one of the available
@@ -11979,7 +11979,7 @@ References:
 
 
 
--   [https://github.com/c-blake/cligen](https://github.com/c-blake/cligen){.bare}
+-   [https://github.com/c-blake/cligen](https://github.com/c-blake/cligen)
 
 
 
@@ -12026,7 +12026,7 @@ variables:
 
 We mentioned already, that the [readline()] function let you type
 textual user input, including spaces, and that you have to terminate
-your input by pressing the return key to pass the input [string]{.str}
+your input by pressing the return key to pass the input [string]
 to the OS, which forwards the input to our program. This form of input
 is sometimes called blocking, as for the time that we wait for user
 input, our program is really waiting, it can not do other work til the
@@ -12076,11 +12076,11 @@ References:
 
 
 
--   [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams){.bare}
+-   [https://en.wikipedia.org/wiki/Standard_streams](https://en.wikipedia.org/wiki/Standard_streams)
 
--   [https://nim-lang.org/docs/terminal.html](https://nim-lang.org/docs/terminal.html){.bare}
+-   [https://nim-lang.org/docs/terminal.html](https://nim-lang.org/docs/terminal.html)
 
--   [https://github.com/johnnovak/illwill](https://github.com/johnnovak/illwill){.bare}
+-   [https://github.com/johnnovak/illwill](https://github.com/johnnovak/illwill)
 
 
 
@@ -12093,7 +12093,7 @@ References:
 In previous sections, we have used the [echo()] function to write
 variables of various data types to the terminal window. The
 [echo()] function accepts multiple arguments, writes the
-[string]{.str} representation of the passed arguments to the terminal
+[string] representation of the passed arguments to the terminal
 window, and terminates the action by writing the [\\n] character
 to move the cursor to the beginning of the next line in the terminal
 window. We have already used the [write()] function from the
@@ -12127,7 +12127,7 @@ value.
 
 
 Let us assume that we have a function called [find()] that
-searches in a [string]{.str} for the first index position of a
+searches in a [string] for the first index position of a
 character:
 
 
@@ -12150,7 +12150,7 @@ echo "Nim".find('i')
 
 The function returns the index position or [-1] to indicate that
 the character has not been found. This works, as we use in Nim typically
-signed integers, and the valid [string]{.str} index positions are never
+signed integers, and the valid [string] index positions are never
 negative, so it is obvious that a negative [result] is some form
 of error indication. In a similar way, whenever a function should return
 a reference or a [pointer], the special value [nil] can be
@@ -12290,7 +12290,7 @@ References:
 
 
 
--   [https://en.wikipedia.org/wiki/Option_type](https://en.wikipedia.org/wiki/Option_type){.bare}
+-   [https://en.wikipedia.org/wiki/Option_type](https://en.wikipedia.org/wiki/Option_type)
 
 
 
@@ -12304,19 +12304,19 @@ When you start writing larger programs, these programs may create data
 which you may want to store permanently on external nonvolatile storage
 like SSDs or traditional hard disks of your computer. For textual data,
 this is very easy, as you only have to write and read a stream of
-unstructured bytes. But when your program deals with [object]{.obj}
+unstructured bytes. But when your program deals with [object]
 instances, container data types like sequences, or references, things
 become more complicated. Writing the data is always easy --- you can
-just convert all the fields of your [object]{.obj} data type to
-[strings]{.str} and write them to a stream or a file. But the reading
+just convert all the fields of your [object] data type to
+[strings] and write them to a stream or a file. But the reading
 back part is much more difficult: You would have to read in the data as
-[strings]{.str}, and then process each [string]{.str} --- maybe
+[strings], and then process each [string] --- maybe
 converting to a [float] number --- and then assign to the
-matching field of an [object]{.obj} instance.
+matching field of an [object] instance.
 
 
 
-When your data consists only of value [objects]{.obj} and no references,
+When your data consists only of value [objects] and no references,
 then you may consider just writing that data in plain binary form to a
 file and read it back. This strategy seems to be simple, and it is very
 fast, as no type conversion steps are involved. But at the same time it
@@ -12328,8 +12328,8 @@ read back stored files anymore.
 
 
 So we will explain how you can store Nim data types in a human-readable
-text format first. Two popular text formats are [JSON]{.ndef} and
-[YAML]{.ndef}. JSON is a simple format, which is easy to parse, but not
+text format first. Two popular text formats are [JSON] and
+[YAML]. JSON is a simple format, which is easy to parse, but not
 very good readable for humans. YAML is more complicated, but more
 flexible and is very good readable for humans.
 
@@ -12350,20 +12350,20 @@ text files by use of the pretty() function.
 
 Other available external packages for data serialization are the
 nim-serialization module set from
-([https://github.com/status-im/nim-serialization](https://github.com/status-im/nim-serialization){.bare})
+([https://github.com/status-im/nim-serialization](https://github.com/status-im/nim-serialization))
 and the very powerful but complicated NimYaml implementation
-([https://nimyaml.org/](https://nimyaml.org/){.bare}). We may describe
+([https://nimyaml.org/](https://nimyaml.org/)). We may describe
 these packages in part V of the book.
 
 
 
 When we have to store and read back Nim data to nonvolatile storage
 media, we have some serious points to consider: First, we have to handle
-various data types like integers, [floats], [strings]{.str},
-[objects]{.obj} --- and even the container types like sequences. And we
+various data types like integers, [floats], [strings],
+[objects] --- and even the container types like sequences. And we
 may have to support reference types and maybe also inherited types and
 containers filled with heterogeneous, subclassed reference
-[objects]{.obj}. The [json] module supports all Nim data types,
+[objects]. The [json] module supports all Nim data types,
 including containers and references, but not heterogeneous sequences.
 
 
@@ -12371,10 +12371,10 @@ including containers and references, but not heterogeneous sequences.
 For our first JSON example, let us assume that we have written a small
 tool that let the user create some geometrical shapes, and we want to
 store the shapes to a file and read it back. For that, we generally use
-an intermediate step, which converts the data to a [string]{.str}, and
-the [string]{.str} back to the data [object]{.obj}. The [string]{.str}
+an intermediate step, which converts the data to a [string], and
+the [string] back to the data [object]. The [string]
 is then written to a file or stream, and read back. Let us start with
-the [string]{.str} conversion --- storing that [string]{.str} and
+the [string] conversion --- storing that [string] and
 reading it back from the file will be explained soon.
 
 
@@ -12484,15 +12484,15 @@ When we run the program, we would get this output:
 
 
 As you can see, we converted the instance [d1] of type
-[Data] to a [string]{.str}, and then we convert that
-[string]{.str} back to variable [d2], with matching content. We
+[Data] to a [string], and then we convert that
+[string] back to variable [d2], with matching content. We
 have made intentionally the [Circ] a [ref] [object],
 so we can see that the conversion works for value and reference
-[objects]{.obj}. In the example program, we applied the %\* macro to our
+[objects]. In the example program, we applied the %\* macro to our
 data instance [d1] to get a [JsonNode], and finally use the
-[pretty()] function to get a nice multi-line [string]{.str}. To
+[pretty()] function to get a nice multi-line [string]. To
 fill the variable [d2] with the content stored in [str1], we
-first have to apply [parseJson()] on the [string]{.str}, and then
+first have to apply [parseJson()] on the [string], and then
 use [to()] to unmarshal the json node into the matching
 [object] type.
 
@@ -12592,7 +12592,7 @@ get [false] as result for the [of Arc] test for the
 
 
 When we have to store different data types in one container, then one
-solution is to use [object]{.obj} variants, which should work with the
+solution is to use [object] variants, which should work with the
 [json] module. Another obvious possibility is to just copy the
 data into containers with the appropriate static type before storing to
 an external medium, and copy them back when we read the data back from
@@ -12681,7 +12681,7 @@ for el in d2.elements:
 
 
 For this example program, we use the object-orientated programming style
-and keep all the geometric [object]{.obj} instances as references in a
+and keep all the geometric [object] instances as references in a
 single sequence. Note that doing this is not always a good idea, as this
 OOP style with the use of references and dynamic run-time dispatch can
 be slower due to many small heap allocations for each [ref]
@@ -12691,29 +12691,29 @@ for each of our data types can be a better solution, and in that way you
 have more control whenever you process the data, for drawing them on the
 screen or user interaction for example. Maybe you want to draw all the
 lines first? But there can be situations where we really need to have
-all the [objects]{.obj} as references in a single container. A typical
-situation is, that we use an [RTree] for fast [object]{.obj}
-location. [RTrees]{.ndef} are data structures, that can store
-two-dimensional or multidimensional geometric [objects]{.obj} and their
+all the [objects] as references in a single container. A typical
+situation is, that we use an [RTree] for fast [object]
+location. [RTrees] are data structures, that can store
+two-dimensional or multidimensional geometric [objects] and their
 rectangular bounding boxes in a tree-like fashion for fast
-[object]{.obj} location. This may be used in a drawing program, so that
+[object] location. This may be used in a drawing program, so that
 coordinates of a user mouse click can be fast matched to an
-[object]{.obj}. For such a use case, we would really prefer to have all
-the [object]{.obj} instances available in one single [RTree], and
-not use one [RTree] data structure for each [object]{.obj} shape.
+[object]. For such a use case, we would really prefer to have all
+the [object] instances available in one single [RTree], and
+not use one [RTree] data structure for each [object] shape.
 
 
 
 Our program defines an additional [Storage] data type, which
 contains homogeneous sequences for each possible geometric shape. We
 then copy all our [ref] [objects] from the elements sequence
-in the matching sequences of the storage [object]{.obj} using the
+in the matching sequences of the storage [object] using the
 dynamic [of] type query to select the exactly matching sequence.
 
 
 
 After that, we can use the already known JSON functions to serialize the
-storage [object]{.obj} into a [string]{.str}, store the [string]{.str}
+storage [object] into a [string], store the [string]
 to a file, read it back, and deserialize the data again into a different
 variable of [Storage] data type. Finally, we use a simple
 [for] loop to copy the [ref] [objects] from the
@@ -12723,7 +12723,7 @@ d2. For storing the data to an external nonvolatile medium, we use the
 close, [write()] and [read()]. Their use should be
 obvious: We pass an uninitialized variable of [File] data type, a
 file name, and a file mode to [open()], use [write()] to
-write the whole [string]{.str}, and use [readAll()] to read the
+write the whole [string], and use [readAll()] to read the
 data back. When done with each file, we use [close()] to close
 the file. The [File] data type is part of the [io] module,
 which is again part of the [system] module, so we don't have to
@@ -12735,7 +12735,7 @@ of the book.
 
 
   -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     We should mention that unfortunately, live is not always that easy, as sometimes we can not freely select the textual output format. Imagine that you create a CAD (computer aided design) tool that should be compatible with another existing tool. In this case, the textual storage format is already defined by the existing tool, and generally that format does not match the JSON or YAML file format. Even when the format should be one of these, matching it exactly would be difficult. While writing out own data in that foreign format is still not really difficult, as we can just write single matching [strings]{.str}, reading in the textual data is more complicated: Typically, we would read the input file line by line, and we would have to inspect and interpret each input [string]{.str}, maybe by use of regular expressions or a custom parser. That generally includes handling of missing or invalid data.
+     We should mention that unfortunately, live is not always that easy, as sometimes we can not freely select the textual output format. Imagine that you create a CAD (computer aided design) tool that should be compatible with another existing tool. In this case, the textual storage format is already defined by the existing tool, and generally that format does not match the JSON or YAML file format. Even when the format should be one of these, matching it exactly would be difficult. While writing out own data in that foreign format is still not really difficult, as we can just write single matching [strings], reading in the textual data is more complicated: Typically, we would read the input file line by line, and we would have to inspect and interpret each input [string], maybe by use of regular expressions or a custom parser. That generally includes handling of missing or invalid data.
   -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -12744,15 +12744,15 @@ References:
 
 
 
--   [https://nim-lang.org/docs/json.html](https://nim-lang.org/docs/json.html){.bare}
+-   [https://nim-lang.org/docs/json.html](https://nim-lang.org/docs/json.html)
 
--   [https://nim-lang.org/docs/io.html](https://nim-lang.org/docs/io.html){.bare}
+-   [https://nim-lang.org/docs/io.html](https://nim-lang.org/docs/io.html)
 
--   [https://nim-lang.org/docs/marshal.html](https://nim-lang.org/docs/marshal.html){.bare}
+-   [https://nim-lang.org/docs/marshal.html](https://nim-lang.org/docs/marshal.html)
 
--   [https://github.com/status-im/nim-serialization](https://github.com/status-im/nim-serialization){.bare}
+-   [https://github.com/status-im/nim-serialization](https://github.com/status-im/nim-serialization)
 
--   [https://nimyaml.org/](https://nimyaml.org/){.bare}
+-   [https://nimyaml.org/](https://nimyaml.org/)
 
 
 
@@ -12763,17 +12763,17 @@ References:
 
 
 In the previous section, we learned how we can store structured data
-like a sequence of [objects]{.obj}, in human-readable form to
+like a sequence of [objects], in human-readable form to
 nonvolatile media by use of the [json] module.
 
 
 
-Text in form of a single [string]{.str}, or in form of a container
-holding multiple [strings]{.str}, is some kind of unstructured data,
+Text in form of a single [string], or in form of a container
+holding multiple [strings], is some kind of unstructured data,
 which we can write directly to nonvolatile storage, and later read it
 back. We can do the same with containers of basic, unstructured data
 types like integer or floating point numbers, and with some restrictions
-we can even write [tuples] or [objects]{.obj} directly as raw
+we can even write [tuples] or [objects] directly as raw
 bits and bytes to external storage and read it back later. Of course,
 this way the stored data is a binary blob, which can not be read or
 modified by other tools, like a text editor. But that may be not
@@ -12803,7 +12803,7 @@ this interface concept is realized by storing a set of function
 When we have to store unstructured data like text, it is not always
 clear if we better should use [Files] or [Streams].
 [Streams] may be the better choice when we (also) want to use a
-[string]{.str} as data source like a file or when we need the
+[string] as data source like a file or when we need the
 [peek()] functions of the [streams] module to access data
 without advancing the position in the stream.
 
@@ -12881,18 +12881,18 @@ data.
 Module [io] provides multiple overloaded [open()]
 [procs]. We use here a variant which returns a file, and raises
 an exception for the unlikely case of an error. We provide a file name
-and a file mode as parameters. We use mode [fmWrite]{.const}, as we want
-to create a new file. Note that [fmWrite]{.const} would clear the
-content of an existing file, so we can not use [fmWrite]{.const} to
+and a file mode as parameters. We use mode [fmWrite], as we want
+to create a new file. Note that [fmWrite] would clear the
+content of an existing file, so we can not use [fmWrite] to
 append data to an existing file. We would have to use
-[fmReadWriteExisting]{.const} or [fmAppend]{.const} to append data to an
+[fmReadWriteExisting] or [fmAppend] to append data to an
 already existing file. As this [open()] [proc] can raise
 an exception, it may make sense to enclose it in a try/except block, or
 we could use an [open()] variant which returns a boolean value to
 indicate success instead. When the file is successfully opened, we can
 use [procs] like [write()] or [writeLine()] to
-write text [strings]{.str} to the file. Both [procs] accept
-multiple arguments and apply the stringify operator [\$]{.op} on them
+write text [strings] to the file. Both [procs] accept
+multiple arguments and apply the stringify operator [\$] on them
 before writing the content. [WriteLine()] writes a
 [\'\\n\'] after the last argument to start a new line. When done,
 we call [close()] to close the file. The operating system would
@@ -12925,14 +12925,14 @@ failed, e.g. because the storage medium had no capacity left.
 When performance really matters, we should note that passing non-string
 arguments to [write()] or [writLine()] [procs]
 using their optional auto-stringify for us, involves allocation of new
-[strings]{.str} and cost some performance. When we have in our program
-already a [string]{.str} variable available, it can be faster to convert
+[strings] and cost some performance. When we have in our program
+already a [string] variable available, it can be faster to convert
 our data into that variable first and then pass that variable to the
 [write()] or [writeLine()] [procs].
 
 
 
-Reading [strings]{.str} from a file works very similar:
+Reading [strings] from a file works very similar:
 
 
 
@@ -12954,10 +12954,10 @@ main()
 
 
 The [readLine()] [proc] reads in a line of text. The
-[LF]{.const}, [CR]{.const} or [CRLF]{.const} line end markers are not
-part of the returned text [string]{.str}. Of course, we may get an empty
-[string]{.str} with length zero back, when we read a line which
-immediately starts with [LF]{.const}, [CR]{.const} or [CRLF]{.const}, or
+[LF], [CR] or [CRLF] line end markers are not
+part of the returned text [string]. Of course, we may get an empty
+[string] with length zero back, when we read a line which
+immediately starts with [LF], [CR] or [CRLF], or
 we may get back a [string] with no visible characters but only a
 few spaces or tabulator characters [\'\\t\'] when a line contains
 only white space. When our [read()] operations have moved the
@@ -12967,10 +12967,10 @@ content, then an exception is raised.
 
 
 The [io] module provides a [readLine()] [proc] that
-returns a newly allocated [string]{.str}, and one that takes an existing
-[string]{.str} as a [var] parameter. The latter may be a bit
+returns a newly allocated [string], and one that takes an existing
+[string] as a [var] parameter. The latter may be a bit
 faster, as it can avoid the allocation of a new buffer when the passed
-[string]{.str} has already enough capacity.
+[string] has already enough capacity.
 
 
 
@@ -13016,17 +13016,17 @@ position to the end of the file, we called [setFilePos()] to move
 again to the start position. The [readLines()] [proc]
 takes a filename and the number of lines to read as parameters, and
 returns a [seq] of [strings]. When the file does not
-contain at least the number of requested lines, an [EOF]{.const}
+contain at least the number of requested lines, an [EOF]
 exception is raised. Another provided [proc] is
 [readAll()], which reads the entire file content into a returned
-[string]{.str} variable. For [readAll()] to work, the actual file
+[string] variable. For [readAll()] to work, the actual file
 position has to be the start of the file. In case of an error, an
 exception is raised.
 
 
 
 We can also write and read binary data directly to a file, without
-converting it to (human-readable) [strings]{.str} first:
+converting it to (human-readable) [strings] first:
 
 
 
@@ -13061,7 +13061,7 @@ of binary file access. Fast storing big data sets with restricted
 hardware may be a use case, e.g. storing a [float32] takes only 4
 bytes on the storage medium and file io is fast, while that number as
 human-readable digits may need more than 8 bytes (1.234567E3) and
-converting to [string]{.str} and parsing back costs some time.
+converting to [string] and parsing back costs some time.
 
 
 
@@ -13111,7 +13111,7 @@ But of course, this is dangerous and fragile. We just show that example,
 as beginner typically ask about it, and may want to try it at least
 once. Obviously this can only work, when the [tuples] or
 [objects] contain only plain data types, that is no
-[string]{.str}, no references and of course no other nested container
+[string], no references and of course no other nested container
 types like sequences or tables. And reading back data may fail, when we
 use a different OS or a different compiler version.
 
@@ -13150,7 +13150,7 @@ References:
 
 
 
--   [https://nim-lang.org/docs/io.html](https://nim-lang.org/docs/io.html){.bare}
+-   [https://nim-lang.org/docs/io.html](https://nim-lang.org/docs/io.html)
 
 
 
@@ -13164,7 +13164,7 @@ which was introduced by languages like C or Modula-2 decades ago. The
 [FileStream] and a [StringStream] implementation, which
 behaves very similar. Nim's [streams] module provides similar
 functions as the [io] module with its [File] data type, but
-it can operate on [strings]{.str} instead of on [Files], and it
+it can operate on [strings] instead of on [Files], and it
 provides a set of [peek()] functions to access data at the
 current read position without moving forward. And some functions are
 more robust, for example closing a stream multiple times does not crash
@@ -13211,14 +13211,14 @@ main()
 
 We test again, if a file with that name already exists. Then we try to
 create a new [FileStream] by using file mode
-[fmReadWrite]{.const}, so that we can write and read from that file.
+[fmReadWrite], so that we can write and read from that file.
 Finally, we write two numbers, which are automatically converted to
 [strings], set the file position back to the beginning, and
 verify what we wrote by reading it in again, before we close the stream.
 
 
 
-In a very similar way, we can write to and read from [string]{.str}
+In a very similar way, we can write to and read from [string]
 streams:
 
 
@@ -13258,25 +13258,25 @@ position or relative to the file end, [streams.setPosition()]
 always use absolute values, that is positions measured from the
 beginning of the stream. The [streams] module provides also the
 low level [procs] [readData()] and [readDataStr()],
-which reads data to a memory region or into a [string]{.str}, and
+which reads data to a memory region or into a [string], and
 returns the actual number of bytes read to indicate success. And as for
 the [io] module, a [proc] [readAll()] is available
-to read all data of a stream into the returned [string]{.str} variable.
+to read all data of a stream into the returned [string] variable.
 
 
 
 The [procs] [writeLine()] writes the passed arguments
 always as [strings]. The overloaded [write()]
 [procs] with [varargs] arguments write the passed values
-as [strings]{.str} and apply the stringify operator [\$]{.op} if
+as [strings] and apply the stringify operator [\$] if
 necessary. The same does the [writeLine()] [proc], but it
 writes a newline character, when all passed variables have been written.
-One more overloaded write [proc] for single [string]{.str}
+One more overloaded write [proc] for single [string]
 parameters exist.
 
 
 
-But for single non [string]{.str} arguments a generic [write()]
+But for single non [string] arguments a generic [write()]
 [proc] is used, which writes numbers (and other data types like
 boolean types or single characters) directly in binary form without
 converting them to [strings].
@@ -13332,7 +13332,7 @@ main()
 
 
 
-In the example above, we write a three byte long [string]{.str} and a
+In the example above, we write a three byte long [string] and a
 [float64] to the file stream. We call [setPosition(0)], to
 read the stream from the beginning again, and then read in an
 [int16] with the function [peekint16()] without moving the
@@ -13347,7 +13347,7 @@ if the file has really the expected size.
 
 
 The [streams] module provides many functions, and the possible
-writing data as [strings]{.str} or in binary form can make using that
+writing data as [strings] or in binary form can make using that
 module a bit daunting at first. But most [procs] have examples in
 the API docs, which helps you to use it.
 
@@ -13355,13 +13355,13 @@ the API docs, which helps you to use it.
 
 
 
-For reading [strings]{.str} and whole lines, the [streams] module
+For reading [strings] and whole lines, the [streams] module
 provides functions like [readLine()], [peekLine()],
 [readStr()] and [peekStr()] each in a variant which
-returns a newly allocated [string]{.str}, and one that uses a passed
-[var] parameter to return the [string]{.str}. The variants with
+returns a newly allocated [string], and one that uses a passed
+[var] parameter to return the [string]. The variants with
 [var] parameters may be a bit faster, as they can avoid allocating
-a new [string]{.str}, when the passed in [var] parameter has
+a new [string], when the passed in [var] parameter has
 already enough capacity.
 
 
@@ -13372,7 +13372,7 @@ References:
 
 
 
--   [https://nim-lang.org/docs/streams.html](https://nim-lang.org/docs/streams.html){.bare}
+-   [https://nim-lang.org/docs/streams.html](https://nim-lang.org/docs/streams.html)
 
 
 
@@ -13383,17 +13383,17 @@ References:
 
 
 
-[String]{.str} processing is a wide area. Nim's standard library
+[String] processing is a wide area. Nim's standard library
 provides various pure Nim modules like [strutils],
 [parseutils] and [strscans] for supporting this task, and
 the impure [re] and [nre] modules and external packages
-supports more advanced operations like [string]{.str} pattern matching
+supports more advanced operations like [string] pattern matching
 with [regular expressions]{.italic} (regex) or by use of the [parsing
 expression grammar]{.italic} (PEG). We will start with the
 [strutils] module, which is one of the mostly used modules of the
 Nim standard library. Then we will introduce some more specialized
 modules like [strscans], [parsecsv], [parseutils] and
-[strformat]. While parsing [strings]{.str} with regular
+[strformat]. While parsing [strings] with regular
 expressions or by use of the parsing expression grammar is very flexible
 and powerful, it is not that easy, not the fastest solution, and not
 that often really needed. So we have moved the Regex section to the end
@@ -13402,26 +13402,26 @@ where we discuss some useful external packages.
 
 
 
-Whenever we do [string]{.str} processing in Nim, we should care a bit
-for performance, as some [string]{.str} operations can be slow by
+Whenever we do [string] processing in Nim, we should care a bit
+for performance, as some [string] operations can be slow by
 design. For simple tasks, we should prefer to use functions from the
 simple modules like [strutils] when possible, and use Regex or PEG
 only when really necessary or when performance is uncritical. And even
-when we use elementary simple functions like a [string]{.str} split, it
+when we use elementary simple functions like a [string] split, it
 is generally good to have a feeling how the requested operations may
-work. Whenever [string]{.str} functions return a [string]{.str} as a
+work. Whenever [string] functions return a [string] as a
 result, this implies an allocation, which takes some time and consumes
 some memory. An example is the [split()] operation, which returns
 a sequence of multiple [strings]. The [split()] function
 is easy to use, so it is often the first choice when we read in lines of
 text from files and want to process it. But as for each section of the
-split line a [string]{.str} is allocated, it may be not as fast as
+split line a [string] is allocated, it may be not as fast as
 desired. In some cases the compiler may be able to optimize the slitting
 process, but it may be also a good idea to think about other ways to
 extract the data, maybe by applying [procs] from the
 [strscans] module, which can parse lines directly into passed
 [var] parameters, avoiding unnecessary allocations. Nim 2.0 may
-get support for [view types]{.ndef}, which functions like split() may
+get support for [view types], which functions like split() may
 use as return types to reuse slices of the initial string instead of
 allocating new result strings.
 
@@ -13429,13 +13429,13 @@ allocating new result strings.
 
 
 
-Remember that Nim [strings]{.str} are value types and have value
-semantic. [String]{.str} assignment copies the [string]{.str} content
+Remember that Nim [strings] are value types and have value
+semantic. [String] assignment copies the [string] content
 and does not create just a reference as in some other programming
-languages. Nim defines also a [string]{.str} variant called
+languages. Nim defines also a [string] variant called
 [TaintedString], which is mainly just an alias for an ordinary
-[string]{.str}, as long as the taint mode is not turned on. Functions
-like [io.readLine()] return tainted [strings]{.str}, which
+[string], as long as the taint mode is not turned on. Functions
+like [io.readLine()] return tainted [strings], which
 typically can be used like ordinary [strings].
 
 
@@ -13445,51 +13445,51 @@ typically can be used like ordinary [strings].
 ### Basic string operations
 
 
-We discussed Nim's [string]{.str} data type already in part II of the
+We discussed Nim's [string] data type already in part II of the
 book. Remember that a [string] in Nim is a variable size
-container for ASCII characters. [Strings]{.str} can be plain ASCII
-[strings], or the bytes of the [string]{.str} can be interpreted
+container for ASCII characters. [Strings] can be plain ASCII
+[strings], or the bytes of the [string] can be interpreted
 as Unicode glyphs. Nim has also a [cstring] data type, which was
 initially introduced to be compatible with the character [arrays]
 used in C libraries as [strings], but is now called compatible
-[string]{.str} as [cstrings] do also support the JavaScript
-backend. Nim [strings]{.str} can be passed directly to C libraries, as a
-Nim [string]{.str} contains a [Null] terminated buffer for the
-actual data, which is identical to a C language [string]{.str}. So
-whenever we convert a Nim [string]{.str} to a C language [string]
-or pass a Nim [string]{.str} to a C library, this is free of costs,
-while converting a C [string]{.str} to a Nim [string]{.str} always means
-allocating a new Nim [string]{.str} and coping the data content.
-Technically, for a Nim [string]{.str} [s] [addr s\[0\]] is
-the C [string]{.str} [pointer], called \* char in C language.
-Whenever we pass [strings]{.str} to C libraries, we have to care for the
+[string] as [cstrings] do also support the JavaScript
+backend. Nim [strings] can be passed directly to C libraries, as a
+Nim [string] contains a [Null] terminated buffer for the
+actual data, which is identical to a C language [string]. So
+whenever we convert a Nim [string] to a C language [string]
+or pass a Nim [string] to a C library, this is free of costs,
+while converting a C [string] to a Nim [string] always means
+allocating a new Nim [string] and coping the data content.
+Technically, for a Nim [string] [s] [addr s\[0\]] is
+the C [string] [pointer], called \* char in C language.
+Whenever we pass [strings] to C libraries, we have to care for the
 fact that Nim's garbage collector may deallocate the [string]
-automatically. Most C libs create copies of passed [strings]{.str}, when
-the library use the [string]{.str} for a longer time span. GTK for
+automatically. Most C libs create copies of passed [strings], when
+the library use the [string] for a longer time span. GTK for
 example, does this with text for its widgets. But when the C library
-does not copy the [string]{.str}, but use it directly for a longer time,
-then it can occur that the Nim code frees the [string]{.str}, as the
-only one Nim variable referring to the [string]{.str} goes out of scope,
-but the C library still uses the [string]{.str}. For that rare case, we
-may call [GC_ref()] on the [string]{.str} to prevent garbage
+does not copy the [string], but use it directly for a longer time,
+then it can occur that the Nim code frees the [string], as the
+only one Nim variable referring to the [string] goes out of scope,
+but the C library still uses the [string]. For that rare case, we
+may call [GC_ref()] on the [string] to prevent garbage
 collection, but that may generate memory leaks then. For the case that C
 libraries create [strings], they provide generally also a
-function to deallocate the [string]{.str}. When we use such a C
+function to deallocate the [string]. When we use such a C
 function, it is typically the best solution, that we copy the
-[string]{.str} from the C library to a Nim [string]{.str} and
-immediately deallocate the C [string]{.str} by a call of the provided
+[string] from the C library to a Nim [string] and
+immediately deallocate the C [string] by a call of the provided
 [free()/dealloc()] function. For most C libraries, there exist
 good high level bindings, which do not have this issues, so we mostly
 can use the C libs like pure Nim libs.
 
 
 
-Nim's [system] module provides already some basic [string]{.str}
+Nim's [system] module provides already some basic [string]
 operations, like accessing single characters by the subscript operator
-[\[\]]{.op}, accessing slices of multiple adjacent characters, or
-joining multiple [strings]{.str} with the [&]{.op} operator. The
+[\[\]], accessing slices of multiple adjacent characters, or
+joining multiple [strings] with the [&] operator. The
 overloaded [add()] functions to append single characters or other
-[strings]{.str} to existing [string]{.str} variables are also provided
+[strings] to existing [string] variables are also provided
 by the [system] module.
 
 
@@ -13505,24 +13505,24 @@ s[0 .. 4] = "We low" # result is: "We love Nim!"
 
 
 
-We start the above example by assigning to the [string]{.str} variable
-[s] a string literal, then we append one more [string]{.str}
+We start the above example by assigning to the [string] variable
+[s] a string literal, then we append one more [string]
 literal, and finally replace the last character and the first five
-characters by another character and by another [string]{.str}. Note that
+characters by another character and by another [string]. Note that
 by using the slice operator, we can not only replace character ranges,
 but we can also replace slices of different length. This way, we can
 also delete ranges in the [string] by replacing it with the empty
-[string]{.str} [\"\"].
+[string] [\"\"].
 
 
 
-The [system] module also defines the stringify operator [\$]{.op},
-which converts expressions to the [string]{.str} presentation when we
+The [system] module also defines the stringify operator [\$],
+which converts expressions to the [string] presentation when we
 put it in front of it. Procedures like [echo()] apply the
 stringify operator automatically to all of its arguments when necessary.
 And the [system] module provides the [contains()] function,
-which we can use to test if a [string]{.str} contains a character.
-Instead of [contains()], we can also use the [in]{.op} operator.
+which we can use to test if a [string] contains a character.
+Instead of [contains()], we can also use the [in] operator.
 
 
 
@@ -13539,10 +13539,10 @@ The [system] module also provides the [procs]
 used for optimizing purposes. The function [newString(n)] creates
 a [string] of length [n], but with uninitialized content.
 We would have to assign characters to the positions [0 .. n-1] to
-create a valid [string]{.str}. The function [newStringOfCap()]
-creates a [string]{.str} with length zero, but with a buffer capacity of
+create a valid [string]. The function [newStringOfCap()]
+creates a [string] with length zero, but with a buffer capacity of
 [n] characters. When we know the needed buffer capacity, or at
-least a lower bound of it, it makes sense to create the [string]{.str}
+least a lower bound of it, it makes sense to create the [string]
 with [newStringOfCap()] with optimal buffer size to avoid
 reallocations. Of course, we could still append more data, Nim would
 allocate a larger buffer and copy the old content.
@@ -13564,22 +13564,22 @@ for c in 'a' .. 'z':
 
 
 
-Filling in characters into an existing [string]{.str} by use of the
-subscript operator [\[\]]{.op} is faster than appending single
+Filling in characters into an existing [string] by use of the
+subscript operator [\[\]] is faster than appending single
 characters with the [add()] function, because the [add()]
-function has to check if the [string]{.str} has still enough capacity
-and because [add()] has to increase the actual [string]{.str}
+function has to check if the [string] has still enough capacity
+and because [add()] has to increase the actual [string]
 length by one for each call.
 
 
 
 Note, that a single character like [\'a\'] is very different from
-a [string]{.str} with only one character like [\"a\"]. A character
+a [string] with only one character like [\"a\"]. A character
 in Nim is nothing more than a single byte, while a
-[string]{.str} --- even one with only one character or an empty
+[string] --- even one with only one character or an empty
 one --- is an opaque entity with length, capacity and a [pointer]
 to a data buffer. When a single character is sufficient, we should use
-that and not a [string]{.str} containing a single character. A function
+that and not a [string] containing a single character. A function
 call like [s.add(\"a\")] may produce less optimized code than
 [s.add(\'a\')], but maybe the compiler optimizes the former for
 us. When we consider optimization, we may wonder if in
@@ -13597,7 +13597,7 @@ echo s
 
 
 
-line 3 allocates a new [string]{.str} or just copies the [string]{.str}
+line 3 allocates a new [string] or just copies the [string]
 literal [\"Bye.\"] in the existing data area. Well we would hope
 for the latter of course.
 
@@ -13623,7 +13623,7 @@ operation is avoided.
 
 
 Often used functions are [len()] and [setLen()] to query
-and set the length of a [string]{.str}. While [len()] looks like
+and set the length of a [string]. While [len()] looks like
 a function call, it is a compiler intern function, so calls are fully
 optimized. So it is OK to write
 
@@ -13642,35 +13642,35 @@ It is not necessary to introduce a temporary variable like [let l =
 s.len()] to avoid many function calls. In C this is different, as
 in C a call of function [strLen()] would not only imply a
 function call, but that function would really have to count all the
-characters up to the terminating [\'\\x0\'], as C [strings]{.str}
+characters up to the terminating [\'\\x0\'], as C [strings]
 have no length field. The function [setLen()] is mostly used to
 truncate [strings]. A call like [s.setLen(0)] makes
-[s] look like a newly allocated [string]{.str}, but its data
-buffer can be reused. Reusing [strings]{.str} is generally better for
+[s] look like a newly allocated [string], but its data
+buffer can be reused. Reusing [strings] is generally better for
 performance than allocating many new [strings]. The
-[setLen()] function is rarely used to increase the [string]{.str}
+[setLen()] function is rarely used to increase the [string]
 length --- in that case an allocation of a larger data buffer can occur,
-and the [string]{.str} would still look the same as initially all the
-new [string]{.str} positions would still contain the default binary zero
+and the [string] would still look the same as initially all the
+new [string] positions would still contain the default binary zero
 content. We would have to fill in actual characters by use of the
-[\[\]]{.op} subscript operator. In Nim version 1.6, a call of
+[\[\]] subscript operator. In Nim version 1.6, a call of
 [s.setLen(0)] overwrites the whole old content with
 [\'\\0\'], which can cost some performance and may be avoided in
 version 2.0. To get the lowest and highest character index of a
-[string]{.str}, we can use [s.low] and [s.high].
+[string], we can use [s.low] and [s.high].
 [s.low] should always return zero, and [high()] is
 identical to [len() - 1], so [high()] is [-1] for an
-empty [string]{.str}. Note that while calling [high()] and
+empty [string]. Note that while calling [high()] and
 [len()] on a Nim [string] has no costs, this may be
-different to C [strings]{.str} as these have no length field.
+different to C [strings] as these have no length field.
 
 
 
-The [system] module provides the overloaded [&]{.op} operator,
+The [system] module provides the overloaded [&] operator,
 which we can use to concatenate [chars] and [strings], the
-[&=]{.op} operator to append a new [string]{.str} to an existing
-[string]{.str}, and the [add()] functions to append characters or
-[strings]{.str} to an existing [string]{.str}. For best performance, we
+[&=] operator to append a new [string] to an existing
+[string], and the [add()] functions to append characters or
+[strings] to an existing [string]. For best performance, we
 should try to use always the most simple, \"native\" operations, at
 least when that does not make the code ugly, or we know for sure that
 the compiler optimizes it for us.
@@ -13688,13 +13688,13 @@ s.add('m') # better
 
 
 The function [add()] can be also used to add a [cstring]
-to a [string]{.str}, and the JS backend allows even to append one
+to a [string], and the JS backend allows even to append one
 [cstring] to another one by [add()] calls.
 
 
 
 Module [system] also exports a [substr()] [proc],
-which copies and returns a [slice] of a [string]{.str}. Overloads
+which copies and returns a [slice] of a [string]. Overloads
 with optional first index with default [0] and optional last index
 with default [s.high] exists.
 
@@ -13714,9 +13714,9 @@ s[0 .. 5] = "" # fail
 
 
 
-And of course, [==]{.op} and [!=]{.op} operators for [string]{.str}
-comparison are provided. To test if a [string]{.str} is empty, we can
-compare with an empty [string]{.str} literal or test if [len()]
+And of course, [==] and [!=] operators for [string]
+comparison are provided. To test if a [string] is empty, we can
+compare with an empty [string] literal or test if [len()]
 is zero. The latter is guaranteed to have the best performance, but the
 former is a bit shorter and should be not bad performance wise. Some
 other languages provide an [empty()] test function for this, we
@@ -13733,14 +13733,14 @@ if s.len != 0:
 
 
 
-When we pass a [string]{.str} to a [proc] that does no operations
+When we pass a [string] to a [proc] that does no operations
 with it, maybe it only calls [echo()] or [stdout.write()]
 to print it, then it may have a tiny performance advantage to pass it as
 [cstring]. This is similar as we may pass sequences as
 [openArray] to functions, which also avoids one level of
-indirection. Also note, that while a Nim [string]{.str} is a value type,
+indirection. Also note, that while a Nim [string] is a value type,
 so we can not test it for [nil] or return [nil] from a
-[proc] that shall return a [string]{.str}, this restriction does
+[proc] that shall return a [string], this restriction does
 not hold for [cstrings]. Unfortunately, recent Nim versions have
 started to complain when we use cstrings as proc parameters. In some
 scenarios, e.g. when we use Nim trampoline functions to call C
@@ -13753,7 +13753,7 @@ libraries, this complains may be not really justified.
 
 
 The module [stringutils] provides a set of functions (120
-currently) and a few [iterators] for simple [string]{.str}
+currently) and a few [iterators] for simple [string]
 operations. Using that functions and [iterators] is simple in most
 cases and mosty well explained in the API docs. Remembering which
 functions exist, their exact name and the function arguments can be a
@@ -13764,7 +13764,7 @@ actual performance may be not as good as expected.
 
 
 Performance critical operations are generally that one which has to
-allocate new [strings]{.str} or that has to shift many characters, like
+allocate new [strings] or that has to shift many characters, like
 text inserting operations. Note that some functions of this module, like
 [toUpperAscii()] work only with the lower and upper ASCII
 letters. For Unicode operations we may need the [unicode] module.
@@ -13778,7 +13778,7 @@ invisible characters {\' \', \'\\t\', \'\\v\', \'\\c\', \'\\n\',
 \'\\f\'} (space, tab, vertical tab, carriage return, new line, form
 feed). Note that we have two possible newline characters {\'\\c\',
 \'\\n\'} that starts a new line, and that older windows text files may
-still use the two character [string]{.str} \"\\c\\n\" to start a new
+still use the two character [string] \"\\c\\n\" to start a new
 line. The character set {\'A\'..\'Z\', \'a\'..\'z\'} is called (ASCII)
 letters, the set {\'0\'..\'9\'} (decimal) digits and the set
 {\'0\'..\'9\', \'A\'..\'F\', \'a\'..\'f\'} hex digits used to represent
@@ -13788,8 +13788,8 @@ hexadecimal numbers.
 
 
 
-The [stringutils] module support [string]{.str} interpolation by
-use of the [%]{.op} operator.
+The [stringutils] module support [string] interpolation by
+use of the [%] operator.
 
 
 
@@ -13806,12 +13806,12 @@ echo format("I know $# programming languages.", 2)
 
 
 We can use [\$1] up to [\$9] to mark positions where
-[string]{.str} [n] from the [array] should be inserted, or
-just [\$] to insert the [strings]{.str} in the order as they
+[string] [n] from the [array] should be inserted, or
+just [\$] to insert the [strings] in the order as they
 appear in the [array]. We can also use named insert markers and
-specify name-value [string]{.str} pairs in the [array]. For a
-single [string]{.str}, we can omit the [array] and pass just as
-[string]{.str}, and finally we can use the [format()]
+specify name-value [string] pairs in the [array]. For a
+single [string], we can omit the [array] and pass just as
+[string], and finally we can use the [format()]
 [proc] to enable stringify for the parameters.
 
 
@@ -13846,24 +13846,24 @@ echo str.split(", ", 4)
 
 
 
-We used the [split()] variant, which accepts a [string]{.str} as
+We used the [split()] variant, which accepts a [string] as
 split marker. This function accepts one optional parameter for the
 number of splits to execute and returns a sequence containing the single
-[strings]. The split marker [string]{.str}, also called
+[strings]. The split marker [string], also called
 separator, is removed from the [strings]. The default value for
 the number of splits is [-1] indicating that we want a split at
 each separator position. If we specify a positive number [n], then
 only [n] splits are executed and the last element of the returned
-sequence will contain the remainder of the [string]{.str}. When we
+sequence will contain the remainder of the [string]. When we
 specify for the intended splits a value, which is larger than the number
 of contained split markers, then we get a full split.
 
 
 
 The reason why this function is not very fast is that it has to allocate
-a sequence for the return value and a new [string]{.str} for each split
-and one more for the last [string]{.str} or the remainder. For the case
-that we do need only the first few [strings]{.str} of the split, it is a
+a sequence for the return value and a new [string] for each split
+and one more for the last [string] or the remainder. For the case
+that we do need only the first few [strings] of the split, it is a
 good idea to specify the number of actual splits to increase
 performance.
 
@@ -13875,9 +13875,9 @@ separators, so we may split at space, tabulator, comma or semicolon with
 {\' \', \'\\t\', \',\', \';\'}. And a function
 [splitWhitespace()] is available to split at whitespace like
 spaces and tabulators, which removes all the whitespace between the
-[strings]{.str}. Notice that the [split()] function for
-[strings]{.str} or single characters does one split for each separator,
-so we can get empty [strings]{.str} as result as in
+[strings]. Notice that the [split()] function for
+[strings] or single characters does one split for each separator,
+so we can get empty [strings] as result as in
 
 
 
@@ -13896,9 +13896,9 @@ echo str2.splitWhiteSpace()
 
 
 An interesting behavior of [splitWhiteSpace()] is that whitespace
-at the start or end of a [string]{.str} is just ignored, while the
-[split()] function returns additional empty [strings]{.str} when
-the [string]{.str} to split starts or ends with the separator:
+at the start or end of a [string] is just ignored, while the
+[split()] function returns additional empty [strings] when
+the [string] to split starts or ends with the separator:
 
 
 
@@ -13916,7 +13916,7 @@ echo str2.splitWhiteSpace()
 
 
 
-Another function is [splitLines()] which splits a [string]{.str}
+Another function is [splitLines()] which splits a [string]
 at CR, LF or CR-LF characters.
 
 
@@ -13924,14 +13924,14 @@ at CR, LF or CR-LF characters.
 For these splitting functions also [iterator] variants exists,
 which behave like the functions with same name. When we limit for the
 [iterators] the number of splits to perform, we may get as last
-returned value the remained [string]{.str}. You may consult the API docs
+returned value the remained [string]. You may consult the API docs
 for details if necessary.
 
 
 
 Functions with names [rsplit()] are also available which behave
 like [split()] but start the splitting process from the end of
-the [string]{.str}, so we can get the file extension of a file name with
+the [string], so we can get the file extension of a file name with
 something like [filename.rsplit(1)\[\^1\]].
 
 
@@ -13939,7 +13939,7 @@ something like [filename.rsplit(1)\[\^1\]].
 The functions [removePrefix()] and [removeSuffix()] can
 sometimes help to avoid expensive split operations. There is an
 overloaded function that removes all single characters, all characters
-from a set or a single [string]{.str}:
+from a set or a single [string]:
 
 
 
@@ -13978,14 +13978,14 @@ echo s.endsWith("Programming") # false
 An efficient function similar to [find()] is
 [continuesWith()] used like [\"Nim
 Language\".continuesWith(\"Lang\", 4)] which tests if a
-[string]{.str} contains a substring at position [n].
+[string] contains a substring at position [n].
 
 
 
-We can use the [join()] [proc] to join [strings]{.str} in
-[arrays] or sequences to single [strings]{.str} with an optional
-glue [string]{.str}. [Join()] works also when the elements are
-not already [strings]{.str} --- in that case, the stringify operator is
+We can use the [join()] [proc] to join [strings] in
+[arrays] or sequences to single [strings] with an optional
+glue [string]. [Join()] works also when the elements are
+not already [strings] --- in that case, the stringify operator is
 applied first:
 
 
@@ -14026,7 +14026,7 @@ echo s.find("Rust") # -1
 
 
 The [contains()] function can be used to test if a character, a
-set of characters, or a substring is contained in a [string]{.str}.
+set of characters, or a substring is contained in a [string].
 Instead of [contains(s, sub)] we can write [sub in s].
 Note that a function variant for single characters is defined in the
 [system] module.
@@ -14034,8 +14034,8 @@ Note that a function variant for single characters is defined in the
 
 
 The [replace()] function can be used to replace all occurrences
-of a character or a substring in a [string]{.str} and to return the new
-[string]{.str}. We can use [replace()] with an empty replacement
+of a character or a substring in a [string] and to return the new
+[string]. We can use [replace()] with an empty replacement
 to delete a substring. The also available [delete()] function is
 used to delete a range specified by two indices in place.
 
@@ -14054,20 +14054,20 @@ pass.
 
 
 The function [strip()] can be used to remove multiple characters
-from a set at the start and the end of a [string]{.str}. The default
+from a set at the start and the end of a [string]. The default
 character set is whitespace, and per default strip removes characters at
-both ends of the [string]{.str}. The function [stripLineEnd()]
+both ends of the [string]. The function [stripLineEnd()]
 removes a single line end marker as \\r, \\n, \\r\\n, \\f, \\v from the
-end of the [string]{.str}, but only once.
+end of the [string], but only once.
 
 
 
 Sometimes useful is the boolean function [isEmptyOrWhitespace()]
-which checks if a [string]{.str} is empty or contains only whitespace.
+which checks if a [string] is empty or contains only whitespace.
 Also useful can be the function [repeat()] which returns a
-[string]{.str} that contains the passed character or the passed
-[string]{.str} [n] times, and the function [spaces()] which
-returns a [string]{.str} containing only [n] spaces.
+[string] that contains the passed character or the passed
+[string] [n] times, and the function [spaces()] which
+returns a [string] containing only [n] spaces.
 
 
 
@@ -14084,14 +14084,14 @@ lower or upper case ASCII letter or a decimal digit.
 Function [toLowerAscii()] convert all the characters \'A\'..\'Z\'
 to lower case, and [toUpperAscii()] converts all the characters
 \'a\'..\'z\' to upper case. The function argument can be a
-[string]{.str} or just a single character. With
+[string] or just a single character. With
 [capitalizeAscii()] we can convert the first ASCII character of a
-[string]{.str} to upper case.
+[string] to upper case.
 
 
 
 The overloaded functions [count()] can be used to count the
-characters or substrings in a [string]{.str}, and [countLines()]
+characters or substrings in a [string], and [countLines()]
 is available to count the number of lines, where lines are separated by
 CR, LF or CR-LF.
 
@@ -14102,23 +14102,23 @@ Sometimes we may also need functions like [formatFloat()],
 [float] numbers for output purposes. You would have to consult
 the [strutils] API docs for all the format details. An
 [intToStr()] function with an argument to specify the minimal
-[string] length is also available. The [string]{.str} may get
+[string] length is also available. The [string] may get
 leading zeros for alignment.
 
 
 
 Finally, some important functions are the parsing functions like
 [parseFloat()] or [parseInt()] which converts
-[strings]{.str} to [float] or integer numbers. Both raises an
-exception when the [string]{.str} does not contain a valid number.
+[strings] to [float] or integer numbers. Both raises an
+exception when the [string] does not contain a valid number.
 
 
 
 The [strutils] module contains some more not that often used
 function, like functions to convert data to hexadecimal, octal or binary
-representation, or to parse numbers back from that [string]{.str}
+representation, or to parse numbers back from that [string]
 representation into numbers. Other functions like [align()],
-[center()] and [indent()] are available for [string]{.str}
+[center()] and [indent()] are available for [string]
 positioning. We will not try to describe these seldom used functions
 here, as it is hard to remember the detailed behavior. You should skim
 the API docs and consult them when you need one of the exotic functions
@@ -14190,7 +14190,7 @@ We can fix this by passing the extended char set {\'a\'..\'z\',
 \'0\'..\'9\'} to [parseWhile()] or by use of
 [parseUntil()] with a character set that does not belong to a
 name. Both functions return the number of processed characters and
-provide the captured [string]{.str} in the passed var parameter. Note
+provide the captured [string] in the passed var parameter. Note
 that we can use the slice operator .. to specify character ranges for
 the char set parameter when the characters build a continues sequence in
 the ASCII table.
@@ -14214,7 +14214,7 @@ more interested in the version numbers after the name:
 All these functions accept an optional start parameter as last argument.
 A common use case is to use an integer position variable initialized
 with zero, which we increase by the returned value so that the parsing
-can continue at the current position in the [string]{.str}. The next
+can continue at the current position in the [string]. The next
 example will use this strategy. For [parseUntil()] overloaded
 functions are available which gets not a char set but a single character
 or a substring as parameter. These functions stop parsing when the
@@ -14223,7 +14223,7 @@ character or the substring is found and return that position.
 
 
 Functions like [parseInt()] and [parseFloat()] can be used
-to extract numbers from [strings]{.str}:
+to extract numbers from [strings]:
 
 
 
@@ -14271,7 +14271,7 @@ data types.
 
 
 
-Processing of well-defined [strings]{.str} is easy, and with user
+Processing of well-defined [strings] is easy, and with user
 defined matcher functions even text input with less strict shape can be
 processed.
 
@@ -14306,21 +14306,21 @@ if scanf(input, "$w $f,$f,$f,$f", name, x1, y1, x2, y2):
 
 
 The first parameter for the [scanf()] macro is the user input
-[string]{.str}, and the second parameter is a pattern [string]{.str}
-that specifies how the input [string]{.str} should be processed. The
+[string], and the second parameter is a pattern [string]
+that specifies how the input [string] should be processed. The
 following parameters are variables that gets the results of the input
 evaluation. The second parameter has some similarity with a regular
 expression. The letters after the dollar sign specifies the data type of
 the substrings, \$i or \$f ask to process an integer or a floating point
 number, and \$w requests to process an ASCII identifier. Other
 characters are captured verbatim, that is the space character after \$w
-has to match a space in the input [string]{.str}, and the comma
+has to match a space in the input [string], and the comma
 characters that separates the \$f has to match commas in the input
-[string]{.str}. The [scanf()] macro supports capturing of some
+[string]. The [scanf()] macro supports capturing of some
 more data types, i.e. \$c for an arbitrary character or \$s for optional
 white space. The optional white space is not captured, just ignored.
 With the use of \$s our program allows already a more flexible input
-[string]{.str}:
+[string]:
 
 
 
@@ -14335,14 +14335,14 @@ if scanf(input, "$w$s$f,$s$f,$s$f,$s$f", name, x1, y1, x2, y2):
 
 
 
-To allow processing even more flexible input [strings]{.str}, it is
+To allow processing even more flexible input [strings], it is
 possible to use user definable matchers in the form of Nim
 [procs] with a well-defined parameter signature. There are two
 different types of matcher [procs] supported --- matchers to just
-skip a part of the input [string]{.str}, and capturing matchers. For the
+skip a part of the input [string], and capturing matchers. For the
 next example we will use a [proc] which can skip various
 separators like comma, semicolon or white space. And we will use a
-capturing matcher [proc] for the [object]{.obj} name.
+capturing matcher [proc] for the [object] name.
 
 
 
@@ -14395,11 +14395,11 @@ proc sep(input: string; start: int; seps: set[char] = {' ',',',';'}): int =
 
 
 
-The first parameter is the [string]{.str} to process, and the second
+The first parameter is the [string] to process, and the second
 parameter is the position at which the processing should start. (Or in
 other words, the second parameter of integer type is the actual position
-in the input [string]{.str}, that position moves during the whole
-capering process from the start of the input [string]{.str} to its end.
+in the input [string], that position moves during the whole
+capering process from the start of the input [string] to its end.
 The end may not be reached if the capering fails at some point.) The
 last parameter has always the type [set\[char\]] with a default
 value indication which characters that [proc] can process.
@@ -14407,11 +14407,11 @@ Actually, a default value seems to be necessary, but the actual value
 seems not to matter. The [proc] returns the number of characters
 that should be skipped. Zero is a valid return value, so we can support
 optional separators. In most cases separators are necessary to process
-the input [string]{.str}, but we can imagine input formats where
+the input [string], but we can imagine input formats where
 separators are optional, e.g. when an integer number is followed by a
 name. A name never starts with a digit, so the boundary between the two
 values is well-defined. This none capturing matcher [proc] is
-called by use of \$\[sep\] in the pattern [string]{.str}.
+called by use of \$\[sep\] in the pattern [string].
 
 
 
@@ -14427,7 +14427,7 @@ proc stt(input: string; strVal: var string; start: int; n: int): int =
 
 
 
-That [proc] also gets as parameters the input [string]{.str} and
+That [proc] also gets as parameters the input [string] and
 the start position, and has to return the number of processed
 characters. But additionally, a [var] parameter of arbitrary data
 type is used to return the result of the capture, and the last parameter
@@ -14443,7 +14443,7 @@ called in the pattern [string] by using curly braces like
 case all the passed in variables get assigned a value. Currently,
 [scanf()] does not support the capturing of optionally data, as
 the whole processing stops when one capture fails, i.e. when \$i is used
-to request the capture of an integer value, but the input [string]{.str}
+to request the capture of an integer value, but the input [string]
 does not contain decimal digits at the current capture position. In the
 same way, the whole capturing process stops when a user defined
 capturing matcher returns zero as no capturing is possible. So
@@ -14573,7 +14573,7 @@ and the capturing process continues. For the last [scanf()] call
 we give as input only five values, so [scanf()] returns false,
 but the first five values gets assigned values, and the rest has default
 values. One restriction of above code is, that we have always to start
-the input [string]{.str} with [pad], otherwise the processing
+the input [string] with [pad], otherwise the processing
 stops immediately. As [scanf()] does not support the capture of
 boolean values, we use the integer data type for the variables
 [px2] and [py2]. The value zero means that there is no
@@ -14616,10 +14616,10 @@ We want to capture two integer values, each with one or two decimal
 digits. By passing the upper limit of digits to the [ndigits()]
 [proc], we get the intended result even when the user does not
 separate the two numbers with white space. Additionally, we have used
-\$. at the end of the pattern [string]{.str}. The \$. matches only when
-the end of the input [string]{.str} is reached, so that [scanf()]
+\$. at the end of the pattern [string]. The \$. matches only when
+the end of the input [string] is reached, so that [scanf()]
 would return false if there are more characters in the input
-[string]{.str} left.
+[string] left.
 
 
 
@@ -14643,7 +14643,7 @@ So we have not to declare the capering variables in advance. The final
 result of the scan process is returned in an additional boolean
 variable. When we use user defined matchers as above, we have to specify
 the data types of the returned values as additional parameters after the
-pattern [string]{.str}.
+pattern [string].
 
 
 
@@ -14651,7 +14651,7 @@ Additionally, the [strscans] module provides a [scanp()]
 macro which works somewhat similar to PEG or RegEx libraries. We will
 not try to explain the [scanp()] macro, as its use may be too
 difficult for a beginner book. And when we really have to process text
-[strings]{.str} with regular expression grammars, then we can use the
+[strings] with regular expression grammars, then we can use the
 available RegEx or PEG modules, which have no restrictions and work for
 Nim in a similar way as for other programming languages. We will
 introduce the Nim RegEx and PEG modules later in the book --- maybe we
@@ -14664,7 +14664,7 @@ will compare the scanp() macro there.
 
 
 With the [fmt()] macro from the [strformat] module, we can
-format and interpolate [strings]{.str} similar to Python3 with its
+format and interpolate [strings] similar to Python3 with its
 f-strings.
 
 
@@ -14689,10 +14689,10 @@ From the four ways to print some text, the last one with [fmt()]
 is the shortest and perhaps the cleanest. As [fmt()] is a macro,
 which is processed at compile time, there is no unnecessary run-time
 overhead involved. A small restriction of [fmt()] is, that it's
-argument is regarded as a generalized raw [string]{.str} literal. So we
-can not use escape sequences like [\"\\n\"] in the [string]{.str}
+argument is regarded as a generalized raw [string] literal. So we
+can not use escape sequences like [\"\\n\"] in the [string]
 literal. But the [strformat] API docs mention various solutions
-for this: We can use the unary [&]{.op} operator instead of the
+for this: We can use the unary [&] operator instead of the
 [fmt()] call, or we can use the notations [{\'\\n\'}],
 [fmt()] or [\"\".fmt].
 
@@ -14761,7 +14761,7 @@ value for integer numbers.
 
 A useful property of the [fmt()] macro is, that we can put an
 equal sign into the curly braces to get the initial expression both as
-[string]{.str} and as interpolated value, as in
+[string] and as interpolated value, as in
 
 
 
@@ -14809,19 +14809,19 @@ References:
 
 
 
--   [https://nim-lang.org/docs/strutils.html](https://nim-lang.org/docs/strutils.html){.bare}
+-   [https://nim-lang.org/docs/strutils.html](https://nim-lang.org/docs/strutils.html)
 
--   [https://nim-lang.org/docs/parseutils.html](https://nim-lang.org/docs/parseutils.html){.bare}
+-   [https://nim-lang.org/docs/parseutils.html](https://nim-lang.org/docs/parseutils.html)
 
--   [https://nim-lang.org/docs/strscans.html](https://nim-lang.org/docs/strscans.html){.bare}
+-   [https://nim-lang.org/docs/strscans.html](https://nim-lang.org/docs/strscans.html)
 
--   [https://nim-lang.org/docs/strformat.html](https://nim-lang.org/docs/strformat.html){.bare}
+-   [https://nim-lang.org/docs/strformat.html](https://nim-lang.org/docs/strformat.html)
 
--   [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression){.bare}
+-   [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
 
--   [https://en.wikipedia.org/wiki/Parsing_expression_grammar](https://en.wikipedia.org/wiki/Parsing_expression_grammar){.bare}
+-   [https://en.wikipedia.org/wiki/Parsing_expression_grammar](https://en.wikipedia.org/wiki/Parsing_expression_grammar)
 
--   [https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions){.bare}
+-   [https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions)
 
 
 
@@ -14832,10 +14832,10 @@ References:
 
 
 
-Together with [strings]{.str}, [arrays] and sequences are the
+Together with [strings], [arrays] and sequences are the
 most important built-in containers for the Nim language. While
 [arrays] have a fixed size defined already at compile time,
-sequences are like [strings]{.str} of dynamic size and can grow when we
+sequences are like [strings] of dynamic size and can grow when we
 append more elements. As [arrays] have fixed size they can be
 allocated on the stack, while due to the dynamic size of sequences the
 actual data buffer has to be allocated on the heap. We explained some
@@ -14875,11 +14875,11 @@ elements in the [proc] as the passed variable behaves like an
 
 
 
-Memory layout of sequences and [strings]{.str} is very similar, both
+Memory layout of sequences and [strings] is very similar, both
 have length, capacity and a data buffer on the heap, and some
 [procs] that work on the data structure have the same names as
 [add()], [len()] and [setlen()] and both support
-operators like [\[\]]{.op}, [&]{.op} and [..]{.op} for access to single
+operators like [\[\]], [&] and [..] for access to single
 elements, and for concatenation and slicing.
 
 
@@ -14915,7 +14915,7 @@ We can initialize sequences by a call of [newSeq()],
 [newSeqOfCap()] or not at all. When we use [newSeq(n)] we
 get a [seq] with [n] elements initialized to binary zero
 each, and we then can just overwrite the elements by use of the
-subscript operator [\[\]]{.op}, which is faster than appending elements
+subscript operator [\[\]], which is faster than appending elements
 with [add()] to an empty [seq]. With
 [newSeqOfCap()] we can allocate a [seq] of size zero but
 with a buffer size of that specified capacity. We can append elements by
@@ -14930,7 +14930,7 @@ reallocation occurs, generally with doubled data buffer size.
 
 We can use the overloaded [add()] [proc] to append single
 elements or to append a whole [array] to a [seq], and the
-[&]{.op} operator is available to join two sequences:
+[&] operator is available to join two sequences:
 
 
 
@@ -14950,7 +14950,7 @@ We can use [len()] to query the length of a [seq] and
 is used to shorten a [seq], that is, to keep the first [n]
 elements, but we can also use [setLen()] to increase the length
 of a [seq]. In that case, the new entries get the value binary
-zero as default, and we can use the subscript operator [\[\]]{.op} to
+zero as default, and we can use the subscript operator [\[\]] to
 fill in actual content. Increasing the length with [setLen()] may
 cause a reallocation if the current capacity is not sufficient.
 Functions [low()] and [high()] are available to get the
@@ -14962,7 +14962,7 @@ is always zero.
 
 
 
-Module [system] provides also the [@]{.op} [array] to
+Module [system] provides also the [@] [array] to
 [seq] operator:
 
 
@@ -15005,9 +15005,9 @@ Note that line three may create a temporary copy of the sequence, which
 may be not that nice for optimal performance. We discussed that topic
 already in part II of the book, Nim 2.0 may improve the situation
 further by introducing views which create no copies. Beside the [s\[a ..
-b\]]{.op} slice operator which includes the elements at position
-[a] and [b], there is [s\[a ..\< b\]]{.op} which does not
-include position [b] and [s\[a .. \^b\]]{.op} where position
+b\]] slice operator which includes the elements at position
+[a] and [b], there is [s\[a ..\< b\]] which does not
+include position [b] and [s\[a .. \^b\]] where position
 [b] is taken from the end of the [seq] or [array],
 e.g. [\^1] is the last position, [\^2] the second last.
 
@@ -15028,7 +15028,7 @@ position upwards. Note that [del()], [delete()],
 
 
 
-Comparison of two [arrays] or sequences by the [==]{.op} operator
+Comparison of two [arrays] or sequences by the [==] operator
 returns [true] when the length as well as all contained items
 matches.
 
@@ -15048,7 +15048,7 @@ last position in the container is reached, so this is a O(n) operation.
 This module defines some useful [procs], [iterators] and
 [templates] for working with [arrays] and sequences. Some
 functions of module [sequtils] use a generic [openArray]
-parameter and so can be used for [strings]{.str} as well. While the
+parameter and so can be used for [strings] as well. While the
 [max()] and [min()] [procs] are available from the
 [system] module, the [minIndex()] and [maxIndex()]
 [procs] are provided by [sequtils]:
@@ -15076,7 +15076,7 @@ separately.^\[[43](#_footnotedef_43 "View footnote."){#_footnoteref_43
 
 
 The functions [minIndex()] and [maxIndex()] as well as
-[count()] or [deduplicate()] can work with [strings]{.str}
+[count()] or [deduplicate()] can work with [strings]
 also:
 
 
@@ -15109,7 +15109,7 @@ seq.
 
 The function [concat()] can join multiple sequences (yes only
 sequences, it does not work with [arrays] currently), maybe that
-is more efficient than using the [&]{.op} operator. And
+is more efficient than using the [&] operator. And
 [insert()] can insert a new value at a position by shifting
 following items, and [delete()] allows removing a range of items
 from the [seq] when we specify two index positions:
@@ -15172,7 +15172,7 @@ echo s.filterIt((it and 1) == 0)
 
 The map variants return a new [seq], with an operation performed
 on all items. The returned [seq] can have a different base type.
-In line 4 we used the [⇒]{.op} operator from the [sugar] module
+In line 4 we used the [⇒] operator from the [sugar] module
 for a simpler notation
 
 
@@ -15396,9 +15396,9 @@ References:
 
 
 
--   [https://nim-lang.org/docs/sequtils.html](https://nim-lang.org/docs/sequtils.html){.bare}
+-   [https://nim-lang.org/docs/sequtils.html](https://nim-lang.org/docs/sequtils.html)
 
--   [https://forum.nim-lang.org/t/7753#49189](https://forum.nim-lang.org/t/7753#49189){.bare}
+-   [https://forum.nim-lang.org/t/7753#49189](https://forum.nim-lang.org/t/7753#49189)
 
 
 
@@ -15480,7 +15480,7 @@ different.
 
 Nim uses in its [random] module an implementation of the
 xoroshiro128+ (xor/rotate/shift/rotate) library. A [Rand]
-[object]{.obj} with two integer fields is used to store the actual
+[object] with two integer fields is used to store the actual
 state, and some simple and fast logic operations as bit shift, logical
 xor and addition is used to update state and to generate the next
 number:
@@ -15514,7 +15514,7 @@ proc next*(r: var Rand): uint64 =
 
 
 
-The [Rand] [object]{.obj} stores the internal state,
+The [Rand] [object] stores the internal state,
 [rotl()] is a helper function which updates the state for each
 call, and [next()] is the actual generator procedure returning an
 [uint64] value. Note that the addition used in [next()]
@@ -15609,15 +15609,15 @@ References:
 
 
 
--   [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation){.bare}
+-   [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)
 
--   [https://en.wikipedia.org/wiki/Applications_of_randomness](https://en.wikipedia.org/wiki/Applications_of_randomness){.bare}
+-   [https://en.wikipedia.org/wiki/Applications_of_randomness](https://en.wikipedia.org/wiki/Applications_of_randomness)
 
--   [https://en.wikipedia.org/wiki/Pseudorandom_number_generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator){.bare}
+-   [https://en.wikipedia.org/wiki/Pseudorandom_number_generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
 
--   [https://nim-lang.org/docs/random.html](https://nim-lang.org/docs/random.html){.bare}
+-   [https://nim-lang.org/docs/random.html](https://nim-lang.org/docs/random.html)
 
--   [https://prng.di.unimi.it/](https://prng.di.unimi.it/){.bare}
+-   [https://prng.di.unimi.it/](https://prng.di.unimi.it/)
 
 
 
@@ -15838,11 +15838,11 @@ References:
 
 
 
--   [https://github.com/LemonBoy/criterion.nim](https://github.com/LemonBoy/criterion.nim){.bare}
+-   [https://github.com/LemonBoy/criterion.nim](https://github.com/LemonBoy/criterion.nim)
 
--   [https://github.com/disruptek/criterion](https://github.com/disruptek/criterion){.bare}
+-   [https://github.com/disruptek/criterion](https://github.com/disruptek/criterion)
 
--   [https://github.com/treeform/benchy](https://github.com/treeform/benchy){.bare}
+-   [https://github.com/treeform/benchy](https://github.com/treeform/benchy)
 
 
 
@@ -15856,8 +15856,8 @@ A common task in computer programming is the storing and retrieving of
 data records. The situation is very easy whenever each data record is
 directly mapped to continuous integer number n0, n0+1, n0+2, ...​, n0+M.
 In that case we can use that numbers as index keys to access the data
-records and store the data as [objects]{.obj} or references to
-[objects]{.obj} in a sequence, or maybe when the data set in small and
+records and store the data as [objects] or references to
+[objects] in a sequence, or maybe when the data set in small and
 the maximal number of entries is known at compile time in an
 [array].
 
@@ -15875,7 +15875,7 @@ buy something in an online shop.
 
 
 
-So let us investigate how we can store and retrieve data [objects]{.obj}
+So let us investigate how we can store and retrieve data [objects]
 without the use of continues numbers as key. Assume we have a customer
 database
 
@@ -15947,20 +15947,20 @@ sequence has to be known.
 
 
 The idea of a hash table is to use an arbitrary data type to directly
-access [objects]{.obj} stored in a container in a similar way as we can
+access [objects] stored in a container in a similar way as we can
 do it for [arrays] and sequences with integer keys. The first
-step is to use a so-called hash function to map key [objects]{.obj},
+step is to use a so-called hash function to map key [objects],
 which are not already of integer type, to the integer type. We would try
 to use a hash function which can be evaluated fast and which maps our
 data to integer values distributed to the whole integer value space
 without clustering. The integers generated by a hash function look in
 some way like random numbers, they are distributed over the full integer
 value range without an obvious order or systematic. Mapping arbitrary
-[objects]{.obj} to integers is generally not difficult. For a
-[string]{.str}, a first attempt would be to use the characters of a
-[string]{.str} in the same way as we calculate the value of a number
+[objects] to integers is generally not difficult. For a
+[string], a first attempt would be to use the characters of a
+[string] in the same way as we calculate the value of a number
 literal by summing up the digits each multiplied with powers of ten
-given by the position. For a [string]{.str} that may look like
+given by the position. For a [string] that may look like
 
 
 
@@ -15978,7 +15978,7 @@ characters.
 
 
 That would be not really a good hash function, as all short
-[strings]{.str} would be mapped to low integer values, not distributed
+[strings] would be mapped to low integer values, not distributed
 over the full value range. But similar, smarter has functions are
 available.
 
@@ -15997,7 +15997,7 @@ operation on the value returned by a hash function.
 Range reduction by modulo gives us smaller integer numbers, which may
 already be some form of index values for an [array] or a seq.
 With two restrictions: Index collisions can occur, as applying the hash
-function and the modulo range reduction on different [strings]{.str} may
+function and the modulo range reduction on different [strings] may
 give us the same index value. And some index values may be never
 generated. The latter is not that serious, some positions in the
 container would remain unpopulated. Collisions are much more serious of
@@ -16101,10 +16101,10 @@ While we have to specify only the base type for a Nim [seq], we
 have to specify the type of the key and the type of the stored entities
 for a hash [Table]. The line [var customers: Table\[string,
 Customer\]] defines a variable with a generic [Table]
-type. The table uses [strings]{.str} as keys and stores
-[Customer] [objects]{.obj}. We can then use the [\[\]]{.op}
-subscript operator to store [Customer] [objects]{.obj} in the
-[Table]. As we created a [Table] with [string]{.str} key
+type. The table uses [strings] as keys and stores
+[Customer] [objects]. We can then use the [\[\]]
+subscript operator to store [Customer] [objects] in the
+[Table]. As we created a [Table] with [string] key
 type, we have to specify [strings] when we use the subscript
 operator or other functions to access entries of our table. For the
 query operation, we first call the function [hasKey()] to check
@@ -16127,8 +16127,8 @@ content is not copied when you assign one instance of a
 
 In the example above, we called [hasKey()] to check if a data
 record is available before we accessed that record. Access with the
-subscript operator [\[\]]{.op} would raise an exception when an entity
-is not available in the table. [HasKey()] and [\[\]]{.op} both
+subscript operator [\[\]] would raise an exception when an entity
+is not available in the table. [HasKey()] and [\[\]] both
 would have to locate the data record. A faster way to access data record
 when we are not sure if they exist in the table is the
 [getOrDefault()] [proc]:
@@ -16149,7 +16149,7 @@ else:
 
 
 A useful variant of the [Table] data type is the
-[CountTable], which we can use to count data [object]{.obj},
+[CountTable], which we can use to count data [object],
 maybe words in a text:
 
 
@@ -16190,7 +16190,7 @@ For all the various table variants we can use [procs] like
 from a table, to check for the number of entries or to delete entries.
 Note that some functions may throw exceptions when we try to access
 entries that are not available. And note that the subscript operator
-[=\[\]]{.op} overwrites already existing entries.
+[=\[\]] overwrites already existing entries.
 
 
 
@@ -16209,13 +16209,13 @@ the hash value for the keys that we use to access table content. For
 many data types, the [hashes] module already defines a hash
 function. When we would like to use [tuples] or [object]
 data types as keys for table access, then we would have to define a hash
-function for that key [objects]{.obj} first. The API documentation of
+function for that key [objects] first. The API documentation of
 the [tables] module contains an example for this, where as key an
-[object]{.obj} data type with firstName and lastName fields is used to
+[object] data type with firstName and lastName fields is used to
 store salary entries in the table. While firstName and lastName are
-[strings]{.str}, and for single [strings]{.str} a predefined hash
+[strings], and for single [strings] a predefined hash
 function is available, we have to declare another hash function for
-[objects]{.obj} with two [strings]{.str}:
+[objects] with two [strings]:
 
 
 
@@ -16247,21 +16247,21 @@ salaries[p1] = 30_000
 
 
 The hash generation is a bit cryptic: First we mix various existing hash
-values using the [!&]{.op} operator, and finally we use the [!\$]
+values using the [!&] operator, and finally we use the [!\$]
 operator to generate the final hash value. For details, please see the
 API documentation of the [hashes] module.
 
 
 
 Hash tables can be seen as a way to attach arbitrary data to other data.
-The above example attaches a \"salary\" to a person [object]{.obj}. In
-most cases, we would just create one more [object]{.obj} field when we
+The above example attaches a \"salary\" to a person [object]. In
+most cases, we would just create one more [object] field when we
 have to store more data, but sometimes that is not easily possible. One
 example is when we use a low level C library, which gives us some C
-[objects]{.obj} back. Maybe we use an advanced C or C++ math library
-like CGAL, and we get some abstract low level [objects]{.obj} from it,
+[objects] back. Maybe we use an advanced C or C++ math library
+like CGAL, and we get some abstract low level [objects] from it,
 maybe circles with center coordinate and diameter. As that
-[objects]{.obj} are not Nim [object]{.obj}, but C or C++ entities, we
+[objects] are not Nim [object], but C or C++ entities, we
 can not easily subclass them to attach more properties like a color
 attribute. But as each entity has a unique address, we can just use a
 table with key type address and all the needed values like color as
@@ -16316,7 +16316,7 @@ column [tuple]{.tup} as key, may save a lot of RAM.
 ### Equality and Identity
 
 
-When we use [objects]{.obj} or references to [objects]{.obj} as keys for
+When we use [objects] or references to [objects] as keys for
 tables, we have to remember how Nim compares value and reference types:
 
 
@@ -16370,21 +16370,21 @@ The output of the above program is
 
 
 
-By default, the [==]{.op} operator compares content for value
+By default, the [==] operator compares content for value
 [objects], but the instance addresses for references. Because of
 this, it makes sense to define hash functions for [object] types
 and [ref] [object] types in a compatible way: We use the
-hash value of the single integer field of our value [object]{.obj} as
-the hash result for the entire [object]{.obj}, and we use the address of
-the instance for the hash value of the reference [object]{.obj}. As
-different instances of [ref] [objects]{.obj} have always different
+hash value of the single integer field of our value [object] as
+the hash result for the entire [object], and we use the address of
+the instance for the hash value of the reference [object]. As
+different instances of [ref] [objects] have always different
 addresses, the hasKey() does return false when we use as argument a
 different instance variable, independent of the content of its fields.
 
 
 
-For special use cases we may redefine the [==]{.op} operator, but we
-have to ensure that the defined hash function matches the [==]{.op}
+For special use cases we may redefine the [==] operator, but we
+have to ensure that the defined hash function matches the [==]
 operator: When [a == b] is true, then [hash(a)] has to be
 identical to [hash(b)]! The reason is, that tables first compare
 the hash value of the query key with the key of entities in the table,
@@ -16422,15 +16422,15 @@ elements type and potentially to add an offset when the [array]
 does not start at index [0]. For tables, we have to calculate the
 hash value, do the modulo operation, access some elements at the
 calculated position, and most importantly, to compare the content at
-that positions with the actual key data. If the key is a [string]{.str},
-a few [string]{.str} comparisons (at least one) are necessary to
+that positions with the actual key data. If the key is a [string],
+a few [string] comparisons (at least one) are necessary to
 determine if the query element is available in the table. So while
 [array] access may take less than a nanosecond on modern
 hardware, table lookup may take a few dozens of nanoseconds. Lookup with
-[string]{.str} keys is generally slower than for other key types likes
-integer, as for [string]{.str} comparison it may be necessary to compare
-many characters to get a result and because [strings]{.str} generates
-some memory indirection by the fact that [string]{.str} content is
+[string] keys is generally slower than for other key types likes
+integer, as for [string] comparison it may be necessary to compare
+many characters to get a result and because [strings] generates
+some memory indirection by the fact that [string] content is
 stored somewhere in the heap outside any cache.
 
 
@@ -16541,10 +16541,10 @@ We mentioned this data type already very briefly in one of the preceding
 sections, but as it really can be very useful sometimes, we should show
 an extended example. The [CountTable] data type is a variant of
 the ordinary [Table] type, that is used to count instances of
-arbitrary data types, most often [strings]{.str} or integer numbers. The
+arbitrary data types, most often [strings] or integer numbers. The
 [CountTable] can use as keys the same data types as the ordinary
 [Table], but its value type is always an integer. And instead of
-using operators like [\[\]=]{.op} to insert values into the table, we
+using operators like [\[\]=] to insert values into the table, we
 use the [inc()] procedure to increase the occurrence counter for
 the key. Actually, the first call of [inc()] adds the key to the
 table instance and sets it counter to one, and each subsequent call of
@@ -16634,9 +16634,9 @@ References:
 
 
 
--   [https://nim-lang.org/docs/tables.html](https://nim-lang.org/docs/tables.html){.bare}
+-   [https://nim-lang.org/docs/tables.html](https://nim-lang.org/docs/tables.html)
 
--   [https://nim-lang.org/docs/hashes.html](https://nim-lang.org/docs/hashes.html){.bare}
+-   [https://nim-lang.org/docs/hashes.html](https://nim-lang.org/docs/hashes.html)
 
 
 
@@ -16658,8 +16658,8 @@ From the implementation, [HashSets] are very similar to hash
 [Tables] --- while a hash [Table] uses a key entity to
 access a value instance, [HashSets] uses only the key, e.g. to
 test if the key is contained in the set. A typical use of
-[HashSets] is to test if a [string]{.str} in contained in a
-collection of [strings]{.str}:
+[HashSets] is to test if a [string] in contained in a
+collection of [strings]:
 
 
 
@@ -16687,7 +16687,7 @@ so similar to hash [Tables], we will not try to explain the
 available functions --- whenever you may have a concrete use case for
 Nim's [HashSets], you can consult the module documentation.
 Remember, that as for hash [Tables], for data types used as keys,
-a [hash()] function and the [==]{.op} operator must have been
+a [hash()] function and the [==] operator must have been
 defined.
 
 
@@ -16818,7 +16818,7 @@ for k, p in walkDir(getAppDir()):
 [WalkDir()] returns a [tuple]{.tup} --- the
 [PathComponent] enumeration like [pcFile] or [pcDir],
 which gives us the type of the directory entry, and the path as a
-[string]{.str}.
+[string].
 
 
 
@@ -16844,9 +16844,9 @@ else:
 
 Here we used [when defined(windows):] to test if the code has
 been compiled for windows or for Linux/macOS, so that we can use the
-correct command [string]{.str}. For windows, flashing of the console
+correct command [string]. For windows, flashing of the console
 window may be an issue, see
-[https://forum.nim-lang.org/t/7320#46431](https://forum.nim-lang.org/t/7320#46431){.bare}.
+[https://forum.nim-lang.org/t/7320#46431](https://forum.nim-lang.org/t/7320#46431).
 
 
 
@@ -16871,7 +16871,7 @@ For Linux users, it is not uncommon to use a [terminal window]{.italic}
 or [shell]{.italic} to launch programs by typing in textual commands
 instead of clicking on icons or pictograms. In the introducing sections
 of the book, we said, that one way to launch the Nim compiler is to type
-a command like [nim c \--gc:arc test1.nim]{.term} in a terminal window.
+a command like [nim c \--gc:arc test1.nim] in a terminal window.
 
 
 
@@ -16885,12 +16885,12 @@ process them with the [parseopt] module of Nim's standard library.
 Working from within a terminal window can have some benefits in some
 scenarios, and some simple tools may have no graphical user interface at
 all, so that you can only use them from the terminal. From within a
-terminal window, we can type in command names like [ls]{.term} or
-[df]{.term}, and press the return key to just execute a program with
+terminal window, we can type in command names like [ls] or
+[df], and press the return key to just execute a program with
 that name. Or we can pass additional options and arguments to these
-programs, e.g. the command [ls -l /tmp]{.term} would list the directory
+programs, e.g. the command [ls -l /tmp] would list the directory
 entries of the [/tmp] folder displayed as one entry per line. Here
-[ls]{.term} is the command or program name, [-l] is an option,
+[ls] is the command or program name, [-l] is an option,
 indicating that we desire an output format with only one entry per line,
 and [/tmp] is the actual argument, which is the [/tmp]
 folder. Don't get confused by the slash character in front of the
@@ -16902,14 +16902,14 @@ file system root.
 
 
 
-We said that in the [ls]{.term} command above, [-l]{.term} was an
-option. That option indicates for the [ls]{.term} command that we want
-the output with only one entry per line. For the [ls]{.term} command,
+We said that in the [ls] command above, [-l] was an
+option. That option indicates for the [ls] command that we want
+the output with only one entry per line. For the [ls] command,
 some other options can be specified in a short and in a long form: The
-notations [-s]{.term} and [\--size]{.term} can both be used to tell
-[ls]{.term} to print the file size. Short options are always introduced
+notations [-s] and [\--size] can both be used to tell
+[ls] to print the file size. Short options are always introduced
 by a single [minus]{.italic} character, and each following single
-character then stands for a distinct option, e.g. [-lt]{.term} ask for a
+character then stands for a distinct option, e.g. [-lt] ask for a
 single entry per line output which included the modification time for
 the entry. For the long options, which starts with two [minus]{.italic}
 signs, only a single option name like \"size\" can be specified.
@@ -16921,30 +16921,30 @@ options with [values]{.italic}. The values are separated from the option
 name with a colon or an equal sign. Imagine that we have a command
 called \"fancyPrint\" which can print out text documents, and allows us
 to specify single pages to print instead of the whole document. That may
-be done with the short and long options [p]{.term} and [page]{.term},
-each requiring a numeric value like [fancyPrint -p:17 mydoc.pdf]{.term}
-or [fancyPrint \--page:17 mydoc.pdf]{.term}.
+be done with the short and long options [p] and [page],
+each requiring a numeric value like [fancyPrint -p:17 mydoc.pdf]
+or [fancyPrint \--page:17 mydoc.pdf].
 
 
 
 In principle, it is possible to mix short and long options with and
 without values and arguments freely, which can make the evaluation of
-command line [strings]{.str} difficult. Usually, options have to be
+command line [strings] difficult. Usually, options have to be
 specified in front of arguments, but some programs relax this, e.g. [ls
-/tmp -l]{.term} works also. And some (older) programs recognize options
-without a leading minus sign, e.g. [tar cf hhh.tar hhh/]{.term}
+/tmp -l] works also. And some (older) programs recognize options
+without a leading minus sign, e.g. [tar cf hhh.tar hhh/]
 specifies that the archiving tool should create (c) a file (f) named
-[hhh.tar]{.term} with the content of folder [hhh]{.term}. Here the
-single letter [c]{.term} without a leading minus sign is interpreted as
-some form of command, [c]{.term} stands for [create]{.italic}. In a
+[hhh.tar] with the content of folder [hhh]. Here the
+single letter [c] without a leading minus sign is interpreted as
+some form of command, [c] stands for [create]{.italic}. In a
 similar way, the Nim compiler interprets the first single letter as a
-command --- [c]{.term} for compiling with the C backend.
+command --- [c] for compiling with the C backend.
 
 
 
 After this short introduction to command line options, we will
 investigate how we can use Nim's [parseopt] module to process the
-command line [string]{.str} and extract the various options and
+command line [string] and extract the various options and
 parameters.
 
 
@@ -16998,8 +16998,8 @@ would generate this output:
 
 
 
-The first option with key [a]{.term} has value [3],
-[verbose]{.term} is a long option without a value, and [h.txt]{.term} is
+The first option with key [a] has value [3],
+[verbose] is a long option without a value, and [h.txt] is
 recognized as argument, which may be a file name in this case.
 
 
@@ -17007,7 +17007,7 @@ recognized as argument, which may be a file name in this case.
 Our program starts with a call of [initOptParser()], which
 returns an [OptParser] [object]. We call
 [initOptParser()] without any parameter --- in this case, the
-function construct the command line [string]{.str} itself by a series of
+function construct the command line [string] itself by a series of
 [commandStr()] calls of the [os] module. In the [while
 true:] loop, we have to call [p.next] to get the next
 option. Then we can access the [kind] field, which is an
@@ -17053,7 +17053,7 @@ possible cases, otherwise the code would not compile.
 
 The [parseopt] module supports additional to pass option values
 without the need to separate the option name and the option value with a
-[:]{.term} or a [=]{.term}, e.g. a command line like [-a3]{.term}. To
+[:] or a [=], e.g. a command line like [-a3]. To
 make that work, we have to tell the parser which options have values and
 which do not:
 
@@ -17103,18 +17103,18 @@ and get this output:
 
 
 We specified for [initOptParser()] that the short options
-[h]{.term}, [v]{.term} and the long options [help]{.term},
-[verbose]{.term} have no values, but work just like a plain switch.
+[h], [v] and the long options [help],
+[verbose] have no values, but work just like a plain switch.
 These specifications tells that function, on the other hand, that all
 other options do use values, so the numeric value [13] after the
-[p]{.term} options is recognized as value, as well as the [low]
-value that follows after [quality]{.term}. As the [verbose]{.term}
-option has no value, [report.pdf]{.term} is recognized as argument.
+[p] options is recognized as value, as well as the [low]
+value that follows after [quality]. As the [verbose]
+option has no value, [report.pdf] is recognized as argument.
 
 
 
 You may still wonder if the [parseopt] module supports command, as
-used in [nim c \--gc:arc mycode.nim]{.term}? Yes this works, we would
+used in [nim c \--gc:arc mycode.nim]? Yes this works, we would
 get this output:
 
 
@@ -17128,18 +17128,18 @@ get this output:
 
 
 
-The command [c]{.term} is recognized as argument, and in our program we
+The command [c] is recognized as argument, and in our program we
 would have to detect that an argument called just \"c\" is a command
 name and not a file name. To avoid ambiguity, we may have to care not
 only for the value of arguments, but also for its position in the
-command [string]{.str}, maybe by use of an additional position counter,
+command [string], maybe by use of an additional position counter,
 or maybe we call [paramStr(1)] to get the first parameter
 directly.
 
 
 
-Note that all the option values are [strings]{.str}, you have to
-validate these [strings]{.str} yourself, and you may have to convert
+Note that all the option values are [strings], you have to
+validate these [strings] yourself, and you may have to convert
 them to integers or other data types when required.
 
 
@@ -17221,18 +17221,18 @@ simplifies the command line parsing.
 
 
 
-A [regular expression]{.ndef}, shortened as [regex]{.ndef} or
-[regexp]{.ndef}, is a sequence of characters that specifies a search
-pattern, which is used to find or replace parts of a [string]{.str} or
+A [regular expression], shortened as [regex] or
+[regexp], is a sequence of characters that specifies a search
+pattern, which is used to find or replace parts of a [string] or
 of a whole text document, or just to validate it. It is a technique
 developed in theoretical computer science and formal language theory,
 introduced in the 1950s, when the American mathematician Stephen Cole
 Kleene formalized the description of a regular language. The use of
 regular expressions became popular with Unix text-processing utilities
-like [sed]{.ndef}, [grep]{.ndef} and [awk]{.ndef}, were used in early
-text editors like [vi]{.ndef} and [emacs]{.ndef} for pattern matching,
+like [sed], [grep] and [awk], were used in early
+text editors like [vi] and [emacs] for pattern matching,
 and are commonly used in modern text editors and word processing
-programs in [find]{.ndef} and [find and replace]{.ndef} dialogs.
+programs in [find] and [find and replace] dialogs.
 Different syntaxes for writing regular expressions have existed since
 the 1980s, one being the POSIX standard and another, widely used, being
 the Perl syntax.
@@ -17253,11 +17253,11 @@ convert the symbolic name [line_width] into [lineWidth]:
 
 
 Here the option [-E] tells the [sed] program to use the
-[extended regular expressions]{.ndef} rather than basic regular
+[extended regular expressions] rather than basic regular
 expressions, and option [-i] specifies to work in place, instead
 to just print the modified text in the terminal window. The pattern
 [s/a/b] tells it to substitute pattern [a] by expression
-[b], and the final [/g] stands for [global]{.ndef} and
+[b], and the final [/g] stands for [global] and
 tells [sed] to do substitutions in the whole file. The actual
 interesting part is the search pattern [\_\[a-z\]], which
 specifies the actual underscore character followed by a single lower
@@ -17280,17 +17280,17 @@ and to remember.
 Some programming languages like Perl or Ruby have built in support for
 regular expressions, and others use external libraries. For interpreted
 languages like Perl, Python or Ruby it makes a lot of sense to use
-regular expressions for parsing [strings]{.str}, as the regex engines of
+regular expressions for parsing [strings], as the regex engines of
 these languages are generally written in C language, which leads to the
-fact that even for very basic [string]{.str} operations like spitting
-[strings]{.str} into single tokens or doing simple character
+fact that even for very basic [string] operations like spitting
+[strings] into single tokens or doing simple character
 replacements, the use of regexes can be faster than doing it with
 multiple statements in the interpreted program code. For compiled
 languages like Nim, the situation is very different --- using regexes is
 fast, but doing simple things directly in the compiled languages is
 still much faster. And Nim provides many other libraries like
 [strscans] or [parseutils], which can do even advanced
-[string]{.str} operations much faster than by use of regular
+[string] operations much faster than by use of regular
 expressions.
 
 
@@ -17299,7 +17299,7 @@ So actually the use of regular expressions in Nim is very limited, in
 most cases there exists other, simpler and faster solutions. As learning
 the use of regexes is not that easy, and it is hard to remember all the
 details, we may hesitate to try it at all. But actually for text
-processing tools like [sed]{.ndef} and [grep]{.ndef}, and for the use in
+processing tools like [sed] and [grep], and for the use in
 text editors and word processors regexes are very useful, so it makes
 some sense to learn at least the basic use of regular expressions. And
 when we learn to use regexes at all, then we can use them in Nim as
@@ -17308,7 +17308,7 @@ well.
 
 
 Each character in a regular expression (that is, each character in the
-[string]{.str} describing its pattern) is either a
+[string] describing its pattern) is either a
 metacharacter,^\[[44](#_footnotedef_44 "View footnote."){#_footnoteref_44
 .footnote}\]^ having a special meaning, or a regular character that has
 a literal meaning. For example, in the regex [b.], [b] is a
@@ -17341,7 +17341,7 @@ consult the Wikipedia article and the various internet resources.
 
 The Nim standard library provides two modules for the use of regular
 expressions, called [re] and [nre], which both are wrappers
-for the [PCRE]{.ndef} [(Perl Compatible Regular Expressions)]{.ndef} C
+for the [PCRE] [(Perl Compatible Regular Expressions)] C
 library. Additionally, a module called [regex] is available as an
 external package, which is fully written in Nim language. These three
 modules are similar, but their API is different. When you intend to use
@@ -17389,7 +17389,7 @@ if match(t2, r, m):
 
 We use the [re()] function with the search pattern as argument to
 generate an instance of a [Regex] variable. Then we can use the
-[match()] function to match a textual [string]{.str} against this
+[match()] function to match a textual [string] against this
 regex. The last argument of the match function is a variable of
 [RegexMatch] type, which captures the matched terms, so that we
 can use them later.
@@ -17398,10 +17398,10 @@ can use them later.
 
 In our pattern [\"\\w\\d\"] the [\\w] stand for a word
 character which includes upper and lower case ASCII letters, and the
-[\\d] stands for a decimal digit. So the [string]{.str} [t1]
-matches that pattern, but the [string]{.str} [t2] does not, as
+[\\d] stands for a decimal digit. So the [string] [t1]
+matches that pattern, but the [string] [t2] does not, as
 there is no decimal digit following the first letter. In the example
-from above, we actually check only if a [string]{.str} matches the
+from above, we actually check only if a [string] matches the
 pattern, but we do not capture the matches. So we do not need the
 RegexMatch variable [m] at all and could call the [match()]
 function without that parameter. To actually capture a match, we would
@@ -17446,13 +17446,13 @@ repetitions. Finally, the [\\d] stands for a decimal digit, and
 subpattern in braces, that group is captured. For a successful match, we
 can access the capture with the [group()] function(, where we
 have to specify the index number of the capture, and the actual text
-[string]{.str} that was used for the match. The fact that we have to
+[string] that was used for the match. The fact that we have to
 specify the initial text may look a bit strange indeed. For
-[string]{.str} [t1], we get a successful capture with the result
-@\[\"7\"\]. So our actual captured [string]{.str} is contained in a seq,
-which is useful when multiple (nested) [strings]{.str} are captured. In
+[string] [t1], we get a successful capture with the result
+@\[\"7\"\]. So our actual captured [string] is contained in a seq,
+which is useful when multiple (nested) [strings] are captured. In
 the code from above, we could have used [groupFirstCapture()]
-instead to get directly the first captured [string]{.str}.
+instead to get directly the first captured [string].
 
 
 
@@ -17467,7 +17467,7 @@ characters as possible, while none-greedy capturing stops the capturing
 process early. Indeed, these greedy/none-greedy capturing can be one of
 the most demanding tasks when we create larger and complicated patterns.
 Imagine that for our above example, we would have used the pattern
-re\"A\\w\*(\\d+)\". For the same [string]{.str} \"Alex77\" we would then
+re\"A\\w\*(\\d+)\". For the same [string] \"Alex77\" we would then
 get the output @\[\"7\"\]. The reason for that is, that [\\w\*]
 does a greedy processing, eating all but the last decimal digit, which
 it left to satisfy [/d+]. From the API documentation of the
@@ -17485,8 +17485,8 @@ The use of escape sequences in regex patterns is another difficulty for
 beginners. The first problem can be that the Nim compiler may process
 the escape sequences already itself, while we intend to left them for
 the regex engine. We can avoid that when we use Nim's raw
-[strings]{.str}, e.g. we can use triple quotes when we construct the
-pattern from individual [strings]{.str}, as done in our next example. In
+[strings], e.g. we can use triple quotes when we construct the
+pattern from individual [strings], as done in our next example. In
 a regex, we can use escape sequences to specify special literal
 characters, we may use [\\t] for a literal tabulator for example.
 And finally, we may have to escape some punctuation characters like
@@ -17539,15 +17539,15 @@ integer pattern with the allowed separators. Note that we allow any
 amount of spaces or tabulators, but only a single comma or semicolon
 between the different entities. Note that the [match()] function
 of the [regex] module always does a full match, so a single space
-at the beginning or end of the text [string]{.str} would make the match
+at the beginning or end of the text [string] would make the match
 fail. We could compensate for that by starting and ending the regex
 pattern with \"\\s\*\". Or we could use instead of [match()] the
-[find()] function, which search through the [string]{.str}
+[find()] function, which search through the [string]
 looking for the first location where there is a match. When we use
 [find()], we may use the special characters [\^] and
-[\$] to match the start or end of the [string]{.str}, that is with
+[\$] to match the start or end of the [string], that is with
 [find()] and [re\"\\s+\$\"] we could find all
-[strings]{.str} which have trailing white-space. Note that [find(text,
+[strings] which have trailing white-space. Note that [find(text,
 re\"\^regex\$\", m)] is the equivalent to the [match()]
 function.
 
@@ -17555,14 +17555,14 @@ function.
 
 The [regex] module provides us also with two [replace()]
 functions, which we can use to replace matched patterns with literal
-[strings]{.str} or captured and modified [strings]{.str}. The first
-[replace()] function uses as third argument a [string]{.str},
+[strings] or captured and modified [strings]. The first
+[replace()] function uses as third argument a [string],
 which is used for replacements and in which we can refer to captured
 groups with the symbols [\$N], where [N] is the index of the
 captured group starting at one. The second [replace()] function
 uses a function as third argument, that function gets an instance of the
 [RegexMatch] type as first parameter and returns the
-[string]{.str} replacement. We will use both variants of the
+[string] replacement. We will use both variants of the
 [replace()] function to create a tiny app that we can use to fix
 typos in program and text files: Text files can contain typing errors,
 which includes two or more spaces between adjacent words, unneeded
@@ -17628,13 +17628,13 @@ which gives us the individual lines of the file. We will start with the
 simplest task, that is removing trailing white-space. The search pattern
 for this issue is obviously [\"\\s+\$\"], that is at least one
 white-space at the line end, which we have to replace with an empty
-[string]{.str}. So we pass this regex pattern called [trail] and
-an empty [string]{.str} literal to the [replace()] function.
+[string]. So we pass this regex pattern called [trail] and
+an empty [string] literal to the [replace()] function.
 Replacing [a] by [an] is also easy --- we search for an
 [a] followed by white-space and a vocal, for which the regex
 pattern is the [aan] variable in the above code. In this case, we
 have to preserve the actual white-space and the vocal, so we enclose
-these in brackets to capture it. The replacing [string]{.str} is
+these in brackets to capture it. The replacing [string] is
 [\"an\$1\"], where [\$1] stands for the captured
 white-space and the captured vocal. Replacing too much inter-word space
 is a bit more difficult. The actual issue is one white-space followed by
@@ -17650,12 +17650,12 @@ whites-space character, and finally a none white-space character. We
 capture the two first characters, and the last one. This way we can
 replace the whole match with the two captures, and we are done. Finally,
 we have to replace underscore characters followed by a lowercase letter
-with the capitalized letter. Some tools like [sed]{.ndef} provides the
+with the capitalized letter. Some tools like [sed] provides the
 [\\U] to capitalize a capture, but this is not available for the
 [regex] module. So we use the [replace()] variant which
 uses a [proc] as last parameter --- to that [proc] the
-capture and the original [string]{.str} is passed, and that function
-should return the replacement [string]{.str}. The capture which we have
+capture and the original [string] is passed, and that function
+should return the replacement [string]. The capture which we have
 to use to catch a snake element is obvious, just \"\_(\[a-z\])\". We
 call the [converter] [proc] [toUpper()], its
 parameters and its return type is specified by the [regex] API
@@ -17663,7 +17663,7 @@ docs. But unfortunately, the actual structure of the passed
 [RegexMatch] instance is not that detailed described. So we
 created some conditional [echo()] statements inside the body of
 our [toUpper()] [proc] to show us the structure of the
-parameters. When we compile our program with the [-d:debugThis]{.term}
+parameters. When we compile our program with the [-d:debugThis]
 option, and run it, we get this output:
 
 
@@ -17690,7 +17690,7 @@ option, and run it, we get this output:
 
 
 
-So the last [string]{.str} parameter is always the whole [string]{.str}
+So the last [string] parameter is always the whole [string]
 that was passed as first argument to [replace()], and
 [m.group(0)] is a sequence of slices for the first capture. We
 need only the first element of this seq, as we have only one capture,
@@ -17703,7 +17703,7 @@ and return that result.
 
 When you run the above program, you should get a text file with all
 issues fixed. You may redirect the output to a file with [\"\\.t
-test.nim \> newtest.nim\"]{.term} and load [newtest.nim] into an
+test.nim \> newtest.nim\"] and load [newtest.nim] into an
 editor to prove that the trailing white-space is removed as well.
 
 
@@ -17733,13 +17733,13 @@ References:
 
 
 
--   [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression){.bare}
+-   [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
 
--   [https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions){.bare}
+-   [https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions)
 
--   [https://www.regular-expressions.info/pcre.html](https://www.regular-expressions.info/pcre.html){.bare}
+-   [https://www.regular-expressions.info/pcre.html](https://www.regular-expressions.info/pcre.html)
 
--   [https://nitely.github.io/nim-regex/regex.html](https://nitely.github.io/nim-regex/regex.html){.bare}
+-   [https://nitely.github.io/nim-regex/regex.html](https://nitely.github.io/nim-regex/regex.html)
 
 
 
@@ -17857,7 +17857,7 @@ elements when it is not really necessary. In one of the following
 sections, we will discuss the quicksort algorithm, which is not a stable
 sorting method: Elements with equal value may be moved with quicksort.
 For plain numbers, that does not really matter for the result, as
-numbers are indistinguishable. But when we sort [objects]{.obj}, maybe
+numbers are indistinguishable. But when we sort [objects], maybe
 persons by age, persons of same age would be exchanged by quicksort,
 which may not be desired.
 
@@ -18228,8 +18228,8 @@ sort an already sorted sequence again, entries with same value may move.
 For plain numbers that is not really an issue, we do not really notice
 it, as we can't mark a number in some way, plain numbers are
 indistinguishable just as elementary particles like electrons and
-protons are. But when we sort a container with [objects]{.obj} by some
-field, then we notice that [objects]{.obj} with same value for sorting
+protons are. But when we sort a container with [objects] by some
+field, then we notice that [objects] with same value for sorting
 may move. The other concern of QuickSort is a general problem of
 recursive algorithm: Each new call of a [proc] generates some
 stack usage, as [proc] parameters may be passed on the stack and
@@ -18466,7 +18466,7 @@ loop index [u], so that we push the larger range always first on
 the stack. You may modify the condition [u == 0] to [u !=
 0] and observe what happens to the maximum used stack dept. We
 could write that condition also with a boolean loop variable and a
-[xor]{.op} operator like
+[xor] operator like
 
 
 
@@ -19069,12 +19069,12 @@ all of our sorting [procs] for special cases, that is for
 with all entries equal, all inversely sorted or presorted. And we would
 have to check how performance is when we sort not containers containing
 plain data like numbers, but containers which elements are
-[objects], [strings]{.str} or again [arrays] or sequences.
-[String]{.str} sorting is special for various reasons: [strings]{.str}
+[objects], [strings] or again [arrays] or sequences.
+[String] sorting is special for various reasons: [strings]
 in Nim are an opaque [object] with a [pointer] to the
 actual data. This is some indirection, and the actual data can be
 located somewhere in the RAM in a cache unfriendly manner, so the actual
-comparison process can be slow. Swapping of [strings]{.str} is also
+comparison process can be slow. Swapping of [strings] is also
 special, as [swap()] generally just does a [pointer]
 exchange for the data areas, and does not have to copy the actual data.
 For sorting containers where each entry is an [array] (of
@@ -19092,7 +19092,7 @@ References:
 
 
 
--   [https://en.wikipedia.org/wiki/Timsort](https://en.wikipedia.org/wiki/Timsort){.bare}
+-   [https://en.wikipedia.org/wiki/Timsort](https://en.wikipedia.org/wiki/Timsort)
 
 
 
@@ -19220,7 +19220,7 @@ case we have two trivial cases --- empty seq and seq with only one
 element, which can be not covered well with a loop with only one simple
 termination condition. And of course, we should try to make the
 condition of the while loop as simple as possible, that is, avoiding
-additional boolean conditions with [and]{.op} or [or]{.op} operators for
+additional boolean conditions with [and] or [or] operators for
 best performance. Further, you may wonder if our picking strategy is
 really optimal, as for a [seq] with no adjacent duplicates we
 still copy all the elements. Yes indeed, but for the general case with
@@ -19272,10 +19272,10 @@ So let's create an algorithm to do this task. A naive strategy would be
 to iterate over container A and delete each element that is also
 contained in B. But that would be slow, and may not work at all, as
 deleting elements while we iterate over the seq does generally not work
-at all. We will create a [proc] called [\`-\`]{.op} which can be
+at all. We will create a [proc] called [\`-\`] which can be
 used as an operator to build the difference of two [arrays] or
 sequences and which returns the difference as a new seq, and a
-[\`-=\`]{.op} [proc] which removes the elements of [b] from
+[\`-=\`] [proc] which removes the elements of [b] from
 [a] in place and is also used as an operator.
 
 
@@ -19326,19 +19326,19 @@ independent of the size of the container, which is called O(1) in the
 big O notation. We make the two [procs] generic and use the data
 type [open array] for the two passed arguments so that our
 [procs] can be used for [arrays] as well as for sequences.
-The exception is the first var parameter of the [\`-=\`]{.op}
+The exception is the first var parameter of the [\`-=\`]
 [proc], which has to be a seq obviously, as [arrays] have
-a fixed size and can not shrink. For the [\`-\`]{.op} [proc] we
+a fixed size and can not shrink. For the [\`-\`] [proc] we
 pre-allocate the returned [result] variable with a size of
 [a.len], so that we can avoid re-allocations. Then we iterate over
 [a] with a for loop, and copy the current element to the result
 seq when the value in not contained in the hash set. We use the
-subscript operator [\[\]]{.op} to copy the picked elements at position
+subscript operator [\[\]] to copy the picked elements at position
 [i] in the [result] seq, which is faster than starting with
 an empty [result] seq and appending the picked elements. As we
 initialize the [result] seq with the size of container [a],
 we have finally to call [result.setLen(i)] to shrink the size to
-the number of actually picked elements. The presented [\`-=\`]{.op}
+the number of actually picked elements. The presented [\`-=\`]
 [proc] is a bit more complicated, as we process seq [a] in
 place. We use an approach similar as we did in the [deTwin()]
 [proc] in the previous section, that is, we use two index
@@ -19352,7 +19352,7 @@ in the lookup set. Again, finally we have to set the size of seq
 While the two presented [procs] may be actually useful in some
 cases, they are more presented as an exercise here. As a smart user of
 the Nim forum showed us, we can get a very similar behavior by use of
-the [filter()] [proc] in combination with the [=\>]{.op}
+the [filter()] [proc] in combination with the [=\>]
 operator of the [sugar] module:
 
 
@@ -19375,7 +19375,7 @@ References:
 
 
 
--   [https://forum.nim-lang.org/t/7753](https://forum.nim-lang.org/t/7753){.bare}
+-   [https://forum.nim-lang.org/t/7753](https://forum.nim-lang.org/t/7753)
 
 
 
@@ -19393,8 +19393,8 @@ then we continued searching for that term in the lower half, otherwise
 in the upper half. That procedure was continued until the searched entry
 was found, or until it was observed that it was not available at all.
 This type of search in an ordered data set is called [binary
-search]{.ndef}, [half-interval search]{.ndef}, [logarithmic]{.ndef}
-search or [binary chop]{.ndef}. As each repetition halves the remaining
+search], [half-interval search], [logarithmic]
+search or [binary chop]. As each repetition halves the remaining
 data set, it is much faster than a linear search in unordered
 data.^\[[50](#_footnotedef_50 "View footnote."){#_footnoteref_50
 .footnote}\]^
@@ -19517,7 +19517,7 @@ References
 
 
 
--   [https://en.wikipedia.org/wiki/Binary_search_algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm){.bare}
+-   [https://en.wikipedia.org/wiki/Binary_search_algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm)
 
 
 
@@ -19528,14 +19528,14 @@ References
 Have you ever asked yourself what actually is happening when we print
 the value of an integer variable on the screen, perhaps by use of the
 [echo()] procedure? Before [echo()] can print the value,
-the integer has to be converted to a text [string]{.str} somehow. Some
+the integer has to be converted to a text [string] somehow. Some
 people may think that this conversion is trivial. But as we know already
 that in our computer all the data is stored in abstract binary form, we
 know better. But maybe there is some magic available to do this task?
 Well, when we regard the existence of C libs or the Nim standard library
 as that magic solution, then the answer is yes. But in this section we
 will assume that we will not use a C library or a function of the Nim
-standard library for the conversion of integers to [strings]{.str}, but
+standard library for the conversion of integers to [strings], but
 do it our self. Indeed, this conversion task is an interesting exercise,
 from which we can learn a lot, much more than from using a gaming lib
 and moving some sprites over the screen. Even when you already know how
@@ -19543,7 +19543,7 @@ to do it, you may learn some new. We will start with the question, how
 we can convert an [int] [i] with a numeric value [0 \<= i
 \<= 9] to a single character digit matching this value, and then
 we will present a first procedure to convert larger integers to
-[strings]{.str}. After that we will try to improve that first procedure,
+[strings]. After that we will try to improve that first procedure,
 we will make it generic and will investigate which problems may occur on
 restricted hardware like small microcontrollers and embedded systems.
 
@@ -19740,19 +19740,19 @@ echo intToStr(int.low)
 
 We use an [array] of character for temporary storing the decimal
 places, and finally copy the digits into the [result]
-[string]{.str}. We pre-allocate the [string]{.str} with the correct
-size, and use the subscript operator [\[\]]{.op} instead of
+[string]. We pre-allocate the [string] with the correct
+size, and use the subscript operator [\[\]] instead of
 [add()] to insert the digits for performance reasons. Initially
 we create a copy [v] with positive sign of the passed integer
 argument [a], and when the argument was initially negative, then
 we add an additional minus sign to the temporary [array], which
-is finally also copied to the result [string]{.str}. All this is not
+is finally also copied to the result [string]. All this is not
 difficult, we have only to care that we get all the indices right. A
 tiny problem is, that when the passed integer argument has the value
 [low(int)], then applying [abs()] would generate an
 overflow error, see section [Binary Numbers](#_binary_numbers) in part
 II of the book if you forgot it. We fix for that by returning just the
-correct [string]{.str} for that unique negative value for now.
+correct [string] for that unique negative value for now.
 
 
 
@@ -19760,7 +19760,7 @@ The above [proc] looks not that bad, but maybe we can improve it,
 maybe we can avoid the temporary [array]? The actual difficulty
 is, that we do not know how many total digits the integer argument will
 require in advance, and so it is impossible to position all the digits
-at the correct position in the result [string]{.str}. A possible
+at the correct position in the result [string]. A possible
 solution is to use a function that gives us the number of decimal places
 of an integer number. Indeed, we have such a function available, it is
 [math.log10()]. Remember, log10(1) is zero, log10(10) is one,
@@ -19804,7 +19804,7 @@ for that value we use the default value [i == 0]. Actually, in all
 cases [i + 1] is the total number of digits that we have to
 generate --- for the case that we have to generate a minus sign we
 increase [i] by one. We pre-allocate a [result]
-[string]{.str} with [i + 1] positions, and put a minus sign at
+[string] with [i + 1] positions, and put a minus sign at
 position zero, which is overwritten in the while loop when the argument
 was not negative. As we know the total number of digits of our number,
 we can use the variable [i] to put the digits at the correct
@@ -19987,7 +19987,7 @@ get the result zero, counting the number of needed divisions. An equal
 approach is to start with a variable with start value one and multiply
 with ten, until the result is larger than our function argument. As
 division is generally slower than multiplication, and on
-microcontrollers a native [div]{.op} operation may be not available at
+microcontrollers a native [div] operation may be not available at
 all, we will try to use multiply operations. So we may start with a
 [proc] like
 
@@ -20081,10 +20081,10 @@ echo digits(uint.high)
 
 
 
-Here, we do a single [div]{.op} operation if the argument is larger than
+Here, we do a single [div] operation if the argument is larger than
 [9], but do all the math with the same type as the argument type.
-The [div]{.op} operation may be still slow on a microcontroller, but our
-[intToStr()] [proc] has also used [div]{.op} operations.
+The [div] operation may be still slow on a microcontroller, but our
+[intToStr()] [proc] has also used [div] operations.
 Indeed, doing [intToStr()] conversions on a tiny 8-bit
 microcontroller is not really a good idea.
 
@@ -20116,13 +20116,13 @@ now, so you could fix it for that cases.
 
 As possible exercises for the reader, we may suggest creating a similar
 [proc] called [strToInt()] that converts a numeric
-[string]{.str} to an integer number, or to convert between
+[string] to an integer number, or to convert between
 [strings] and [float] numbers. The first one is easy, you
 would build the [int] value by continuously multiplying the digit
 value with its correct power of ten, matching its position in the
-[string]{.str}. The [float] conversion is more difficult, in one
+[string]. The [float] conversion is more difficult, in one
 weekend you may get some working code, but perfect solutions like the
-[ryu]{.ndef} or [dragonbox]{.ndef} algorithm are very complicated.
+[ryu] or [dragonbox] algorithm are very complicated.
 
 
 
@@ -20149,39 +20149,39 @@ tutorials for game programming available, see for example
 
 
 
--   [https://hookrace.net/blog/writing-a-2d-platform-game-in-nim-with-sdl2/](https://hookrace.net/blog/writing-a-2d-platform-game-in-nim-with-sdl2/){.bare}
+-   [https://hookrace.net/blog/writing-a-2d-platform-game-in-nim-with-sdl2/](https://hookrace.net/blog/writing-a-2d-platform-game-in-nim-with-sdl2/)
 
--   [https://github.com/Ethosa/nodesnim](https://github.com/Ethosa/nodesnim){.bare}
+-   [https://github.com/Ethosa/nodesnim](https://github.com/Ethosa/nodesnim)
 
--   [https://github.com/paranim/paranim](https://github.com/paranim/paranim){.bare}
+-   [https://github.com/paranim/paranim](https://github.com/paranim/paranim)
 
--   [https://github.com/jiro4989/nimtetris](https://github.com/jiro4989/nimtetris){.bare}
+-   [https://github.com/jiro4989/nimtetris](https://github.com/jiro4989/nimtetris)
 
--   [https://github.com/jiro4989/nimothello](https://github.com/jiro4989/nimothello){.bare}
+-   [https://github.com/jiro4989/nimothello](https://github.com/jiro4989/nimothello)
 
--   [https://forum.nim-lang.org/t/8080](https://forum.nim-lang.org/t/8080){.bare}
+-   [https://forum.nim-lang.org/t/8080](https://forum.nim-lang.org/t/8080)
 
--   [https://github.com/dsrw/enu](https://github.com/dsrw/enu){.bare}
+-   [https://github.com/dsrw/enu](https://github.com/dsrw/enu)
 
--   [https://github.com/def-/nimes](https://github.com/def-/nimes){.bare}
+-   [https://github.com/def-/nimes](https://github.com/def-/nimes)
 
--   [https://vladar4.github.io/nimgame2/](https://vladar4.github.io/nimgame2/){.bare}
+-   [https://vladar4.github.io/nimgame2/](https://vladar4.github.io/nimgame2/)
 
--   [https://github.com/greenfork/nimraylib_now](https://github.com/greenfork/nimraylib_now){.bare}
+-   [https://github.com/greenfork/nimraylib_now](https://github.com/greenfork/nimraylib_now)
 
--   [https://github.com/pragmagic/godot-nim](https://github.com/pragmagic/godot-nim){.bare}
+-   [https://github.com/pragmagic/godot-nim](https://github.com/pragmagic/godot-nim)
 
--   [https://github.com/nimgl/nimgl](https://github.com/nimgl/nimgl){.bare}
+-   [https://github.com/nimgl/nimgl](https://github.com/nimgl/nimgl)
 
--   [https://github.com/Vladar4/sdl2_nim](https://github.com/Vladar4/sdl2_nim){.bare}
+-   [https://github.com/Vladar4/sdl2_nim](https://github.com/Vladar4/sdl2_nim)
 
--   [https://github.com/ftsf/nico](https://github.com/ftsf/nico){.bare}
+-   [https://github.com/ftsf/nico](https://github.com/ftsf/nico)
 
--   [https://github.com/StefanSalewski/nim-chess4](https://github.com/StefanSalewski/nim-chess4){.bare}
+-   [https://github.com/StefanSalewski/nim-chess4](https://github.com/StefanSalewski/nim-chess4)
 
--   [https://github.com/planetis-m/goodluck/](https://github.com/planetis-m/goodluck/){.bare}
+-   [https://github.com/planetis-m/goodluck/](https://github.com/planetis-m/goodluck/)
 
--   [https://forum.nim-lang.org/t/8619](https://forum.nim-lang.org/t/8619){.bare}
+-   [https://forum.nim-lang.org/t/8619](https://forum.nim-lang.org/t/8619)
 
 
 
@@ -20214,7 +20214,7 @@ which can easily be installed with Nim's package manager(s).
 
 
 For packages registered in the [Nimble]{.name} database, executing the
-[nimble install]{.term} command
+[nimble install] command
 
 
 
@@ -20241,27 +20241,27 @@ administrator privileges. We told you already in the introduction to
 this book, that we do not intend to discuss the detailed use of
 [nimble] in this book, at least not for the first edition. The
 [Nimble]{.name} package manager is described in detail in
-[https://github.com/nim-lang/nimble](https://github.com/nim-lang/nimble){.bare},
+[https://github.com/nim-lang/nimble](https://github.com/nim-lang/nimble),
 and also in the Manning book. There you can also learn how you can
 create [Nimble]{.name} packages yourself, and how you can register your
 own packages in [Nimble's]{.name} database so that other people can find
 them easier. While [Nimble]{.name} is [Nim's]{.nim} default package
 manager, which is currently used by the majority of the user base, there
 exist also the alternative implementation
-[https://github.com/disruptek/nimph](https://github.com/disruptek/nimph){.bare},
+[https://github.com/disruptek/nimph](https://github.com/disruptek/nimph),
 and some lesser known ones like [Nimp]{.name}, [Slim]{.name} or
 [Nifty]{.name}.
 
 
 
 We have already a few thousand external packages for [Nim]{.nim} --- you
-may use commands like [nimble list]{.term} or [nimble search]{.term} to
+may use commands like [nimble list] or [nimble search] to
 list all registered packages, or to search in the database for entries,
 or you can use
-[https://nimble.directory/](https://nimble.directory/){.bare} or the
+[https://nimble.directory/](https://nimble.directory/) or the
 [GitHub] online search to find more packages. You can also consult
 the list of curated [Nim]{.nim} packages at
-[https://github.com/xflywind/awesome-nim](https://github.com/xflywind/awesome-nim){.bare}.
+[https://github.com/xflywind/awesome-nim](https://github.com/xflywind/awesome-nim).
 
 
 
@@ -20314,8 +20314,8 @@ documentation is not really beginner-friendly.
 
 
 We will start with a powerful package for the use of the [Parsing
-Expression Grammar]{.ndef} (PEG), which is some form of an alternative
-to the use of [regular expressions]{.ndef} for parsing tasks.
+Expression Grammar] (PEG), which is some form of an alternative
+to the use of [regular expressions] for parsing tasks.
 
 
 
@@ -20325,22 +20325,22 @@ to the use of [regular expressions]{.ndef} for parsing tasks.
 
 
 
-Parsing whole text files or single [strings]{.str} is a common
+Parsing whole text files or single [strings] is a common
 programming task, e.g. to process textual user input or to extract data
 from HTML or CSV files. Traditional this is often done by the use of
-[regular expressions]{.ndef} --- in part III of the book we show how it
+[regular expressions] --- in part III of the book we show how it
 can be done by use of the [regex] module.
 
 
 
-[PEGs]{.ndef}, or [Parsing Expression Grammars]{.ndef}, are another
+[PEGs], or [Parsing Expression Grammars], are another
 formalism for recognizing patterns in text by use of a set of rules. A
-PEG can be used as an alternative to [regular expressions]{.ndef} for
+PEG can be used as an alternative to [regular expressions] for
 parsing, pattern matching and text processing. The [Parsing Expression
-Grammar]{.ndef} was introduced by Bryan Ford in 2004 and is closely
+Grammar] was introduced by Bryan Ford in 2004 and is closely
 related to the family of top-down parsing languages introduced in the
 early 1970s. PEGs are a derivative of the [Extended Backus-Naur
-Form]{.ndef} (EBNF) with a different interpretation, designed to
+Form] (EBNF) with a different interpretation, designed to
 represent a recursive descent parser.
 
 
@@ -20359,8 +20359,8 @@ expressions.
 
 
 While the use of regular expressions is very similar in different
-programming languages or external tools like [sed]{.ndef} and
-[grep]{.ndef}, the API for PEG libraries can be very different, and even
+programming languages or external tools like [sed] and
+[grep], the API for PEG libraries can be very different, and even
 the actual syntax for building parsing rules can differ.
 
 
@@ -20369,7 +20369,7 @@ Nim's standard library includes already a simple [pegs] module,
 but we will use the more advanced external [NPeg]{.name} package of Ico
 Doornekamp instead. [NPeg]{.name} is a pure [Nim]{.nim} library, that
 provides macros to compile PEGs to Nim procedures which can parse
-[strings]{.str} and collect selected parts of the input.
+[strings] and collect selected parts of the input.
 
 
 
@@ -20380,7 +20380,7 @@ documentation of the [npeg] module.
 
 
 
-Formally, a [parsing expression grammar]{.ndef} consists of a starting
+Formally, a [parsing expression grammar] consists of a starting
 expression, a set of parsing rules, and finite sets of terminal and
 nonterminal
 symbols.^\[[51](#_footnotedef_51 "View footnote."){#_footnoteref_51
@@ -20391,17 +20391,17 @@ symbols.^\[[51](#_footnotedef_51 "View footnote."){#_footnoteref_51
 Each parsing rule has the form [A ← e], where [A] is a
 nonterminal symbol and [e] is a parsing expression. An (atomic)
 parsing expression consists of terminal or nonterminal symbols or an
-empty [string]{.str}. New parsing expressions can be constructed from
+empty [string]. New parsing expressions can be constructed from
 existing ones by concatenation (sequence), an ordered choice, by
 repetitions (zero-or more, one-or-more, optional) of an existing
-expression, and by use of the [and]{.ndef} and [not]{.ndef} predicate.
-The [and-predicate]{.ndef} expression [&e] invokes the
+expression, and by use of the [and] and [not] predicate.
+The [and-predicate] expression [&e] invokes the
 sub-expression [e], and then succeeds if [e] succeeds and
 fails if [e] fails, but in either case never consumes any input.
 The [not-predicate] expression [!e] succeeds if [e]
 fails and fails if [e] succeeds, again consuming no input in
 either case. Because these two predicates can use an arbitrarily complex
-sub-expression to [\"look ahead\"]{.ndef} into the input [string]{.str}
+sub-expression to [\"look ahead\"] into the input [string]
 without actually consuming it, they provide a powerful syntactic
 look-ahead and disambiguation facility, in particular when reordering
 the alternatives cannot specify the exact parse tree desired.
@@ -20410,7 +20410,7 @@ the alternatives cannot specify the exact parse tree desired.
 
 [NPeg]{.name} is a pure [Nim]{.nim} pattern matching library. It
 provides macros to compile patterns and grammars (PEGs) to Nim
-procedures which will parse a [string]{.str} and collect selected parts
+procedures which will parse a [string] and collect selected parts
 of the input. In this way, [npeg] is an alternative to the use of
 the [regex] module, but [npeg] does not support the optional
 replacement of matched patterns.
@@ -20438,7 +20438,7 @@ echo p.match("123").ok
 
 The [npeg] module defines a few macros for processing PEG
 patterns. One of them is the [peg()] macro, to which we pass as
-argument a starting expression in the form of a [string]{.str}, and
+argument a starting expression in the form of a [string], and
 which creates and return a [Parser] object. In the body of the
 [peg()] macro, we have to define all the grammar rules that our
 PEG is built of. For our example, we only need one simple rule that is a
@@ -20447,7 +20447,7 @@ repetition of the decimal digits zero to nine.
 
 
 The [npeg] module uses as terminal symbols single characters
-enclosed in single quotes or [strings]{.str} enclosed in double quotes.
+enclosed in single quotes or [strings] enclosed in double quotes.
 
 
 
@@ -20470,10 +20470,10 @@ expression.
 
 
 The [peg()] macro returns a [Parser] object, which we can
-pass together with a [string]{.str} that should be parsed to the
+pass together with a [string] that should be parsed to the
 [match()] function. The function [match()] returns an
 instance of a [MatchObject] --- we use the [ok] field of
-this [object]{.obj} to check if the match was successful.
+this [object] to check if the match was successful.
 
 
 
@@ -20484,7 +20484,7 @@ module uses a syntax, which is not fully identical to the original PEG
 definition, which is used by the [pegs] module of Nim's standard
 library: Originally character classes were created by enclosing
 individual characters or character ranges in square brackets, similar as
-done for [regular expressions]{.ndef}. But the [npeg] module uses
+done for [regular expressions]. But the [npeg] module uses
 a pair of curly braces instead. In PEG repetitions are specified by
 [\*], [+] and [?] for zero or more, one or more, or
 one or zero, as in regular expressions. In the original PEG design these
@@ -20492,11 +20492,11 @@ characters were put after an expression, while for the [npeg]
 syntax we have to put them in front of an expression. In the original
 PEG syntax, sequences of expressions are just separated by spaces, while
 in npeg syntax a [\*] is used, and for the ordered choice
-[npeg] syntax uses the [\|]{.op} instead of the original slash
-([/]{.op}) symbol. Like the original PEG syntax, [npeg] uses the
-symbols [&] and [!]{.op} for the non-capturing [and] and
-[not]{.ndef} predicates. Additional [npeg] provides the symbol
-[1] to match all, [0] to match nothing and an infix [-]{.op}
+[npeg] syntax uses the [\|] instead of the original slash
+([/]) symbol. Like the original PEG syntax, [npeg] uses the
+symbols [&] and [!] for the non-capturing [and] and
+[not] predicates. Additional [npeg] provides the symbol
+[1] to match all, [0] to match nothing and an infix [-]
 operator --- [P1 - P2] matches [P1] if [P2] does not
 match. So an expression, which for example matches all characters but a
 space, can be easily written as [1 - \' \'].
@@ -20530,7 +20530,7 @@ We said that the symbol [\*] is used to indicate zero or more
 repetitions of an expression. But for the [npeg] module this
 [\*] is used at the same time to construct sequences of
 expressions, that is, to concatenate expressions. In the code above, we
-pass the [string]{.str} \"term\" as the starting expression to the
+pass the [string] \"term\" as the starting expression to the
 [peg()] macro. In the macro body we define three rules, which
 each assign an expression to the nonterminal symbols [term],
 [dig] and [op]. In the expression [dig \* \*(op \*
@@ -20546,7 +20546,7 @@ or subtraction.
 ### Capturing data
 
 
-The [npeg] module offers plain [string]{.str} captures and more
+The [npeg] module offers plain [string] captures and more
 flexible code block captures.
 
 
@@ -20586,9 +20586,9 @@ if m.ok:
 The [MatchResult] returned by the [peg()] macro has the
 exported fields [matchLen] and [captures], which we can read
 out in case of a successful match. [MatchLen] tells us how many
-characters of the [string]{.str} has been captured, and [captures]
+characters of the [string] has been captured, and [captures]
 is a [seq\[string\]] containing the captured
-[strings]{.str}.^\[[52](#_footnotedef_52 "View footnote."){#_footnoteref_52
+[strings].^\[[52](#_footnotedef_52 "View footnote."){#_footnoteref_52
 .footnote}\]^
 
 
@@ -20605,24 +20605,24 @@ for handling the data during parsing.
 
 When a grammar rule ends with a colon [:], the next indented
 block in the grammar is interpreted as Nim code, which gets executed
-when the rule has been matched. Any [string]{.str} captures that were
+when the rule has been matched. Any [string] captures that were
 made inside the rule are available to the Nim code in the injected
 variable [capture\[\]] of type [seq\[Capture\]].
-[Capture] is an [object]{.obj} with field [s] containing
-the captured [string]{.str} and field [si] containing the index
-position of the capture inside the original [string]{.str}.
+[Capture] is an [object] with field [s] containing
+the captured [string] and field [si] containing the index
+position of the capture inside the original [string].
 
 
 
 The total sub-string matched by the code block rule is available as
-[capture\[0\]], and the individual captured [strings]{.str} are
+[capture\[0\]], and the individual captured [strings] are
 available with indices \> [0]. In the indented code block, we can
 also use [\$n] instead of [capture\[n\].s] and [\@n]
 instead of [capture\[n\].si].
 
 
 
-We could use the seq of captures to print the captured [strings]{.str}
+We could use the seq of captures to print the captured [strings]
 or to copy it into some global variable. To avoid the need for global
 variables, we can pass to the [peg()] macro a second argument,
 which is a name and a data type separated by a colon, like [peg(name,
@@ -20633,7 +20633,7 @@ ordinary variable in the code block.
 
 For our next example, we will assume that we have written a plain CAD
 tool, that allows the user to enter textual commands like [moveTo(x,
-y)]{.term}.
+y)].
 
 
 
@@ -20673,11 +20673,11 @@ rules --- [command], [com] and [pos]. For the
 [command] rule, we use an expression which starts with the command
 name, followed in round brackets, the [x/y] coordinate pair. In
 front of the nonterminal symbols [com] and [pos] we put the
-[\>]{.op} operator to capture these values. We put a colon after the
+[\>] operator to capture these values. We put a colon after the
 command rule and can access the captured values in the indented block,
 by use of the [\$N] symbol. For the [com] rule, we specify
 the literal terminal symbols [\"moveTo\"] or [\"lineTo\"] as
-ordered choice with the [\|]{.op} operator. Finally, the expression for
+ordered choice with the [\|] operator. Finally, the expression for
 the [pos] rule is just a sequence of one or more decimal digits.
 
 
@@ -20692,7 +20692,7 @@ rules. In that case, we can use the [patt()] macro instead of
 
 
 
-For example, the pattern below splits a [string]{.str} by white space:
+For example, the pattern below splits a [string] by white space:
 
 
 
@@ -20724,7 +20724,7 @@ The PEG syntax defines also the two non-capturing [and] and
 facility. A common use of the [!] predicate is to terminate a
 parsing expression with [!1]. Here the [1] matches
 everything, and [!1] would only match when there is nothing left
-to match, that is the [string]{.str} end is reached.
+to match, that is the [string] end is reached.
 
 
 
@@ -20742,9 +20742,9 @@ References:
 
 
 
--   [https://github.com/zevv/npeg](https://github.com/zevv/npeg){.bare}
+-   [https://github.com/zevv/npeg](https://github.com/zevv/npeg)
 
--   [https://en.wikipedia.org/wiki/Parsing_expression_grammar](https://en.wikipedia.org/wiki/Parsing_expression_grammar){.bare}
+-   [https://en.wikipedia.org/wiki/Parsing_expression_grammar](https://en.wikipedia.org/wiki/Parsing_expression_grammar)
 
 
 
@@ -20758,7 +20758,7 @@ References:
 
 In part III of the book, we presented the module [parseopt] of
 Nim's standard library, which can help us to parse the command line
-[string]{.str} --- for programs launched from within a terminal window
+[string] --- for programs launched from within a terminal window
 by typing the command name followed by a set of options and arguments.
 There we also explained the difference between short and long option
 names, and options with and without values. If you can not remember
@@ -20852,10 +20852,10 @@ can compile and run this code:
 
 Long and short option names, with and without values are supported, you
 can use [=] or [:] to separate option names from its values,
-and leaf out the separator as in [-p12]{.term} when there is no
+and leaf out the separator as in [-p12] when there is no
 ambiguity. Long options can be abbreviated if there is no ambiguity,
 i.e. we could call our app like [./fancyprint \--p12 \--qual:high
-\--verb file.pdf]{.term}.
+\--verb file.pdf].
 
 
 
@@ -20889,7 +20889,7 @@ overview of the intended use:
 You can also display a summary about the [cligen] syntax with the
 parameter [help-syntax]. The [cligen] module offers some
 more advanced features, which we will not discuss here in detail: We can
-use a command mode, to support app calls like [nim c ...​]{.term}, where
+use a command mode, to support app calls like [nim c ...​], where
 the first argument selects which command is called. Or you can specify
 that a different letter than the first one of the long option name is
 used as short option. Or, instead of directly calling a proc, we can use
@@ -20904,7 +20904,7 @@ References:
 
 
 
--   [https://github.com/c-blake/cligen](https://github.com/c-blake/cligen){.bare}
+-   [https://github.com/c-blake/cligen](https://github.com/c-blake/cligen)
 
 
 
@@ -20975,7 +20975,7 @@ support, which was used for the [sqr()] macro above. C macros
 have the purpose to support named constants and to support simple
 parameterized expressions like the [sqr()] from above, avoiding
 the need to create actual functions. The C pre-processor would
-substitute each occurrence of the [string]{.str} [PI]{.const} in the C
+substitute each occurrence of the [string] [PI] in the C
 source file with the [float] literal [3.1415] and the term
 [sqr(1+2)] with [(1+2)\*(1+2)].
 
@@ -21080,12 +21080,12 @@ program, we get only the output [\"calling macro m1\"] from the
 [main()] [proc], as the macro [m1()] does return an
 empty AST only. The careful reader may wonder why the [echo()]
 statement in the macro body above works at all, as the parameter of
-macro [m1()] is specified as ordinary [string]{.str}, not as
+macro [m1()] is specified as ordinary [string], not as
 [static\[string\]]. So the type of [s] in the macro body
 should be a NimNode. Well, perhaps an [echo()] overload exists
-that can work with NimNodes, or maybe, as we pass a [string]{.str}
+that can work with NimNodes, or maybe, as we pass a [string]
 constant to macro [m1()], in this concrete case s is indeed an
-ordinary [string]{.str} in the macro body. Possibly we should have used
+ordinary [string] in the macro body. Possibly we should have used
 [s: static\[string\]] as parameter type, which would give us the
 exact same results.
 
@@ -21133,7 +21133,7 @@ prints the message [\"str\"], which is a bit surprising. To fix
 this, we can change the parameter type to [static\[string\]],
 which guarantees that we can indeed pass only compile time constants.
 Our last example would give a compile error in this case, while the one
-before with the [string]{.str} constant would work as expected.
+before with the [string] constant would work as expected.
 
 
 
@@ -21156,15 +21156,15 @@ and to create useful macros.
 
 
 We will start with the simple [parseStmt()] function, which
-generates the syntax tree from the source code text [string]{.str} that
+generates the syntax tree from the source code text [string] that
 we pass it as argument. This seems to be very restricted, and maybe even
 useless, as we can write the source code just as ordinary program text
 outside the macro body. That is true, but we can construct the text
-[string]{.str} argument that we pass to the [parseStmt()]
+[string] argument that we pass to the [parseStmt()]
 function with regular Nim code at compile time. That is similar to
-having one program, which generates a new source code [string]{.str},
-saves that [string]{.str} to disk, and finally compiles and runs that
-created program. Let us check with a fully [static] [string]{.str}
+having one program, which generates a new source code [string],
+saves that [string] to disk, and finally compiles and runs that
+created program. Let us check with a fully [static] [string]
 that [parseStmt()] actually works:
 
 
@@ -21196,7 +21196,7 @@ compiled AST is executed and produces the output.
 
 
 
-Of course, executing a fully [static] [string]{.str} this way is
+Of course, executing a fully [static] [string] this way is
 useless, as we could have used regular program code instead. Now let us
 investigate how we can construct some program code at compile time. Let
 us assume that we have an [object] with multiple fields, and we
@@ -21206,7 +21206,7 @@ statement, when we separate the field arguments each by [\"\\n\"].
 The [with] module may further simplify our task. But as we have to
 print multiple fields, not an [array] or a [seq], we can
 not directly iterate over the values to process them. Let us see how a
-simple text [string]{.str} based macro can solve the task:
+simple text [string] based macro can solve the task:
 
 
 
@@ -21236,21 +21236,21 @@ main()
 
 
 In this example, we pass the name of our [object] instance as a
-[static] [string]{.str} to the macro, while we pass the fields not
-as [string]{.str}, but as a list of [untyped] values. The passed
-[static] [string]{.str} is indeed an ordinary Nim [string]
+[static] [string] to the macro, while we pass the fields not
+as [string], but as a list of [untyped] values. The passed
+[static] [string] is indeed an ordinary Nim [string]
 inside the [macro], we can apply sting operations on it. But the
 field names passed as [untyped] parameters appear as so called
 NimNodes inside the macro. We can use the [repr()] function to
 convert the NimNodes to ordinary [strings], so that we can use
-[string]{.str} operations on them. We iterate with a [for] loop
+[string] operations on them. We iterate with a [for] loop
 over all the passed field names, and generate [echo()] statements
 from the [object] instance name and the field names, each
 separated by a newline character. Then all the statements are collected
-in a multi-line [string]{.str} [s] and are finally converted to
+in a multi-line [string] [s] and are finally converted to
 the final AST by the [parseStmt()] function. In the macro body,
 we use the [echo()] statement to verify the content of that
-[string]{.str}. As the [macro] is executed during compile time, we
+[string]. As the [macro] is executed during compile time, we
 get this output when we compile our program:
 
 
@@ -21299,8 +21299,8 @@ with the [of] keyword at runtime. Note that [object]
 variants and references (the managed [pointers] itself, not the
 actual data allocated on the heap) always occupy the same amount of RAM,
 independent of the actual runtime type. (That is why we can store
-[object]{.obj} variants with different content or references to
-[objects]{.obj} of different runtime types using inheritance in
+[object] variants with different content or references to
+[objects] of different runtime types using inheritance in
 [arrays] and sequences.)
 
 
@@ -21349,8 +21349,8 @@ parameters are not NimNodes in the [macro] body, but have their
 ordinary data types in the [macro] body. Variables that we define
 inside the [macro] body have exactly that type that we give to
 then, e.g. when we define a variable as [s: string] then this is
-an ordinary Nim [string]{.str} variable, for which we can use the common
-[string]{.str} operations. But of course, we have always to remember
+an ordinary Nim [string] variable, for which we can use the common
+[string] operations. But of course, we have always to remember
 that [macros] are executed at compile time, and so the operations
 on variables defined in the [macro] body occur at compile time,
 which may restrict a few operations. Currently, [macros] are
@@ -21658,9 +21658,9 @@ When we compile and run that code, we get:
 In the [macro] body we use the [proc] [toStrLit()]
 from the [macros] module, which is described with this comment:
 \"Converts the AST n to the concrete Nim code and wraps that in a
-[string]{.str} literal node\" So our local variable [n] in the
+[string] literal node\" So our local variable [n] in the
 [macro] body is a [NimNode] that now contains the
-[string]{.str} representation of the [macro] argument [x].
+[string] representation of the [macro] argument [x].
 We use the [NimNode] [n] enclosed with backtics in the
 [quote do:] construct. It seems that writing this [macro]
 was indeed not that difficult, but actually it was only that easy
@@ -21684,7 +21684,7 @@ are interpolated at compile time. For our program from above, the actual
 [echo()] statement in the block is then finally executed at
 program runtime. To prove how this final [echo()] statement looks
 we may add as the last line of our [macro] the statement [\"echo
-result.repr\"] and we would then get the [string]{.str} \"echo
+result.repr\"] and we would then get the [string] \"echo
 \"a \* sqrt(b)\", \": \", a \* sqrt(b)\" when we compile our program
 again.
 
@@ -21730,7 +21730,7 @@ echo "a + b", ": ", a + b
 
 
 That is, for debugging we would like to print an expression first in its
-[string]{.str} representation, and divided by a colon the evaluated
+[string] representation, and divided by a colon the evaluated
 expression. The [dumpTree()] [macro] can show us how the
 Nim syntax tree for such a print debug statement should look:
 
@@ -21769,7 +21769,7 @@ When we compile this code, we get as output:
 
 So the Nim syntax tree for the [echo()] statement from above is a
 statement list consisting of an [echo()] command with two
-[string]{.str} literal arguments and a last argument which is built with
+[string] literal arguments and a last argument which is built with
 the infix + operator and the two arguments [a] and [b]. So
 we can see how the AST that we would have to construct would have to
 look, but we still have no idea how we could construct such an AST in
@@ -21877,7 +21877,7 @@ there is one more problem: That nested [macro] body from above is
 not really useful for our final [dump()] [macro], as we
 would like to be able to construct the [NimNode], that is
 returned by the [dump()] [macro] step wise: Add the
-[echo()] command, then the passed expression in [string]{.str}
+[echo()] command, then the passed expression in [string]
 form, and finally the evaluated expression. So let us first rewrite the
 above [macro] in a form where the AST is constructed step by step.
 That may look difficult, but when we know that we can call the
@@ -21949,15 +21949,15 @@ same output:
 The next step to create our actual [dump()] macro is again
 easy --- we pass the expression to [dump()] as an
 [untyped] [macro] parameter to the [macro], convert
-it to a [NimNode] of [string]{.str} type and use that instead of
+it to a [NimNode] of [string] type and use that instead of
 the [newLit(\"a + b\")] from above. In our second [macro],
 where we used the [quote do:] construct, we applied already
 [toStrLit()] on an [untyped] [macro] parameter, so
-we should be able to reuse that to get the [string]{.str}
+we should be able to reuse that to get the [string]
 [NimNode]. Instead, we would have to apply the stringify operator
 additional on that value. But a simpler way is to just apply
 [repr()] on the [untyped] [macro] argument to get a
-[NimNode] of [string]{.str} type. And finally, to get the value
+[NimNode] of [string] type. And finally, to get the value
 of the evaluated expression in our [dump()] macro, we
 [add()] the [untyped] [macro] parameter directly in
 the command three --- that value is evaluated when we run the
@@ -22091,7 +22091,7 @@ an [assert()] [macro] as well.
 
 Arguments for our [assert()] [macro] may look like [\"x ==
 1 +2\"], containing one infix operator and one left-hand and one
-right-hand operand. We will show how we can use subscript [\[\]]{.op}
+right-hand operand. We will show how we can use subscript [\[\]]
 operators on the [NimNode] argument to access each operand.
 
 
@@ -22171,11 +22171,11 @@ module --- that module follows the convention to prepend [enum]
 values with a prefix, which is [nnk] for [NimNodeType] in
 this case. In the [macro] body, we use the subscript operator
 [\[0\]] to access the operator, and then apply [repr()] on
-it to get its [string]{.str} representation. Further, we use the
-subscript operators [\[1\]]{.op} and [\[2\]]{.op} to extract the two
+it to get its [string] representation. Further, we use the
+subscript operators [\[1\]] and [\[2\]] to extract the two
 operands from the macro argument and store the result each in a
 [NimNode] [lhs] and [rhs]. Finally, we create the
-[quote do:] construct with its indented multi-line [string]{.str}
+[quote do:] construct with its indented multi-line [string]
 argument and the interpolated [NimNode] values enclosed in
 backtics. The block after the [quote do:] construct checks if the
 passed [arg] [macro] argument evaluates to [false] at
@@ -22381,7 +22381,7 @@ shape of the [for] loop node. In that node, we only have to
 replace two [newIdentNode()] calls so that the fields names can
 be provided by iterating over an [array] of [strings], and
 the [object] name is taken from the [iterator] parameter. To
-get the [object]{.obj} name, we first use [o.treeRepr] to see the
+get the [object] name, we first use [o.treeRepr] to see the
 whole parameter structure, and then [params.treeRepr] to get the
 structure of the parameters passed to our [iterator]. Using
 subscript operators, we get the actual [object] name. We insert
@@ -22486,7 +22486,7 @@ main()
 
 
 Again, [dumpAstGen()] shows us the structure of the needed AST.
-We use [repr()] to get the [string]{.str} representation of the
+We use [repr()] to get the [string] representation of the
 two [macro] arguments and replace in the [dumpAstGen()]
 output the arguments of the [newIdentNode()] calls with that
 values. When we compile and run the above program, we get
@@ -22510,17 +22510,17 @@ References:
 
 
 
--   [https://nim-lang.org/docs/manual.html#macros](https://nim-lang.org/docs/manual.html#macros){.bare}
+-   [https://nim-lang.org/docs/manual.html#macros](https://nim-lang.org/docs/manual.html#macros)
 
--   [https://nim-lang.org/docs/tut3.html](https://nim-lang.org/docs/tut3.html){.bare}
+-   [https://nim-lang.org/docs/tut3.html](https://nim-lang.org/docs/tut3.html)
 
--   [https://nim-by-example.github.io/macros/](https://nim-by-example.github.io/macros/){.bare}
+-   [https://nim-by-example.github.io/macros/](https://nim-by-example.github.io/macros/)
 
--   [https://hookrace.net/blog/introduction-to-metaprogramming-in-nim/](https://hookrace.net/blog/introduction-to-metaprogramming-in-nim/){.bare}
+-   [https://hookrace.net/blog/introduction-to-metaprogramming-in-nim/](https://hookrace.net/blog/introduction-to-metaprogramming-in-nim/)
 
--   [https://flenniken.net/blog/nim-macros/](https://flenniken.net/blog/nim-macros/){.bare}
+-   [https://flenniken.net/blog/nim-macros/](https://flenniken.net/blog/nim-macros/)
 
--   [https://dev.to/beef331/demystification-of-macros-in-nim-13n8](https://dev.to/beef331/demystification-of-macros-in-nim-13n8){.bare}
+-   [https://dev.to/beef331/demystification-of-macros-in-nim-13n8](https://dev.to/beef331/demystification-of-macros-in-nim-13n8)
 
 
 
@@ -22551,9 +22551,9 @@ As the CPUs of recent desktop computers often have already a few dozen
 of cores, and GPUs may have thousands of them, it has become more and
 more important to distribute computing tasks between all these cores to
 gain optimal performance. Dedicated programming languages like
-[Chapel]{.ndef} or [Pony]{.ndef} have been developed for this task, and
+[Chapel] or [Pony] have been developed for this task, and
 most modern programming languages supports it. For older languages like
-C extension like [OpenMP]{.ndef} for threading support have been
+C extension like [OpenMP] for threading support have been
 developed.
 
 
@@ -22587,7 +22587,7 @@ physical CPU cores. All the threads of one single process can use common
 resources and access common variables, which enables data exchange
 between threads, with some restrictions. Data exchange between
 different, separated processes is not that easy, but it is also possible
-by use of [inter-process-communication]{.ndef} protocols. Early PC
+by use of [inter-process-communication] protocols. Early PC
 operating systems executed only one process at a time, sometimes the
 user was able to switch between multiple launched processes. Modern
 operating systems do a fast switching between all the ready processes,
@@ -22608,8 +22608,8 @@ mouse input or display updates. Concurrency is typically supported by
 smart hardware, which can interrupt the current work of the CPU to
 temporarily execute a different code segment. Hardware like disc
 controllers or network cards have its own data buffers or can access
-parts of the RAM directly by [DMA (Direct Memory Access)]{.ndef} and
-notice the CPU by so-called [interrupt signals]{.ndef} when a buffer is
+parts of the RAM directly by [DMA (Direct Memory Access)] and
+notice the CPU by so-called [interrupt signals] when a buffer is
 full (or empty) or when another condition is met, e.g. when new network
 data are available. This interrupt system can drastically improve
 performance and throughput, as active waiting in polling busy loops for
@@ -22621,16 +22621,16 @@ intervention.
 
 
 This form of (hardware interrupt driven) concurrency needs generally
-some software support, e.g. the Linux kernel may use the [epoll]{.ndef}
+some software support, e.g. the Linux kernel may use the [epoll]
 system for I/O event notifications. Initially it was a common practice
-to connect so-called [callback functions]{.ndef} to interrupt driven
+to connect so-called [callback functions] to interrupt driven
 signals, e.g. a callback function was invoked whenever some network data
 package has arrived. Some C programs and system libraries work still
-this way, for example the [glib]{.ndef} library of the [GTK GUI]{.ndef}
+this way, for example the [glib] library of the [GTK GUI]
 toolkit. But use of callbacks can become difficult and confusing for
 large applications, sometimes it was called a [\"callback
-hell\"]{.ndef}. So languages like Java, JavaScript or Python introduced
-a framework called [async/await]{.ndef} to simplify the process of
+hell\"]. So languages like Java, JavaScript or Python introduced
+a framework called [async/await] to simplify the process of
 writing non-blocking asynchronous software. The async/await framework
 actually hides the use of callbacks or use of system functions like
 epoll from the user. This asynchronous programming style has gained some
@@ -22638,7 +22638,7 @@ popularity due to the fact that many programs perform a lot of network
 communication, where data is transferred often slow compared to the
 processing power of the CPU. The Nim standard library provides an
 async/await framework which can be used similarly as that of Python, and
-the external Chronos package of [Status corp.]{.ndef} offers one more
+the external Chronos package of [Status corp.] offers one more
 similar package. Additionally, there was a discussion of some Nim
 developers to support or replace the async/await framework with a more
 flexible CPS based one. We should mention, that async/await has its
@@ -22664,7 +22664,7 @@ system of the standard library do not support parallel execution
 directly, but is executed only on a single thread, it is generally
 possible to use async/await with threads running in parallel. As an
 example for that, you may see
-[https://github.com/dom96/httpbeast](https://github.com/dom96/httpbeast){.bare}.
+[https://github.com/dom96/httpbeast](https://github.com/dom96/httpbeast).
 
 
 
@@ -22672,7 +22672,7 @@ example for that, you may see
 
 For Nim, we have many different ways to do parallel program execution,
 and for the async/await framework of Nim's standard library the
-[chronos]{.ndef} alternative implementation is available. Creating new
+[chronos] alternative implementation is available. Creating new
 threads, which are executed in parallel when the CPU has multiple
 physical cores, is supported by the [threads] module. Additionally
 the Nim standard library provides the [threadpool] module, which
@@ -22720,7 +22720,7 @@ from one thread to another by use of the [channels] module.
 
 Note: Whenever we intend to use threads in Nim, that is when we import
 the [threadpool] or the [threads] module, we have to compile
-our program with the option [\--threads:on]{.term}.
+our program with the option [\--threads:on].
 
 
 
@@ -22781,20 +22781,20 @@ container type that can store the result of our passed function. In the
 example above we used FlowVar\[int\] as our [proc] [sum]
 returns an integer value, but of course the generic
 [FlowVar\[T\]] type works for other data types as well, including
-sequence and [object]{.obj} types. As the instances of
+sequence and [object] types. As the instances of
 [FlowVar\[T\]] type are returned immediately by [spawn()],
 these container variables may be empty initially. We may then use
 functions like [isReady()] from the [threadpool] module to
 test if the [FlowVar\[T\]] variable contains already the result
 data, or we can do a blocking wait for the result of our [proc]
-with the [\^]{.op} operator. The [\^]{.op} operator applied to the
+with the [\^] operator. The [\^] operator applied to the
 [FlowVar\[T\]] variable waits for the thread to finish the
 execution of our [proc] and then returns the actual result. If
-the thread is already finished when we apply the [\^]{.op} operator, we
-get the result immediately. As [\^]{.op} does a blocking wait, it may
+the thread is already finished when we apply the [\^] operator, we
+get the result immediately. As [\^] does a blocking wait, it may
 look as there would not be much benefit, but of course we can launch a
 number of threads with [spawn], which can be processed in
-parallel, and then we wait with [\^]{.op} on all the results.
+parallel, and then we wait with [\^] on all the results.
 
 
 
@@ -22802,7 +22802,7 @@ In the example above, we use a plain [proc] which sums up the
 first [i] natural numbers, very similar to our very first example
 program in part I of the book. We use [spawn()] to launch two
 instances of that [proc], and then wait for the results with the
-[\^]{.op} operator applied to the flowvar. If your PC has more than one
+[\^] operator applied to the flowvar. If your PC has more than one
 physical CPU core, then both [proc] instances should be running
 in parallel, taking only the total time of one single run. You may
 compile and launch the above code with [nim c \--threads:on t.nim; time
@@ -22873,11 +22873,11 @@ possible way to request user input without blocking the whole app.
 With the [parallel] statement, the [threadpool] module
 offers one more way to use threads to process data in parallel. While
 the [parallel] statement is already available in Nim since many
-years, it was recently labeled as [experimental feature]{.ndef}, so we
+years, it was recently labeled as [experimental feature], so we
 have to use the [{.experimental.}] pragma to use it. And the
 detailed description is currently only available in the experimental
 section of the manual:
-[https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn-parallel-statement](https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn-parallel-statement){.bare}
+[https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn-parallel-statement](https://nim-lang.org/docs/manual_experimental.html#parallel-amp-spawn-parallel-statement)
 
 
 
@@ -22979,7 +22979,7 @@ the [proc] parameter to [createThread()]. The
 [Thread] variable must have the same generic type as the
 parameter of the [proc] that we want to execute. In our example
 that parameter type is a plain integer, but of course we can use other
-data types including [objects]{.obj}, \[.tup\]#tuple#s or container
+data types including [objects], \[.tup\]#tuple#s or container
 types like sequences.
 
 
@@ -23186,8 +23186,8 @@ threads access the data. In the example code, the actual issue results
 from the copying into the local variable and later copying the value
 back --- a plain inc() executed on the global variable may work. We used
 the local copy here to make the problem visible. Whenever we would work
-in such an unordered way onto more complicated data like [strings]{.str}
-or [objects]{.obj}, we would get corrupted data. This example should
+in such an unordered way onto more complicated data like [strings]
+or [objects], we would get corrupted data. This example should
 raise your awareness to all the concerns which may occur when multiple
 threads access global data in an uncontrolled way.
 
@@ -23311,7 +23311,7 @@ functions by one of the threads in the pool.
 As a practical application for parallel code execution, we will finally
 present an example for the process of parsing textual data files to
 extract some information. A commonly used file format to store data in
-files is a [comma-separated values]{.ndef} (CSV) file. Each line of the
+files is a [comma-separated values] (CSV) file. Each line of the
 file is a data record, consisting of one or more fields, separated by
 commas.
 
@@ -23401,13 +23401,13 @@ strategy for parsing CSV files is, that we read the file line by line,
 and process the data fields of each line. The first choice of people
 coming from other languages may be to use regexes for separating the
 components of each line. Regexes allow a very flexible parsing of
-[strings]{.str}, but regex parsing is not very fast, and as our file has
+[strings], but regex parsing is not very fast, and as our file has
 a very simple format, where the different fields are cleanly grouped by
 separating commas, other methods for extracting the data fields may be
 faster and simpler. But as regexes may be indeed useful for more
 complicated data extraction tasks, we will start with a small regex code
 example. Regex matching gives us only the substrings, but does not
-convert [strings]{.str} containing floating point or integer numbers to
+convert [strings] containing floating point or integer numbers to
 numeric values. We will leave this conversion out for now --- later we
 can use [parseInt()] or [parseFloat()] to get the numeric
 values. The code for our first regex solution is straight forward, we
@@ -23447,7 +23447,7 @@ main()
 
 
 The only part you may wonder about is the regex pattern: We have used
-[\[\^,\]] to create a character class. The [\^]{.op} has a
+[\[\^,\]] to create a character class. The [\^] has a
 special meaning if used in square brackets: It inverts the characters,
 that is [\[\^,\]] actually match all characters that are not a
 comma. This makes some sense in our case, as our data fields are
@@ -23500,7 +23500,7 @@ We used [+(1 - \',\')] as a pattern to grep the data fields, that
 is one or more repetitions of any character that is not a comma. The
 [\[5\]] indicates exactly five repetitions --- it may be a bit
 surprising that we have to put this expression after the pattern
-expression, while operators like [\*]{.op}, [+]{.op} and [?]{.op} have
+expression, while operators like [\*], [+] and [?] have
 to put in front for the [npegs] module.
 
 
@@ -23531,7 +23531,7 @@ main()
 
 For this use case, [split()] is the simplest solution, and it
 should be faster than the regex and PEG solution. But for each call,
-[split()] returns a seq with six [strings]{.str}, which have to
+[split()] returns a seq with six [strings], which have to
 be newly allocated for each call. So even faster solutions may be
 possible. So let us try the [parseutils] module now:
 
@@ -23570,7 +23570,7 @@ main()
 
 As we have discussed the [parseutils] module in part V of the book
 in much detail, the above code should be easily understandable for you.
-For extracting the area and population data, we will use [string]{.str}
+For extracting the area and population data, we will use [string]
 parsing only for now, and avoid the also available [parseFloat()]
 and [parseInt()] functions, as we want to compare the performance
 of the four solutions before we continue.
@@ -23578,12 +23578,12 @@ of the four solutions before we continue.
 
 
 The following table lists the runtimes for the four different ways of
-parsing the CSV data into [strings]{.str}. We used a CSV file with one
+parsing the CSV data into [strings]. We used a CSV file with one
 million lines. Additionally, as the last row of the table, we have used
 [parseutils] to parse the area and population directly into
 numeric variables. The CSV data have been generated with our program
 from the start of this section, and we compiled our parsers with
-[-d:release]{.term}, and with default GC and with [\--gc:arc]{.term}.
+[-d:release], and with default GC and with [\--gc:arc].
 The [time] shell command was used to measure the program
 runtimes.
 
@@ -23597,7 +23597,7 @@ runtimes.
   parseutils float/int   492 ms         522 ms
 
 
-As expected, regex parsing is the slowest, and with [\--gc:arc]{.term}
+As expected, regex parsing is the slowest, and with [\--gc:arc]
 it is even slower. The use of [parseutils] is the fastest, and we
 get the [float] and [int] values for free.
 
@@ -23605,7 +23605,7 @@ get the [float] and [int] values for free.
 
 Can we further improve the performance? Indeed, for the concrete data
 format, and when we are only interested to find numeric extreme values,
-then actually parsing the first four [strings]{.str} is not really
+then actually parsing the first four [strings] is not really
 necessary:
 
 
@@ -23641,12 +23641,12 @@ main()
 
 
 
-This reduced the runtime with [\--gc:arc]{.term} to 232 ms. Parsing the
+This reduced the runtime with [\--gc:arc] to 232 ms. Parsing the
 two numeric values is enough to find the line with the extreme
-value --- we can then just return the whole line [string]{.str}, from
+value --- we can then just return the whole line [string], from
 which the other fields can then be extracted. But this optimization is a
 bit dangerous, for corrupted data our backward scanning loops may run
-before the start of the line [string]{.str}, generating a runtime error.
+before the start of the line [string], generating a runtime error.
 
 
 
@@ -23825,15 +23825,15 @@ main()
 
 
 Note that we have to compile the program always with
-[\--threads:on]{.term}. When we compile the code above with option
-[-d:release]{.term}, it takes 120 ms to run, on a four core Intel box.
+[\--threads:on]. When we compile the code above with option
+[-d:release], it takes 120 ms to run, on a four core Intel box.
 That is indeed a performance improvement of a factor of four, which is
 not bad. Unfortunately, when we compile the code with [-d:release
-\--gc:arc]{.term}, we get runtimes of about 500 ms, which is no
+\--gc:arc], we get runtimes of about 500 ms, which is no
 improvement compared to the single threaded code. And with [-d:release
-\--gc:orc]{.term} the runtime is even in the range of 700 ms. At the end
+\--gc:orc] the runtime is even in the range of 700 ms. At the end
 of this section we will present a solution which works fine also for
-[\--gc:arc]{.term} --- for [\--gc:orc]{.term} the runtime is decreased
+[\--gc:arc] --- for [\--gc:orc] the runtime is decreased
 to 300 ms at least. When you think about the code a few minutes, its
 basic idea should become clear: We read a block from the CSV file, and
 when the end of the file is not yet reached, we go back to the last
@@ -23846,7 +23846,7 @@ declared a [Res] [object], which contains the parsed
 fields. All the [FlowVar\[ref Res\]] instances are collected in a
 sequence. When the end of the file is reached and all the data chunks
 have been passed to a spawned [candidate()] proc, we can start
-reading the [FlowVar] sequence. The [\^]{.op} operator blocks,
+reading the [FlowVar] sequence. The [\^] operator blocks,
 until the thread has finished, and we can access the data of the
 [FlowVar] to select the optimum from all the candidates.
 
@@ -23907,8 +23907,8 @@ we may guess that copying all the chunks may take not more time. As an
 alternative solution to the above code, we could try the [threads]
 module, using [channels] to pass the candidates back, or maybe
 the [parallel] construct. Or we may experiment with so-called
-[memory mapped files]{.ndef}, see
-[https://nim-lang.org/docs/memfiles.html](https://nim-lang.org/docs/memfiles.html){.bare}.
+[memory mapped files], see
+[https://nim-lang.org/docs/memfiles.html](https://nim-lang.org/docs/memfiles.html).
 
 
 
@@ -23917,21 +23917,21 @@ the [parallel] construct. Or we may experiment with so-called
 
 
 As we found out, the performance is currently disappointing when we
-compile with [\--gc: arc]{.term} or [\--gc:orc]{.term}. One easy way to
+compile with [\--gc: arc] or [\--gc:orc]. One easy way to
 fix that is, when we use additional the compiler option
-[-d:useMalloc]{.term}. This avoids the use of Nim's own memory
+[-d:useMalloc]. This avoids the use of Nim's own memory
 allocator, which seems to be slow when we compile with
-[\--threads:on]{.term}. The issue becomes very obvious due to the fact,
+[\--threads:on]. The issue becomes very obvious due to the fact,
 that the current implementation of the [splitLines()]
 [iterator] calls [subStr()] for each [yield], and
-[subStr()] does allocate a new [string]{.str}. Actually it is not
-really necessary to do a [string]{.str} allocation for each
-[yield]. As [strings]{.str} have value semantic, it would be
-possible to reuse the same [string]{.str} --- the [lines()]
+[subStr()] does allocate a new [string]. Actually it is not
+really necessary to do a [string] allocation for each
+[yield]. As [strings] have value semantic, it would be
+possible to reuse the same [string] --- the [lines()]
 [iterator] does that. It may be even possible to avoid allocations
 at all, by using the [openArray\[char\]] data type as result type
 for the [iterator], see
-[https://forum.nim-lang.org/t/6968#43685](https://forum.nim-lang.org/t/6968#43685){.bare}.
+[https://forum.nim-lang.org/t/6968#43685](https://forum.nim-lang.org/t/6968#43685).
 But actually we do not need the [splitLines()] [iterator]
 at all, we can again just use [parseUntil()]:
 
@@ -24007,17 +24007,17 @@ main()
 
 
 This code, compiled with [nim c \--threads:on -d:release \--gc:arc
-t.nim]{.term}, runs in less than 100 ms. With [-d:useMalloc]{.term} we
-can save a few more ms. With [\--gc:orc]{.term} we get a runtime of 300
+t.nim], runs in less than 100 ms. With [-d:useMalloc] we
+can save a few more ms. With [\--gc:orc] we get a runtime of 300
 ms, which is not that great. As you may have noticed, we have used only
 [Res] value [objects] in the code above, we do not need
 references. This is possible when we only compile with
-[\--gc:arc]{.term} or [\--gc:orc]{.term}, for [\--gc:refc]{.term} we
+[\--gc:arc] or [\--gc:orc], for [\--gc:refc] we
 would get the compile Error: [cannot create a flowVar of type:
 Res]{.italic}. We have done one additional modification --- we allocate
 the buffer [buf] inside of the [while] loop. This may look
 strange, as we generally avoid allocations in loops. But as
-[candidates()] gets a copy of the [buf] [string]{.str}, and
+[candidates()] gets a copy of the [buf] [string], and
 ARC uses move semantics and sink parameters, this may make sense. The
 compiler may pass the newly allocated [buf] variable just to
 candidates, instead of copying it. And we do not have to call
@@ -24041,21 +24041,21 @@ References
 
 
 
--   [http://callbackhell.com/](http://callbackhell.com/){.bare}
+-   [http://callbackhell.com/](http://callbackhell.com/)
 
--   [https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/){.bare}
+-   [https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/)
 
--   [https://en.wikipedia.org/wiki/Green_threads](https://en.wikipedia.org/wiki/Green_threads){.bare}
+-   [https://en.wikipedia.org/wiki/Green_threads](https://en.wikipedia.org/wiki/Green_threads)
 
--   [https://en.wikipedia.org/wiki/Continuation-passing_style](https://en.wikipedia.org/wiki/Continuation-passing_style){.bare}
+-   [https://en.wikipedia.org/wiki/Continuation-passing_style](https://en.wikipedia.org/wiki/Continuation-passing_style)
 
--   [https://github.com/status-im/nim-chronos](https://github.com/status-im/nim-chronos){.bare}
+-   [https://github.com/status-im/nim-chronos](https://github.com/status-im/nim-chronos)
 
--   [https://github.com/mratsim/weave](https://github.com/mratsim/weave){.bare}
+-   [https://github.com/mratsim/weave](https://github.com/mratsim/weave)
 
--   [https://en.wikipedia.org/wiki/Lock\_(computer_science](https://en.wikipedia.org/wiki/Lock_(computer_science){.bare})
+-   [https://en.wikipedia.org/wiki/Lock\_(computer_science](https://en.wikipedia.org/wiki/Lock_(computer_science))
 
--   [https://en.wikipedia.org/wiki/Comma-separated_values](https://en.wikipedia.org/wiki/Comma-separated_values){.bare}
+-   [https://en.wikipedia.org/wiki/Comma-separated_values](https://en.wikipedia.org/wiki/Comma-separated_values)
 
 
 
@@ -24067,7 +24067,7 @@ References
 
 
 
-The [async/await]{.ndef} framework allows asynchronous code execution by
+The [async/await] framework allows asynchronous code execution by
 use of only one single thread --- the currently active thread can
 suspend itself when waiting for data or other events.
 
@@ -24194,7 +24194,7 @@ modules [std/asyncdispatch] and [std/asyncfutures].
 
 
 
-These modules provide a [dispatcher]{.ndef}, a generic
+These modules provide a [dispatcher], a generic
 [Future\[T\]] type implementation, and the [async] macro
 which allows asynchronous code to be written in a synchronous style with
 the [await] keyword.
@@ -24229,7 +24229,7 @@ implemented with macros and meta-programming and use of Nim's
 Currently, Nim's async/await uses only one single thread on its own, but
 applications can combine it with multiple parallel running threads. As
 an alternative implementation, we could use
-[https://github.com/status-im/nim-chronos](https://github.com/status-im/nim-chronos){.bare},
+[https://github.com/status-im/nim-chronos](https://github.com/status-im/nim-chronos),
 which provides similar functionality.
 
 
@@ -24267,7 +24267,7 @@ be run by the dispatcher.
 
 
 The [Future\[T\]] data type, which is also called
-[Promise]{.ndef}, [Delay]{.ndef} or [Deferred]{.ndef} in other
+[Promise], [Delay] or [Deferred] in other
 programming languages, acts as a proxy for a result that is initially
 unknown or unavailable.
 
@@ -24282,12 +24282,12 @@ no longer empty and we can read out its value. That is where the name
 
 
 Every asynchronous operation in Nim returns a [Future\[T\]]
-[object]{.obj}, where the [T] corresponds to the type of value
+[object], where the [T] corresponds to the type of value
 that the [Future] promises to store in the future. We don't have
 to know that many details of the internal structure or behavior of the
 [Future\[T\]] data type, but we can easily experiment with it
 without involving any actual asynchronous I/O operations. The code below
-shows the behavior of a simple [Future\[string\]] [object]{.obj}:
+shows the behavior of a simple [Future\[string\]] [object]:
 
 
 
@@ -24428,7 +24428,7 @@ echo "total time elapsed: ", epochTime() - to
 
 
 The two calls of the [tick()] [proc] each returns nearly
-instantly a [Future\[void\]] [object]{.obj}, no waiting happens
+instantly a [Future\[void\]] [object], no waiting happens
 here. The use of the [await] keyword in the [proc] body
 causes the [proc] to suspend its execution and control flow
 returns to the call site immediately. But at the same time, the
@@ -24437,7 +24437,7 @@ dispactcher loop, so that it can resume its execution.
 
 
 
-The returned [Future] [object]{.obj} encapsulates the actual
+The returned [Future] [object] encapsulates the actual
 return type of the call --- in this case only void --- and gives us a
 reference that we can use to ask the dispatcher whether our call has
 completed or not.
@@ -24459,7 +24459,7 @@ of [void] type.
 
 
 
-We can use the operators [and]{.op} or [or]{.op} to combine multiple
+We can use the operators [and] or [or] to combine multiple
 futures, in this way we can wait until all of them or at least one of
 them completes. Note that the dispatcher loops stops when waitFor()
 succeeds, so when we wait only for one future and that one finished,
@@ -24472,7 +24472,7 @@ variable is already finished. When a future is finished, it means that
 either the value that it holds is now available or it holds an error
 instead. The latter situation occurs when the operation to complete a
 future fails with an exception. We can distinguish between the two
-situations with the [failed()] function. Future [objects]{.obj}
+situations with the [failed()] function. Future [objects]
 can also store a callback procedure which will be called automatically
 once the future completes, see the example in the previous section.
 
@@ -24631,7 +24631,7 @@ In this example, we use an asynchronous HTTP client, for which the
 overloaded [proc] [getContent()] returns a
 [Future\[string\]] in this case. The call of [waitFor]
 waits for the download to finish and returns the actual content of the
-future, which is a [string]{.str} containing the page content.
+future, which is a [string] containing the page content.
 
 
 
@@ -24659,7 +24659,7 @@ echo f2.read
 
 
 The combination [f1 and f2] actually creates a new future of void
-type. We use two variables [f1] and [f2] of [string]{.str}
+type. We use two variables [f1] and [f2] of [string]
 type, and read the content with the [read()] [proc] when
 both futures are completed.
 
@@ -24731,13 +24731,13 @@ other client that is currently connected to it.
 
 
 We have not a working client app yet, but in the case that you have the
-[telnet]{.ndef} program installed on your computer, you can already use
+[telnet] program installed on your computer, you can already use
 that one to test this server. Telnet sends messages unencrypted , so its
 use is generally not recommended to send messages over the internet, but
 for testing purposes on the local net we may use it. If the telnet app
 is not installed on your computer, you may install it with the package
 manager of your OS --- for Gentoo Linux, we would run \"emerge -av
-telnet-bsd\". An alternative may be the use of the [busybox]{.ndef} app,
+telnet-bsd\". An alternative may be the use of the [busybox] app,
 which provides the telnet functionality as well.
 
 
@@ -24745,7 +24745,7 @@ which provides the telnet functionality as well.
 If you have a telnet app available, you may open three terminal windows:
 On the first one, you compile and run the server app --- you will see no
 output in that window. In the two other terminals, you type [telnet
-localhost 12345]{.term} each. That should start the telnet app, which
+localhost 12345] each. That should start the telnet app, which
 connects to our running server. When you now type in some text, that
 text is echoed to both telnet windows:
 
@@ -24769,8 +24769,8 @@ text is echoed to both telnet windows:
 
 
 Note that terminating the telnet app is not that simple --- you may have
-to type [CTRL \]]{.term} first, then you get the telnet prompt, where
-you type [quit]{.term} to terminate the app.
+to type [CTRL \]] first, then you get the telnet prompt, where
+you type [quit] to terminate the app.
 
 
 
@@ -24784,7 +24784,7 @@ instead of telnet to send messages to the server.
 #### Data transfer over a network
 
 
-For our chat application, we will use the [TCP]{.ndef} protocol, with
+For our chat application, we will use the [TCP] protocol, with
 so-called network sockets as endpoints. The use of sockets and the TCP
 protocol is a common practice in network communication. We will not try
 to explain any details here, so citing some definitions from Wikipedia
@@ -24800,11 +24800,11 @@ other.^\[[57](#_footnotedef_57 "View footnote."){#_footnoteref_57
 
 
 
-The [Internet protocol suite]{.ndef}, commonly known as [TCP/IP]{.ndef},
+The [Internet protocol suite], commonly known as [TCP/IP],
 is the set of communications protocols used in the Internet and similar
 computer networks. The current foundational protocols in the suite are
-the [Transmission Control Protocol]{.ndef} (TCP) and the [Internet
-Protocol]{.ndef} (IP). The Internet protocol suite provides end-to-end
+the [Transmission Control Protocol] (TCP) and the [Internet
+Protocol] (IP). The Internet protocol suite provides end-to-end
 data communication specifying how data should be packetized, addressed,
 transmitted, routed, and
 received.^\[[58](#_footnotedef_58 "View footnote."){#_footnoteref_58
@@ -24812,7 +24812,7 @@ received.^\[[58](#_footnotedef_58 "View footnote."){#_footnoteref_58
 
 
 
-A [network socket]{.ndef} is a software structure within a network node
+A [network socket] is a software structure within a network node
 of a computer network that serves as an endpoint for sending and
 receiving data across the
 network.^\[[59](#_footnotedef_59 "View footnote."){#_footnoteref_59
@@ -24854,7 +24854,7 @@ As we want to create a non-blocking, asynchronous server app, we create
 our socket instance with a call to [newAsyncSocket()] of default
 TCP type, and then bind it with a call of [bindAddr()] to a
 socket address, that is the combination of an IP address and a port
-number. The IP address is a [string]{.str}, it may consist of four or
+number. The IP address is a [string], it may consist of four or
 six 8-bit numbers each separated by a period, or of a symbolic name like
 [\"google.com\"]. As we want to test our server only on our local
 network, we use the default IP address [\"localhost\"]. The port
@@ -24985,13 +24985,13 @@ and restarted: Socket instances are not immediately removed by the OS
 when an app terminates, as data packages for that socket may be still
 traveling. So a restart of the app may produce an error message like
 [\"Socket address is already in use\"]. Another point is that we
-used not the IP address [string]{.str} [\"localhost\"], but leave
-out that parameter, which seems to default to the empty [string]{.str}
+used not the IP address [string] [\"localhost\"], but leave
+out that parameter, which seems to default to the empty [string]
 in that case. Well, generally the default should make some sense, you
 may test with [\"localhost\"] yourself to see if that may make a
-difference. Finally, we append the [string]{.str} [\"\\c\\L\"] to
+difference. Finally, we append the [string] [\"\\c\\L\"] to
 the messages that we send out to all of our clients. That is a
-carriage-return linefeed [string]{.str}, which is commonly used in
+carriage-return linefeed [string], which is commonly used in
 network communication to separate messages. You may still wonder about
 the capital [\"L\"] --- well should be identical to
 [\"\\l\"], you can verify it yourself.
@@ -25028,8 +25028,8 @@ library. We will use that method again for the [realLine()]
 calls, and combine it with the async/await pattern for sending messages
 to the server and for watching for other messages from the server.
 Actually, our client example program follows closely the client program
-from [Mr. Picheta]{.ndef}, the creator of Nim's async/await framework,
-which he sketched in the [Manning]{.ndef} book years ago:
+from [Mr. Picheta], the creator of Nim's async/await framework,
+which he sketched in the [Manning] book years ago:
 
 
 
@@ -25107,23 +25107,23 @@ discuss: Is the client/server architecture really the best solution, or
 may the clients just talk directly to each other, without the use of a
 central server? Then there is the problem with the actual port numbers,
 as routers and firewalls may block that ports. And finally, you may
-intend to send not only plain [strings]{.str} as we did, but structured
+intend to send not only plain [strings] as we did, but structured
 message --- maybe add a time and sender name to each message, and send
 the content encrypted over the internet. For encrypting the messages you
 should find some ideas in Nim\' standard library or in external
 packages, and sending structured messages is not difficult: For example
 we used the JSON format in an earlier section of the book to save
-structured [objects]{.obj} to disk and reload it later. The
-[object]{.obj} content was encoded as human-readable text, which you can
+structured [objects] to disk and reload it later. The
+[object] content was encoded as human-readable text, which you can
 send of course over the net without any problems. You just have to
-define a protocol for the message exchange: Create Nim [objects]{.obj}
+define a protocol for the message exchange: Create Nim [objects]
 that contain all the data you want to exchange, like sender name, time,
 and the actual message content. Then use one of the [procs]
-provided by the [json] module to encode the [object]{.obj} before
+provided by the [json] module to encode the [object] before
 you send it, and encode it again on the receiving side. The [json]
-module provides for example the [%]{.op} operator to convert various
-data types to JSON [strings]{.str} or JSON [objects]{.obj}, and the
-[parseJson()] [proc] to convert the text [string]{.str}
+module provides for example the [%] operator to convert various
+data types to JSON [strings] or JSON [objects], and the
+[parseJson()] [proc] to convert the text [string]
 back into Nim data types. When you have some free time and are
 interested in that topic, you can try that yourself, it should be not
 difficult. Maybe we will give later in the last part of the book a
@@ -25155,7 +25155,7 @@ dedicated literature.
 
 For a real world Nim application for network data exchange, you may also
 investigate this Twitter clone:
-[https://github.com/zedeus/nitter](https://github.com/zedeus/nitter){.bare}
+[https://github.com/zedeus/nitter](https://github.com/zedeus/nitter)
 
 
 
@@ -25163,11 +25163,11 @@ References:
 
 
 
--   [https://en.wikipedia.org/wiki/Asynchronous_I/O](https://en.wikipedia.org/wiki/Asynchronous_I/O){.bare}
+-   [https://en.wikipedia.org/wiki/Asynchronous_I/O](https://en.wikipedia.org/wiki/Asynchronous_I/O)
 
--   [https://en.wikipedia.org/wiki/Async/await](https://en.wikipedia.org/wiki/Async/await){.bare}
+-   [https://en.wikipedia.org/wiki/Async/await](https://en.wikipedia.org/wiki/Async/await)
 
--   [https://peterme.net/asynchronous-programming-in-nim.html](https://peterme.net/asynchronous-programming-in-nim.html){.bare}
+-   [https://peterme.net/asynchronous-programming-in-nim.html](https://peterme.net/asynchronous-programming-in-nim.html)
 
 
 
@@ -25192,10 +25192,10 @@ to be done...​
 
 
 Special thanks go to Mr. Jim Wilcoxson
-([https://github.com/hashbackup](https://github.com/hashbackup){.bare})
+([https://github.com/hashbackup](https://github.com/hashbackup))
 who did proofreading of the first dozen pages of the book and gave some
 advice on English grammar and spelling. Thanks go also to Mr. Marek Ľach
-([https://github.com/marek-lach](https://github.com/marek-lach){.bare})
+([https://github.com/marek-lach](https://github.com/marek-lach))
 for fixing many more spelling and grammar errors. Finally, a lot of
 missing commas and some more grammar errors have been detected by use of
 the languagetool.org software used from the command line with the
@@ -25229,7 +25229,7 @@ one would have to delete the account after the test again.
 
 
 
-[Nimble]{.ndef}, initial called [Babel]{.nedef}, is Nim's default
+[Nimble], initial called [Babel]{.nedef}, is Nim's default
 package manager, which is currently shipped together with the Nim
 compiler, and can be used to install additional Nim packages. Nim
 packages are collections of Nim modules and other related files, which
@@ -25240,7 +25240,7 @@ used as libraries. But packages can also contain complete applications
 programs, and may even contain pre-compiled executables. In part IV of
 the book, we have already used the library packages nim-regex and
 cligen. An example of a package containing a complete application is the
-[c2nim]{.ndef} tool, which can convert C source code to Nim code. You
+[c2nim] tool, which can convert C source code to Nim code. You
 can find a longer introduction into the Nimble package manager in the
 Manning book, and a detailed description on the Nimble GitHub page. As
 the GitHub page is not really intended as an introduction, and as some
@@ -25290,7 +25290,7 @@ multiple, incompatible version. A common practice is to assign version
 numbers to packages --- these version numbers are typically built of
 three parts, each separated with a period, like [1.2.14]. Larger
 numbers indicate a never package version. A common scheme for version
-numbers is called [semantic versioning]{.ndef}, where the leftmost
+numbers is called [semantic versioning], where the leftmost
 number is the major version, the second number is the minor version, and
 the rightmost number is the patch level. The rightmost number is
 increased for each tiny change of the software, e.g. for small bug
@@ -25334,7 +25334,7 @@ updates are bundled, so that when a package changes it major version,
 all packages that require it, are also updated. Another possible
 solution is, that for dynamic libraries multiple versions are installed
 in parallel, or that multiple package versions are installed in
-so-called [slots]{.ndef}, which can coexists on the same computer. A
+so-called [slots], which can coexists on the same computer. A
 prominent example is the GTK GUI toolkit, which can be installed in a
 [3.0] and a [4.0] slot. But that is in no way free from
 issues --- an actual example in early 2022 is libsoup, which is
@@ -25355,7 +25355,7 @@ versions that are compatible.
 Nimble can work with local packages that are stored on the user's file
 system, and with external packages provided by repository hosting
 services. Nimble uses as foundation for external packages [Distributed
-Version Control Systems]{.ndef} (DVCS) like Git or Mercurial, and the
+Version Control Systems] (DVCS) like Git or Mercurial, and the
 packages are hosted on online platforms like GitHub or GitLab.
 
 
@@ -25364,12 +25364,12 @@ While Nim uses currently no dedicated central package repository, it
 supports a centralized list with package names and some metadata. We can
 upload our own packages to hosting servers and register the package, to
 allow others a very easy installation. For registered packages, the
-command [nimble install package_name]{.term} downloads and installs the
+command [nimble install package_name] downloads and installs the
 package for us. Other packages, that are available somewhere on the
 Internet, but are not yet registered in Nim's package database, can be
 downloaded and installed in a similar way, but we have to specify the
 full path to the package, like
-[https://github.com/stefansalewski/gintro.git](https://github.com/stefansalewski/gintro.git){.bare}.
+[https://github.com/stefansalewski/gintro.git](https://github.com/stefansalewski/gintro.git).
 
 
 
@@ -25394,7 +25394,7 @@ and import other modules.
 The directory structure of a valid nimble package has to follow a
 well-defined shape, which we will discuss later in detail. When we have
 a valid local package directory somewhere on our file system, then we
-can [cd]{.term} into it and call [nimble install]{.term} to install that
+can [cd] into it and call [nimble install] to install that
 package, without having to download all the files (again) from a remote
 server. This installation from an existing directory does not only save
 us the download, but also allows us to fix the package before the
@@ -25406,18 +25406,18 @@ work with the latest compiler version?
 
 
 Note: Nimble may use the Git tool to download Git repositories, so the
-[nimble]{.term} command may not work properly when Git is not installed
+[nimble] command may not work properly when Git is not installed
 on your computer. As you will need the Git tool in any case, you should
 ensure that it is installed, and install it if it is missing. To check
 if Git and Nimble are available, you may execute in a terminal window
-these commands: [git \--version]{.term} and [nimble \--version]{.term}
+these commands: [git \--version] and [nimble \--version]
 
 
 
 
 
 As a concrete example, we will show the three ways how we can install
-the [RTree]{.ndef} package:
+the [RTree] package:
 
 
 
@@ -25484,7 +25484,7 @@ which searches in Nim's central package list for packages marked with
 tags indicating its purpose. We may search for terms like GUI, png, mp3
 and such. We can combine the search command with the [\--ver] flag
 to get all the versions of the packages listed, like [nimble search GTK
-\--ver]{.term}.
+\--ver].
 
 
 
@@ -25494,14 +25494,14 @@ to get all the versions of the packages listed, like [nimble search GTK
 
 For creating new packages, we can create the folder structure and the
 .nimble file manually, maybe by copying an existing package and editing
-it, or we can use the [nimble init]{.term} command. When we use [nimble
-init]{.term}, we can first create a folder, [cd]{.term} into that folder
-and call [nimble init]{.term}, or we let Nimble create the folder by
-specifying the folder name like [nimble init MyTest]{.term}. Nimble will
+it, or we can use the [nimble init] command. When we use [nimble
+init], we can first create a folder, [cd] into that folder
+and call [nimble init], or we let Nimble create the folder by
+specifying the folder name like [nimble init MyTest]. Nimble will
 ask a few questions, and create the folder structure for us. You should
 test this exercise now, to get a feeling for the process. Just move to a
-temporary directory like [/tmp]{.term} on Linux, and enter [nimble init
-MyNewPkg]{.term}.
+temporary directory like [/tmp] on Linux, and enter [nimble init
+MyNewPkg].
 
 
 
@@ -25573,7 +25573,7 @@ task at the end of .nimble files, like
 
 
 
-This allows us to execute [nimble test]{.term} from within the package
+This allows us to execute [nimble test] from within the package
 directory to compile and run package tests.
 
 
@@ -25599,7 +25599,7 @@ GitHub has not asked you to create an access token during the initial
 registration, you have to create one now before you can continue. The
 GitHub page or a search engine should give you the detailed instructions
 how you can create a personal access token. The token is a long ASCII
-[string]{.str}, which you may store in some file, and paste in later
+[string], which you may store in some file, and paste in later
 when GitHub ask for passwords when uploading files. Later, you can save
 the token in the local git database somehow, that may save you from the
 copy/paste process.
@@ -25609,7 +25609,7 @@ copy/paste process.
 When you have an account, you can easily create new public repositories
 following the instructions on the GitHub page. Let us assume you have
 created a repository named fft, a package to support the [fast Fourier
-transform]{.ndef}. Then you can download that Git repository with this
+transform]. Then you can download that Git repository with this
 instruction:
 
 
@@ -25622,16 +25622,16 @@ instruction:
 
 To make a valid Nimble package out of this repository, you have at least
 to create the subdirectory src/fft and a fft.nimble file. You can do
-this manually, or you can do it with [nimble init fft]{.term} or [cd
+this manually, or you can do it with [nimble init fft] or [cd
 fft; nimble
-init]{.term}.^\[[60](#_footnotedef_60 "View footnote."){#_footnoteref_60
+init].^\[[60](#_footnotedef_60 "View footnote."){#_footnoteref_60
 .footnote}\]^ If your package consist of only one file, you should call
 it [fft.nim] and copy it into [fft/src/]. Or, if you have
 multiple files, create a directory [fft/src/fft] and copy the
 files to that location, maybe with file names [fft.nim] and
 [ffpsup.nim]. As you have modified the local repository folder, it
 is not consistent anymore with the remote repository. You can check that
-with the command [git status]{.term} executed inside the folder. To make
+with the command [git status] executed inside the folder. To make
 it consistent again, you have to push your changes to the GitHub server,
 which can be done with these commands:
 
@@ -25646,9 +25646,9 @@ which can be done with these commands:
 
 
 
-The command [add -A]{.term} adds all the created files and directories
-to the Git content, the [commit -m]{.term} commits the changes with the
-specified message, and finally [push origin main]{.term} uploads all the
+The command [add -A] adds all the created files and directories
+to the Git content, the [commit -m] commits the changes with the
+specified message, and finally [push origin main] uploads all the
 modifications to GitHub. When you now visit the GitHub page of your
 remote repository, you should see the changes.
 
@@ -25671,16 +25671,16 @@ Other people can now already install your package by
 Whenever you create or update a package, you should care for possible
 dependencies and the required compiler version. The requirements field
 of the .nimble file lists all the dependencies, like [requires \"nim \>=
-1.6.0\", nim-regex, bigints]{.term}. Nimble supports the command
+1.6.0\", nim-regex, bigints]. Nimble supports the command
 [c], which can be used from within a package directory, and which
 we can use to compile the package and to verify the requirements: While
-the command [nim c myapp.nim]{.term} always searches for libraries at
+the command [nim c myapp.nim] always searches for libraries at
 all known locations (current folder, Nimble packages, and standard
-library) the command [nimble c myapp.nim]{.term} firsts check the
+library) the command [nimble c myapp.nim] firsts check the
 requirement field of [myapp.nimble], and refuses to use nimble
 packages that are not listed under requirements. On the other hand, when
 an external package is listed under requirements, but is not yet
-installed, then the [nimble c]{.term} command tries to install it.
+installed, then the [nimble c] command tries to install it.
 
 
 
@@ -25688,19 +25688,19 @@ If you think that your package is really useful for many other Nim
 users, you may decide to publish your package, that is to add it to
 Nim's central package list. This can be done in two ways: You can just
 call from within your package folder the command [nimble
-publish]{.term}. Then you are asked for some data, e.g. a list of tag
+publish]. Then you are asked for some data, e.g. a list of tag
 names and a description, and the publishing process should start. After
 manual approval by some Nim devs, which checks if your package has a
 valid structure and its name does not conflict with existing packages,
 your packages gets added to the official package list. Unfortunately,
-the [nimble publish]{.term} command have failed for some people in the
+the [nimble publish] command have failed for some people in the
 past. So you may prefer to publish your package manually by creating a
 pull request at the package list repository.
 
 
 
 After successful publication, people can download your package just by
-giving its name, that is with [nimble install fft]{.term}. This
+giving its name, that is with [nimble install fft]. This
 publishing process may be a bit complicated, but it is necessary only
 ones: It is not necessary to publish the package again, when you update
 the package.
@@ -25771,11 +25771,11 @@ References:
 
 
 
--   [https://github.com/](https://github.com/){.bare}
+-   [https://github.com/](https://github.com/)
 
--   [https://github.com/nim-lang/nimble](https://github.com/nim-lang/nimble){.bare}
+-   [https://github.com/nim-lang/nimble](https://github.com/nim-lang/nimble)
 
--   [https://github.com/nim-lang/packages](https://github.com/nim-lang/packages){.bare}
+-   [https://github.com/nim-lang/packages](https://github.com/nim-lang/packages)
 
 
 
@@ -25885,11 +25885,11 @@ We use semantic markup with these text styles:
 
 -   Recent text: [This was recently updated]{.recent}
 
--   First use: [term]{.ndef}
+-   First use: [term]
 
 -   Italic: [This is italic]{.italic}
 
--   Operators: [+ - & shl]{.op}
+-   Operators: [+ - & shl]
 
 -   Keywords: [var ref object import while]
 
@@ -25899,9 +25899,9 @@ We use semantic markup with these text styles:
 
 -   Data types: [float int Table]
 
--   String data type: [string]{.str}
+-   String data type: [string]
 
--   Array data type: [array]{.array}
+-   Array data type: [array]
 
 -   Function calls: [setLen()]
 
@@ -25911,11 +25911,11 @@ We use semantic markup with these text styles:
 
 -   Literals: [100, false, 3.14]
 
--   Constants: [fmWrite]{.const}
+-   Constants: [fmWrite]
 
 -   Code in text: [while a \> 0 and not done:]
 
--   Terminal text: [nim c -gc:arc test.nim]{.term}
+-   Terminal text: [nim c -gc:arc test.nim]
 
 
 
@@ -25955,7 +25955,7 @@ looks like \_\_\--\_\_\--\_\_.
 
 
 [4](#_footnoteref_4). Well, before the OS is loaded and starts
-execution, often another tiny program called a [Boot Manager]{.ndef} is
+execution, often another tiny program called a [Boot Manager] is
 launched. Boot managers are used to select different operating systems
 to boot, maybe Linux or Windows, or to pass parameters as the hard disk
 boot partition number to the OS.
@@ -25966,7 +25966,7 @@ boot partition number to the OS.
 do exactly what was hoped for by its creators is called debugging. That
 term is still a legacy from the very first computers in the 50s, where
 logical circuits were built by mechanical relays, for example a logical
-[and]{.term} operation was built by two relays in series connection. To
+[and] operation was built by two relays in series connection. To
 let the current flow, both of them would have to be in the conducting
 state. And it was told that sometimes insects walked onto the electric
 contacts of the relays and blocked them. Today, misbehavior of computer
@@ -26011,7 +26011,7 @@ the book in more detail.
 
 
 [12](#_footnoteref_12).
-[https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss#Anecdotes](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss#Anecdotes){.bare}
+[https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss#Anecdotes](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss#Anecdotes)
 
 
 
@@ -26062,7 +26062,7 @@ by intend for now.
 
 [17](#_footnoteref_17). Here [len()] is a predefined function of
 the Nim standard library, len() is short for length, and that function
-returns the actual length of a text [string]{.str} as an integer value.
+returns the actual length of a text [string] as an integer value.
 
 
 
@@ -26204,12 +26204,12 @@ actually used, so the C compiler can inline it.
 
 
 [38](#_footnoteref_38).
-[https://nim-lang.org/docs/manual.html#iterators-and-the-for-statement-firstminusclass-iterators](https://nim-lang.org/docs/manual.html#iterators-and-the-for-statement-firstminusclass-iterators){.bare}
+[https://nim-lang.org/docs/manual.html#iterators-and-the-for-statement-firstminusclass-iterators](https://nim-lang.org/docs/manual.html#iterators-and-the-for-statement-firstminusclass-iterators)
 
 
 
 [39](#_footnoteref_39).
-[https://en.wikipedia.org/wiki/Generic_programming](https://en.wikipedia.org/wiki/Generic_programming){.bare}
+[https://en.wikipedia.org/wiki/Generic_programming](https://en.wikipedia.org/wiki/Generic_programming)
 
 
 
@@ -26235,12 +26235,12 @@ through all the items in RAM only once.
 
 
 [44](#_footnoteref_44).
-[https://en.wikipedia.org/wiki/Metacharacter](https://en.wikipedia.org/wiki/Metacharacter){.bare}
+[https://en.wikipedia.org/wiki/Metacharacter](https://en.wikipedia.org/wiki/Metacharacter)
 
 
 
 [45](#_footnoteref_45).
-[https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression){.bare}
+[https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
 
 
 
@@ -26270,7 +26270,7 @@ sort can be stable.
 
 
 [49](#_footnoteref_49). Ruby provides such an operator:
-[https://ruby-doc.org/core-3.0.0/Array.html#method-i-2D](https://ruby-doc.org/core-3.0.0/Array.html#method-i-2D){.bare}
+[https://ruby-doc.org/core-3.0.0/Array.html#method-i-2D](https://ruby-doc.org/core-3.0.0/Array.html#method-i-2D)
 
 
 
@@ -26283,7 +26283,7 @@ for not too tiny data sets.
 
 
 [51](#_footnoteref_51).
-[https://en.wikipedia.org/wiki/Parsing_expression_grammar](https://en.wikipedia.org/wiki/Parsing_expression_grammar){.bare}
+[https://en.wikipedia.org/wiki/Parsing_expression_grammar](https://en.wikipedia.org/wiki/Parsing_expression_grammar)
 
 
 
@@ -26304,17 +26304,17 @@ written by A. Doering, a former paid Nim core developer
 
 
 [55](#_footnoteref_55).
-[https://en.wikipedia.org/wiki/Async/await](https://en.wikipedia.org/wiki/Async/await){.bare}
+[https://en.wikipedia.org/wiki/Async/await](https://en.wikipedia.org/wiki/Async/await)
 
 
 
 [56](#_footnoteref_56).
-[https://peterme.net/asynchronous-programming-in-nim.html](https://peterme.net/asynchronous-programming-in-nim.html){.bare}
+[https://peterme.net/asynchronous-programming-in-nim.html](https://peterme.net/asynchronous-programming-in-nim.html)
 
 
 
 [57](#_footnoteref_57).
-[https://en.wikipedia.org/wiki/Computer_network](https://en.wikipedia.org/wiki/Computer_network){.bare}
+[https://en.wikipedia.org/wiki/Computer_network](https://en.wikipedia.org/wiki/Computer_network)
 
 
 
@@ -26324,7 +26324,7 @@ written by A. Doering, a former paid Nim core developer
 
 
 [59](#_footnoteref_59).
-[https://en.wikipedia.org/wiki/Network_socket](https://en.wikipedia.org/wiki/Network_socket){.bare}
+[https://en.wikipedia.org/wiki/Network_socket](https://en.wikipedia.org/wiki/Network_socket)
 
 
 
