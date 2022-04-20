@@ -17,7 +17,7 @@ A gentle Introduction © Dr. Stefan Salewski 2020, 2021, 2022
 
 
 
-## About this book {#_about_this_book}
+## About this book
 
 
 
@@ -1385,15 +1385,15 @@ after the prompt like \"What is your name: Nimrod\". As the
 `echo] `proc] always writes a newline character after the
 last argument has been written, we have to use a different function to
 get the input prompt on the same line. We can use the `write()]
-`proc] from the `system]{.mod} module for this. As
+`proc] from the `system] module for this. As
 `write()] can not only write to the terminal, but also to files,
 it needs an additional parameter which specifies the destination. We can
-pass the variable `stdout] from the `system]{.mod} module to
+pass the variable `stdout] from the `system] module to
 indicate that `write()] should write to our terminal window.
 Another desire of beginners is, generally, to have the ability to read
 single character input without the need to press additional the return
 key. For that, we can use the `getch()] function from the
-`terminal]{.mod} module --- that functions waits (blocks) until a key is
+`terminal] module --- that functions waits (blocks) until a key is
 pressed and returns the ASCII character of the pressed key:
 
 
@@ -1511,7 +1511,7 @@ as the built-in container types like `tuple]{.tup}, `object],
 `seq] and `string], are written in lower case, while data
 types that are defined by the Nim standard library or that we define our
 self, by convention starts with a capital letter like the
-`CountTables] type defined in the `tables]{.mod} module. Some
+`CountTables] type defined in the `tables] module. Some
 people may regard this as an inconsistency, others may say that in this
 way we can differentiate built in types from types defined by libraries.
 At least we may agree that using capital notation for common types as in
@@ -1812,7 +1812,7 @@ addition, subtraction, multiplication and division. Unlike for the
 `int] types, for the `float] types we never get overflow
 or underflow errors, and also no error for a division by zero. But the
 result of an operation of two `float] operands can be a special
-value like `system]{.mod}.`Inf], system.NegInf or system.NaN. The
+value like `system].`Inf], system.NegInf or system.NaN. The
 first two indicate an over- or underflow, and `NaN] (Not a Number)
 indicates that the result of an operation is not a valid number at all,
 for example the result of a division by zero or the result of
@@ -1832,9 +1832,9 @@ value, which is not what we really had in mind, as that test has always
 a negative result. The actual test for the value `NaN] is `a ==
 a], which is only false when `a] has the value `NaN],
 or we may use math.isNaN(). More useful constants and functions for the
-`float] data types can be found in the `std/fenv]{.mod} module,
+`float] data types can be found in the `std/fenv] module,
 and functions working with `floats] like the trigonometric ones
-are available from the `std/math]{.mod}
+are available from the `std/math]
 module.^\[[21](#_footnotedef_21 "View footnote.") \]^
 
 
@@ -1842,8 +1842,8 @@ module.^\[[21](#_footnotedef_21 "View footnote.") \]^
 For `floats], we have the operators `+]{.op}, `-]{.op}, `*]{.op}
 and `/]{.op} for addition, subtraction, multiplication and division. For
 powers with integral exponents, you can use the `^]{.op} operator, but
-you have to import it from the `std/math]{.mod} module. The expression
-`x \^ 3] is the same as `x \* x \* x]. The `math]{.mod}
+you have to import it from the `std/math] module. The expression
+`x \^ 3] is the same as `x \* x \* x]. The `math]
 module contains many more functions like `sin()] or
 `cos()], `sqrt()] and `pow()]. The function name
 `sqrt()] is short for square-root, and `pow()] stands for
@@ -1877,7 +1877,7 @@ conversions in this case, as it makes it more clear what really is
 intended. And generally, we should try to avoid using a lot of
 operations with mixed types, as that may make type conversions
 necessary, which may cost performance. If we really do not care, we may
-import the module `std/lenientOps]{.mod}, which defines the arithmetic
+import the module `std/lenientOps], which defines the arithmetic
 operations for mixed operands.
 
 
@@ -3171,7 +3171,7 @@ echo name
 
 The Nim standard library provides a lot of functions for creating and
 modifying `strings], most of these functions are collected in the
-`system]{.mod} and in the `strutils]{.mod} module. The most important
+`system] and in the `strutils] module. The most important
 procedures for `strings] are `len()] and `high()].
 The `len()] procedure returns the length of a `string],
 that is, the number of ASCII characters or bytes that the
@@ -3180,7 +3180,7 @@ that is, the number of ASCII characters or bytes that the
 function returns the number of 8-bit characters, not the number of
 Unicode glyphs, when the `string] should be interpreted as
 Unicode text. To determine the number of glyphs of Unicode
-`strings], you should use some of the `unicode]{.mod} modules.
+`strings], you should use some of the `unicode] modules.
 The `high()] function is very similar to the `len()]
 function, it returns the index of the last character in the
 `string]{.str}. For each `string] `s] `high(s) == len(s)
@@ -3926,7 +3926,7 @@ the whole runtime of the program, and not only for the duration of the
 execution of a single `proc], has to be defined as global. The
 same holds obviously for global variables that are used from code of
 different `procs], like the `stdout] and `stdin]
-variables of the `system]{.mod} module. An alternative to the use of
+variables of the `system] module. An alternative to the use of
 global variables when a variable used in a `proc] should keep its
 value between different `proc] calls is to attach the {.global.}
 pragma to a `proc] local variable. This way that variable is
@@ -5540,7 +5540,7 @@ and so on.
 
 Nim [slices]{.plain} are [objects] of type [Slice] with two
 fields, a lower bound [a]{.ndef} and an upper bound [b]{.ndef}. The
-[system]{.mod} module defines also the [HSlice] [object],
+[system] module defines also the [HSlice] [object],
 called heterogeneous slice, for which the lower and upper bound can have
 different data types:
 
@@ -5566,7 +5566,7 @@ and other containers.
 
 
 
-One example for its direct use from the [system]{.mod} module is
+One example for its direct use from the [system] module is
 
 
 
@@ -7268,7 +7268,7 @@ instead of [proc] here, as we only return a result but modify no
 states. We pass the initial [string] and the character for the
 frame both as plain value parameters, and return a newly created framed
 [string]. In the function body, we start with an optimized
-version of the procedure [newString()] from the [system]{.mod}
+version of the procedure [newString()] from the [system]
 module, called [newStringOfCap()]. Like [newString()] that
 procedure creates an empty [string] variable, but it ensures that
 the data buffer of the new [string]{.str} has exactly the specified
@@ -7323,7 +7323,7 @@ copy. This code duplication is not really that nice. Of course,
 replace [sort(data)] with [data = sorted(data)]. But the
 latter creates a temporary copy, which may not be optimal for
 performance. Since Nim version 1.2 a [dup()] macro is available
-from the [sugar]{.mod} module, which creates copies of variables and
+from the [sugar] module, which creates copies of variables and
 then applies one or multiple in place [procs] on the copy. So the
 [procs] [sorted()] or our [proc] [framed()]
 would be unnecessary. We can use [dup()] as in this example:
@@ -8738,7 +8738,7 @@ main()
 
 
 
-The [sort()] procedure is provided by the [algorithm]{.mod}
+The [sort()] procedure is provided by the [algorithm]
 module. The [sort()] [proc] accepts an [array] or a
 sequence, and a [cmp()] [proc] that gets two parameters of
 the same type as the elements in the passed [array], and that
@@ -8898,7 +8898,7 @@ These functions get procedures as arguments that determine how container
 data types are converted. We can pass a regular named procedure as
 second argument to [procs] like [map()] and
 [filter], or in simple cases we can just pass an anonymous
-[proc] or use the [⇒]{.op} operator provided by the [sugar]{.mod}
+[proc] or use the [⇒]{.op} operator provided by the [sugar]
 module:
 
 
@@ -8938,7 +8938,7 @@ to convert the data of our sequence. [Map()] expects as second
 argument a [proc] with a parameter of the seq's base type,
 returning a result of the same type. In the line before the last one, we
 specify an anonymous [proc] as parameter, while in the last line
-we use the [⇒]{.op} operator from the [sugar]{.mod} module to just
+we use the [⇒]{.op} operator from the [sugar] module to just
 specify the actual conversion.
 
 
@@ -10038,7 +10038,7 @@ parameter [v] --- calling them [x] would give some trouble:
 
 
 
-Nim's [system]{.mod} module uses [templates] to define some
+Nim's [system] module uses [templates] to define some
 operators like
 
 
@@ -10625,7 +10625,7 @@ aware of their existence. The overloading of the [and]{.op}, the
 numbers may be convenient, but it may sometimes lead to confusion, when
 we intend to do boolean operations, but instead actually do operations
 on bit patterns. It was suggested to call the operators bitand, bitor
-and bitand instead, and indeed the [bitops]{.mod} module of Nim's
+and bitand instead, and indeed the [bitops] module of Nim's
 standard library defines operators with these names and provide
 additional, more useful bit operations, including counting the number of
 set bits in a variable or determining the number of leading zero bits.
@@ -10749,7 +10749,7 @@ as then for each division a check instructions is added.
 
 
 In Nim all [Exceptions] types are [objects] that inherits
-from the [Exception] type of the [system]{.mod} module and have
+from the [Exception] type of the [system] module and have
 public [name] and [msg] fields of [string] type.
 
 
@@ -10820,7 +10820,7 @@ type can not be handled.
 
 
 Instead of raising one of the predefined [Exceptions] from the
-[system]{.mod} module, we can create also our own variants and then
+[system] module, we can create also our own variants and then
 [raise] them:
 
 
@@ -11332,7 +11332,7 @@ is called. The variables [o3] and [o4] are of [ref]
 [object]{.obj} and of value [object]{.obj} types, each with a field of
 type [O1], and for that field the destructor for [O1] is
 called. Finally, for type [O5] we define our own destructor,
-which then additional calls the destructor of module [tt]{.mod}.
+which then additional calls the destructor of module [tt].
 
 
 
@@ -11812,14 +11812,14 @@ to important container data types like [hash tables]{.ndef} (sometimes
 called hash maps in other programming languages) and various kinds of
 [set]{.ndef} data types. We will also introduce modules for working with
 [regular expressions]{.ndef}, and we will show how simple modules like
-the [times]{.mod} or the [random]{.mod} module can be used. Most modules
+the [times] or the [random] module can be used. Most modules
 mentioned in this part will be from the Nim standard library, so that
 you will not have to install external packages to use them. But there
 may be some exceptions, e.g. for some external Nimble packages with a
 very useful functionality and an easy user interface. One of these
-exceptions is the [regex]{.mod} module: Nim's standard library comes
-with the [re]{.mod} and [nre]{.mod} modules, which both uses the PCRE C
-library. We have decided to introduce the [regex]{.mod} module instead,
+exceptions is the [regex] module: Nim's standard library comes
+with the [re] and [nre] modules, which both uses the PCRE C
+library. We have decided to introduce the [regex] module instead,
 which is an external package written completely in Nim language.
 
 
@@ -11829,7 +11829,7 @@ libraries, and [wrappers]{.italic}. The majority of Nim's standard
 library consist of pure libraries, that are modules completely written
 in Nim code. Impure libraries provide a high level Nim interface, and
 can be used like pure libraries, but use C libraries under the hood.
-Examples are the two modules [re]{.mod} and [nre]{.mod}, which both uses
+Examples are the two modules [re] and [nre], which both uses
 the PCRE C library, and some database modules. Impure libraries can be
 used like the pure ones, when the underlying C library is installed. The
 few wrappers that are shipped with Nim provide only a low level
@@ -11928,7 +11928,7 @@ double quotes:
 
 In Nim, we have the same functionality available by use of the
 [paramCount()] and [paramStr()] [procs], which we
-have to import from the [os]{.mod} module. But [paramCount()]
+have to import from the [os] module. But [paramCount()]
 gives us the actual number of parameters, so when we call our program on
 the command line without any arguments, [paramCount()] will
 return the value zero. The symbol [paramStr()] is not a global
@@ -11993,7 +11993,7 @@ While using command line arguments is convenient for data like file
 names or options that we already know when we launch a program from the
 terminal window, often we have to provide textual user input while the
 program is already running. Functions for this task are provided by the
-[io]{.mod} module, which is part of the [system]{.mod} module, and which
+[io] module, which is part of the [system] module, and which
 we have not to import explicitly. In one of the introducing sections of
 the book, we used already the [readLine()] and the
 [getch()] [procs] for reading in a line of text from the
@@ -12001,10 +12001,10 @@ terminal and for waiting on a single key press event.
 
 
 
-For input and output operations in a terminal window, the [io]{.mod}
+For input and output operations in a terminal window, the [io]
 module defines the three variables [stdin], [stdout] and
 [stderr] of [File] data type. Many [procs] of the
-[io]{.mod} module expects as first parameter a variable of [File]
+[io] module expects as first parameter a variable of [File]
 type. We can explicitly open a named file to write data to external
 media like the SSD, or we can just use the [stdin] and
 [stdout] variables to read data from the keyboard and to write
@@ -12046,19 +12046,19 @@ literature, if you should really need that info.
 
 
 
-The [io]{.mod} module does not provide [read()] functions for
+The [io] module does not provide [read()] functions for
 other basic data types like numeric or boolean types. So we should use
 [readLine()] to read the user input in [string] form,
 which we can convert by functions like [parseInt()],
 [parseFloat()] or similar functions to numeric data. Note that
 parsing [procs] like [parseInt()] are provided by the
-module [strutils]{.mod} as well as by the module
-[parseutils]{.mod} --- one function raises an exception for invalid
+module [strutils] as well as by the module
+[parseutils] --- one function raises an exception for invalid
 input, while the other one returns a boolean value indicating conversion
 success. Of course, we should handle textual user input always carefully
 and never just assume that the input is actually valid data. Some of the
 modules that can be used for converting textual input data into other
-data types like the [strutils]{.mod}, [strscans]{#parseutils# and [ .mod
+data types like the [strutils], [strscans]{#parseutils# and [ .mod
 .mod} modules are described in more detail at the end of this part of
 the book.
 
@@ -12066,7 +12066,7 @@ the book.
 
 For advanced user input processing, like cursor movement, colored
 display or displaying progress bars, you may also consult the
-[terminal]{.mod} module. And finally, to create fancy textual user
+[terminal] module. And finally, to create fancy textual user
 interfaces (TUIs) we recommend trying external packages like the
 [illwill] library.
 
@@ -12097,9 +12097,9 @@ variables of various data types to the terminal window. The
 window, and terminates the action by writing the [\\n] character
 to move the cursor to the beginning of the next line in the terminal
 window. We have already used the [write()] function from the
-[io]{.mod} module for the case that we want to write a single
+[io] module for the case that we want to write a single
 [string] to the terminal without a terminating newline character.
-The [io]{.mod} module contains some overloaded [write()]
+The [io] module contains some overloaded [write()]
 functions for other basic data types like [int], [float]
 or [bool], and a variant with a [varargs] parameter and
 applied stringify operator, so that [write()] can be used like
@@ -12245,7 +12245,7 @@ if res.isSome:
 
 
 
-The [options]{.mod} module of Nim's standard library provides the
+The [options] module of Nim's standard library provides the
 generic [Option\[\]] data type and the functions [some()],
 [isSome()], and [isNone()] to create a new [Option]
 type encapsulating some data, and to check if data is present. In the
@@ -12280,7 +12280,7 @@ should be not significant in most use cases.
 
 
 
-The [options]{.mod} module provides some more procedures for the
+The [options] module provides some more procedures for the
 handling of [Option] types, but this short introduction should be
 enough to get you started.
 
@@ -12337,12 +12337,12 @@ flexible and is very good readable for humans.
 
 For Nim, we have already many modules available, which we can use for
 storing data in JSON or YAML format. The Nim standard library includes
-the [marshal]{.mod} and the [json]{.mod} module. The [marshal]{.mod}
-module uses, like the [json]{.mod} module, the json data file format, is
+the [marshal] and the [json] module. The [marshal]
+module uses, like the [json] module, the json data file format, is
 easy to use and simple, but is not really designed to generate
 human-readable data files, as the stored data is not stored as a
 sequence of individual lines. So we will describe and use the
-[json]{.mod} module in this section, which is also easy to use, but has
+[json] module in this section, which is also easy to use, but has
 some larger set of functionality and can generate real human readable
 text files by use of the pretty() function.
 
@@ -12363,7 +12363,7 @@ various data types like integers, [floats], [strings]{.str},
 [objects]{.obj} --- and even the container types like sequences. And we
 may have to support reference types and maybe also inherited types and
 containers filled with heterogeneous, subclassed reference
-[objects]{.obj}. The [json]{.mod} module supports all Nim data types,
+[objects]{.obj}. The [json] module supports all Nim data types,
 including containers and references, but not heterogeneous sequences.
 
 
@@ -12498,7 +12498,7 @@ use [to()] to unmarshal the json node into the matching
 
 
 
-Now let us investigate what happens when we try to use the [json]{.mod}
+Now let us investigate what happens when we try to use the [json]
 module with a container with heterogeneous [ref] [objects].
 For that, we subclass the [Disc] type, creating a new
 [Arc] type:
@@ -12593,7 +12593,7 @@ get [false] as result for the [of Arc] test for the
 
 When we have to store different data types in one container, then one
 solution is to use [object]{.obj} variants, which should work with the
-[json]{.mod} module. Another obvious possibility is to just copy the
+[json] module. Another obvious possibility is to just copy the
 data into containers with the appropriate static type before storing to
 an external medium, and copy them back when we read the data back from
 external storage. Will will show an example for that now:
@@ -12725,11 +12725,11 @@ obvious: We pass an uninitialized variable of [File] data type, a
 file name, and a file mode to [open()], use [write()] to
 write the whole [string]{.str}, and use [readAll()] to read the
 data back. When done with each file, we use [close()] to close
-the file. The [File] data type is part of the [io]{.mod} module,
-which is again part of the [system]{.mod} module, so we don't have to
+the file. The [File] data type is part of the [io] module,
+which is again part of the [system] module, so we don't have to
 import these modules. We could have used as an alternative also the
-[streams]{.mod} module. We will learn some more details about the
-[File] data type and the [streams]{.mod} module in later sections
+[streams] module. We will learn some more details about the
+[File] data type and the [streams] module in later sections
 of the book.
 
 
@@ -12764,7 +12764,7 @@ References:
 
 In the previous section, we learned how we can store structured data
 like a sequence of [objects]{.obj}, in human-readable form to
-nonvolatile media by use of the [json]{.mod} module.
+nonvolatile media by use of the [json] module.
 
 
 
@@ -12786,13 +12786,13 @@ continue with the processing later.
 ### Files
 
 
-For storing unstructured data, Nim provides the [io]{.mod} module with
+For storing unstructured data, Nim provides the [io] module with
 the [File] data type and related [procs], and the
-[streams]{.mod} module with the [Stream] data type and related
+[streams] module with the [Stream] data type and related
 [procs]. While a [File] in Nim is currently only a
-[pointer] to a C file, the [streams]{.mod} module has a higher
+[pointer] to a C file, the [streams] module has a higher
 abstraction level. Although the Nim language does not directly support
-interfaces, the [Stream] data type of the [streams]{.mod} module
+interfaces, the [Stream] data type of the [streams] module
 is some form of an interface, which is implemented by a
 [StringStream] and a [FileStream] data type. Internally,
 this interface concept is realized by storing a set of function
@@ -12804,18 +12804,18 @@ When we have to store unstructured data like text, it is not always
 clear if we better should use [Files] or [Streams].
 [Streams] may be the better choice when we (also) want to use a
 [string]{.str} as data source like a file or when we need the
-[peek()] functions of the [streams]{.mod} module to access data
+[peek()] functions of the [streams] module to access data
 without advancing the position in the stream.
 
 
 
-We will use the [File] data type of the [io]{.mod} module first.
-As the [io]{.mod} module is part of the [system]{.mod} module, we do not
+We will use the [File] data type of the [io] module first.
+As the [io] module is part of the [system] module, we do not
 have to import it before we can use it. The principle usage of files is,
 that we call the function [open()] to open a file with given
 name, call some [procs] to write or read data, and finally
 [close()] the file. While Nim support destructors, when we
-compile with \--gc:arc or \--gc:orc, the [io]{.mod} module does not yet
+compile with \--gc:arc or \--gc:orc, the [io] module does not yet
 use them, so we should actually call [close()] to close the file.
 
 
@@ -12878,7 +12878,7 @@ data.
 
 
 
-Module [io]{.mod} provides multiple overloaded [open()]
+Module [io] provides multiple overloaded [open()]
 [procs]. We use here a variant which returns a file, and raises
 an exception for the unlikely case of an error. We provide a file name
 and a file mode as parameters. We use mode [fmWrite]{.const}, as we want
@@ -12913,7 +12913,7 @@ file when done.
 
 
 
-The [io]{.mod} module provides some [procs] like
+The [io] module provides some [procs] like
 [writeBuffer()], [writeBytes()] or [writeChars()],
 which gives us as return value the actual number of bytes written. This
 return value should generally match the requested number of bytes to
@@ -12966,7 +12966,7 @@ content, then an exception is raised.
 
 
 
-The [io]{.mod} module provides a [readLine()] [proc] that
+The [io] module provides a [readLine()] [proc] that
 returns a newly allocated [string]{.str}, and one that takes an existing
 [string]{.str} as a [var] parameter. The latter may be a bit
 faster, as it can avoid the allocation of a new buffer when the passed
@@ -12974,7 +12974,7 @@ faster, as it can avoid the allocation of a new buffer when the passed
 
 
 
-The [io]{.mod} module provides a function called [endOfFile()]
+The [io] module provides a function called [endOfFile()]
 with a boolean result, which we can use to check if the end of file
 position is already reached. The provided functions
 [readBuffer()], [readBytes()] or [readChars()]
@@ -13117,7 +13117,7 @@ use a different OS or a different compiler version.
 
 
 
-The [io]{.mod} module provides the [File] variables
+The [io] module provides the [File] variables
 [stdin], [stdout] and [stderr], which are the standard
 input, output and error streams. Sometimes we use
 [stdout.write()] instead of the common [echo()]
@@ -13126,7 +13126,7 @@ without moving the cursor to the next line already.
 
 
 
-An important function of the [io]{.mod} module is [flushFile()],
+An important function of the [io] module is [flushFile()],
 which is used to ensure that all buffer content of buffered files is
 actually written to the file. This is important when we use the
 [stdout] [File] variable, maybe to ask the user a question
@@ -13140,9 +13140,9 @@ implementation and operating system.
 
 
 
-The [io]{.mod} module provides some more useful procedures, but we will
+The [io] module provides some more useful procedures, but we will
 stop this introducing section here, and continue with the
-[streams]{.mod} module in the next section.
+[streams] module in the next section.
 
 
 
@@ -13160,17 +13160,17 @@ References:
 
 A stream is an abstract interface for performing certain I/O operations,
 which was introduced by languages like C or Modula-2 decades ago. The
-[streams]{.mod} module of the Nim standard library provides a
+[streams] module of the Nim standard library provides a
 [FileStream] and a [StringStream] implementation, which
-behaves very similar. Nim's [streams]{.mod} module provides similar
-functions as the [io]{.mod} module with its [File] data type, but
+behaves very similar. Nim's [streams] module provides similar
+functions as the [io] module with its [File] data type, but
 it can operate on [strings]{.str} instead of on [Files], and it
 provides a set of [peek()] functions to access data at the
 current read position without moving forward. And some functions are
 more robust, for example closing a stream multiple times does not crash
 the program, as the first [close()] call sets the file variable
 of file streams to [nil], so that following [close()] calls
-are ignored. Currently, the [streams]{.mod} module does not support
+are ignored. Currently, the [streams] module does not support
 automatically closing of streams when they go out of scope.
 
 
@@ -13180,8 +13180,8 @@ We can create a new [FileStream] by calling the overloaded
 filename as parameter, or we can use [openFileStream()]. The
 latter raises an exception when the stream can not be opened, while the
 former [procs] just return [nil]. We can write and read
-textual data with the [streams]{.mod} module in a very similar way as we
-did it with the [io]{.mod} module and the [File] data type:
+textual data with the [streams] module in a very similar way as we
+did it with the [io] module and the [File] data type:
 
 
 
@@ -13247,20 +13247,20 @@ In the example above, we do not test if the stream variable is not
 
 For buffered streams, we can call [flush()] to ensure that the
 buffer content (of file streams) is written, similar as we can do it for
-plain [Files] of the [io]{.mod} module. Instead of
+plain [Files] of the [io] module. Instead of
 [io.endofFile()], we use the [proc] [atEnd()], to
 test if the current stream position is already at the end of the stream.
 Functions [getPosition()] and [setPosition()] are
 available to query or set the actual position in the stream. While the
-[io]{.mod} module with its [File] data type supports for
+[io] module with its [File] data type supports for
 [io.setFilePos()] although position modes relative to the actual
 position or relative to the file end, [streams.setPosition()]
 always use absolute values, that is positions measured from the
-beginning of the stream. The [streams]{.mod} module provides also the
+beginning of the stream. The [streams] module provides also the
 low level [procs] [readData()] and [readDataStr()],
 which reads data to a memory region or into a [string]{.str}, and
 returns the actual number of bytes read to indicate success. And as for
-the [io]{.mod} module, a [proc] [readAll()] is available
+the [io] module, a [proc] [readAll()] is available
 to read all data of a stream into the returned [string]{.str} variable.
 
 
@@ -13288,7 +13288,7 @@ To read the binary numbers back, we can use functions like
 fixed number of bytes. Or we can use the generic [read()]
 [proc], which accepts a [var] parameter which defines the
 data type that we intend to read in binary form. Additional to the
-various [read()] [procs], the [streams]{.mod} module
+various [read()] [procs], the [streams] module
 provides a set of [peek()] [procs], which reads data in
 without moving the actual position in the stream forward. This may be
 useful for parsing of files, as we can read the same information
@@ -13341,12 +13341,12 @@ the actual position one byte forward. (Instead of [readInt8()],
 we could also call [read()] with variable [i8] as passed
 [var] parameter.) Then we read in two bytes, and finally the
 [float64] value at the end of the stream. Finally, we check by
-use of the function [getFileSize()] from the [os]{.mod} module,
+use of the function [getFileSize()] from the [os] module,
 if the file has really the expected size.
 
 
 
-The [streams]{.mod} module provides many functions, and the possible
+The [streams] module provides many functions, and the possible
 writing data as [strings]{.str} or in binary form can make using that
 module a bit daunting at first. But most [procs] have examples in
 the API docs, which helps you to use it.
@@ -13355,7 +13355,7 @@ the API docs, which helps you to use it.
 
 
 
-For reading [strings]{.str} and whole lines, the [streams]{.mod} module
+For reading [strings]{.str} and whole lines, the [streams] module
 provides functions like [readLine()], [peekLine()],
 [readStr()] and [peekStr()] each in a variant which
 returns a newly allocated [string]{.str}, and one that uses a passed
@@ -13384,16 +13384,16 @@ References:
 
 
 [String]{.str} processing is a wide area. Nim's standard library
-provides various pure Nim modules like [strutils]{.mod},
-[parseutils]{.mod} and [strscans]{.mod} for supporting this task, and
-the impure [re]{.mod} and [nre]{.mod} modules and external packages
+provides various pure Nim modules like [strutils],
+[parseutils] and [strscans] for supporting this task, and
+the impure [re] and [nre] modules and external packages
 supports more advanced operations like [string]{.str} pattern matching
 with [regular expressions]{.italic} (regex) or by use of the [parsing
 expression grammar]{.italic} (PEG). We will start with the
-[strutils]{.mod} module, which is one of the mostly used modules of the
+[strutils] module, which is one of the mostly used modules of the
 Nim standard library. Then we will introduce some more specialized
-modules like [strscans]{.mod}, [parsecsv]{.mod}, [parseutils]{.mod} and
-[strformat]{.mod}. While parsing [strings]{.str} with regular
+modules like [strscans], [parsecsv], [parseutils] and
+[strformat]. While parsing [strings]{.str} with regular
 expressions or by use of the parsing expression grammar is very flexible
 and powerful, it is not that easy, not the fastest solution, and not
 that often really needed. So we have moved the Regex section to the end
@@ -13405,7 +13405,7 @@ where we discuss some useful external packages.
 Whenever we do [string]{.str} processing in Nim, we should care a bit
 for performance, as some [string]{.str} operations can be slow by
 design. For simple tasks, we should prefer to use functions from the
-simple modules like [strutils]{.mod} when possible, and use Regex or PEG
+simple modules like [strutils] when possible, and use Regex or PEG
 only when really necessary or when performance is uncritical. And even
 when we use elementary simple functions like a [string]{.str} split, it
 is generally good to have a feeling how the requested operations may
@@ -13419,7 +13419,7 @@ split line a [string]{.str} is allocated, it may be not as fast as
 desired. In some cases the compiler may be able to optimize the slitting
 process, but it may be also a good idea to think about other ways to
 extract the data, maybe by applying [procs] from the
-[strscans]{.mod} module, which can parse lines directly into passed
+[strscans] module, which can parse lines directly into passed
 [var] parameters, avoiding unnecessary allocations. Nim 2.0 may
 get support for [view types]{.ndef}, which functions like split() may
 use as return types to reuse slices of the initial string instead of
@@ -13484,13 +13484,13 @@ can use the C libs like pure Nim libs.
 
 
 
-Nim's [system]{.mod} module provides already some basic [string]{.str}
+Nim's [system] module provides already some basic [string]{.str}
 operations, like accessing single characters by the subscript operator
 [\[\]]{.op}, accessing slices of multiple adjacent characters, or
 joining multiple [strings]{.str} with the [&]{.op} operator. The
 overloaded [add()] functions to append single characters or other
 [strings]{.str} to existing [string]{.str} variables are also provided
-by the [system]{.mod} module.
+by the [system] module.
 
 
 
@@ -13516,11 +13516,11 @@ also delete ranges in the [string] by replacing it with the empty
 
 
 
-The [system]{.mod} module also defines the stringify operator [\$]{.op},
+The [system] module also defines the stringify operator [\$]{.op},
 which converts expressions to the [string]{.str} presentation when we
 put it in front of it. Procedures like [echo()] apply the
 stringify operator automatically to all of its arguments when necessary.
-And the [system]{.mod} module provides the [contains()] function,
+And the [system] module provides the [contains()] function,
 which we can use to test if a [string]{.str} contains a character.
 Instead of [contains()], we can also use the [in]{.op} operator.
 
@@ -13534,7 +13534,7 @@ Instead of [contains()], we can also use the [in]{.op} operator.
 
 
 
-The [system]{.mod} module also provides the [procs]
+The [system] module also provides the [procs]
 [newString()] and [newStringOfCap()], which are mostly
 used for optimizing purposes. The function [newString(n)] creates
 a [string] of length [n], but with uninitialized content.
@@ -13666,7 +13666,7 @@ different to C [strings]{.str} as these have no length field.
 
 
 
-The [system]{.mod} module provides the overloaded [&]{.op} operator,
+The [system] module provides the overloaded [&]{.op} operator,
 which we can use to concatenate [chars] and [strings], the
 [&=]{.op} operator to append a new [string]{.str} to an existing
 [string]{.str}, and the [add()] functions to append characters or
@@ -13693,7 +13693,7 @@ to a [string]{.str}, and the JS backend allows even to append one
 
 
 
-Module [system]{.mod} also exports a [substr()] [proc],
+Module [system] also exports a [substr()] [proc],
 which copies and returns a [slice] of a [string]{.str}. Overloads
 with optional first index with default [0] and optional last index
 with default [s.high] exists.
@@ -13752,7 +13752,7 @@ libraries, this complains may be not really justified.
 ### Module stringutils
 
 
-The module [stringutils]{.mod} provides a set of functions (120
+The module [stringutils] provides a set of functions (120
 currently) and a few [iterators] for simple [string]{.str}
 operations. Using that functions and [iterators] is simple in most
 cases and mosty well explained in the API docs. Remembering which
@@ -13767,7 +13767,7 @@ Performance critical operations are generally that one which has to
 allocate new [strings]{.str} or that has to shift many characters, like
 text inserting operations. Note that some functions of this module, like
 [toUpperAscii()] work only with the lower and upper ASCII
-letters. For Unicode operations we may need the [unicode]{.mod} module.
+letters. For Unicode operations we may need the [unicode] module.
 
 
 
@@ -13788,7 +13788,7 @@ hexadecimal numbers.
 
 
 
-The [stringutils]{.mod} module support [string]{.str} interpolation by
+The [stringutils] module support [string]{.str} interpolation by
 use of the [%]{.op} operator.
 
 
@@ -13869,7 +13869,7 @@ performance.
 
 
 
-The [strutils]{.mod} module provides overloaded functions which use
+The [strutils] module provides overloaded functions which use
 single characters as separators or which accepts a set of characters as
 separators, so we may split at space, tabulator, comma or semicolon with
 {\' \', \'\\t\', \',\', \';\'}. And a function
@@ -14029,7 +14029,7 @@ The [contains()] function can be used to test if a character, a
 set of characters, or a substring is contained in a [string]{.str}.
 Instead of [contains(s, sub)] we can write [sub in s].
 Note that a function variant for single characters is defined in the
-[system]{.mod} module.
+[system] module.
 
 
 
@@ -14100,7 +14100,7 @@ CR, LF or CR-LF.
 Sometimes we may also need functions like [formatFloat()],
 [formatBiggestFloat()] or [formatEng()] to format
 [float] numbers for output purposes. You would have to consult
-the [strutils]{.mod} API docs for all the format details. An
+the [strutils] API docs for all the format details. An
 [intToStr()] function with an argument to specify the minimal
 [string] length is also available. The [string]{.str} may get
 leading zeros for alignment.
@@ -14114,7 +14114,7 @@ exception when the [string]{.str} does not contain a valid number.
 
 
 
-The [strutils]{.mod} module contains some more not that often used
+The [strutils] module contains some more not that often used
 function, like functions to convert data to hexadecimal, octal or binary
 representation, or to parse numbers back from that [string]{.str}
 representation into numbers. Other functions like [align()],
@@ -14132,11 +14132,11 @@ function.^\[[41](#_footnotedef_41 "View footnote."){#_footnoteref_41
 ### Module parseutils
 
 
-The module [parseutils]{.mod} provides a set of functions for efficient
+The module [parseutils] provides a set of functions for efficient
 and fast parsing of [strings]. The functions avoid the allocation
 of new [strings] by passing back results in [var]
 [string] parameters and by returning the number of processed
-characters. The module [parseutils]{.mod} is a good choice when we need
+characters. The module [parseutils] is a good choice when we need
 efficient parsing of [strings] and the input [strings]
 have a simple structure. For more complicated input data, we may have to
 use RegEx or PEGs. Let us assume that we have a set of library names
@@ -14164,7 +14164,7 @@ First, we allocate a [string] with enough capacity, so that the
 [parse()] functions can use it without having to do allocations.
 As we want to receive the plain names, using [parseWhile()] with
 a char set as last parameter may be a possible solution. But as we see
-this will not really work for [webkit2gtk]{.mod} which contains a digit
+this will not really work for [webkit2gtk] which contains a digit
 in its name:
 
 
@@ -14243,7 +14243,7 @@ echo year, ": ", value # 2020: 2.5
 
 
 
-In the above example we used the module prefix as [strutils]{.mod}
+In the above example we used the module prefix as [strutils]
 contains also a [parseInt()] and a [parseFloat()]
 function. The functions [parseBin()], [parseOct()] and
 parseHex() behave similarly. Returned is the number of processed
@@ -14264,7 +14264,7 @@ API documentation for details.
 ### Module strscans
 
 
-The [strscans]{.mod} module provides a [scanf()] macro which can
+The [strscans] module provides a [scanf()] macro which can
 be used to extract substrings from textual user input. The content of
 the substrings is automatically converted to Nim variables of matching
 data types.
@@ -14623,7 +14623,7 @@ would return false if there are more characters in the input
 
 
 
-The latest version of the [strscans]{.mod} module provides also a
+The latest version of the [strscans] module provides also a
 variant of the [scanf()] macro called [scanTuple()] which
 returns a [tuple]{.tup}. We could use it in this way in our example
 above:
@@ -14647,7 +14647,7 @@ pattern [string]{.str}.
 
 
 
-Additionally, the [strscans]{.mod} module provides a [scanp()]
+Additionally, the [strscans] module provides a [scanp()]
 macro which works somewhat similar to PEG or RegEx libraries. We will
 not try to explain the [scanp()] macro, as its use may be too
 difficult for a beginner book. And when we really have to process text
@@ -14663,7 +14663,7 @@ will compare the scanp() macro there.
 ### Module strformat
 
 
-With the [fmt()] macro from the [strformat]{.mod} module, we can
+With the [fmt()] macro from the [strformat] module, we can
 format and interpolate [strings]{.str} similar to Python3 with its
 f-strings.
 
@@ -14691,7 +14691,7 @@ which is processed at compile time, there is no unnecessary run-time
 overhead involved. A small restriction of [fmt()] is, that it's
 argument is regarded as a generalized raw [string]{.str} literal. So we
 can not use escape sequences like [\"\\n\"] in the [string]{.str}
-literal. But the [strformat]{.mod} API docs mention various solutions
+literal. But the [strformat] API docs mention various solutions
 for this: We can use the unary [&]{.op} operator instead of the
 [fmt()] call, or we can use the notations [{\'\\n\'}],
 [fmt()] or [\"\".fmt].
@@ -14775,7 +14775,7 @@ echo fmt"{2 * pi = }" # 2 * pi = 6.283
 
 
 
-This is similar to the [dump()] macro from the [sugar]{.mod}
+This is similar to the [dump()] macro from the [sugar]
 module and is mostly used for debugging purposes.
 
 
@@ -14885,10 +14885,10 @@ elements, and for concatenation and slicing.
 
 
 Some often used functions and operators for sequences and
-[arrays] are defined in the [system]{.mod} module, like creating
+[arrays] are defined in the [system] module, like creating
 new sequences, converting [arrays] to sequences, joining
 sequences or adding elements to it. Other important functions, operators
-and [iterators] are defined in the [sequtils]{.mod} module, which
+and [iterators] are defined in the [sequtils] module, which
 we describe in the next section.
 
 
@@ -14962,7 +14962,7 @@ is always zero.
 
 
 
-Module [system]{.mod} provides also the [@]{.op} [array] to
+Module [system] provides also the [@]{.op} [array] to
 [seq] operator:
 
 
@@ -14986,7 +14986,7 @@ temporary [array] to the seq should be faster.
 
 
 
-Slicing is also supported by the [system]{.mod} module:
+Slicing is also supported by the [system] module:
 
 
 
@@ -15047,10 +15047,10 @@ last position in the container is reached, so this is a O(n) operation.
 
 This module defines some useful [procs], [iterators] and
 [templates] for working with [arrays] and sequences. Some
-functions of module [sequtils]{.mod} use a generic [openArray]
+functions of module [sequtils] use a generic [openArray]
 parameter and so can be used for [strings]{.str} as well. While the
 [max()] and [min()] [procs] are available from the
-[system]{.mod} module, the [minIndex()] and [maxIndex()]
+[system] module, the [minIndex()] and [maxIndex()]
 [procs] are provided by [sequtils]:
 
 
@@ -15172,7 +15172,7 @@ echo s.filterIt((it and 1) == 0)
 
 The map variants return a new [seq], with an operation performed
 on all items. The returned [seq] can have a different base type.
-In line 4 we used the [⇒]{.op} operator from the [sugar]{.mod} module
+In line 4 we used the [⇒]{.op} operator from the [sugar] module
 for a simpler notation
 
 
@@ -15268,7 +15268,7 @@ echo s.foldr(a + b) #45
 
 
 
-The [sequtils]{.mod} module contains some more [procs],
+The [sequtils] module contains some more [procs],
 [templates] and macros that are not needed that often. It would
 not make much sense to mention all of them here, as it is already not
 easy to remember the ones that we have introduced above. You should skim
@@ -15388,7 +15388,7 @@ avoided --- the function name gives you already a good hint. And if you
 should need such a function, it should be no problem to implement one if
 efficiency is really not critical. But possibly in that case it would be
 better to use a different container type, maybe the double-ended queue
-provided by the [deques]{.mod} module.
+provided by the [deques] module.
 
 
 
@@ -15478,7 +15478,7 @@ different.
 
 
 
-Nim uses in its [random]{.mod} module an implementation of the
+Nim uses in its [random] module an implementation of the
 xoroshiro128+ (xor/rotate/shift/rotate) library. A [Rand]
 [object]{.obj} with two integer fields is used to store the actual
 state, and some simple and fast logic operations as bit shift, logical
@@ -15521,7 +15521,7 @@ call, and [next()] is the actual generator procedure returning an
 does wrap around instead of giving an overflow error as unsigned
 integers are used. The numbers returned by the [rand()]
 [proc] are the foundation for all the other random number types
-provided by the [random]{.mod} module. To get integers with reduced
+provided by the [random] module. To get integers with reduced
 numeric range, we can just use the modulo operation, and to get
 [float] results we may convert the integer value to
 [float] and apply some basic mathematical operations like
@@ -15529,7 +15529,7 @@ division for range reduction.
 
 
 
-The most basic functions provided by the [random]{.mod} module are the
+The most basic functions provided by the [random] module are the
 overloaded [rand()] functions. [Rand()] called with an
 integer parameter [n] gives us integer random numbers in the range
 from [0] up to [n], and [rand()] called with a
@@ -15546,17 +15546,17 @@ start of our program.
 
 
 Generally, it is a good idea to not use the one internal global state of
-the [random]{.mod} module for generation of our random number, but to
+the [random] module for generation of our random number, but to
 use our own state variable. That way we prevent conflicts with other
-modules which may use the [random]{.mod} module as well. Imagine that we
+modules which may use the [random] module as well. Imagine that we
 want to get the same sequence of random numbers for each run of our
 program as we are debugging our game, but another module initialize the
-internal state of module [random]{.mod} with a value based on the
+internal state of module [random] with a value based on the
 current time.
 
 
 
-So the module [random]{.mod} provides overloaded [rand()]
+So the module [random] provides overloaded [rand()]
 functions that gets a state variable:
 
 
@@ -15598,7 +15598,7 @@ exactly once in the sequence. Of course, a code segment like [s\[i\] =
 generated multiple times or not at all. The obvious solution for this
 task is to fill an [array] first with consecutive numbers
 [1] to [100] and then exchange the initial positions with
-destination positions determined by [rand(99)] The [random]{.mod}
+destination positions determined by [rand(99)] The [random]
 module provides the [shuffle()] function for this shaking of a
 container. A related function is [sample()], which is used to
 randomly select an element from an [openArray] or a [set].
@@ -15629,9 +15629,9 @@ References:
 
 Sometimes we may want to measure the execution time of a code segment of
 our program. For this, the Nim standard library provides various modules
-including the larger [times]{.mod} module and the [monotimes]{.mod}
-module. The [times]{.mod} module provides many functions and data types
-for handling dates and times, while the small [monotimes]{.mod} module
+including the larger [times] module and the [monotimes]
+module. The [times] module provides many functions and data types
+for handling dates and times, while the small [monotimes] module
 is more specialized for measuring of time intervals. For our first test,
 we will use the [times.cpuTime()] function and the
 [monotimes.getMonoTime()] function. The former gives us time
@@ -15698,7 +15698,7 @@ have to remember that our computer may execute other task at the same
 time or may be in various power saving states with reduced CPU clock
 frequency, from which it takes some time to wake up. To take care of
 this, we try to execute some warm up code before our actual timing task,
-and we do use the [rand()] function from the [random]{.mod}
+and we do use the [rand()] function from the [random]
 module to provide input values for our code that are not known during
 compile time. Finally, we output the result of the calculation by use of
 an [echo()] statement to make clear to the compiler that the
@@ -16048,7 +16048,7 @@ it is done for plain sequences when all capacity is occupied.
 
 
 
-Now let us see how we can use the [tables]{.mod} module of the Nim
+Now let us see how we can use the [tables] module of the Nim
 standard library to store the customer record we introduced above:
 
 
@@ -16113,9 +16113,9 @@ again the subscript operator to access the data record.
 
 
 
-The [tables]{.mod} module of the Nim standard library provides many more
+The [tables] module of the Nim standard library provides many more
 functions for interacting with [Tables]. Most are easy to
-understand and use. When you inspect the API docs of the [tables]{.mod}
+understand and use. When you inspect the API docs of the [tables]
 module, you will discover that beside the [Table] data type also
 a [TableRef] exists. The [Table] type has value semantics,
 that is if you copy a whole table instance, then the whole content is
@@ -16204,13 +16204,13 @@ cases, in most cases different things have different names.
 ### User defined hash values
 
 
-The [tables]{.mod} module uses the [hashes]{.mod} module to calculate
+The [tables] module uses the [hashes] module to calculate
 the hash value for the keys that we use to access table content. For
-many data types, the [hashes]{.mod} module already defines a hash
+many data types, the [hashes] module already defines a hash
 function. When we would like to use [tuples] or [object]
 data types as keys for table access, then we would have to define a hash
 function for that key [objects]{.obj} first. The API documentation of
-the [tables]{.mod} module contains an example for this, where as key an
+the [tables] module contains an example for this, where as key an
 [object]{.obj} data type with firstName and lastName fields is used to
 store salary entries in the table. While firstName and lastName are
 [strings]{.str}, and for single [strings]{.str} a predefined hash
@@ -16249,7 +16249,7 @@ salaries[p1] = 30_000
 The hash generation is a bit cryptic: First we mix various existing hash
 values using the [!&]{.op} operator, and finally we use the [!\$]
 operator to generate the final hash value. For details, please see the
-API documentation of the [hashes]{.mod} module.
+API documentation of the [hashes] module.
 
 
 
@@ -16647,7 +16647,7 @@ References:
 
 
 
-The [sets]{.mod} module provides the generic [HashSet\[T\]] data
+The [sets] module provides the generic [HashSet\[T\]] data
 type and the related procedures and functions. [HashSets] behave
 similar to Nim's built-in [set] type, but while the base types of
 the built-in [set] type is restricted to ordinal data types of 8
@@ -16678,8 +16678,8 @@ if v in s:
 
 
 
-The functions and procedures provided by the [sets]{.mod} module are
-used similar to the ones of the [tables]{.mod} module --- we have
+The functions and procedures provided by the [sets] module are
+used similar to the ones of the [tables] module --- we have
 [excl()] and [incl()] to remove or add elements to a set
 instance, and operations to create the union, intersection or difference
 of two [HashSets]. As the basic behavior of [HashSets] is
@@ -16730,10 +16730,10 @@ yourself!
 
 
 
-The [os]{.mod} module supports basic interactions with the operating
+The [os] module supports basic interactions with the operating
 system, like accessing the file system, reading command line arguments,
 executing shell commands and external processes or retrieving
-environment variables. The abstractions of the [os]{.mod} module allows
+environment variables. The abstractions of the [os] module allows
 us to write programs that may interact with the OS but still can be
 compiled and run unchanged on various operating systems including
 Windows, macOS and Linux.
@@ -16743,11 +16743,11 @@ Windows, macOS and Linux.
 This module is quite large, and it would make no sense to introduce many
 of its content here. When you have the feeling that you may need some
 functionality that is related to OS services, you just should consult
-the API documentation of the [os]{.mod} module.
+the API documentation of the [os] module.
 
 
 
-We have already used some functions of the [os]{.mod} module in earlier
+We have already used some functions of the [os] module in earlier
 section of the book, for example the [paramCount()] and
 [paramStr()] functions to process command line arguments, and the
 [fileExists()] and [getFileSize()] functions to test if a
@@ -16823,7 +16823,7 @@ which gives us the type of the directory entry, and the path as a
 
 
 The function [execProcess()] to run a shell command is provided
-by the [osproc]{.mod} module:
+by the [osproc] module:
 
 
 
@@ -16850,11 +16850,11 @@ window may be an issue, see
 
 
 
-Other functions of the [os]{.mod} module that can sometimes be useful
+Other functions of the [os] module that can sometimes be useful
 are [sleep()] to delay the program execution for a time period
 specified in milliseconds, and [parseCmdLine()] which splits the
 command line argument [string] into several components. But in
-the next section we will present the [parseopt]{.mod} module, which is
+the next section we will present the [parseopt] module, which is
 an advanced command line parser, and in part V of the book, we will
 present the external [cligen] package, which is even more
 powerful.
@@ -16878,7 +16878,7 @@ a command like [nim c \--gc:arc test1.nim]{.term} in a terminal window.
 Pure Windows users, who never use terminal windows to interact with the
 computer, may skip this section. For the others, we will give a short
 introduction to the structure of command line arguments, and how we can
-process them with the [parseopt]{.mod} module of Nim's standard library.
+process them with the [parseopt] module of Nim's standard library.
 
 
 
@@ -16943,7 +16943,7 @@ command --- [c]{.term} for compiling with the C backend.
 
 
 After this short introduction to command line options, we will
-investigate how we can use Nim's [parseopt]{.mod} module to process the
+investigate how we can use Nim's [parseopt] module to process the
 command line [string]{.str} and extract the various options and
 parameters.
 
@@ -17008,7 +17008,7 @@ Our program starts with a call of [initOptParser()], which
 returns an [OptParser] [object]. We call
 [initOptParser()] without any parameter --- in this case, the
 function construct the command line [string]{.str} itself by a series of
-[commandStr()] calls of the [os]{.mod} module. In the [while
+[commandStr()] calls of the [os] module. In the [while
 true:] loop, we have to call [p.next] to get the next
 option. Then we can access the [kind] field, which is an
 enumeration type with the possible values [cmdEnd],
@@ -17051,7 +17051,7 @@ possible cases, otherwise the code would not compile.
 
 
 
-The [parseopt]{.mod} module supports additional to pass option values
+The [parseopt] module supports additional to pass option values
 without the need to separate the option name and the option value with a
 [:]{.term} or a [=]{.term}, e.g. a command line like [-a3]{.term}. To
 make that work, we have to tell the parser which options have values and
@@ -17113,7 +17113,7 @@ option has no value, [report.pdf]{.term} is recognized as argument.
 
 
 
-You may still wonder if the [parseopt]{.mod} module supports command, as
+You may still wonder if the [parseopt] module supports command, as
 used in [nim c \--gc:arc mycode.nim]{.term}? Yes this works, we would
 get this output:
 
@@ -17145,7 +17145,7 @@ them to integers or other data types when required.
 
 
 At the end of this section, we will sketch how an actual program may use
-the [parseopt]{.mod} module. We assume that we want to create a tool
+the [parseopt] module. We assume that we want to create a tool
 that can print a single PDF file --- the complete content or just a
 specified page, with a selectable print quality. So the base structure
 of our program may look like
@@ -17208,7 +17208,7 @@ print()
 
 In this example, we left out the interpretation for the short options,
 which should be processed similarly as the long ones. You see that the
-actual use of the [parseopt]{.mod} module still requires a lot of code
+actual use of the [parseopt] module still requires a lot of code
 for validation and interpretation of options and arguments. In part V of
 the book, we will present the external cligen package, which further
 simplifies the command line parsing.
@@ -17332,25 +17332,25 @@ keyboard.^\[[45](#_footnotedef_45 "View footnote."){#_footnoteref_45
 
 In this section we will not try to explain all the details of the syntax
 and semantic of regular expressions, but only show you how the
-[regex]{.mod} module is used in principle, and give a few examples for
+[regex] module is used in principle, and give a few examples for
 its use. For details, you should consult the API documentation of the
-[regex]{.mod} module, and for concrete use cases you may additionally
+[regex] module, and for concrete use cases you may additionally
 consult the Wikipedia article and the various internet resources.
 
 
 
 The Nim standard library provides two modules for the use of regular
-expressions, called [re]{.mod} and [nre]{.mod}, which both are wrappers
+expressions, called [re] and [nre], which both are wrappers
 for the [PCRE]{.ndef} [(Perl Compatible Regular Expressions)]{.ndef} C
-library. Additionally, a module called [regex]{.mod} is available as an
+library. Additionally, a module called [regex] is available as an
 external package, which is fully written in Nim language. These three
 modules are similar, but their API is different. When you intend to use
 [re] and [nre] you have to ensure that the PCRE C library is
-also installed on your computer. As the external [regex]{.mod} module is
+also installed on your computer. As the external [regex] module is
 written in pure Nim and is of high quality, we will actually use that
 one for our examples --- actually if using one of the two others, it
 would be not easy to decide which to use. You may wonder why we present
-the [regex]{.mod} module already here, as it is not part of the Nim
+the [regex] module already here, as it is not part of the Nim
 standard library? Well, a regex library is am important part of each
 programming languages, and [re] and [nre] are actually
 included in Nim's standard library. Due to Nim's package managers like
@@ -17364,7 +17364,7 @@ nimble, using external packages is very easy, we just have to execute
 
 
 
-We will start to demonstrate the use of the [regex]{.mod} module with a
+We will start to demonstrate the use of the [regex] module with a
 very simple example:
 
 
@@ -17471,7 +17471,7 @@ re\"A\\w\*(\\d+)\". For the same [string]{.str} \"Alex77\" we would then
 get the output @\[\"7\"\]. The reason for that is, that [\\w\*]
 does a greedy processing, eating all but the last decimal digit, which
 it left to satisfy [/d+]. From the API documentation of the
-[regex]{.mod} module, we learn that we can specify [\\w\*?]
+[regex] module, we learn that we can specify [\\w\*?]
 instead to get a none-greedy processing, so both digits are left for
 [\\d+] and we get again @\[\"77\"\] as output.
 
@@ -17538,7 +17538,7 @@ brackets. The total regex pattern is constructed by the subexpression
 integer pattern with the allowed separators. Note that we allow any
 amount of spaces or tabulators, but only a single comma or semicolon
 between the different entities. Note that the [match()] function
-of the [regex]{.mod} module always does a full match, so a single space
+of the [regex] module always does a full match, so a single space
 at the beginning or end of the text [string]{.str} would make the match
 fail. We could compensate for that by starting and ending the regex
 pattern with \"\\s\*\". Or we could use instead of [match()] the
@@ -17553,7 +17553,7 @@ function.
 
 
 
-The [regex]{.mod} module provides us also with two [replace()]
+The [regex] module provides us also with two [replace()]
 functions, which we can use to replace matched patterns with literal
 [strings]{.str} or captured and modified [strings]{.str}. The first
 [replace()] function uses as third argument a [string]{.str},
@@ -17652,7 +17652,7 @@ replace the whole match with the two captures, and we are done. Finally,
 we have to replace underscore characters followed by a lowercase letter
 with the capitalized letter. Some tools like [sed]{.ndef} provides the
 [\\U] to capitalize a capture, but this is not available for the
-[regex]{.mod} module. So we use the [replace()] variant which
+[regex] module. So we use the [replace()] variant which
 uses a [proc] as last parameter --- to that [proc] the
 capture and the original [string]{.str} is passed, and that function
 should return the replacement [string]{.str}. The capture which we have
@@ -17720,7 +17720,7 @@ difficult to modify that patterns later. Maybe you should play a bit
 with regexes yourself now, and come back to this topic when you think
 that you need them. In this book, we were only able to give a tiny
 introduction into the stuff --- you will have to carefully study the API
-docs of the [regex]{.mod} module and a lot of other resources on the
+docs of the [regex] module and a lot of other resources on the
 Internet when you should intend to seriously use them. We should also
 mention, that while regexes are very powerful, for some tasks they work
 not that well, e.g. parsing math expressions with nested braces, or just
@@ -18196,11 +18196,11 @@ entries by random. After our call of [quicksort()] we call
 [isSorted()] from Nim's standard library to check the success of
 our sorting. After these tests, which does some warm up of the CPU for
 us, we add more random entries and again sort and test it, while we
-record the needed time with module [monotimes]{.mod} as we did before in
+record the needed time with module [monotimes] as we did before in
 the Timers section. To get a feeling about the performance of our
 sorting [proc] we [shuffle()] again and sort this time
-with the [sort()] [proc] from Nim's [algorithm]{.mod}
-module. [Sort()] from [algorithm]{.mod} module uses currently
+with the [sort()] [proc] from Nim's [algorithm]
+module. [Sort()] from [algorithm] module uses currently
 another sorting method called merge sort, which has the advantage that
 it is a stable sorting algorithm, but it may be a bit slower than
 quicksort. And [sort()] from algorithm may pass a [cmp()]
@@ -19149,7 +19149,7 @@ result, and potentially later the memory management system has to free
 the result data again, which is some additional effort. So we may guess
 that the in-place [proc] is faster, as long as we do not really
 need the copy. When needed, we can use the [dup()] macro of the
-[sugar]{.mod} module to use our in place [proc] as one that works
+[sugar] module to use our in place [proc] as one that works
 on a copy and returns this copy, without modifying the input.
 
 
@@ -19353,7 +19353,7 @@ While the two presented [procs] may be actually useful in some
 cases, they are more presented as an exercise here. As a smart user of
 the Nim forum showed us, we can get a very similar behavior by use of
 the [filter()] [proc] in combination with the [=\>]{.op}
-operator of the [sugar]{.mod} module:
+operator of the [sugar] module:
 
 
 
@@ -20329,7 +20329,7 @@ Parsing whole text files or single [strings]{.str} is a common
 programming task, e.g. to process textual user input or to extract data
 from HTML or CSV files. Traditional this is often done by the use of
 [regular expressions]{.ndef} --- in part III of the book we show how it
-can be done by use of the [regex]{.mod} module.
+can be done by use of the [regex] module.
 
 
 
@@ -20365,7 +20365,7 @@ the actual syntax for building parsing rules can differ.
 
 
 
-Nim's standard library includes already a simple [pegs]{.mod} module,
+Nim's standard library includes already a simple [pegs] module,
 but we will use the more advanced external [NPeg]{.name} package of Ico
 Doornekamp instead. [NPeg]{.name} is a pure [Nim]{.nim} library, that
 provides macros to compile PEGs to Nim procedures which can parse
@@ -20376,7 +20376,7 @@ provides macros to compile PEGs to Nim procedures which can parse
 In this section, we will try to explain the basic concepts of the PEG
 use and give some examples. For a more formal and complete description,
 you should refer to the linked Wikipedia article and consult the API
-documentation of the [npeg]{.mod} module.
+documentation of the [npeg] module.
 
 
 
@@ -20412,7 +20412,7 @@ the alternatives cannot specify the exact parse tree desired.
 provides macros to compile patterns and grammars (PEGs) to Nim
 procedures which will parse a [string]{.str} and collect selected parts
 of the input. In this way, [npeg] is an alternative to the use of
-the [regex]{.mod} module, but [npeg] does not support the optional
+the [regex] module, but [npeg] does not support the optional
 replacement of matched patterns.
 
 
@@ -20436,7 +20436,7 @@ echo p.match("123").ok
 
 
 
-The [npeg]{.mod} module defines a few macros for processing PEG
+The [npeg] module defines a few macros for processing PEG
 patterns. One of them is the [peg()] macro, to which we pass as
 argument a starting expression in the form of a [string]{.str}, and
 which creates and return a [Parser] object. In the body of the
@@ -20446,14 +20446,14 @@ repetition of the decimal digits zero to nine.
 
 
 
-The [npeg]{.mod} module uses as terminal symbols single characters
+The [npeg] module uses as terminal symbols single characters
 enclosed in single quotes or [strings]{.str} enclosed in double quotes.
 
 
 
 In the original PEG syntax, a pair of square brackets is used to specify
 character ranges like \[\'a\'..\'z\'\] for the lower case letters of the
-alphabet, but the [npeg]{.mod} module uses curly braces instead.
+alphabet, but the [npeg] module uses curly braces instead.
 
 
 
@@ -20479,12 +20479,12 @@ this [object]{.obj} to check if the match was successful.
 
 
 
-When we intend to use the [npeg]{.mod} module, we have to know that this
+When we intend to use the [npeg] module, we have to know that this
 module uses a syntax, which is not fully identical to the original PEG
-definition, which is used by the [pegs]{.mod} module of Nim's standard
+definition, which is used by the [pegs] module of Nim's standard
 library: Originally character classes were created by enclosing
 individual characters or character ranges in square brackets, similar as
-done for [regular expressions]{.ndef}. But the [npeg]{.mod} module uses
+done for [regular expressions]{.ndef}. But the [npeg] module uses
 a pair of curly braces instead. In PEG repetitions are specified by
 [\*], [+] and [?] for zero or more, one or more, or
 one or zero, as in regular expressions. In the original PEG design these
@@ -20527,7 +20527,7 @@ echo p2.match("1+23").ok
 
 
 We said that the symbol [\*] is used to indicate zero or more
-repetitions of an expression. But for the [npeg]{.mod} module this
+repetitions of an expression. But for the [npeg] module this
 [\*] is used at the same time to construct sequences of
 expressions, that is, to concatenate expressions. In the code above, we
 pass the [string]{.str} \"term\" as the starting expression to the
@@ -20546,7 +20546,7 @@ or subtraction.
 ### Capturing data
 
 
-The [npeg]{.mod} module offers plain [string]{.str} captures and more
+The [npeg] module offers plain [string]{.str} captures and more
 flexible code block captures.
 
 
@@ -20729,10 +20729,10 @@ to match, that is the [string]{.str} end is reached.
 
 
 We will end our introduction to the parsing expression grammar and the
-use of the [npeg]{.mod} module here. To learn all the details about PEG
+use of the [npeg] module here. To learn all the details about PEG
 like restrictions, performance and memory consumption you should consult
 the Wikipedia article or other dedicated literature. And for advanced
-uses of the [npeg]{.mod} module including the use of back references,
+uses of the [npeg] module including the use of back references,
 and all the available syntax elements, you have to study its API
 documentation carefully.
 
@@ -20756,7 +20756,7 @@ References:
 
 
 
-In part III of the book, we presented the module [parseopt]{.mod} of
+In part III of the book, we presented the module [parseopt] of
 Nim's standard library, which can help us to parse the command line
 [string]{.str} --- for programs launched from within a terminal window
 by typing the command name followed by a set of options and arguments.
@@ -20775,7 +20775,7 @@ lot. The basic idea of the [cligen]{.italic} package is, that the
 parameter list of Nim procs is already a valuable specification for
 parameters: It provides names, data types, and optional default values
 for a set of parameters, in a form, which is already familiar to the Nim
-user. The [cligen]{.mod} module allows us to just create a top level
+user. The [cligen] module allows us to just create a top level
 [proc] with a parameter list, which can be called directly from
 the command line with all the parameters passed in fully automatically.
 We only have to call the [dispatch()] [macro] on that
@@ -20795,7 +20795,7 @@ At the end of section [\[Command line
 parsing\]](#Command%20line%20parsing), we gave the sketch of a tool
 called [fancyPrint] that could be used to print files. That tool
 had options to select single pages to print, and to specify the print
-quality. With [cligen]{.mod} we only have to create the [proc]
+quality. With [cligen] we only have to create the [proc]
 definition, and to call [dispatch()] on it:
 
 
@@ -20831,7 +20831,7 @@ dispatch(fancyPrint)
 
 
 
-When you have installed [cligen]{.mod} already as suggested above, you
+When you have installed [cligen] already as suggested above, you
 can compile and run this code:
 
 
@@ -20886,14 +20886,14 @@ overview of the intended use:
 
 
 
-You can also display a summary about the [cligen]{.mod} syntax with the
-parameter [help-syntax]. The [cligen]{.mod} module offers some
+You can also display a summary about the [cligen] syntax with the
+parameter [help-syntax]. The [cligen] module offers some
 more advanced features, which we will not discuss here in detail: We can
 use a command mode, to support app calls like [nim c ...​]{.term}, where
 the first argument selects which command is called. Or you can specify
 that a different letter than the first one of the long option name is
 used as short option. Or, instead of directly calling a proc, we can use
-[cligen]{.mod} to initialize an [object] instance, which is then
+[cligen] to initialize an [object] instance, which is then
 passed as parameter to a proc. It is even possible to use other data
 types as values than the primitive Nim types, when we define converter
 [procs] for that data types.
@@ -20993,7 +20993,7 @@ The macro keyword is used similar to [proc], [func] and
 [template] to define a parameterized code block, which is executed
 at compile time and consists of ordinary Nim code and meta-programming
 instructions. The meta-programming instructions are imported from the
-[macros]{.mod} module and are used to construct an Abstract Syntax Tree
+[macros] module and are used to construct an Abstract Syntax Tree
 (AST) of the Nim language. This AST is created by the macro body at
 compile time and is returned by the macro as untyped data type. The
 parameter list of macros accept ordinary (static) Nim data types and
@@ -21043,7 +21043,7 @@ that hard. But when we try to create macros of our own for the first
 time, it can be frustrating. Strange error messages, or even worse, no
 idea at all how we can solve a concrete task. So maybe the best start
 with macros is to read the code of existing macros, to study the
-[macros]{.mod} module to see what is available, and maybe to follow some
+[macros] module to see what is available, and maybe to follow some
 of the various tutorials listed at the end of this section. And finally
 you would have to ask for help in the Nim forum, on IRC or the other Nim
 help channels.
@@ -21143,7 +21143,7 @@ an AST in the macro body, we have various options: we can use the
 [parseStmt()] function or the [\"quote do:\"] notation to
 generate the AST from regular program code in text form, or we can
 create the syntax tree directly with expressions provided by the
-[macros]{.mod} module, e.g. by calls like [newTree()] or
+[macros] module, e.g. by calls like [newTree()] or
 [newLit()] and such. The latter gives us the best control over
 the AST generation process, but is not easy for beginners. The good news
 is that Nim now provides a set of helper functions like
@@ -21203,7 +21203,7 @@ us assume that we have an [object] with multiple fields, and we
 want to print the field contents. A sequence of [echo()]
 statements would do that for us, or we may use only one [echo()]
 statement, when we separate the field arguments each by [\"\\n\"].
-The [with]{.mod} module may further simplify our task. But as we have to
+The [with] module may further simplify our task. But as we have to
 print multiple fields, not an [array] or a [seq], we can
 not directly iterate over the values to process them. Let us see how a
 simple text [string]{.str} based macro can solve the task:
@@ -21340,7 +21340,7 @@ type compatible to [int].
 What may be surprising at first is, that inside the [macro] body
 all parameter types have not the data type of the actual argument that
 we have passed to the [macro], but the special [macro] data
-type [NimNode], which is defined in the [macros]{.mod} module.
+type [NimNode], which is defined in the [macros] module.
 The predefined result variable of the [macro] has the type
 [NimNode] as well. The only exception are [macro]
 parameters which are explicitly marked with the [static] keyword
@@ -21656,7 +21656,7 @@ When we compile and run that code, we get:
 
 
 In the [macro] body we use the [proc] [toStrLit()]
-from the [macros]{.mod} module, which is described with this comment:
+from the [macros] module, which is described with this comment:
 \"Converts the AST n to the concrete Nim code and wraps that in a
 [string]{.str} literal node\" So our local variable [n] in the
 [macro] body is a [NimNode] that now contains the
@@ -21665,7 +21665,7 @@ We use the [NimNode] [n] enclosed with backtics in the
 [quote do:] construct. It seems that writing this [macro]
 was indeed not that difficult, but actually it was only that easy
 because we have basically copied the [dump()] [macro] from
-the [sugar]{.mod} module of Nim's standard library.
+the [sugar] module of Nim's standard library.
 
 
 
@@ -21698,17 +21698,17 @@ In the two sections before, we used the functions [parseStmt()]
 and [quote()] to build the AST from a textual representation of
 Nim code. That can be convenient, but is not very flexible. In this
 section, we will learn how we can build a valid AST from scratch by
-calling functions of the [macros]{.mod} module. That is not that easy,
+calling functions of the [macros] module. That is not that easy,
 but this way we have the full power of the Nim meta-programming
 available.
 
 
 
-Luckily, the [macros]{.mod} module provides some macros like
+Luckily, the [macros] module provides some macros like
 [dumpTree()] and [dumpAstGen()] which can help us get
 started. We will create again a macro similar to the [show()]
 [macro] that we created before with the [quote do:]
-construct, but now with elementary instructions from the [macros]{.mod}
+construct, but now with elementary instructions from the [macros]
 module. This may look a bit boring, but this plain example is already
 complicated enough for the beginning, and it shows use the basics to
 construct much more powerful [macros] later.
@@ -21773,7 +21773,7 @@ statement list consisting of an [echo()] command with two
 the infix + operator and the two arguments [a] and [b]. So
 we can see how the AST that we would have to construct would have to
 look, but we still have no idea how we could construct such an AST in
-detail. Well, the [macros]{.mod} module would contain the functions what
+detail. Well, the [macros] module would contain the functions what
 we need for that, but it is not easy to find the right functions there.
 The [dumpAstGen()] [macro] can list us exactly the needed
 functions:
@@ -22097,7 +22097,7 @@ operators on the [NimNode] argument to access each operand.
 
 
 As a first step, we use the [treeRepr()] function from the
-[macros]{.mod} module to show us the Nim tree structure of a boolean
+[macros] module to show us the Nim tree structure of a boolean
 expression with an infix operator:
 
 
@@ -22166,7 +22166,7 @@ The first two function calls [expectKind()] and
 [expectLen()] verify that the [macro] argument is indeed an
 infix operator with two operands, that is, the total length of the
 argument is 3. The symbol nnkInfix is an [enum] value of the
-[NimNodeKind] data type defined in the [macros]{.mod}
+[NimNodeKind] data type defined in the [macros]
 module --- that module follows the convention to prepend [enum]
 values with a prefix, which is [nnk] for [NimNodeType] in
 this case. In the [macro] body, we use the subscript operator
@@ -22192,7 +22192,7 @@ operator and the two operands, which are then just joined again to show
 the exception message. But at least we have learned how we can access
 the various parts of a [macro] argument by use of subscript
 operators, how we can use the [treeRepr()] function from the
-[macros]{.mod} module to inspect a [macros] argument, and how we
+[macros] module to inspect a [macros] argument, and how we
 can ensure that the [macro] argument has the right shape for our
 actual [macro] by applying functions like [expectKind()]
 and [expectLen()] early in the [macro] body.
@@ -22253,7 +22253,7 @@ important points: For the [proc] that is passed as
 [body()] to get the AST representation of the body of the passed
 [proc], and we can use [name()] to get the name of that
 [proc]. The functions [body()] and [name()] are
-provided by the [macros]{.mod} module of Nim's standard library. In our
+provided by the [macros] module of Nim's standard library. In our
 [macro] [pm()] we first verify, that the passed argument is
 really of node kind ProcDef. Then we create a new [NimNode],
 which calls the [echo()] function with the [proc] name as
@@ -22674,8 +22674,8 @@ For Nim, we have many different ways to do parallel program execution,
 and for the async/await framework of Nim's standard library the
 [chronos]{.ndef} alternative implementation is available. Creating new
 threads, which are executed in parallel when the CPU has multiple
-physical cores, is supported by the [threads]{.mod} module. Additionally
-the Nim standard library provides the [threadpool]{.mod} module, which
+physical cores, is supported by the [threads] module. Additionally
+the Nim standard library provides the [threadpool] module, which
 can create a pool of threads, which may be used by the [spawn]
 construct or the [parallel] keyword. Additionally, external
 packages like [weave] can be used for high performance parallel
@@ -22712,14 +22712,14 @@ In the following sections of the book, we will first demonstrate a few
 ways to use multiple threads, which will run in parallel when there are
 more than one physical CPU core available. After that, we will
 investigate basic async/await operations and show how we can send data
-from one thread to another by use of the [channels]{.mod} module.
+from one thread to another by use of the [channels] module.
 
 
 
 
 
 Note: Whenever we intend to use threads in Nim, that is when we import
-the [threadpool] or the [threads]{.mod} module, we have to compile
+the [threadpool] or the [threads] module, we have to compile
 our program with the option [\--threads:on]{.term}.
 
 
@@ -22739,7 +22739,7 @@ program.
 
 
 As a first very simple example, we will show how we can use the
-[spawn] procedure of the [threadpool]{.mod} module to request the
+[spawn] procedure of the [threadpool] module to request the
 execution of a regular proc. This way we create not really a new thread,
 but we add our [proc] to a list of [procs] to execute.
 When one of the threads in the pool is idle, then our [proc] is
@@ -22784,7 +22784,7 @@ returns an integer value, but of course the generic
 sequence and [object]{.obj} types. As the instances of
 [FlowVar\[T\]] type are returned immediately by [spawn()],
 these container variables may be empty initially. We may then use
-functions like [isReady()] from the [threadpool]{.mod} module to
+functions like [isReady()] from the [threadpool] module to
 test if the [FlowVar\[T\]] variable contains already the result
 data, or we can do a blocking wait for the result of our [proc]
 with the [\^]{.op} operator. The [\^]{.op} operator applied to the
@@ -22853,7 +22853,7 @@ main()
 
 In this example, we use [spawn()] to execute the
 [readLine()] function of Nim's standard library by a thread of
-the [treadpool]{.mod} module. We use the function [isReady()] to
+the [treadpool] module. We use the function [isReady()] to
 test if the user input is already available, and call a worker procedure
 if there is no input yet. As we have no real work to do, that
 [proc] just echos a message and calls [os.sleep()] to
@@ -22870,7 +22870,7 @@ possible way to request user input without blocking the whole app.
 #### The parallel statement
 
 
-With the [parallel] statement, the [threadpool]{.mod} module
+With the [parallel] statement, the [threadpool] module
 offers one more way to use threads to process data in parallel. While
 the [parallel] statement is already available in Nim since many
 years, it was recently labeled as [experimental feature]{.ndef}, so we
@@ -22932,7 +22932,7 @@ finally sum up the individual result to get the total sum of all the
 Our example code above is kept very simple by intent to clearly show the
 principal use. You may try to modify it to work on sequences with
 arbitrary runtime sizes instead of a fixed sized [array], and to
-use more than two threads. For all the details of the [threadpool]{.mod}
+use more than two threads. For all the details of the [threadpool]
 module, you should of course consult is documentation.
 
 
@@ -22942,7 +22942,7 @@ module, you should of course consult is documentation.
 ### Using the threads module to create new threads
 
 
-When for some reason we can not use the [threadpool]{.mod} module, or we
+When for some reason we can not use the [threadpool] module, or we
 need more control over the various threads, then we can create our own
 treads:
 
@@ -22969,8 +22969,8 @@ main()
 
 
 
-The [createThread()] procedure is provided by the [threads]{.mod}
-module, which is part of the [system]{.mod} module --- for that reason,
+The [createThread()] procedure is provided by the [threads]
+module, which is part of the [system] module --- for that reason,
 we do not have to explicitly import it. The [proc] that we want
 to execute in its own, newly created thread has to be annotated with the
 {.thread.} pragma and has to use one single parameter. We pass the
@@ -22988,7 +22988,7 @@ As [createThread()] does not return a result, we call
 [echo()] in our [sum()] [proc] to show what is
 going on. Actually, calling [echo()] from within a [proc]
 running as a thread may be not a good idea, as multiple [echo()]
-calls from different threads may interfere. We may use the [locks]{.mod}
+calls from different threads may interfere. We may use the [locks]
 module to make the output operation atomic, but to keep our example
 short and simple, we ignore that problem for now. The code above creates
 two newly created threads, which in our case run the same [proc]
@@ -23012,7 +23012,7 @@ done.
 
 
 [Threads] created with the [createThread()] function of
-the [threads]{.mod} module do not directly return a result, but may be
+the [threads] module do not directly return a result, but may be
 executed for a long time period, often for the whole lifetime of the
 main process. Typically, it is necessary to exchange messages and data
 between these types of threads --- among multiple child threads
@@ -23027,10 +23027,10 @@ sending thread has sent them.
 
 
 The generic [Channel\[T\]] data type and the functions to use it
-are provided by the [system]{.mod} module, so we do not need to import
+are provided by the [system] module, so we do not need to import
 them. Channels should be used only for [Threads] of the
-[threads]{.mod} module, but not for the hidden threads of the
-[threadpool]{.mod} module. [Channels] allow to send messages and
+[threads] module, but not for the hidden threads of the
+[threadpool] module. [Channels] allow to send messages and
 data only in one direction, for bidirectional communication we would
 need two separate channels. Variables of the [Channel] data type
 are generally defined at the global scope, to avoid problems with the
@@ -23216,7 +23216,7 @@ standard library and the compiler manual.
 
 
 While Nim's [Lock] data type and the corresponding functions are
-defined in the [locks]{.mod} module of the standard library, that module
+defined in the [locks] module of the standard library, that module
 contains only minimal explanations, so we have to consult the
 experimental section of the compiler manual.
 
@@ -23298,7 +23298,7 @@ is always used in matching pairs.
 Whenever a [proc] that is running as its own thread is raising an
 uncaught exception, then the whole process is terminated and a stack
 trace with the corresponding error message is displayed in the terminal
-window. This applies not only to the threads of the [threads]{.mod}
+window. This applies not only to the threads of the [threads]
 module, but also when the [spawn()] function is applied to run
 functions by one of the threads in the pool.
 
@@ -23495,18 +23495,18 @@ main()
 
 
 This solution should be again not surprising for you, as we have
-discussed the [npeg]{.mod} module in part V of the book in some detail.
+discussed the [npeg] module in part V of the book in some detail.
 We used [+(1 - \',\')] as a pattern to grep the data fields, that
 is one or more repetitions of any character that is not a comma. The
 [\[5\]] indicates exactly five repetitions --- it may be a bit
 surprising that we have to put this expression after the pattern
 expression, while operators like [\*]{.op}, [+]{.op} and [?]{.op} have
-to put in front for the [npegs]{.mod} module.
+to put in front for the [npegs] module.
 
 
 
 The third and maybe most obvious solution, is to just use
-[split()] of the [strutils]{.mod} module:
+[split()] of the [strutils] module:
 
 
 
@@ -23533,7 +23533,7 @@ For this use case, [split()] is the simplest solution, and it
 should be faster than the regex and PEG solution. But for each call,
 [split()] returns a seq with six [strings]{.str}, which have to
 be newly allocated for each call. So even faster solutions may be
-possible. So let us try the [parseutils]{.mod} module now:
+possible. So let us try the [parseutils] module now:
 
 
 
@@ -23568,7 +23568,7 @@ main()
 
 
 
-As we have discussed the [parseutils]{.mod} module in part V of the book
+As we have discussed the [parseutils] module in part V of the book
 in much detail, the above code should be easily understandable for you.
 For extracting the area and population data, we will use [string]{.str}
 parsing only for now, and avoid the also available [parseFloat()]
@@ -23580,7 +23580,7 @@ of the four solutions before we continue.
 The following table lists the runtimes for the four different ways of
 parsing the CSV data into [strings]{.str}. We used a CSV file with one
 million lines. Additionally, as the last row of the table, we have used
-[parseutils]{.mod} to parse the area and population directly into
+[parseutils] to parse the area and population directly into
 numeric variables. The CSV data have been generated with our program
 from the start of this section, and we compiled our parsers with
 [-d:release]{.term}, and with default GC and with [\--gc:arc]{.term}.
@@ -23598,7 +23598,7 @@ runtimes.
 
 
 As expected, regex parsing is the slowest, and with [\--gc:arc]{.term}
-it is even slower. The use of [parseutils]{.mod} is the fastest, and we
+it is even slower. The use of [parseutils] is the fastest, and we
 get the [float] and [int] values for free.
 
 
@@ -23659,7 +23659,7 @@ physical cores of our computer, so that we can really distribute all the
 work on all available cores. Our first idea may be to use a thread for
 each line of the file, but obviously really creating millions of threads
 make not much sense, and even feeding millions of [procs] to
-spawn of the [threadpool]{.mod} should generate a lot of overhead.
+spawn of the [threadpool] should generate a lot of overhead.
 Processing only one line is just too less work for a thread, so that the
 switching process generates too much overhead. A better idea seems to be
 to use a thread for maybe a few thousand lines.
@@ -23670,7 +23670,7 @@ So our first task is to split the whole file into chunks or fragments,
 where each chunk should contain a number of lines. Seems to be easy, but
 this splitting of the whole CSV file into chunks should be really fast,
 so using the [lines()] [iterator] is not a good idea. But
-the [io]{.mod} module provides the functions [readBytes()] or
+the [io] module provides the functions [readBytes()] or
 [readChars()], which we can use to read the CSV file fast in
 larger block. Here is a first sketch of the code:
 
@@ -23751,9 +23751,9 @@ chunk. So we finally have only to select the best of all candidates.
 
 
 
-We will use Nim's [threadpool]{.mod} for the actual parallel processing,
+We will use Nim's [threadpool] for the actual parallel processing,
 as [spawn] offers an easy way to return results to the main
-thread. Using the [threads]{.mod} module should also work, but then we
+thread. Using the [threads] module should also work, but then we
 would need [channels] to return results.
 
 
@@ -23840,7 +23840,7 @@ when the end of the file is not yet reached, we go back to the last
 newline character. Then we use [spawn] to run our
 [candidate()] [proc] with the [fixed]{.italic} data block
 as parameter. Similarly, as before, the [candidates()]
-[proc] uses functions from [parseutils]{.mod} to parse the lines
+[proc] uses functions from [parseutils] to parse the lines
 and select the best candidate. To simplify the data handling, we have
 declared a [Res] [object], which contains the parsed
 fields. All the [FlowVar\[ref Res\]] instances are collected in a
@@ -23904,7 +23904,7 @@ copied, which may minimally decrease performance. But copying of data
 blocks is fast --- modern hardware has memory bandwidths of a few dozen
 GB/s. Our initial sketch for only reading in the CSV file took 12 ms, so
 we may guess that copying all the chunks may take not more time. As an
-alternative solution to the above code, we could try the [threads]{.mod}
+alternative solution to the above code, we could try the [threads]
 module, using [channels] to pass the candidates back, or maybe
 the [parallel] construct. Or we may experiment with so-called
 [memory mapped files]{.ndef}, see
@@ -24190,7 +24190,7 @@ can be combined with threading and parallel program execution.
 
 
 The core elements of Nim's async/await framework are provided by the
-modules [std/asyncdispatch]{.mod} and [std/asyncfutures].
+modules [std/asyncdispatch] and [std/asyncfutures].
 
 
 
@@ -24201,7 +24201,7 @@ the [await] keyword.
 
 
 
-The [asyncdispatch]{.mod} module implements a global dispatcher
+The [asyncdispatch] module implements a global dispatcher
 (technically one per thread), that is responsible for running the
 procedures that are registered with
 it.^\[[56](#_footnotedef_56 "View footnote."){#_footnoteref_56
@@ -24210,10 +24210,10 @@ it.^\[[56](#_footnotedef_56 "View footnote."){#_footnoteref_56
 
 
 Build on top of these two modules, there exists various modules for
-asynchronous communication: Module [std/asyncnet]{.mod} implements a
-high-level asynchronous sockets API and [std/asynchttpserver]{.mod}
+asynchronous communication: Module [std/asyncnet] implements a
+high-level asynchronous sockets API and [std/asynchttpserver]
 implements a high performance asynchronous HTTP server. Some other
-modules like [std/httpclient]{.mod} support synchronous and asynchronous
+modules like [std/httpclient] support synchronous and asynchronous
 data transfers.
 
 
@@ -24356,7 +24356,7 @@ echo "total time elapsed: ", epochTime() - to
 
 
 
-In the code example above, we import the [asyncdispatch]{.mod} module
+In the code example above, we import the [asyncdispatch] module
 and have attached the {.async.} pragma to our [tick()] procedure.
 As the [tick()] [proc] does not return any actual data, we
 use [Future\[void\]] as return type --- actually, we could leave
@@ -24381,7 +24381,7 @@ The result is not really surprising, as for each call of [proc]
 [tick()] the loop in its body is executed two times, generating a
 [100 ms] delay for each iteration. But the output will drastically
 change when we call instead of the ordinary [sleep()] function
-the function [sleepAsync()] provided by the [asyncdispatch]{.mod}
+the function [sleepAsync()] provided by the [asyncdispatch]
 module:
 
 
@@ -24559,7 +24559,7 @@ and [e] got never printed. The fact that the printed time values
 can be a few ms larger than the actual specified sleep times should not
 surprise us, as some more code is executed in our [procs], and as
 the dispatcher loop itself may need some tiny execution time. When an
-exact timing should be required, we may use the [std/times]{.mod} module
+exact timing should be required, we may use the [std/times] module
 to read the exact time and adjust the actual delays. Also note that
 async/await as a co-operative approach of multitasking also means that
 long-running tasks can delay the execution of other tasks unexpectedly:
@@ -24577,7 +24577,7 @@ offers some possible solutions for more accurate timings.
 ### File download
 
 
-The module [std/httpclient]{.mod} of Nim's standard library provides
+The module [std/httpclient] of Nim's standard library provides
 procedures for synchronous and asynchronous file transfer. Let us start
 with this simple synchronous example to download two small text files
 from a URI:
@@ -24669,7 +24669,7 @@ both futures are completed.
 ### A chat server application
 
 
-In the API documentation of the [std/asyncnet]{.mod} module, we find
+In the API documentation of the [std/asyncnet] module, we find
 this example for a very basic chat server application:
 
 
@@ -24821,7 +24821,7 @@ network.^\[[59](#_footnotedef_59 "View footnote."){#_footnoteref_59
 
 
 In Nim, a network socket is represented by the [Socket] data
-type, defined in the [std/net]{.mod} module. We can create new
+type, defined in the [std/net] module. We can create new
 [Socket] instances with a call of [newSocket()] or
 [newAsyncSocket()] for synchronous or asynchronous communication.
 
@@ -25119,8 +25119,8 @@ send of course over the net without any problems. You just have to
 define a protocol for the message exchange: Create Nim [objects]{.obj}
 that contain all the data you want to exchange, like sender name, time,
 and the actual message content. Then use one of the [procs]
-provided by the [json]{.mod} module to encode the [object]{.obj} before
-you send it, and encode it again on the receiving side. The [json]{.mod}
+provided by the [json] module to encode the [object]{.obj} before
+you send it, and encode it again on the receiving side. The [json]
 module provides for example the [%]{.op} operator to convert various
 data types to JSON [strings]{.str} or JSON [objects]{.obj}, and the
 [parseJson()] [proc] to convert the text [string]{.str}
@@ -25907,7 +25907,7 @@ We use semantic markup with these text styles:
 
 -   Variables: [i, j, length]
 
--   Module names: [strutils, system, io]{.mod}
+-   Module names: [strutils, system, io]
 
 -   Literals: [100, false, 3.14]
 
