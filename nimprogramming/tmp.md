@@ -2,74 +2,74 @@ https://ssalewski.de/nimprogramming.htm
 
 
 
-# Computer Programming with the Nim Programming Language
+# プログラミング言語「Nim」によるコンピュータ・プログラミング
 
 
-A gentle Introduction © Dr. Stefan Salewski 2020, 2021, 2022
+やさしい入門書 © Dr. Stefan Salewski 2020, 2021, 2022
 
 
 
 
 
-> When you are not able to explain it with words, you may have to add pictures. And when you even do not manage it with pictures, you can still make a video.
+> 言葉で説明できないときは、絵をつけることがあります。そして、絵でもどうにもならない時は、やはり動画にするのが一番です。
 
 
 
 
 
-## About this book
+## この本について
 
 
 
-In the year 1970 Prof. Niklaus Wirth invented the Pascal programming language to teach his students the fundamentals of computer programming. While the initial core Pascal language was designed for teaching purposes only, it was soon expanded by commercial vendors and got some popularity. Later, Wirth presented the language `Modula-2` with improved syntax and support for modules for larger projects, and the Oberon language family with additional support for Object-Oriented Programming.
+1970年、ニクラウス・ヴィルト教授は、学生にコンピュータ・プログラミングの基礎を教えるために、プログラミング言語Pascalを考案した。当初、Pascalは教育用に設計されたが、すぐに商用ベンダーによって拡張され、ある程度の人気を得た。その後、ヴィルトは、より大規模なプロジェクトのために構文を改良し、モジュールをサポートした「Modula-2」言語や、オブジェクト指向プログラミングを追加サポートした「Oberon」言語ファミリーを発表した。
 
 
 
-The Nim programming language can be seen in this tradition, as it is basically an easy language suited for beginners with no prior programming experience, but at the same time is not restricted in any way. Nim offers all the concepts of modern and powerful programming languages in combination with high performance and some sort of universality --- Nim can be used to create programs for tiny microcontroller as well as large desktop apps and web applications.
+プログラミング言語Nimはこの伝統の中にあって、基本的にプログラミング経験のない初心者に適した簡単な言語ですが、同時に何ら制限を受けるものではありません。Nimは、現代的で強力なプログラミング言語のすべての概念を、高性能とある種の普遍性との組み合わせで提供します。Nimは、小さなマイクロコントローラのプログラムから、大規模なデスクトップアプリケーションやウェブアプリケーションのプログラムまで作成するのに使用することができます。
 
 
 
-Most books about programming languages concentrate on the language itself and assume that the reader is familiar with the foundations of computer hardware and already has some programming experience. This is generally a valid approach, as today most people are taught this fundamental knowledge, sometimes called Computer Science (CS) in school. But still, there are people who missed this introduction in school for various reasons and decide later that they need some programming skills, maybe for a technical job. And there may exist some children that are not satisfied with the introduction to computer science taught at school. So we have decided to start this book with a short introduction to fundamental concepts --- most people may skip that part, but you should be really sure that you know these foundations.  This book is divided into six parts. It is possible to read the parts independently in arbitrary order, but for Nim beginners it is recommended to read them mostly in ascending order, maybe while looking already early at some interesting sections in the second half of the book. In part II, we explain the basics of computer programming step by step in a way which should enable even children to learn independently.  In this part we may repeat some of the stuff which we already mentioned in part I. We do that by intent, as some people may skip part I, and because it is generally not a bad idea to support the learning process of the reader with some repetitions. Part III will give you an overview of Nim's standard library, which contains many useful functions and data types, that we can use in our programs to solve common tasks like input and output operations, using the file system, or sorting of data. In part IV, we will apply what we have learned by solving some common programming task, like sorting, searching, or converting numbers from the internal computer format to displayable text. Part V will introduce some useful external packages, which can be easily installed with one of Nim's package managers. Nim has already a few thousand of external packages --- some of them may support or replace the standard library, and others offers special or advanced functionalities. Part VI of the book will finally introduce advanced concepts like asynchronous operations, threading and parallel processing, macros and meta-programming, and last not least, Nim's concept implementation. Some sections, that do not integrate well into the other six parts, or that are boring or useful only for a minority of Nim users, have been moved to the Appendix and may be not part of a printed copy of the book. This includes currently a short introduction to Nim's standard package manager, Nimble.
+プログラミング言語に関する書籍の多くは、言語そのものに焦点を当て、読者がコンピュータハードウェアの基礎に精通し、すでにプログラミングの経験を持っていることを前提としています。これは一般的に正しいアプローチで、今日ではほとんどの人が学校でこの基礎知識（コンピュータサイエンス（CS）と呼ばれることもある）を教わっているからです。しかし、さまざまな理由で学校での授業に参加できなかった人の中には、技術的な仕事のためにプログラミングのスキルが必要だと考える人もいます。また、学校で教わったコンピュータサイエンスの入門書に満足できない子供たちも存在するかもしれません。そこで、本書では、まず基本的な概念について簡単に紹介することにしました。 本書は6つのパートに分かれています。各パートは独立して任意の順序で読むことができますが、Nim の初心者には、本書の後半にあるいくつかの興味深いセクションをすでに見ながら、主に昇順で読むことをお勧めします。第II部では、コンピュータ・プログラミングの基本を、子供でも自主的に学習できるように、段階を追って説明します。 このパートでは、パートIですでに述べたことを繰り返すことがあります。パートIを読み飛ばす人がいるかもしれないので、意図的にそうしていますし、読者の学習プロセスを繰り返し支援することは一般的に悪い考えではないためです。パート III では Nim の標準ライブラリの概要を説明します。このライブラリには多くの便利な関数やデータ型が含まれており、入出力操作、ファイルシステムの使用、データのソートなどの一般的なタスクを解決するためにプログラムで使用することができます。パート IV では、ソート、検索、コンピュータ内部のフォーマットから表示可能なテキストへの変換など、一般的なプログラミングタスクを解決することで、学んだことを応用します。第五部では、Nim のパッケージマネージャの一つで簡単にインストールできる、便利な外部パッケージをいくつか紹介します。Nim にはすでに数千の外部パッケージがあります。それらの中には標準ライブラリをサポートしたり、置き換えたりするものもあれば、特殊な、あるいは高度な機能を提供するものもあります。本書の第六部では、最後に、非同期処理、スレッドと並列処理、マクロとメタプログラミング、そして、Nim のコンセプトの実装といった高度な概念を紹介します。他の6つのパートとうまく統合できない、あるいは退屈であったり、少数のNimユーザーにとってのみ有用であったりするセクションは、付録に移され、本書の印刷版には含まれないかもしれません。これには現在 Nim の標準パッケージマネージャである Nimble の短い紹介が含まれます。
 
 
 
-This book is basically a traditional text book, a very simple one with detailed explanations, so that kids from 14 years upwards can read and understand it on their own, with no, or only minimal help from adults.  The English language may still be a problem for many kids not born in a country with a good English language tradition, unfortunately. But luckily automatic translations are already supported for some languages, and perhaps we will be able to offer some translated editions later, possibly a Chinese and a German translation?
+この本は基本的に伝統的な教科書で、とても簡単なものですが、詳しい説明がついているので、14歳以上の子供なら、大人の助けを全く借りずに、あるいは最小限の助けだけで読んで理解することができます。 英語の伝統のある国で生まれていない多くの子供たちにとって、残念ながら英語はまだ問題かもしれません。しかし、幸いなことに、いくつかの言語ではすでに自動翻訳がサポートされていますし、将来的には翻訳版も提供できるかもしれません。
 
 
-In the last decades in the area of computer programming, traditional text books have partly been replaced by videos and "Crash course" and "Learning by doing" books. Well, maybe a good video may indeed help you start with a new language, and a video may enable people with problems reading printed texts or with difficulties concentrating on a topic for a few minutes to learn a programming language. Unfortunately, the quality of most videos is very bad, some are made by kids just having learned the first steps of computer programming themselves. And of course watching videos does not improve the reading and concentration issues that people have. "Crash course" and "Learning by doing" books may give you a good start, but for that we already have a lot of textual tutorials. The concern with these kinds of books is, that they may help you with solving some common tasks, but they do not really support a deeper understanding. The idea of a "Crash course" and "Learning by doing" may not be that bad in general, but in computer science starting with a larger example application may be an overwhelming process, as you have to learn a lot of stuff in parallel.  It may work for you, but there is the danger that you forget all the details very quickly again. And these kinds of books are not very helpful when you have to look up something. The other concern with "Learning by doing" in computer science is, that learning materials may have only examples which you may not really be interested in: Of course we can create a simple chat application, a simple Twitter clone and do some basic web scraping using async/await. Or create a basic game, or a simple GUI with one of the dozen available tool-kits. But what when you are not interested in chatting and twittering, and that single selected toolkit? We think that for such a case, reading the detailed examples can be very frustrating. So we would recommend that after reading the first tutorial, and maybe a few pages of this book, you just start coding with stuff you are interested in. Perhaps together with some friends? Whenever you should need some concrete help, you should find it on the Internet, using search engines, Wikipedia or a discussion platform of your choice. And if you have really no idea whatsoever for a project with which you can start, then potentially computer programming is just not the right profession for you.
+この数十年、コンピュータ・プログラミングの分野では、従来の教科書がビデオや「クラッシュ・コース」、「ラーニング・バイ・ディング」の本に取って代わられてきました。また、印刷されたテキストを読むのが苦手な人や、あるトピックに数分間集中するのが難しい人でも、ビデオならプログラミング言語を学習することができるかもしれません。残念ながら、ほとんどのビデオの品質は非常に悪く、中にはコンピュータ・プログラミングの最初のステップを学んだばかりの子供たち自身が作ったものもあります。そしてもちろん、ビデオを見ていても、人々が抱える読解力や集中力の問題は改善されない。「クラッシュコース」や「Learning by doing」の本は、良いスタートを与えるかもしれませんが、それについては、すでに多くのテキストチュートリアルがあります。この種の本で懸念されるのは、よくある課題を解決するのに役立つかもしれませんが、より深い理解をサポートするものではないことです。クラッシュコース」や「Learning by doing」という考え方は一般的には悪くないかもしれませんが、コンピュータサイエンスでは、より大きなサンプルアプリケーションから始めると、多くのことを並行して学ばなければならないため、圧倒されるかもしれません。 自分には合っているかもしれませんが、またすぐに細かいことを忘れてしまう危険性があります。また、この種の本は、何かを調べなければならないときにあまり役に立ちません。コンピュータサイエンスにおける「Learning by doing」のもう一つの懸念は、学習教材が本当に興味のない例ばかりであることです。もちろん、簡単なチャットアプリケーションやTwitterクローンを作ったり、async/awaitを使って基本的なウェブスクレイピングをしたりすることはできます。もちろん、簡単なチャットアプリケーションや簡単なTwitterクローンを作ったり、async/awaitを使って基本的なWebスクレイピングをすることもできます。しかし、チャットやTwitter、そしてその選択されたツールキットに興味がない場合はどうでしょうか？そのような場合、詳細なサンプルを読むのは非常にもどかしいと思います。ですから、最初のチュートリアルと、この本の数ページを読んだら、興味のあるものからコーディングすることをお勧めします。おそらく友人と一緒に？具体的な手助けが必要なときは、検索エンジンやウィキペディア、あるいは好きなディスカッション・プラットフォームを使って、インターネット上で見つけることができます。そして、もしあなたが始められるプロジェクトのアイデアが全くないのであれば、コンピュータ・プログラミングはあなたにとって正しい職業ではない可能性があります。
 
 
-While Nim has a JavaScript backend and so supports web related development well, this book concentrates on native code generation using the C and C++ backends. We will discuss some peculiarities of the JavaScript backend in the second half of the book, and we may give some examples for the use of the JavaScript backend in the Appendix. If you are strongly interested in web development and the JavaScript backend, then you may also consult the book `Nim in Action` of Dominik Picheta, which gives some detailed examples for the development of web based software with the Nim programming language, including a simple chat application and the skeleton of a microblogging and social networking service. And you may consult the tutorials and manuals of Nim web packages like Karax, Jester or Basolato.
+NimはJavaScriptのバックエンドを持つため、Web関連の開発をよくサポートしますが、本書ではCとC++のバックエンドを使ったネイティブコード生成に重点を置いています。JavaScriptバックエンドの特殊性については本書の後半で説明し，JavaScriptバックエンドの使用例については付録で紹介する予定です．この本には、簡単なチャットアプリケーションや、マイクロブログやソーシャルネットワーキングサービスのスケルトンなど、Nimプログラミング言語によるウェブベースのソフトウェア開発のための詳細な例がいくつか掲載されています。また、Karax、Jester、BasolatoのようなNimウェブパッケージのチュートリアルやマニュアルを参照することもできます。
 
 
 
-This book will not try to explain things that are already explained well elsewhere or that should have been explained well elsewhere --- at least not in this first edition, where we still have so much other essential stuff. So what we will leaf out for now is the installation of the compiler, installing and using text editors or IDEs with special Nim support, using Nim package managers like Nimble, Nimph or others, using the foreign function interface (FFI) to create bindings to C libraries, and internal compiler details like the various memory management options, all the pragmas and similar. Also, we do not intend to fill the book up with redundant stuff, like tables listing all the Nim keyword or Nim's primitive data types and such, as you can find all that in the compiler manual easily.
+この本は、他の場所ですでによく説明されていることや、他の場所でよく説明されているはずのことを説明しようとしません --- 少なくとも、この初版では、まだ他に多くの重要なことがあります。つまり、コンパイラのインストール、Nim をサポートするテキストエディタや IDE のインストールと使用、Nimble や Nimph などの Nim パッケージマネージャの使用、FFI (Foreign Function Interface) を使った C ライブラリへのバインディング、各種メモリ管理オプションやすべてのプラグマなどのコンパイラ内部の詳細など、今のところ手をつけず、そのままにしています。また、NimキーワードやNimのプリミティブなデータ型などの一覧表はコンパイラのマニュアルで簡単に見つけることができますので、この本を冗長なものでいっぱいにするつもりはありません。
 
 
 
-While creating graphical user interfaces (GUIs) is an important topic, we can not give many details for that due to various reasons: Nim has not yet the one and only accepted GUI library, but more than 20 attempts --- from pure Nim ones like NimX or Fidget, over wrapped libraries like GTK or QML, or GUIs that try to provide a native look for various operating systems like XWidgets or NiGui, to web based GUIs. And for each of these, at least for the more serious ones, we could write a separate GUI book. So we will give only a few minimal examples for some of them in part IV or V of the book.
+グラフィカル・ユーザ・インターフェース(GUI)の作成は重要なトピックですが、様々な理由により、その詳細を説明することはできません。Nimにはまだ唯一無二のGUIライブラリがあるわけではなく、NimXやFidgetのような純粋なNimのものから、GTKやQMLのようにオーバーラップしたライブラリ、XWidgetsやNiGuiのように様々なOSでネイティブに見えるようにしたGUI、そしてWebベースのGUIまで20以上の試みが行われています。そして、これらのそれぞれについて、少なくともより本格的なものについては、別のGUI本を書くことができます。そこで、この本のパートIVまたはVで、それらのうちのいくつかについて、最小限の例だけを紹介することにします。
 
 
 
-Also, we will not explain game programming, as game programming is a broad area, and there are already a lot of tutorials available. Maybe in later editions of the book we will add some of these topics, e.g. game programming, as so many people like it. But we will always have to ensure that a possible printed book version will not get more than 500 pages, so we may then leave out some stuff in the printed version.
+また、ゲームプログラミングについては、ゲームプログラミングは広い分野であり、すでに多くのチュートリアルがあるため、説明は行いません。例えば、ゲームプログラミングは多くの人が好きなので、この本の後の版では、これらのトピックを追加することになるかもしれません。しかし、印刷される本のページ数が500ページを超えないようにする必要がありますから、印刷版では省かれるものもあるかもしれません。
 
 
 
-General when learning a new programming language, people start with some short tutorials before really learning the language following a book.  This way is indeed a good start. So we recommend you to read the short official tutorials part 1 and 2 and perhaps also some other tutorials freely available online. Tutorials generally only scratch the topics, so you may not be able to understand all really well, but this way you get already a feeling for the language. There exists also some video tutorials, for the case that you have problems reading, but in that case this book will not be of much use for you at all. When you know already some computer science and have already experience with other languages like C++, Haskell or Rust, then the tutorials and the Nim compiler manual may be fully sufficient for you, and you may not need this book at all.
+一般に、新しいプログラミング言語を学ぶ場合、本で学ぶ前に簡単なチュートリアルから始めることが多いようです。 この方法は、確かに良いスタートです。そこで、短い公式チュートリアルのパート1とパート2、そしておそらくオンラインで自由に利用できる他のチュートリアルを読むことをお勧めします。チュートリアルは一般的にトピックを掻い摘むだけなので、すべてを本当によく理解することはできないかもしれませんが、この方法で言語に対する感覚をすでに得ることができます。読むのに問題がある場合は、ビデオチュートリアルもありますが、その場合、この本はあまり役に立ちません。コンピュータサイエンスの知識があり、C++やHaskell、Rustなどの他の言語を使った経験がある場合は、チュートリアルとNimコンパイラのマニュアルで十分であり、この本は全く必要ないかもしれません。
 
 
 
-This book is based on the Nim reference implementation of the team around Mr. A. Rumpf. While the first pages of this book have been written already in spring 2020, it should be mostly up-to-date with the current stable version Nim v1.6. We will try to keep the book up to date with further Nim releases, as a 1.8 or maybe already a 2.0 release with planned support for incremental compilation.
+本書は、A. Rumpf氏を中心としたチームによるNimリファレンス実装をベースにしています。本書の最初のページはすでに2020年春に書かれていますが、現在の安定版Nim v1.6にほぼ対応しているはずです。今後、Nimの1.8、あるいはインクリメンタル・コンパイルのサポートを予定している2.0のリリースに合わせて本書を最新の状態に維持しようと思っています。
 
 
 
 
 
-The source code of the book is hosted at `https://github.com/StefanSalewski/NimProgrammingBook`.  You may use the GitHub issue tracker to point us to mistakes or unclear explanations, we will try to fix that. Please note that we are more interested in remarks to the content of the book currently, not that much in typos or grammar issues. Before the book will be officially published or a printed version will be created, we will run it through some correction software or hire a professional proofreader.
+この本のソースコードは `https://github.com/StefanSalewski/NimProgrammingBook` でホストされています。 GitHubのissue trackerで間違いや不明瞭な説明を指摘していただければ、修正するよう努めます。現在、私たちは本の内容に関する指摘に興味があり、誤字脱字や文法の問題にはあまり興味がないことに注意してください。本が正式に出版されたり、印刷版が作られたりする前に、修正ソフトにかけたり、プロの校正者を雇ったりする予定です。
 
 
 
-New sections, and serious content changes are now (end of 2021) marked with a yellow background, and not that new stuff is still marked with a light yellow. For details, you may see the change log in the appendix.
+新しいセクションや重大な内容の変更は、現在（2021年末）黄色い背景で表示され、それ以外の新しいものはまだ薄い黄色で表示されています。詳しくは、付録の変更履歴をご覧ください。
 
 
 
@@ -77,126 +77,126 @@ New sections, and serious content changes are now (end of 2021) marked with a ye
 
 
 
-About the Author
+著者について
 
 
 
-Dr. S. Salewski studied Physics, Mathematics and Computer Science at Hamburg University (Germany), where he got his PhD in 2005 in the area of laser physics. He has worked in the field of fiber laser physics, electronics, and software development, using languages like Pascal, Modula-2, Oberon, C, Ruby and Nim. Some of his software projects, including the Nim GTK GUI bindings and Nim implementations of an N-dimensional RTree and a fully dynamic, constrained Delaunay triangulation, are freely available as open source projects at `https://github.com/StefanSalewski`.
+S. Salewski博士は、ハンブルク大学（ドイツ）で物理学、数学、コンピュータサイエンスを学び、2005年にレーザー物理の分野で博士号を取得した。ファイバーレーザー物理、エレクトロニクス、ソフトウェア開発の分野で、Pascal、Modula-2、Oberon、C、Ruby、Nimなどの言語を用いて研究している。Nim GTK GUIバインディングや、N次元RTreeと完全動的制約付きドロネー三角測量のNim実装など、彼のソフトウェアプロジェクトのいくつかは、オープンソースプロジェクトとして `https://github.com/StefanSalewski` で自由に利用することができます。
 
 
 
 
 
 
-# Part I: Introduction
+# 第一部：はじめに
 
 
 
-For using computers and writing computer programs, you initially do not have to know many details. It is basically like driving a car: Although a car is a powerful and complicated tool, kids generally can drive it after a 3-minute introduction. Still, good racing drivers typically need a much broader insight into the inner working of all the technical components, and finally, a lot of practice.
+コンピュータを使ったり、コンピュータのプログラムを書いたりするのに、最初はあまり細かいことを知らなくても大丈夫です。基本的には、車の運転に似ています。自動車は強力で複雑な道具ですが、3分も説明すれば、子供でも運転できるようになります。しかし、優れたレーシングドライバーは、通常、すべての技術的なコンポーネントの内部動作についてより広い見識を必要とし、最後に、多くの練習をする必要があります。
 
 
 
 
-## What is a Computer?
+## コンピュータとは？
 
 
-A computer is primarily a device which can run computer programs, by following instructions about how to manipulate data. Nearly all the computers currently in use, from the tiny ones integrated in electronic gadgets, the well known desktop computers (PCs), to large and powerful super computers filling out entire rooms, work internally with digital data only.^\[[1](#_footnotedef_1 "View footnote.") ]^ Digital data are basically integer (whole) numbers encoded in binary form, which are represented by sequences of the symbols `0` and `1`. We will discuss the term digital in the next section in more detail. The most important part of a digital computer is the `CPU`, the `Central Processing Unit`. That tiny device is built of digital electronic circuits and can perform very basic mathematical and logical operations on numbers, like adding two numbers or deciding if a number is larger or smaller than another number. Most computer CPUs can only store very few numbers internally, and forget the numbers when the power is switched off. So the CPU is typically electrically connected to a `RAM` module, a `Random Access Memory`, which can store many more numbers and allow fast access to these numbers, and to a `Hard disk` or `SSD` device which can permanently store the numbers, but does not allow such fast access. The stored numbers are most often called just `data` --- basically that data is nothing more than numbers, but it can be interpreted in many ways, such as pictures, sounds and much more. The traditional hard disk drives (HDD), which store data electromechanical on rotating magnetic disks, as well as the more modern variants, the solid-state-devices (SDD), which store data using modern semiconductor technologies, can store data persistently for longer time periods, even when no electric power supply is available. Both, SSDs and HDDs, can be optionally split into multiple partitions, e.g. one or multiple OS partitions for executable programs or pure data partition for passive data like text files or pictures. Before used, each partition is generally formatted and a file system (FS) is created.  These two steps create an internal structure on the storage device, which allows us to store and retrieve individual data blocks like programs, text files or pictures. Nearly all of today's desktop computers, and even most notebooks and cellphones contain not only a single CPU, but multiple CPUs, also called "Cores", so they can run different programs in parallel, or a single program can run parts of it on different CPUs, to increase performance or reduce total execution time. The so-called super computers can contain thousands of CPUs. Beside CPUs, most computers have also at least one `GPU`, a `Graphic Processing Unit`, that can be used to display data on a screen or monitor, maybe for doing animations in games or for playing video. The distinction between CPU and GPU is not really sharp; usually a CPU can also display data on screens and monitors, and GPUs can do also some data processing that CPUs can do.  But GPUs are optimized for the data display task. More visible to the ordinary computer user are the peripheral devices like keyboard, mouse, screen and perhaps a printer. These enable human interaction with the computer, but are in no way a core component of it; the computer can run well without them. In notebook or laptop computers or in cellphones, the peripheral devices are closely integrated with the core components. All the physical parts of a computer are also called `hardware`, while the programs running on that hardware are called `software`. A less visible but also very important class of computers are `microcontroller` and so called `embedded devices`, tiny pieces with typically a hull of black plastic with some electrical contacts. The devices can contain all necessary elements, that is the CPU, some RAM and a persistent storage that can store programs and data when no electric power supply is available. These devices may be restricted in computing power and the amount of data that they can store and process, but they are contained in many consumer devices. They control your washing machine, refrigerator, television and radio and much more. Some devices in your home may even contain multiple microcontrollers and often the microcontrollers can already communicate with each other by RF (Radio-Frequency), or access by WLAN the internet, which is sometimes called `Internet of Things` (IoT). Another class of large and very powerful digital computers are called `mainframe computers` or `super computers`, which are optimized to process large amount of data very fast. The key to their gigantic computing power is that many fast CPUs work in parallel --- the problem or task is split into many small parts that are solved by one CPU each, and the final result is then the combination of all the solved sub-tasks. Unfortunately, it is not always possible to split large problems into smaller sub-tasks. Digital computers are usually driven by a clock signal that pulses at a certain frequency. The CPU can do simple operations like the addition of two integers at each pulse of the clock signal. For more complicated operations like a multiplication or a division, it may need more clock pulses. So a rough measure for the performance of a computer is the clock rate, that is the number of clock pulses per second, divided by the number of pulses that the CPU needs to perform a basic operation, multiplied by the number of CPUs or Cores that the computer can use. A totally different kind of computers are `Quantum Computers`, large, expensive high-tech devices, which use the rules of `quantum mechanics` to calculate many computations in parallel. Today only a few of them exist, for research at universities and some large commercial institutes. Quantum computers may at some time in the future fundamentally change computing and our whole world, but they are not the topic of this book. ## Analog and Digital Whenever we measure a quantity based on some tiny base unit, then we work in the digital area, we measure with some granularity. Our ordinary money is digital in some way, as the cent is the smallest base unit; you will never pay a fraction of a cent for something. Time can be seen as a digital quantity as long as we accept the second as the smallest unit.  Even on so-called analogue watches, the second hand will generally jump forwards in steps of a second, so you can not measure fractions of a second with that watch. An obvious analogue property is the thermodynamic temperature and its classic measurement device is the well known capillary thermometer consisting of a glass capillary filled with alcohol or liquid mercury.  When temperature increases, the liquid in a reservoir expand more than the surrounding glass and partly fills the capillary. That filling rate is an analogue measure for the temperature. While the hourglass works digitally (you can count the tiny sand grains), the sundial does not. Most of the quantities in our real world seem analog, and digital quantities seem to be some sort of arbitrary approximation. But `quantum mechanics` has taught us that many quantities in our world really have a granularity. Physically, quantities like energy or momentum are indeed multiplies of the tiny `Planck constant`. Or consider electric charge, which is always a multiple of the `elementary charge unit` of one electron. Whenever an electrical current is flowing through an electrically conducting wire, an ionized gas or an electrolyte like salt water, there are flowing multiplies of the elementary charge only, never fractions of it. And of course light and electromagnetic radiation also has some form of granularity, which the photoelectric effect as well as Compton scattering proves. An important and useful property of digital signals, and digital data, is that they map directly to integral numbers. The simplest form of digital data is binary data, which can have only two distinct values. When you use a mechanical switch to turn the light bulb in your house on, or of, you change the binary state of the bulb.  And your neighbor, when watching your house, receives binary signals.^\[[2](#_footnotedef_2 "View footnote.") \]^ Digital computers are generally using binary electric states internally --- voltage or current `on` or `off`. Such an on/off state is called a bit. We will learn more about bits and binary logic later. One bit can store obviously only two states, which we may map to the numbers `0` and `1`. Larger integer numbers can be represented by a sequence of multiple bits. The `Morse code` was an early application to transmit messages encoded in binary form. A very important property of digital encoded numbers (data) is that they can be copied and transmitted exactly without loss of precision. The reason for this is that digital numbers have a well-defined clean state, there is no noise which overlays the data and may accumulate when the data is copied multiple times. Well, that statement is not really true --- under bad conditions, the noise can become so large that it changes the binary state of signals. Imagine we try to transfer some whole numbers encoded in binary form, maybe by binary states encoded as voltage level `0 Volt` and `5 Volts`, over an electric wire and a long distance. It is clear that the long wire can pick up some electromagnetic noise that can change the true `0` Volt data to a voltage that is closer to `5` Volts than to the true `0` Volt level, so it is received incorrectly. To catch such types of transmission errors, checksums are added to the actual data.  A checksum is derived by a special mathematical formula from the original data and transferred with it. The receiver applies the same formula to the received data and compares the result with the received checksum. If it does not match, then it is clear that the data transmission is corrupted, and a resend is requested. The opposite of digital is generally called analogue, a term which is used for data which have or seems to have no granularity. For example, we speak of an analogue voltage when the voltage can have each value in a given range and when the voltage does not "jump" but change continuous.^\[[3](#_footnotedef_3 "View footnote.") \]^ For observing analogue voltages or currents, one can use a moving coil meter, a device where the current flows through a coil in a magnetic field and the magnetic force moves the hand/pointer. We said in the previous section that nearly all of our current computers work with digital data only. Basically, that is that they work internally with integer numbers, stored in sequences of binary bits. All input for computers must have the form of integer numbers, and all output has the form of integer numbers. Whenever we want to feed computers with some sort of analogue data, like an analogue voltage, we have to convert it into a digital approximation. For that task, special devices called `analog to digital converters (ADC) exists. And in some cases we have to convert the digital output data of computers to analogue signals, like when a computer plays music: The computer output in form of digital data is then converted by a device called `digital to analog converter` (DAC) into an analogue voltage, that generates an analogue current through a coil in the speakers of our sound box, and that electric current in the coil generates a magnetic field which exercise mechanical forces and moves the membrane of the speaker, resulting in oscillating motions, which generates air pressure variations that our ear can detect and that we finally hear as sound.
+コンピュータは、データを操作する命令に従って、コンピュータ・プログラムを実行することができる装置である。現在使われているコンピュータは、電子機器に組み込まれた小さなものから、よく知られているデスクトップコンピュータ（PC）、部屋全体を埋め尽くすような大型で強力なスーパーコンピュータまで、ほとんどすべてが内部でデジタルデータのみを扱っています^[[1](#_footnotedef_1 "View footnote.") ]^ デジタルデータは基本的に整数（ホール）数を2進法で符号化しており、0`と1`という記号の列で表されるものです。デジタルという言葉については、次章で詳しく説明します。デジタル・コンピュータの最も重要な部分は「CPU」、つまり「中央処理装置」である。この小さな装置はデジタル電子回路でできていて、2つの数を足したり、ある数が他の数より大きいか小さいかを判断するなど、数に対して非常に基本的な数学的、論理的演算を行うことができる。ほとんどのコンピュータのCPUは、ごく少数の数字しか内部に保存できず、電源を切るとその数字を忘れてしまう。そのため、CPUは通常、より多くの数値を記憶でき、これらの数値に高速にアクセスできる「ランダムアクセスメモリ」（RAM）モジュールや、数値を永久に記憶できるが、高速なアクセスを許さない「ハードディスク」（SSD）デバイスに電気的に接続されています。保存された数値は「データ」と呼ばれることが多く、基本的には数値以外の何ものでもないが、画像や音声などさまざまな形で解釈することができる。回転する磁気ディスクに電気機械的にデータを保存する従来のハードディスクドライブ（HDD）と、最新の半導体技術を使ってデータを保存するソリッドステートデバイス（SDD）は、電力供給がない場合でもデータを長時間保存することができる。SSDもHDDも、実行プログラム用のOSパーティションや、テキストファイルや画像などのパッシブデータ用のデータパーティションなど、複数のパーティションに分割して使用することが可能です。使用前に、各パーティションは一般的にフォーマットされ、ファイルシステム(FS)が作成されます。 この2つのステップにより、ストレージデバイスに内部構造が作成され、プログラム、テキストファイル、画像などの個々のデータブロックの保存と取り出しが可能になる。現在のデスクトップパソコンのほぼすべて、さらにはノートパソコンや携帯電話のほとんどには、単一のCPUだけでなく、「コア」とも呼ばれる複数のCPUが搭載されており、異なるプログラムを並行して実行したり、1つのプログラムの一部を異なるCPUで実行して、性能を高めたり総実行時間を短縮したりすることができるようになっています。いわゆるスーパーコンピューターは、数千個のCPUを搭載することができる。CPUの他に、ほとんどのコンピュータは少なくとも1つのGPU（グラフィック・プロセッシング・ユニット）を持っており、データを画面やモニターに表示したり、ゲームでのアニメーションやビデオ再生に使用したりすることができます。CPUとGPUの区別はあまり明確ではありません。通常、CPUはスクリーンやモニターにデータを表示することもできますし、GPUはCPUができるいくつかのデータ処理を行うことができます。 しかし、GPUはデータ表示タスクに最適化されています。一般的なコンピューター・ユーザーにとってより身近なのは、キーボード、マウス、スクリーン、そしておそらくプリンターといった周辺機器です。これらはコンピュータと人間との対話を可能にするものですが、決してコンピュータの中核的な構成要素ではありません。ノートパソコンやラップトップパソコン、携帯電話では、周辺機器は中核部品と密接に統合されている。コンピュータの物理的な部品はすべて「ハードウェア」とも呼ばれ、そのハードウェア上で動作するプログラムは「ソフトウェア」と呼ばれる。あまり目立たないが、非常に重要なコンピュータのクラスが「マイクロコントローラ」と呼ばれる「組み込みデバイス」で、通常、黒いプラスチックの外皮にいくつかの電気接点を持つ小さな部品である。このデバイスは、必要なすべての要素、すなわちCPU、RAM、および電力供給がないときにプログラムやデータを保存できる永続的なストレージを含むことができます。これらのデバイスは、計算能力や保存・処理できるデータ量に制限があるかもしれませんが、多くのコンシューマー機器に搭載されています。洗濯機、冷蔵庫、テレビ、ラジオなど、さまざまな機器を制御しています。家庭内の機器には複数のマイクロコントローラーが搭載されているものもあり、マイクロコントローラーはすでにRF（無線周波数）で互いに通信したり、WLANでインターネットにアクセスできるようになっていることが多く、これは「モノのインターネット」（IoT）と呼ばれることもあります。また、大型で非常に強力なデジタル・コンピュータは、「メインフレーム・コンピュータ」や「スーパー・コンピュータ」と呼ばれ、大量のデータを非常に高速に処理するために最適化されている。問題やタスクは多くの小さなパーツに分割され、それぞれ1つのCPUが解決し、最終結果はすべての解決したサブタスクの組み合わせとなる。残念ながら、大きな問題を小さなサブタスクに分割することは必ずしも可能ではない。デジタル・コンピュータは、通常、ある周波数でパルスを発するクロック信号によって駆動される。CPUは、クロック信号のパルスごとに2つの整数の足し算のような簡単な演算を行うことができます。しかし、乗算や除算のような複雑な演算を行うには、より多くのクロックパルスが必要になる。つまり、1秒あたりのクロックパルス数を、CPUが基本的な演算を行うのに必要なパルス数で割ったものに、コンピュータが使用できるCPUまたはコアの数をかけたものが、コンピュータの性能を測る大まかな指標となるのです。量子力学の法則を利用して多くの計算を並列に行う大型で高価なハイテク機器である「量子コンピュータ」は、現在では数台しか存在しない。現在では、大学や一部の大規模な商業研究機関の研究用として、数台が存在するのみである。量子コンピュータは、将来、コンピューティングと私たちの世界全体を根本的に変えるかもしれませんが、本書のテーマではありません。## アナログとデジタル ある量を小さな基本単位に基づいて測定するときはいつでも、私たちはデジタル領域で作業しています。私たちが普段使っているお金は、1セントが最小の基本単位なので、ある意味でデジタルです。時間についても、1秒を最小単位とすれば、デジタル量とみなすことができる。 いわゆるアナログ時計でも、秒針は一般に1秒単位で進むので、その時計で1秒の端数を計測することはできない。アナログの特性として、熱力学的温度は明らかであり、その古典的な測定装置は、アルコールまたは液体水銀を満たしたガラス毛細管からなる、よく知られた毛細管温度計である。 温度が上昇すると、リザーバー内の液体が周囲のガラスよりも膨張し、毛細管を部分的に満たします。その充填速度が温度のアナログ的な指標となる。砂時計はデジタルで動くが（小さな砂粒を数えることができる）、日時計はデジタルで動かない。私たちの実世界にある量のほとんどはアナログに見え、デジタル量はある種の任意の近似に見える。しかし、「量子力学」は、私たちの世界の多くの量が本当に粒状性を持っていることを教えてくれた。物理的には、エネルギーや運動量といった量は、確かに小さな「プランク定数」の掛け算である。また、電荷を考えてみよう。電荷は常に1個の電子の「元素電荷単位」の倍数である。導電性の電線、電離した気体、塩水のような電解質に電流が流れるときは、常に素電荷の倍数であり、決して端数にはならない。もちろん光や電磁波にも粒状性があり、光電効果やコンプトン散乱などが証明している。デジタル信号やデジタルデータの重要かつ有用な特性は、それらが直接積分数に対応することである。デジタルデータの最も単純な形式は2値データであり、2つの異なる値のみを持つことができる。機械的なスイッチを使って、家の中の電球を点けたり消したりすると、電球の2進数の状態が変化する。 また、隣人があなたの家を監視しているときは、2値信号を受信しています。このようなオンとオフの状態をビットと呼びます。ビットと2値論理については後ほど詳しく説明します。1ビットに格納できるのは明らかに2つの状態だけで、これを0と1という数字に対応させることができます。より大きな整数は、複数のビットの並びで表現できます。モースコードは、2進数で符号化されたメッセージを伝送するための初期のアプリケーションであった。デジタルで符号化された数値（データ）の非常に重要な特性は、精度を失うことなく正確にコピーして送信できることである。その理由は、デジタル数値は明確に定義されたクリーンな状態であり、データに重なるノイズがなく、データを何度もコピーしても蓄積されることがないからである。しかし、実際には、悪条件下ではノイズが大きくなり、信号の2値性が変化してしまうことがある。例えば、2進数で符号化された整数を、電圧レベル「0ボルト」と「5ボルト」で符号化された2進数で、電線と長距離を転送しようとしたとします。このとき、電線は電磁波ノイズを拾ってしまい、0ボルトのデータを5ボルトに近い電圧に変えてしまうので、間違って受信してしまうことがあります。このような伝送エラーを検出するために、実際のデータにチェックサムを付加します。 チェックサムは、元のデータから特殊な数式で導き出され、データとともに転送される。受信側では、受信したデータに同じ式を適用し、その結果を受信したチェックサムと比較する。一致しない場合は、データ通信が壊れていることが明らかになり、再送信が要求される。デジタルの反対語は一般にアナログと呼ばれ、粒度の揃わない、あるいは揃わないように見えるデータに対して使われる言葉である。例えば、電圧がある範囲の値しかとれず、しかも「飛ぶ」のではなく、連続的に変化するものをアナログ電圧といいます^[[3](#_footnotedef_3 "View footnote.") \]^ アナログの電圧や電流を観測するには、ムービングコイルメーターという、磁界中のコイルに電流を流してその磁力で指針を動かして観測する装置が使われます。前項で、現在のコンピュータのほぼすべてがデジタルデータのみで動作していると述べた。基本的には、2進数のビット列に格納された整数を内部で扱うということである。コンピュータへの入力はすべて整数でなければならず、出力もすべて整数でなければならない。アナログ電圧のようなアナログデータをコンピュータに入力する場合は、必ずデジタルに変換しなければならない。この作業のために、「アナログ・デジタル・コンバータ」（ADC）と呼ばれる特別な装置が存在する。また、コンピュータが音楽を再生するときのように、コンピュータのデジタル出力データをアナログ信号に変換しなければならない場合もある。デジタルデータの形で出力されたコンピュータは、「デジタル・アナログ変換器」（DAC）と呼ばれる装置によってアナログ電圧に変換され、サウンドボックスのスピーカーにあるコイルを通してアナログ電流を発生させます。コイルに流れる電流が磁場を発生させて機械力を発揮し、スピーカーの膜を動かして振動運動を起こし、空気圧変動を生み出して、それを耳が感知してようやく音として聞くことができるのです。
 
-## What is an Operating System?
+## オペレーティング・システムとは？
 
 
 
-Most computers, from cellphones to large super computers, use an `operating system` (OS). A well known OS is the GNU/Linux kernel.  Operating systems can be seen as the initial program, that is loaded and started when we switch the computer on and that works as some kind of supervisor:^\[[4](#_footnotedef_4 "View footnote.") \]^ it can load other programs, and it distributes resources like CPU cores or RAM between multiple running programs. It also controls user input by keyboard and mouse, displays output data on the screen --- as text or graphics, controls how data is loaded and stored to nonvolatile storage media like hard-disk or SSD, manages all the network traffic and many more tasks. An important task of the OS is to allow user programs to access all the various hardware components from different vendors in a uniform, high level manner. An OS can be seen as an intermediate layer between user programs, like a text processor or a game, and the hardware of the computer. The OS allows user programs to work on a higher level of abstraction, so they do not need to know much about the low level hardware details.
+携帯電話から大型スーパーコンピュータまで、ほとんどのコンピュータは「オペレーティング・システム」（OS）を使っています。よく知られているOSはGNU/Linuxカーネルです。 オペレーティングシステムは、コンピュータの電源を入れたときに読み込まれて起動し、ある種のスーパーバイザーとして働く初期プログラムと見ることができます^[[4](#_footnotedef_4 "View footnote.") \]^ 他のプログラムをロードしたり、CPUコアやメモリなどのリソースを複数の実行プログラム間で分散させることができる。また、キーボードやマウスによるユーザーの入力を制御したり、テキストやグラフィックなどの出力データを画面に表示したり、データを読み込んでハードディスクやSSDなどの不揮発性記憶媒体に保存する方法を制御したり、すべてのネットワークトラフィックを管理したりと、多くのタスクがあります。OSの重要な仕事は、ユーザー・プログラムが異なるベンダーのさまざまなハードウェア・コンポーネントに、統一された高いレベルでアクセスできるようにすることである。OSは、テキストプロセッサやゲームなどのユーザープログラムと、コンピュータのハードウェアの間の中間層と見なすことができます。OSのおかげで、ユーザープログラムはより高い抽象度で作業できるようになり、低レベルのハードウェアの詳細についてあまり知る必要がなくなります。
 
 
 
-An important ability of most modern operating systems is to run multiple system and user programs concurrent or parallel. Concurrent execution of programs means, that the execution switches very fast between all the active programs. That way the user does not notice when programs do pause for a short time interval, and all of them seems to be running all the time, but not with the full speed. True parallel execution of programs indicate, that all of them can permanently run with full speed --- this is only possible when the computer has multiple CPUs or a CPU with multiple physically cores.
+最近のオペレーティングシステムの重要な機能として、複数のシステムプログラムとユーザープログラムを同時または並列に実行することが挙げられます。プログラムの同時実行は、すべてのアクティブなプログラム間で実行が非常に高速に切り替わることを意味します。このため、プログラムが短時間停止してもユーザーは気づかず、すべてのプログラムが常時動作しているように見えますが、完全な速度ではありません。プログラムの真の並列実行とは、すべてのプログラムが常時フルスピードで動作することである。これは、コンピュータが複数のCPUまたは複数の物理コアを持つCPUを搭載している場合にのみ可能である。
 
 
 
-Computer operating systems have generally a close relation to software libraries, which are collections of data types and functions working with that data types. Libraries can be a part of the OS, or can be more or less independent of the OS. Libraries are software components that provide data types and functions with a well-defined interface (API, Application Programming Interface) and behavior.
+コンピュータのオペレーティングシステムは一般に、データ型とそのデータ型を扱う関数の集合体であるソフトウェアライブラリと密接な関係がある。ライブラリはOSの一部であることもあれば、OSから多かれ少なかれ独立していることもある。ライブラリは、データ型や関数を、明確に定義されたインタフェース（API、Application Programming Interface）と動作で提供するソフトウェア部品である。
 
 
 
-Libraries can be used as shared libraries, which are single binary files stored on the file system of a computer, often with the file extension `.so` or `.dll`, which can be accessed from different computer programs simultaneously, or as static libraries, which are part of single programs. Shared libraries have some advantages: we need only one instance on the file system of the computer, and the library is loaded only once into the computer memory (RAM), even when it is used by different apps simultaneously. This saves space, and when the library has serious errors, it is in principle possible to replace the library with a corrected version, which is then used by all the software on the computer. Shared libraries often come in numbered versions, where a higher number denotes a newer, improved or extended library version.  Sometimes some of the programs we use may need still an older library version, while other software needs already a never one. In that case, our file system has to provide multiple versions of a shared library, which can be used independently. On the other hand, statically linked libraries are directly glued with a single computer program. That makes the distribution of the program easier, as it can be shipped as a single entity, and we do not have to ensure that all the needed dynamic libraries are available on the destination computer. But if a statically linked library has serious errors, then we have to replace all the programs that are linked statically with that corrupted library.
+ライブラリは、共有ライブラリとして使用することができます。共有ライブラリは、コンピュータのファイルシステム上に格納された単一のバイナリファイルで、多くの場合、ファイル拡張子が `.so` または `.dll` で、異なるコンピュータプログラムから同時にアクセスすることができ、または単一のプログラムの一部である静的ライブラリとして使用することができます。共有ライブラリは、コンピュータのファイルシステム上に1つのインスタンスしか必要とせず、異なるアプリケーションで同時に使用される場合でも、ライブラリはコンピュータのメモリ（RAM）に一度だけロードされます。また、ライブラリに重大なエラーが発生した場合、原則的にライブラリを修正版に置き換えることができ、その修正版をコンピュータ上のすべてのソフトウェアが使用できる。共有ライブラリには番号が振られていることが多く、番号が大きいほど新しい、改良された、または拡張されたライブラリであることを示します。 しかし、あるソフトがまだ古いバージョンを必要とし、別のソフトがすでに新しいバージョンを必要とすることがあります。そのような場合、ファイルシステムは複数のバージョンの共有ライブラリを用意し、それぞれを独立して使えるようにしなければならない。一方、静的にリンクされたライブラリは、1つのコンピュータ・プログラムに直接接着される。そのため、プログラムを単一化して出荷することができ、必要な動的ライブラリがすべて出荷先のコンピュータで利用可能であることを確認する必要がないため、配布が容易になります。しかし、静的にリンクされたライブラリに重大なエラーがあった場合、その破損したライブラリと静的にリンクされているプログラムをすべて置き換える必要があるのです。
 
 
 
-Small microcontrollers and embedded devices often do not need to use an operating system, as they generally run only one single user program and because they usually do not have a large variety of hardware components to support.
+小型のマイコンや組み込み機器では、一般に1つのユーザープログラムしか実行しないため、また通常サポートするハードウェア部品の種類が多くないため、オペレーティングシステムを使用する必要がないことが多い。
 
 
 
 
 
-## What is a User Interface
+## ユーザーインターフェースとは
 
 
 
-To interact with the OS and with application programs running on the computer, we need some form of a user interface. Traditional user interfaces are text centric and often provided direct by the OS as one single text screen filling the whole display: The user has to enter textual commands, and the computer react with textual messages. For entering commands and data, a keyboard is used, which layout was heavily inspired by the classical mechanical typewriter. For desktop computers the textual user interfaces has been mostly replaced or at least supported by graphical user interfaces (GUIs) for about a half century now, and even cellphones and other electronic gadgets now use some form of a GUI for user interaction. For large mainframe computers, the textual user interface is still common. Graphical user interfaces present the user a set of icons or widgets, often arranged in rectangular graphical boxes called windows. These windows can be moved around, resized, and can partly or fully overlap other windows. A special type of windows are called terminal-, shell- or console-windows, which behave as the traditional full-screen textual user interfaces.  Graphical user interfaces allows it to interact with the computer by simple actions like clicking on buttons or by drag or wipe gestures, performed directly on a touch sensitive display or with a device called a mouse, which mirrors its mechanical movement on the table to a graphical cursor on the computer display, and provides a set of push buttons which are used to initiate a click action when the mouse pointer hovers over an icon or widget. The main advantage of graphical user interfaces is, that the user does not have to remember and type in long command sequences. A set of on-screen buttons labeled with single letters can even simulate a traditional keyboard, but when the input of longer textual data is required, the physical keyboard is still used.  Graphical user interfaces are sometimes even supported by speech recognition system, which are used to enter commands or textual messages vocally. Graphical user interfaces may be very strongly coupled with the OS, but are basically still system programs executed by the OS. For the Microsoft Windows OS or the macOS this distinction is not that obvious, as the same GUI is running permanently. For other operating system like Linux it is more obvious, as these operating systems are sometimes used without a GUI, and because various GUI tool kits like Gnome, KDE and many more are available.
+OSやコンピュータ上で動作するアプリケーションプログラムと対話するためには、何らかの形のユーザーインターフェースが必要です。従来のユーザーインターフェースはテキスト中心で、多くの場合、ディスプレイ全体を埋め尽くす1つのテキスト画面としてOSから直接提供されます。ユーザーはテキストでコマンドを入力し、コンピュータはテキストメッセージで反応します。コマンドやデータの入力にはキーボードが使われ、そのレイアウトは古典的な機械式タイプライターから大きな影響を受けています。デスクトップ・コンピュータでは、テキスト・ユーザー・インターフェースは、半世紀ほど前からグラフィカル・ユーザー・インターフェース（GUI）にほとんど取って代わられ、少なくともサポートされている。大型のメインフレームコンピュータでは、テキストによるユーザーインターフェイスがまだ一般的です。グラフィカル・ユーザー・インターフェースは、ユーザーにアイコンやウィジェットを提示し、ウィンドウと呼ばれる長方形のグラフィカルなボックスに配置されることが多い。これらのウィンドウは移動したり、サイズを変更したり、他のウィンドウと一部または全部を重ねることができます。特別なタイプのウィンドウはターミナルウィンドウ、シェルウィンドウ、コンソールウィンドウと呼ばれ、従来のフルスクリーンテキストユーザーインターフェースのように動作する。 グラフィカルユーザーインターフェースは、ボタンをクリックしたり、ドラッグやワイプなどの簡単な操作でコンピューターと対話することができます。グラフィカルユーザーインターフェースの主な利点は、ユーザーが長いコマンドシーケンスを覚えて入力する必要がないことです。一文字で表示される画面上のボタン群は、従来のキーボードをシミュレートすることもできますが、長いテキストデータの入力が必要な場合は、物理的なキーボードが使用されます。 グラフィカルユーザーインターフェースは、音声認識システムによってサポートされることもあり、コマンドやテキストメッセージを音声で入力するために使用される。グラフィカルユーザーインターフェイスは、OSと非常に強く結合している場合もありますが、基本的にはOSが実行するシステムプログラムであることに変わりはありません。Microsoft Windows OSやmacOSでは、同じGUIが常時動作しているため、この区別はそれほど明白ではありません。Linuxのような他のOSでは、GUIなしで使われることもあり、またGnomeやKDEなどのさまざまなGUIツールキットが利用できるため、この区別はよりはっきりしています。
 
 
 
-## What is Computer Programming?
+## コンピュータ・プログラミングとは？
 
 
 
-Computer programming includes the creation, testing and optimizing of computer programs.
+コンピュータ・プログラミングには、コンピュータ・プログラムの作成、テスト、最適化などが含まれます。
 
 
 
 
 
-## What is a Computer Program?
+## コンピュータ・プログラムとは？
 
 
 
-A computer program is basically a sequence of numbers, which make some sense to a computer CPU, in such a way that the CPU recognizes the numbers as so-called `instructions` or `numeric machine code`, maybe the instruction to add two numbers.
+コンピュータ・プログラムとは、基本的に、コンピュータのCPUがその数字をいわゆる「命令」あるいは「数値計算機コード」、例えば「2つの数字を足せ」という命令として認識できるような、何らかの意味を持つ数字の列のことである。
 
 
-The first computers, built in the 1950s, were indeed programmed by feeding sequences of plain numbers to the device. The numbers were stored on so-called `punch cards`, consisting of strong paper, where the numbers were encoded by holes in the cards. The holes could be recognized by electrical contacts to feed the numbers into the CPU. As plain numbers do not match well to human thinking, soon more abstract codes were used. A very direct code, which matches numerical instructions to symbols, is the `assembly language`. In that language, for example the character sequence "add A0, $8" may map directly to a sequence of numbers which instructs the CPU to add the constant integer number 8 to CPU register A0, where A0 is a storage area in the CPU where numbers can be stored. As there exist many different types of CPUs, all with their own instruction sets, there exists many different assembly instruction sets, with similar, but not identical instructions. The rules that describe how these basic instructions have to look are called the `syntax` of the assembly language.
+1950年代に作られた最初のコンピュータは、確かに単純な数字の列をデバイスに送り込むことでプログラムされた。この数字は、丈夫な紙でできた「パンチカード」と呼ばれるものに格納され、カードに開けられた穴によって符号化されていた。この穴を電気接点で認識し、CPUに数字を送り込むのである。しかし、平凡な数字では人間の思考とうまく結びつかないため、やがて抽象的なコードが使われるようになった。数値の命令を記号に対応させた非常に直接的なコードとして、「アセンブリ言語」がある。この言語では、例えば「add A0, $8」という文字列は、CPUのレジスタA0（A0はCPU内の数値を格納する領域）に一定の整数値である8を追加するよう指示する数値列に直接マッピングすることができる。CPUにはさまざまな種類があり、それぞれ独自の命令セットを持つため、アセンブリ命令セットにも多くの種類があり、類似しているが同一ではない命令も存在する。これらの基本的な命令がどのように見えるかを記述する規則を、アセンブリ言語の「文法」と呼びます。
 
 
 
-The numerical machine code, or the corresponding assembly language, is the most basic instruction set for a CPU. Every instruction which a CPU can execute maps to a well-defined assembly instruction. So, each operation that a computer may be able to perform can be expressed in a sequence of assembly instructions. But complicated tasks may require millions of assembly instructions, which would take humans very long to write, and even much longer to modify, proof and debug.^\[[5](#_footnotedef_5 "View footnote.") \]^
+数値機械語、またはそれに対応するアセンブリ言語は、CPUの最も基本的な命令セットです。CPUが実行できるすべての命令は、明確に定義されたアセンブリ命令と対応する。つまり、コンピュータが実行可能な各操作は、アセンブリ命令のシーケンスで表現することができる。しかし、複雑な作業には何百万というアセンブリ命令が必要で、人間がそれを書くには非常に時間がかかり、修正、証明、デバッグにはさらに時間がかかります^^ [[5](#_footnotedef_5 "View footnote.") \] ^)
 
 
 
-Just a few years after the invention of the first computers, people recognized that they would need even more abstract instruction sets, like repeated execution, composed conditionals, or other data types than plain numbers as operands. So higher level programming languages like Algol, Fortran, C, Pascal or Basic were created.
+最初のコンピュータが発明されてからわずか数年後、人々は、オペランドとして単なる数値だけでなく、繰り返し実行、合成条件文、他のデータ型など、さらに抽象的な命令セットが必要であることを認識したのです。そこで、Algol、Fortran、C、Pascal、Basicといった、より高度なプログラミング言語が作られたのです。
 
 
 
 
 
-## What is an Algorithm?
+## アルゴリズムとは？
 
 
 
-An `algorithm` is a detailed sequence of more or less abstract instructions to solve a specific task, or to reach a goal. Cooking recipe books and car repair instructions are examples of algorithms.
+アルゴリズムとは、特定のタスクを解決するため、あるいはあるゴールに到達するための、多かれ少なかれ抽象的な指示の詳細なシーケンスのことです。料理のレシピ本や車の修理の説明書はアルゴリズムの一例です。
 
 
 
-The basic math operations kids learn in school --- to add, multiply or divide two numbers with paper and pencil --- are algorithms too. Even starting a car follows an algorithm --- when the temperature is below zero, and snow covers the vehicle, then you first have to clean the windows and lights. And when you first drive again after a longer break, you would have to check the tires before you start the engine. The algorithm can be carried out by strictly following the instructions --- it is not necessary to really understand how and why it works.
+子供が学校で習う算数の基本操作-紙と鉛筆を使って2つの数を足したり、かけたり、割ったり-もアルゴリズムです。気温が零下で雪が積もったら、まず窓拭きとライトの掃除をする。また、久しぶりに運転するときは、エンジンをかける前にタイヤをチェックしなければならない。アルゴリズムは、指示されたことを忠実に実行すればよいので、その仕組みや理由を本当に理解する必要はありません。
 
 
 
-So an algorithm is a perfect fit for a computer, as computers are excellent at following instructions without really understanding what they are trying to accomplish.
+だから、アルゴリズムはコンピュータにぴったりだ。コンピュータは、何を達成しようとしているのかを本当に理解せずに指示に従うことに長けているからだ。
 
 
 
-A math algorithm to sum up the first 100 natural numbers may look like:
+最初の100個の自然数を合計する数学アルゴリズムは、次のようになります。
 
 
 
 
 ```
-use two integer variables called i and sum
-assign the value 0 to both variables
+iとsumという2つの整数変数を使用する
+両方の変数に値0を代入する
 
-while i is less than 100 do:
-  increase i by one
-  add value of i to sum
+i が 100 よりも小さい間は
+  iを1つ増やす
+  iの値をsumに追加
 
-optionally print the final value of sum
+オプションでsumの最終値を表示
 ```
 
 
@@ -204,78 +204,78 @@ optionally print the final value of sum
 
 
 
-## What is a Programming Language?
+## プログラミング言語とは？
 
 
 
-Most traditional programming languages were created to map algorithms to elementary CPU instructions. Algorithms typically contain nested conditionals, repetition, math operations, recovery from errors and maybe plausibility checks. A more complicated algorithm generally can be split into various separate logical parts, which may include reading in data at one point, multiple processing steps at another, and storing, or displaying data as plain text, graphic or animation at yet another point. This splitting into parts is mapped to programming languages by grouping tasks into subroutines, functions or procedures which accept a set of input parameters and can return a result.
+従来のプログラミング言語の多くは、アルゴリズムを初歩的なCPU命令に対応させるために作られました。アルゴリズムは一般的に、入れ子になった条件文、繰り返し、数学演算、エラーからの回復、そして多分もっともらしいチェックを含んでいます。より複雑なアルゴリズムは、一般的に様々な論理的な部分に分割することができます。ある時点ではデータの読み込み、別の時点では複数の処理ステップ、さらに別の時点ではデータの保存やプレーンテキスト、グラフィック、アニメーションとしての表示などが含まれるかもしれません。このような部分への分割は、タスクをサブルーチン、関数、プロシージャにグループ化することでプログラミング言語にマッピングされ、一連の入力パラメータを受け取って結果を返すことができるようになります。
 
 
 
-As algorithms often work not only with numbers, but also with text, it makes sense to have a form of textual data type in a programming language too. And all the data types can be grouped in various ways, for example, as sequences of multiple data of the same type, like lists of numbers or names. Or as collections of different types, like name, age and profession of a citizen in an income tax database. For all these use cases, programming languages provide some sort of support.
-
-
-
-
-
-## Compilers and Interpreters
-
-
-
-We already learned that the CPU in the computer can execute only simple instructions, which we call numeric machine code or assembly instructions.
-
-
-
-To run a program written in a high level language with many abstractions, we need some sort of converter to transform that program into the basic instructions that the CPU can execute. For the conversion process we have basically two options: We can convert the entire program into machine code, store it to disk, and then run it on the CPU. Or we can convert it in small portions, maybe line by line, and run each portion whenever we have converted it. Tools that convert the whole program first are called compilers. `Compilers` process the program that we have written, include other source code like needed library modules, check the code for obvious errors and then generate and store the machine code that we then can run.
-
-
-
-Tools that process the source code in small portions, like single statements, are called `interpreters`. They read in a line of source code, investigate it to check if it is a valid statement, and then feed the CPU with corresponding instructions to execute it. It is similar to picking strawberries: you can pick one and eat it at once, or you can put them all into a basket and eat them later. Both interpreters and compilers have advantages and disadvantages for special use cases.  Compilers can already detect errors before the program is run, and compiled programs generally run fast, as all the instructions are already available when the programs run. The compiling step takes some time of course, at least a few seconds, but for some languages and large programs it may take much longer. That can make the software development process slow because as you add or change code, you have to compile it before you can execute and test your program. That may be inconvenient for unskilled programmers, as they may have to do much testing. Some use a programming style that is: change a tiny bit of the source code, then run it and see what is does. But a more common practice is that you think about the problem first and then write the code, that then in most cases does nearly that of what you intended. For this style of programming, you do not have to compile and execute your code that often. Compilers have one important benefit: they can detect many bugs, mostly typing errors, already in the compile phase, and they give you a detailed error message. Interpreters have the advantage that you can modify your code and immediately execute it without delay. That is nice for learning a new language and for some fast tests, but even simple typing errors can only be detected when they are encountered while running the program. If your test does not try to run a faulty statement, there will be no error, but it may occur later. Generally, interpreted program execution is much slower than running compiled executables, as the interpreter has to continually process the source code in real-time as it's being run, while the compiler does it only once before the program is run. At the end of this section, a few additional notes:
-
-
-
-Compilers are sometimes supported by so-called linkers. In that case, the compiler converts the source code, that can be stored in multiple text files, each in a sequence of machine code instructions, and finally the linker joins all these machine code files to the final executable.  Some compilers do not need the linking step or call the linker automatically. And some interpreters convert the textual source code in one very fast, initial pre-processing step ("on the fly") to so-called `byte code`, that can then be interpreted faster. The languages Ruby and Python do that. Some languages, like Java, can compile and optimize the source code while the program is running. For that process, a so-called `virtual machine` is used, which builds an intermediate layer between the hardware and the user program.
+アルゴリズムは数字だけでなく、テキストも扱うことが多いので、プログラミング言語にもテキストデータ型があるのは理にかなっている。また、すべてのデータ型は様々な方法でグループ化することができます。例えば、数値や名前のリストのように、同じ型の複数のデータのシーケンスとしてグループ化できます。また、所得税データベースの国民の名前、年齢、職業のように、異なるタイプのコレクションとしてまとめることもできる。このような使用例に対して、プログラミング言語はある種のサポートを提供している。
 
 
 
 
 
-## Types of Programming Languages
+## コンパイラとインタプリタ
 
 
 
-There are many different styles that software can be written in. A programming paradigm is a fundamental style of writing software, and each programming language supports a different set of paradigms. You're probably already familiar with one, or more of them, and at the very least, you know what `object-oriented programming` (OOP) is, because it's taught as part of many introductory computer science courses.
+コンピュータのCPUは、数値機械語やアセンブリ命令と呼ばれる単純な命令しか実行できないことは既に学んだ。
 
 
 
-We already mentioned the assembly languages, which provide only the basic operations that the CPU can perform. Assembly languages provide no abstractions, so maybe we should not even call them programming languages at all. Then there are low level languages like Fortran or C, with some basic abstractions, which still work close to the hardware and which are mostly designed for high performance and low resource consumption (RAM), but not to detect and prevent programming errors or to make life easy for programmers. These languages already support some higher order data types, like floating point numbers or text (strings), and homogeneous, fixed size containers (called `arrays` in C) or heterogeneous fixed size containers (called structs in C).
+抽象度の高い言語で書かれたプログラムを実行するには、そのプログラムをCPUが実行可能な基本命令に変換するための何らかの変換器が必要である。変換処理には、基本的に2つの選択肢がある。プログラム全体を機械語に変換してディスクに保存し、CPUで実行する。プログラム全体を機械語に変換してディスクに保存し、CPUで実行するか、あるいは、行ごとに変換し、変換が完了した時点でそれぞれの部分を実行するかである。プログラム全体を最初に変換するツールはコンパイラと呼ばれます。コンパイラは、私たちが書いたプログラムを処理し、必要なライブラリモジュールなどの他のソースコードを含め、コードに明らかな誤りがないかチェックし、私たちが実行できる機械語を生成して保存するものである。
 
 
 
-A different approach is taken by languages like Python or Ruby, which try to make writing code easier by offering many high level abstractions and which have better protection against errors, but are not as efficient. These languages also support dynamic containers, which can grow and shrink, or advanced data structures like hash tables (maps) or support for textual pattern matching by regular expressions (regex).
-
-
-Another way to differentiate programming languages is if they are statically, or dynamically typed. Ruby, Python and JavaScript are all examples of dynamically typed languages, that is, they use variables which can store any data type, so the variable's type of data that it accepts can therefore dynamically change during program execution. That seems comfortable for the user, and sometimes it is, especially for short programs, which may be written for one-time use only and are sometimes called scripts. But dynamic typing makes discovery of logical errors harder --- an illegal addition of a number to a letter may be detected only at run-time. And dynamically typed languages generally waste a lot of memory and their performance is not that great. It is as we would own a set of large, equally sized moving boxes, and we would store all of our goods in it, each piece in one box.
+ソースコードを1つの文のように小さく分割して処理するツールを「インタプリタ」と呼びます。インタープリタは、ソースコードを読み込んで、それが有効な文であるかどうかを調べ、それに対応する命令をCPUに与えて実行させる。これはイチゴ狩りに似ていて、イチゴを摘んですぐに食べることもできるし、全部カゴに入れて後で食べることもできる。インタープリタとコンパイラのどちらにも、特殊な使用例に対するメリットとデメリットがある。 コンパイラは、プログラムを実行する前にすでにエラーを検出することができ、コンパイルされたプログラムは、プログラムが実行されるときにすでにすべての命令が利用可能であるため、一般に高速に実行されます。コンパイルのステップにはもちろん時間がかかり、少なくとも数秒はかかるが、言語や大規模なプログラムではもっと長い時間がかかることもある。そのため、コードを追加したり変更したりすると、プログラムを実行したりテストしたりする前にコンパイルしなければならず、ソフトウェア開発プロセスが遅くなることがある。そのため、未熟なプログラマーにとっては、多くのテストを行わなければならず、不便な場合があります。ソースコードのほんの少しを変更し、それを実行して何が起こるかを見る、というプログラミングスタイルを使う人もいます。しかし、より一般的なのは、まず問題を考えてからコードを書き、そのコードがほぼ意図したとおりの動作をする場合です。このようなスタイルのプログラミングでは、コンパイルと実行を頻繁に行う必要はありません。コンパイラは、コンパイルの段階ですでに多くのバグ（主にタイプミス）を検出し、詳細なエラーメッセージを表示してくれるからです。インタプリタには、コードを修正したらすぐに実行できる、という利点があります。これは新しい言語を学習したり、高速なテストを行うには良いことですが、単純なタイピングエラーでさえ、プログラムを実行しているときに遭遇して初めて検出することができます。もしテストが欠陥のあるステートメントを実行しようとしなければ、エラーは発生しませんが、後で発生する可能性があります。一般に、インタープリタによるプログラムの実行は、コンパイルされた実行ファイルを実行するよりもはるかに遅いです。これは、インタープリタが実行中にリアルタイムでソースコードを継続的に処理しなければならないのに対し、コンパイラはプログラムを実行する前に一度だけそれを行うからです。このセクションの最後に、いくつかの追加的な注意事項があります。
 
 
 
-For statically typed languages, each variable has a well-defined data type like integer number, real number, a single letter, a text element and many more. The data type is either assigned by the author of the program with a type declaration, or is detected by the compiler itself when processing the program source code, called `type inference`, and the variable's type does never change. In this way, the compiler can check for logical errors early in the compile process, and the compiler can reserve memory blocks exactly customized to the variables that we want to store, so total memory consumption and performance can be optimized. Referring again to our boxes example, statically typing is like using customized boxes for all your goods.
+コンパイラは、いわゆるリンカにサポートされることもある。その場合、コンパイラは、複数のテキストファイルに格納されていることがあるソースコードを、それぞれ機械語の命令列に変換し、最後にリンカがこれらすべての機械語のファイルを結合して最終的な実行ファイルにする。 コンパイラの中には、リンクの段階を必要としないものや、リンカを自動的に呼び出すものもある。また、インタプリタの中には、テキスト形式のソースコードを、非常に高速な最初の前処理工程（「オンザフライ」）で、いわゆる「バイトコード」に変換し、より高速に解釈できるようにするものがあります。RubyやPythonのような言語がそうです。Javaなどの一部の言語では、プログラムの実行中にソースコードをコンパイルして最適化することができます。この処理には、ハードウェアとユーザープログラムの間に中間層を構築する、いわゆる「仮想マシン」が使用される。
 
 
 
-All these types of programming languages are often called `imperative programming languages`, as the program describes detailed what to do. There are other types of programming languages too, for example languages like Prolog, which try to give only a set of rules and then let the computer try to solve a problem with these rules. And of course there are the new concepts of `artificial intelligence` (AI) and `machine learning` (ML), which are less based on algorithms and more on neural nets, which are trained with a lot of data until it can provide the desired results. Nim, the computer language this book is about, is an imperative language, so we will focus on the imperative programming style in this book. But of course, Nim can be used to create AI applications.
+
+
+## プログラミング言語の種類
 
 
 
-Further still, we can differentiate between languages like C, C++, Rust, Nim and many more that compile to native executables and can run directly on the hardware of the computer, contrasted with languages like Java, Scala, Julia and some more, that use a large `Virtual Machine` (VM) as an intermediate layer between the program and the hardware, and interpreted languages like Ruby and Python. Languages using a virtual machine generally need some startup time when a program is invoked, as the VM must be loaded and initialized, and interpreted languages are generally not very fast.^\[[6](#_footnotedef_6 "View footnote.") \]^ The distinction between languages that compile to native executables, and those that are executed on a virtual machine, is not really sharp. For example, Kotlin and Julia were executed on a virtual machine initially, but now can compile the source code to native executables.
+ソフトウェアの書き方には様々なスタイルがあります。プログラミングパラダイムはソフトウェアを書くための基本的なスタイルで、それぞれのプログラミング言語が異なるパラダイムのセットをサポートしています。少なくとも、オブジェクト指向プログラミング（OOP）については、コンピュータサイエンスの入門コースで教えられることが多いので、ご存じでしょう。
 
 
 
-An important class of programming languages are the so called `Object-Oriented-Programming` (OOP) languages, which uses inheritance and dynamic dispatch, and become popular in the 1990s. For some time, it was assumed that Object-Oriented-Programming was the ultimate solution to manage and structure really large programs. Java was the most prominent example of the OOP languages. Java forces the programmer to use OOP design, and languages like C++, Python or Ruby strongly push the programmer to use the OOP design. Practice has shown that OOP design is not the ultimate solution for all computing problems, and OOP design may prevent optimal performance. So newer languages, like Go, Rust and Nim, support some form of OOP programming, but use it only as one paradigm among many others.
+アセンブリ言語についてはすでに述べましたが、これはCPUが実行できる基本的な操作のみを提供するものです。アセンブリ言語は抽象化をしないので、プログラミング言語と呼ぶのはやめたほうがいいかもしれない。次に、FortranやCのような低レベルの言語がありますが、これは基本的な抽象化機能を備えており、依然としてハードウェアに近いところで動作します。これらの言語は、浮動小数点数やテキスト（文字列）のような高次のデータ型や、均質で固定サイズのコンテナ（Cでは `array` と呼ばれる）、異種の固定サイズのコンテナ（Cでは structs と呼ばれる）を既にサポートしています。
 
 
 
-Another popular and important class of programming languages is JavaScript and its more modern cousins like TypeScript, Kotlin or Dart and others. JavaScript was designed to run in web browsers to support interactive web pages and programs and games running in the browser. In this way, the program became nearly independent of the native operating system of the computer. Note that unlike the name may indicate, JavaScript is not closely related to the Java language. Nim can compile to a JavaScript backend, so it supports web development well.
+PythonやRubyのような言語では、多くの高度な抽象化機能を提供することでコードを書きやすくし、エラーに対する保護機能を高めているが、効率はそれほど良くない。これらの言語では、大きくなったり小さくなったりする動的コンテナや、ハッシュテーブル（マップ）のような高度なデータ構造、正規表現（regex）によるテキストのパターンマッチングもサポートしている。
+
+
+プログラミング言語を区別するもう一つの方法は、静的型付けか動的型付けかである。Ruby、Python、JavaScriptはすべて動的型付け言語の例である。つまり、任意のデータ型を格納できる変数を使っているので、プログラムの実行中に変数が受け入れるデータの型が動的に変化することが可能である。特に、一度しか使わないような短いプログラムはスクリプトと呼ばれることもある。しかし、動的型付けは論理的エラーの発見を難しくする。数字と文字の不正な追加は、実行時にしか発見できないかもしれない。また、動的型付けされた言語は、一般に多くのメモリを浪費し、性能もそれほど高くない。それは、私たちが大きな、同じ大きさの引っ越し用の箱のセットを所有し、その中にすべての荷物を、それぞれの荷物を一つの箱に分けて収納するようなものである。
+
+
+
+静的型付け言語では、各変数は整数、実数、文字、テキスト要素など、明確に定義されたデータ型を持っている。このデータ型は、プログラムの作者が型宣言を行うか、コンパイラがソースコードを処理する際に「型推論」と呼ばれる方法で検出され、変数の型が変更されることはない。このように、コンパイラはコンパイルの初期段階で論理エラーをチェックし、格納したい変数にぴったり合わせたメモリブロックを確保することで、全体のメモリ消費量と性能を最適化することができる。箱の例で言えば、静的型付けは、商品を入れる箱をカスタマイズするようなものです。
+
+
+
+これらのプログラミング言語は、プログラムが何をすべきかを詳細に記述することから、「命令型プログラミング言語」と呼ばれることが多い。例えば、Prologのように、ルールだけを与えて、そのルールに従ってコンピュータに問題を解かせようとするプログラミング言語もあります。もちろん、「人工知能」（AI）や「機械学習」（ML）という新しい概念もある。これらはアルゴリズムに基づくというよりも、多くのデータを使って望ましい結果が得られるまで訓練するニューラルネットに基づくものである。本書で扱うコンピュータ言語であるNimは命令型言語なので、本書では命令型プログラミングのスタイルを中心に解説します。しかし、もちろんNimはAIアプリケーションの作成にも使えます。
+
+
+
+さらに、C、C++、Rust、Nimなどのようにネイティブな実行ファイルにコンパイルしてコンピュータのハードウェア上で直接実行できる言語と、Java、Scala、Juliaなどのようにプログラムとハードウェアの間の中間層として大きな仮想マシン（VM）を使用する言語、およびRubyやPythonなどのインタプリタ言語とを区別することもできる。仮想マシンを利用する言語は、一般にプログラム起動時にVMのロードと初期化が必要なため起動時間がかかり、インタプリタ型言語は一般にあまり高速ではない。^[[6](#_footnotedef_6 "View footnote.") \]^ コンパイルしてネイティブ実行ファイルにする言語と仮想マシンで実行する言語は、実はあまり区別されない。例えば、KotlinやJuliaは当初仮想マシン上で実行されていたが、現在ではソースコードをコンパイルしてネイティブな実行ファイルにすることができる。
+
+
+
+プログラミング言語の重要なクラスとして、1990年代に普及した、継承と動的ディスパッチを用いた、いわゆる「オブジェクト指向プログラミング」（OOP）と呼ばれる言語がある。オブジェクト指向プログラミングは、大規模なプログラムを管理・構造化するための究極のソリューションであると考えられていた。Javaは、OOP言語の最も顕著な例であった。JavaはプログラマーにOOPデザインを使うことを強制し、C++、Python、Rubyなどの言語はプログラマーにOOPデザインを使うことを強く押し付けました。実践の結果、OOPデザインはすべてのコンピューティング問題に対する究極の解決策ではなく、OOPデザインは最適なパフォーマンスを妨げる可能性があることが明らかになった。そのため、Go、Rust、Nimなどの新しい言語では、何らかの形でOOPプログラミングをサポートしているが、数あるパラダイムの中の1つとしてしか使用していない。
+
+
+
+プログラミング言語のもうひとつの人気かつ重要なクラスは、JavaScriptと、TypeScript、Kotlin、Dartなど、より現代的な同系列の言語です。JavaScriptは、ウェブブラウザで実行されるインタラクティブなウェブページやプログラム、ゲームをサポートするために設計されました。このようにして、プログラムはコンピュータのネイティブオペレーティングシステムからほぼ独立するようになった。なお、名前から想像されるのとは異なり、JavaScriptはJava言語と密接な関係があるわけではありません。NimはJavaScriptのバックエンドにコンパイルすることができるので、Web開発をしっかりサポートします。
 
 
 +------+------+------+------+------+------+------+------+-------+
@@ -316,12 +316,12 @@ Another popular and important class of programming languages is JavaScript and i
 |      | nted |      |      |      |      |      |      |       |
 +------+------+------+------+------+------+------+------+-------+
 
-: Table 1. Overview of popular programming languages:^\[[7](#_footnotedef_7 "View footnote.") \]^
+: Table 1. 一般的なプログラミング言語の概要:^\[[7](#_footnotedef_7 "View footnote.") \]^
 
 
 
 
-Sometimes source code written in one programming language is converted into another one. A prominent target for such conversions is JavaScript, as JavaScript enables execution of programs in web browsers. Another important target language is C or C++. Creating intermediate C code, which is then compiled by a C compiler to native executables, has some advantages compared to direct compilation to native executables: C compilers exists for nearly all computer systems including microcontrollers and embedded systems, so the use of a language is not restricted to systems for which a native compiler backend is provided.  And C as intermediate code simplifies the use of system libraries, which typically provide a C compatible interface. Due to decades of development, C compilers generally can do better code optimizations than young languages may manage to do. Some people fear that intermediate C code carries the problems of the C language, like verbosity, confusing and error-prone code or undefined behavior, to the source languages. But these well known concerns of C occur only when humans write C code directly, in the same way as when humans write assembly code directly.  Automatic conversions are well-defined and well tested, which means they are free of errors to the same degree as direct machine code generation would be. But indeed there are some small drawbacks when C or C++ is used as a backend of a programming language: C does not always allow direct access to all CPU instructions, which may make it difficult to generate optimal code for some special constructs like exceptions. And C uses wrap around arithmetic for unsigned integer types, which may not be what modern languages desire. The current Nim implementation provides a JavaScript and a C and C++ backend. While the JavaScript backend is a design decision to enable web development, the C and C++ backends are a more pragmatic decision, and may be later replaced or at least supported by direct native code generation or use of the popular LLVM backend.  ^\[[8](#_footnotedef_8 "View footnote.")\]^ When computer languages are converted from one language to another, then sometimes the term `transpiler` is used to differentiate the translation process to a direct compilation to a binary executable. When program code is converted between very similar languages with nearly the same level of abstractions, then the term transpiler may be justified.  But Nim is very different from C and has a higher abstraction level, and the Nim compiler performs many advanced optimizations. So it should be not called a transpiler, even when compiling to JavaScript or to the C++ backend.
+あるプログラミング言語で書かれたソースコードを、別のプログラミング言語に変換することがある。ウェブブラウザ上でプログラムを実行できるJavaScriptは、その代表的な変換対象である。また、C言語やC++も重要な変換対象である。C言語の中間コードを作成し、それをCコンパイラでコンパイルしてネイティブの実行ファイルにする方法は、直接ネイティブの実行ファイルにコンパイルする方法と比較して、いくつかの利点がある。Cコンパイラは、マイクロコントローラや組み込みシステムなど、ほぼすべてのコンピュータシステム用に存在するため、言語の利用は、ネイティブコンパイラバックエンドが提供されるシステムに限定されない。 また、中間コードとしてのCは、通常C互換のインターフェースを提供するシステムライブラリの使用を簡素化する。数十年にわたる開発により、Cコンパイラは一般に、若い言語が行うよりも優れたコード最適化を行うことができる。C言語の中間コードには、冗長性、混乱やエラーを起こしやすいコード、未定義の動作など、C言語の問題がソース言語に持ち込まれることを懸念する人もいます。しかし、C言語のこれらのよく知られた懸念は、人間がアセンブリコードを直接書くときと同じように、Cコードを直接書くときにのみ発生します。 自動変換は十分に定義され、十分にテストされているので、機械語のコードを直接生成するのと同じ程度にはエラーが発生しないことになる。しかし、CやC++をプログラミング言語のバックエンドとして使う場合、確かに小さな欠点はある。C言語では、必ずしもすべてのCPU命令に直接アクセスできるわけではないので、例外処理などの特殊な構成に対して最適なコードを生成することが難しい場合がある。また、C言語では符号なし整数型に対してラップアラウンド演算を行いますが、これは現代の言語が望むものではない可能性があります。現在のNimの実装は、JavaScriptとC、C++のバックエンドを提供している。JavaScript バックエンドは Web 開発を可能にするための設計上の決定ですが、C と C++ バックエンドはより実用的な決定であり、将来的にはネイティブコードの直接生成や、人気のある LLVM バックエンドの使用によって置き換えられるか、少なくともサポートされる可能性があります。 ^[[8](#_footnotedef_8 "View footnote.")┛]]^ コンピュータ言語をある言語から別の言語に変換する場合、バイナリ実行ファイルへの直接コンパイルと区別するために「トランスパイラ」という用語が使われることがある。プログラムコードが、ほぼ同じ抽象度を持つ非常に類似した言語間で変換される場合、トランスパイラという用語が正当化されることがあります。 しかし、NimはC言語とは大きく異なり、抽象度が高く、Nimコンパイラは多くの高度な最適化を行っている。ですから、JavaScriptやC++のバックエンドにコンパイルする場合でも、トランスパイラと呼ぶべきではないでしょう。
 
 
 
@@ -329,72 +329,72 @@ Sometimes source code written in one programming language is converted into anot
 
 
 
-## Why Nim?
+## なぜNimなのか？
 
 
 
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     In this section we are using a lot of new Computer Science (CS) expressions but do not explain them. That is intentional --- when you already know them, you may get a better feeling of what Nim is, and when you do not know them, you will at least learn that we can describe Nim with fancy-sounding terms.
+     このセクションでは新しいコンピュータサイエンス(CS)の表現をたくさん使いますが、それについての説明はしません。これは意図的なもので、それらを既に知っていれば、Nim が何であるかをより良く感じられるでしょうし、知らない場合は、少なくとも Nim を派手な響きの言葉で表現できることを学ぶことができます。
   -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-Three well known traditional programming languages are C, Java and Python. C is basically a simple, close-to-the-hardware language created in 1972, for which compilers can generate fast, highly optimized native machine code, but it has cryptic syntax, some strange semantics, and is missing higher concepts of modern languages. Java, created in 1995, forces you strongly to the object-orientated style of programming (OOP) and runs on a virtual machine, which makes it unsuitable for embedded systems and microcontrollers. Python, created in 1991, is generally interpreted instead of compiled, which makes program execution not very fast, and it does not really allow writing low level code which operates close to the hardware. As many libraries of the Python language are written in highly optimized C, Python can appear really fast if a standard task, like sorting of data, processing of CSV or JSON files or website crawling is performed. So Python is not a bad solution when we use it mostly for calling library functions, but it reveals its low performance when we have to write some actual Python code in order to solve a problem. Of course, there are many more programming languages, each with its own advantages and disadvantages --- with some optimized for special use cases.
+伝統的なプログラミング言語としてよく知られているのは、C、Java、Pythonの3つである。C言語は基本的に1972年に作られたシンプルでハードウェアに近い言語であり、コンパイラは高速で高度に最適化されたネイティブなマシンコードを生成できるが、不可解な構文と奇妙な意味論を持っており、現代言語の高い概念が欠落している。1995年に作られたJavaは、オブジェクト指向プログラミング（OOP）を強く強制し、仮想マシン上で動作するため、組み込みシステムやマイクロコントローラには不向きである。1991年に開発されたPythonは、一般にコンパイルではなくインタープリタで記述されるため、プログラムの実行速度があまり速くなく、ハードウェアに近い動作をする低レベルのコードを記述することができない。Python言語の多くのライブラリは高度に最適化されたC言語で書かれているので、データのソート、CSVやJSONファイルの処理、ウェブサイトのクロールなどの標準的なタスクが実行されると、Pythonは本当に速く見えることがあります。このように、Pythonはライブラリ関数を呼び出すために使う分には悪いソリューションではありませんが、問題を解決するために実際にPythonのコードを書かなければならないときには、その性能の低さが露呈してしまいます。もちろん、この他にもたくさんのプログラミング言語があり、それぞれに長所と短所があるのだが、特殊な用途のために最適化されたものもある。
 
 
 
-Nim is a state-of-the-art programming language well suited for systems and application programming. Its clean Python-like syntax makes programming easy and fun for beginners, without applying any restrictions to experienced systems programmers. Nim combines successful concepts from mature languages like Python, Ada and Modula with a few established features of the latest research. It offers high performance with type and memory safety while keeping the source code short and readable. The compiler itself and the generated executables support all major platforms including Windows, Linux, BSD and Mac OS X.  Cross-compiling to Android and other mobile and embedded devices and microcontrollers is possible, and the JavaScript backend allows creating web apps and to run programs in web browsers. The custom package managers, Nimble or Nimph, makes use and redistribution of programs and libraries easy and secure. Nim supports various "backends" to generate the final code. The C, C++ and LLVM-based backends allow easy OS library calls without additional glue code, while the JavaScript backend generates high quality code for web applications. The integrated "Read/Eval/Print Loop" (REPL), "Hot code reloading", incremental compilation (expected for version 1.8), and support of various development environments including debugging and language server protocols makes working with Nim productive and enjoyable.
+Nimはシステムプログラミングやアプリケーションプログラミングに適した最先端のプログラミング言語です。Pythonのようなきれいな構文は、経験豊富なシステムプログラマーに制約を与えることなく、初心者でも簡単に楽しくプログラミングを行うことができます。Nimは、Python、Ada、Modulaなどの成熟した言語の成功したコンセプトと、最新の研究で確立されたいくつかの機能を組み合わせています。ソースコードを短く読みやすくしながら、型安全性、メモリ安全性を備えた高いパフォーマンスを提供します。コンパイラ本体と生成される実行ファイルは、Windows、Linux、BSD、Mac OS Xなど、主要なプラットフォームをサポートしています。 Androidなどのモバイル機器や組み込み機器、マイコンへのクロスコンパイルが可能で、JavaScriptバックエンドによりWebアプリの作成やWebブラウザでのプログラム実行も可能です。カスタムパッケージマネージャであるNimbleまたはNimphにより、プログラムやライブラリの利用や再配布が容易かつ安全に行えます。Nimは最終的なコードを生成するための様々な「バックエンド」をサポートしている。C、C++、LLVMベースのバックエンドは、追加のグルーコードなしにOSライブラリの呼び出しを容易にし、JavaScriptバックエンドはウェブアプリケーション用の高品質なコードを生成する。統合された「Read/Eval/Print Loop」（REPL）、「Hot code reloading」、インクリメンタル・コンパイル（バージョン 1.8 に期待）、デバッグや言語サーバー・プロトコルなど様々な開発環境のサポートにより、Nimでの作業が生産的で楽しいものになります。
 
 
 
-### Some Facts About Nim
+### ニムに関するいくつかの事実
 
 
--   Nim is a multi-paradigm programming language. Unlike some popular programming languages, Nim doesn't focus on the OOP paradigm. It's mainly an imperative and procedural programming language, with varying support for OOP, data-orientated, functional, declarative, concurrent, and other programming styles. Nim supports common OOP features, including inheritance, polymorphism, and dynamic dispatch.
+-   Nim はマルチパラダイムプログラミング言語です。いくつかの人気のあるプログラミング言語とは異なり、NimはOOPパラダイムに重点を置いていません。Nim は主に命令型、手続き型のプログラミング言語であり、OOP、データ指向、関数型、宣言型、並行型、その他のプログラミングスタイルを様々にサポートしています。Nim は継承、ポリモーフィズム、動的ディスパッチなどの一般的な OOP 機能をサポートしています。
 
--   The generated executables are dependence free and small: a simple chess program with a plain GTK-based graphical user interface is only 100 kB in size, and the size of the Nim compiler executable itself is about 6.5 MB. It is possible to shrink the executable size of "Hello World" programs to about 10 kB for use on tiny microcontrollers.
+-   生成される実行形式は依存性がなく、小さいものです。GTKベースの平易なグラフィカルユーザインターフェースを持つ単純なチェスプログラムのサイズはわずか100kBで、Nimコンパイラの実行形式自体のサイズは約6.5MBです。小さなマイクロコントローラで使う「Hello World」プログラムの実行ファイルサイズを10kB程度に縮小することも可能です。
 
--   Nim is fast. Generally, performance is very close to other high-performance languages such as C or C++. There are some exceptions still: other languages may have libraries or applications that have been tuned for performance for many years, while similar Nim applications are so far less tuned for performance, or maybe are more written with a priority of short and clean code or run-time safety.
+-   Nimは速いです。一般に、C や C++ などの他の高性能言語と非常に近い性能を持っています。他の言語には何年も前から性能向上のためにチューニングされたライブラリやアプリケーションがありますが、Nim の類似アプリケーションは性能向上のためのチューニングがあまりされていないか、あるいは短くてきれいなコードや実行時の安全性を優先して書かれている可能性があります。
 
--   Clean Python-like syntax with significant white-space, no need for block delimiters like `{}` or `begin/end` keywords, and no need for statement delimiters like `;`
+-   Python のようなきれいな構文で、空白を多く含み、`{}` や `begin/end` キーワードのようなブロック区切りは不要で、`;` のような文の区切りも不要です。
 
--   Safety: Nim programs are type- and memory-safe --- memory corruption is prevented by the compiler as long as unsafe low level constructs like casts, pointers and the addr operator or the {.union.} pragma are not used.
+-   安全性 Nim プログラムは型安全、メモリ安全です。キャスト、ポインタ、addr 演算子、{.union.} プラグマなどの安全でない低レベルの構成を使用しない限り、コンパイラによってメモリ破壊が防止されます。
 
--   Fast compiler. The Nim compiler can compile itself and other medium-size packages in less than 10 seconds, and upcoming incremental compilation will increase that speed further.
+- 高速なコンパイラです。Nimコンパイラは自分自身や他の中型パッケージを10秒以内にコンパイルすることができ、今後のインクリメンタル・コンパイルでさらにその速度を上げることができます。
 
--   Nim is statically typed: each `object` and each variable has a well-defined type, which catches most programming errors already at compile time, prevents run-time errors, and ensures the highest performance. At the same time, the statically typing makes it easier to understand and to maintain larger code bases.
+-   Nim は静的型付けされています。各オブジェクトと各変数は明確に定義された型を持っており、コンパイル時にすでにほとんどのプログラミングエラーを検出し、実行時エラーを防ぎ、最高のパフォーマンスを保証します。同時に、静的型付けは、より大きなコードベースを理解し、維持することを容易にします。
 
--   Nim supports various memory management strategies, including manually allocations for critical low-level tasks as well as various garbage collectors including a destructor based, fully deterministic memory manager.
+-   Nim は重要な低レベルタスクのための手動割り当てや、デストラクタベースの完全決定論的メモリマネージャを含む様々なガベージコレクタなど、様々なメモリ管理ストラテジーをサポートしています。
 
--   Nim produces native, highly optimized executables and can also generate JavaScript output for web applications.
+- Nim は高度に最適化されたネイティブな実行ファイルを生成し、ウェブアプリケーション用の JavaScript 出力も生成できます。
 
--   Nim has a clean module concept, which helps to structure large projects.
+- Nim はクリーンなモジュールコンセプトを持っており、大規模なプロジェクトを構成するのに役立ちます。
 
--   Nim has a well-designed standard library which supports many basic programming tasks. The full source code of the library is included and can be viewed easily from within the HTML-based API documentation.
+-   Nimには、多くの基本的なプログラミング作業をサポートする、よく設計された標準ライブラリがあります。ライブラリの完全なソースコードが含まれており、HTML ベースの API ドキュメントから簡単に閲覧することができます。
 
--   Library modules like the `os` module provides OS independent abstractions, which allows to compile and run the same program on different operating system without modifications.
+- `os` モジュールのようなライブラリモジュールは OS に依存しない抽象化機能を提供し、同じプログラムを異なるオペレーティングシステム上で修正せずにコンパイルして実行することを可能にします。
 
--   The Nim standard library is supported by more than 1000 external packages for a broad range of use cases. External packages can be installed easily with Nim's package managers.
+- Nim の標準ライブラリは、1000 以上の外部パッケージによってサポートされており、幅広いユースケースに対応しています。外部パッケージはNimのパッケージマネージャで簡単にインストールすることができます。
 
--   Asynchronous operation, threading and parallel processing is supported.
+- 非同期処理、スレッド処理、並列処理に対応しています。
 
--   Nim supports all popular operating systems including Linux, Windows, macOS and Android.
+-   Nim は Linux、Windows、macOS、Android を含むすべての一般的なオペレーティングシステムをサポートしています。
 
--   Usage of external libraries written in C is easy and occurs directly without any glue code, and Nim can even work together with code written in other languages, for example there are some Nim <-> Python interfaces available.
+- C 言語で書かれた外部ライブラリの利用も簡単で、グルーコードなしで直接利用できます。また、Nim は他の言語で書かれたコードとの連携も可能で、例えば Nim <-> Python インターフェースがあります。
 
--   Many popular editors have support for Nim syntax highlighting and other IDE functionality like on-the-fly checking for errors and displaying detailed information about imported functions and data types.
+- 多くの一般的なエディタでは、Nim のシンタックスハイライトや、オンザフライでのエラーチェック、インポートした関数やデータ型に関する詳細情報の表示といった IDE 機能がサポートされています。
 
--   In the last few years Nim has reached some important milestones: Version 1.0 with some stability promises was released, and with the ARC and ORC memory management strategies and full destructor support fully deterministic memory management comparable to memory management in C++ or Rust is available. So problems of conventional garbage collectors like delayed memory deallocation or longer pausing of programs due to the GC process are gone. And some larger companies have started using Nim in production, the most influential may be currently the Status Corp. with their Ethereum client development.
-
-
-
-### Nim supports many programming styles
+-   ここ数年、Nim はいくつかの重要なマイルストーンに到達しました。ARCとORCのメモリ管理ストラテジーとデストラクタのフルサポートにより、C++やRustのメモリ管理に匹敵する完全な決定論的メモリ管理が可能になりました。そのため、従来のガベージコレクタが抱えていた、メモリ解放の遅れやGC処理によるプログラムの長時間停止といった問題は解消されました。そして、いくつかの大企業がNimを実運用で使い始めています。最も影響力があるのは、現在Ethereumクライアントを開発しているStatus Corp.かもしれません。
 
 
-We mentioned already that Nim is a multi-paradigm programming language, that supports various programming styles. While we may regard Nim in first line as an imperative, procedural programming language, it supports the popular functional and object-orientated programming styles well.
+
+### Nimは様々なプログラミングスタイルに対応
 
 
-In classical OOP programming languages, we have the concept of `classes` with `attributes`, and methods that are very closely bound to the classes, as in Python:
+Nim がマルチパラダイムプログラミング言語であり、様々なプログラミングスタイルをサポートしていることは既に述べたとおりです。Nim は第一義的には命令型、手続き型のプログラミング言語ですが、 一般的な関数型やオブジェクト指向のプログラミングスタイルにも対応しています。
+
+
+古典的なオブジェクト指向プログラミング言語では，Pythonのように「属性」を持つ「クラス」と，そのクラスに非常に密接に結びついた「メソッド」という概念があります．
 
 
 
@@ -411,18 +411,18 @@ user.say()
 
 
 
-In this Python snippet, we declare a class User, with a custom method named `say()` bound to this class. Then we create an instance variable of this class and call its say() method.
+このPythonのスニペットでは、Userというクラスを宣言し、`say()`というカスタムメソッドをこのクラスにバインドしています。そして、このクラスのインスタンス変数を作成し、そのsay()メソッドを呼び出しています。
 
 
 
-This tight bounding of methods to classes is not very flexible, e.g.  extending the set of methods of a class may be difficult or impossible.  Another problem with such a class concept is, that it is not always clear to which class a method belongs when more than just one single class is involved: Imagine that we need a method that appends a single character to a text `string`. Is that method a member of the character class, or a member of the text `string` class?
+例えば、あるクラスのメソッド群を拡張することは困難か不可能かもしれません。 このようなクラス概念のもう一つの問題は、複数のクラスが関与している場合に、あるメソッドがどのクラスに属するかが必ずしも明確でないことである。例えば、文字列 `string` に1文字を追加するメソッドが必要だとします。このメソッドは character クラスのメンバなのか、それとも text `string` クラスのメンバなのか？
 
 
-Nim avoids such a strict class concept, while its generalized `method call syntax` allows us to use a class like syntax for all of our data types: e.g. to get the length of a `string` variable, we can write `len(myString)` in classical procedural notation, or we can use the method call syntax `myString.len()` or just `myString.len`. The compiler regards all these notations as equivalent, so we have the method syntax available without the restrictions of the class concept. The method call syntax can be used in Nim for all data types, even for plain numbers --- so the notation `abs(myNum)` is fully equivalent with `myNum.abs`.
+Nim はこのような厳密なクラス概念を避けて、一般的な `メソッド呼び出し構文` を用いて、全てのデータ型にクラスのような構文を用いることができます。例えば、`string` 変数の長さを得るには、古典的な手続き表記で `len(myString)` と書くこともできるし、メソッド呼び出し構文 `myString.len()` または単に `myString.len` を用いることができるのです。コンパイラはこれらの表記をすべて等価と見なしますので、クラス概念の制約を受けずにメソッド構文を利用することができます。Nim ではすべてのデータ型に対してメソッド呼び出し構文を使用することができます。数値の場合でさえもです。したがって、 `abs(myNum)` という記法は `myNum.abs` と完全に等価です。
 
 
 
-The Python code from above may look in Nim like
+上記のPythonのコードは、Nimでは次のようになります。
 
 
 
@@ -440,11 +440,11 @@ user.say()
 
 
 
-Instead of classes, we use `object` types in Nim, and we define procedures and methods that can work on `objects` or other data types.
+Nim ではクラスの代わりに `オブジェクト` 型を使用し、 `オブジェクト` や他のデータ型に対して動作する手続きやメソッドを定義しています。
 
 
 
-As an example for the functional programming style in Nim, we may look at some code fragment from a real world app that has to generate a `string` from four numbers, separated by commas. Using the `mapIt()` procedure imported from the `sequtils` module and the `fmt()` `macro` from the `strformat` module, we may write that in functional programming style in this way:
+Nim の関数型プログラミングの例として、カンマで区切られた4つの数字から `string` を生成しなければならない現実のアプリケーションのコードの断片を見てみましょう。`sequtils` モジュールの `mapIt()` プロシージャと `strformat` モジュールの `fmt()` ` マクロを使って、このように関数型プログラミングスタイルで記述することができるだろう。
 
 
 
@@ -461,7 +461,7 @@ echo str # "0, 0, 800, 600"
 
 
 
-In the imperative, procedural style, we would write it like
+命令型、手続き型のスタイルでは、次のように書きます。
 
 
 
@@ -478,54 +478,53 @@ for i, x in pairs(DefaultWorldRange):
 
 
 
-### Nim is Efficient
+### ニムは効率的
 
 
-Nim is a compiled and statically-typed language. While for interpreted, dynamically-typed languages like Python we have to run every statement to check even for trivial errors, the Nim compiler checks for most errors during the compile process. The static typing together with the well-designed Nim type system allows the compiler to catch most errors already in the compile phase, like the undefined addition of a number and a letter, and to report the errors in the terminal window or directly in the editor or IDE. When no errors are found or all errors have been fixed, then the compiler generates highly optimized dependency free executables. And this compilation process is generally really fast, for example the compiler compiles itself in maybe 10 to 30 seconds on a typical modern PC.^\[[9](#_footnotedef_9 "View footnote.") \]^
-
-
-
-Modern concepts like zero-overhead `iterators`, compile-time evaluation of user-defined functions and cross-module inlining in combination with the preference of value-based, stack-located data types leads to extremely efficient code. Multi-threading, asynchronous input/output operations (async IO), parallel processing and SIMD instructions including GPU execution are supported. Various memory management strategies exists: selectable and tuneable high performance `Garbage Collectors` (GC), including a new fully deterministic destructor based GC, are supported for automatic memory management.  These can be disabled for manual memory management. This makes Nim a good choice for application development and close-to-the-hardware system programming at the same time. The unrestricted hardware access, small executables and optional GC will make Nim a perfect solution for embedded systems, hardware driver and operating system development.
+Nim はコンパイルされた静的型付け言語です。Python のような動的型付けされたインタプリタ言語では、些細なエラーもチェックするために全ての文を実行しなければなりませんが、Nim のコンパイラはコンパイル時にほとんどのエラーをチェックします。静的型付けとよく設計されたNimの型システムにより、コンパイラは数字と文字の未定義の足し算のようなほとんどのエラーをコンパイル段階ですでにキャッチし、ターミナルウィンドウやエディタやIDEで直接エラーを報告します。エラーが見つからなかったり、すべてのエラーが修正された場合、コンパイラは高度に最適化された依存性のない実行ファイルを生成する。そして、このコンパイルプロセスは一般的に非常に高速で、例えば、コンパイラは一般的な最新のPCで10秒から30秒程度でコンパイルします^[[9](#_footnotedef_9 "View footnote.") \]^。
 
 
 
-### Nim is Expressive and Elegant
-
-
-Nim offers a modern type system with `templates`, generics and type inference. Built-in advanced data types like dynamic containers, sets, and `strings` with full UTF support are completed by a large collection of library types like hash tables and regular expressions.  While the traditional Object-Oriented-Programming programming style with inheritance and dynamic dispatch is supported, Nim does not enforce this programming paradigm and offers modern concepts, like procedural and functional programming. The optional method call syntax allows to use all data types and functions in an OOP like fashion, e.g. instead of len(myStr) we can also use the OOP style myStr.len.^\[[10](#_footnotedef_10 "View footnote.") \]^ The powerful AST-based hygienic macro system offers nearly unlimited possibilities for the advanced programmer. This macro and meta-programming system allows compiler-guided code generation at compile time, so the Nim core language can be kept small and compact, while many advanced features are enabled by user defined macros. For example, the support of asynchronous IO operations has been created with these forms of meta-programming, as well as many Domain Specific Language (DSL) extensions.
+ゼロオーバーヘッドのイテレータ、ユーザー定義関数のコンパイル時評価、モジュール間のインライン化といった最新のコンセプトと、値ベースのスタック配置型データ型の選択により、非常に効率的なコードを実現します。マルチスレッド、非同期入出力操作（async IO）、並列処理、GPU 実行を含む SIMD 命令がサポートされています。自動メモリ管理のために、新しい完全に決定論的なデストラクタベースのGCを含む、選択可能で調整可能な高性能の`ガーベジコレクタ`(GC)がサポートされています。 手動でメモリを管理する場合は、これらを無効にすることができます。このため、Nim はアプリケーション開発と同時に、ハードウェアに近い形でのシステムプログラミングにも適しています。無制限のハードウェアアクセス、小さな実行ファイル、オプションのGCは、Nimを組み込みシステム、ハードウェアドライバ、オペレーティングシステム開発のための完璧なソリューションにすることでしょう。
 
 
 
+### Nim は表現力豊かでエレガント
 
-### Nim is Open and Free
 
-
-The Nim compiler and all modules of the standard library are implemented in Nim. All source code is available under the less restricted MIT license.
+Nim はテンプレート、ジェネリクス、型推論を備えたモダンな型システムを提供します。動的コンテナ、集合、完全な UTF サポートを持つ `strings` などの組み込みの高度なデータ型は、ハッシュテーブルや正規表現などの大規模なライブラリ型コレクションによって補完されています。 継承や動的ディスパッチなどの伝統的なオブジェクト指向プログラミングもサポートされていますが、Nim はこのプログラミングパラダイムを強制するものではなく、手続き型や関数型プログラミングなどの現代的な概念も提供します。例えば、len(myStr) の代わりに OOP スタイルの myStr.lenも使用できます。^[[10](#_footnotedef_10 "View footnote.") \]^ ASTベースの強力な hygienic macro system は上級プログラマにほぼ無限の可能性を提供しま す。このマクロとメタプログラミングのシステムにより、コンパイル時にコンパイラが誘導するコード生成が可能になり、Nimコア言語を小さくコンパクトに保つことができる一方、多くの高度な機能はユーザ定義のマクロにより有効になります。例えば、非同期IO操作のサポートは、これらの形式のメタプログラミングで作成されており、また、多くのDSL（Domain Specific Language）拡張も可能です。
 
 
 
 
-### Nim has a community
+### Nim はオープンでフリー
 
 
-The Nim forum is hosted at:
-
-
-
-`https://forum.nim-lang.org/`
+Nimのコンパイラと標準ライブラリの全モジュールはNimで実装されています。すべてのソースコードは、制限の少ないMITライセンスの下で利用可能です。
 
 
 
-and the software running the forum is coded in Nim.
+
+### Nimにはコミュニティがある
+
+
+Nimのフォーラムは、以下の場所で開催されています。
 
 
 
-Real-time chat is supported by IRC, Gitter, Discord, Telegram and
-others.
+https://forum.nim-lang.org/`
 
 
 
-Nim is also supported by Reddit.com and Stackoverflow.com:
+でホストされており、フォーラムを動かすソフトウェアは Nim でコード化されています。
+
+
+
+リアルタイムチャットは、IRC、Gitter、Discord、Telegram などがあります。
+
+
+
+Nimは、Reddit.comやStackoverflow.comでもサポートされています。
 
 
 
@@ -536,49 +535,49 @@ Nim is also supported by Reddit.com and Stackoverflow.com:
 
 
 
-### Nim is evolving
+### Nimは進化している
 
 
-Started more than 12 years ago as a small community project of some bright CS students led by `Mr. A. Rumpf`, it is now considered as one of the most interesting and promising programming languages, supported by countless individuals and leading companies of the computer industry, for instance, it's actively used in the areas of application, game, web and cryptocurrency development. Nim has made a large amount of progress in the last few years: it reached version Nim v1.6 with some stability guarantees and a new deterministic memory management system was introduced, which will improve support of parallel processing and the use of Nim in the area of embedded systems development.
-
-
-
-
-### Why is Nim not a popular mainstream language yet?
-
-
-Nim was created by Mr. A. Rumpf in 2008, supported by a few volunteers.  Finally, in 2018 Nim got some significant monetary support by `Status Corp.` and in 2019 the stable Nim version 1.0 was released. But still Nim is developed by a small core team and some volunteers, while some other languages like Java, C#, Go, or Rust are supported by large companies, or like C and C++ have a very long history and well-trained users. And finally, there are many competing languages, some with a longer history, and some possibly better suited for special purposes, like JavaScript, Dart or Kotlin for web development, Julia or R for numeric applications, or Zig, C and Assembly for the tiny 8-bit microcontrollers with a small amount of RAM.
-
-
-
-Nim is already supported by more than 1000 external packages which cover many application areas, but that number is still small compared to really popular languages like Python, Java or JavaScript. And some Nim packages can currently not really compare with the libraries of other languages, which have been optimized for years by hundreds or thousands of full-time developers.
-
-
-
-Indeed, the future of Nim is not really secure. Core developers may vanish, financial support may stop, or maybe a better language may appear. But even if the development of Nim should stop some day, you will still be able to use it, and many concepts that you may have learned with Nim can be used with other modern languages too.
+12年以上前に`A. Rumpf`氏率いる優秀なCS学生たちの小さなコミュニティ・プロジェクトとして始まったNimは、今では最も興味深く有望なプログラミング言語の一つと考えられており、無数の個人やコンピュータ業界の大手企業によって支持されています。例えば、アプリケーション、ゲーム、ウェブ、暗号通貨開発の分野で活発に使用されています。Nimはここ数年で大きな進歩を遂げました。安定性がある程度保証されたバージョンNim v1.6に到達し、新しい決定論的メモリ管理システムが導入されました。Nim v1.6に到達し、並列処理のサポートが強化され、組み込みシステム開発の分野でもNimが使用されるようになりました。
 
 
 
 
-### Is Nim a good choice as first language for a Beginner?
+### なぜNimはまだ主流の言語として普及していないのでしょうか？
 
 
-When you use C as your first language, you may learn well how computers really work, but the learning experience is not that nice, progress is slow and C lacks many concepts of modern programming languages. C++, Rust or Haskell are really too difficult for beginners. So currently many starts with Python. While you can learn high level concepts well with Python, and you get useful results fast, you learn not much about the internal working of computers. So you may never understand why your code is slow and consumes so many resources, and you will have no idea how to improve the program or how you could run it successfully on restricted hardware. It's like learning to drive a car, without any knowledge about how a combustion engine, the transmission, or the brakes really work. Nim has none of these restrictions, as we have high level concepts available like in Python, but we have access to low level stuff too, so we can really understand the internal workings, if we want.  Learning resources for Nim are still not that good as for mainstream languages, but there exists some nice tutorials already, and hopefully this book will help beginners also a bit.
-
-
-
-### Is Nim really a good teaching language?
-
-
-Generally yes, in the same way as Pascal was in the 1980s, and Modula/Oberon were at the end of the last century. But Nim still has the same problems as the wirthian languages: They do not really help with finding a job. When we teach the kids some JavaScript or C, they may find at least a simple employment when they have to leave the intended education path early for some reason. With niche languages this is unfortunately not the case, so teachers should know about their responsibility. And of course teaching against the interests of the kids makes not much sense. When they want to learn some JavaScript to make some visual effects or whatever easily, then it is hard to teach another language which may be not immediately available on the PC at home or their smartphone.
+Nimは2008年にA.Rumpf氏によって、数人のボランティアに支えられて作られました。 そして2018年、ついにNimは`Status Corp.`から多額の金銭的支援を受け、2019年には安定版のNimバージョン1.0がリリースされました。しかし、JavaやC#、Go、Rustのように大企業にサポートされていたり、CやC++のように非常に長い歴史とよく訓練されたユーザーがいる言語もある中で、Nimはまだ小さなコアチームと一部のボランティアによって開発されている。さらに、ウェブ開発用のJavaScript、Dart、Kotlin、数値演算アプリケーション用のJuliaやR、RAMの少ない小さな8ビットマイクロコントローラ用のZig、C、Assemblyなど、より長い歴史を持ち、特殊な用途に適していると思われる競合言語も数多く存在するのです。
 
 
 
+Nim はすでに 1000 を超える外部パッケージによってサポートされており、多くの応用分野をカバーしていますが、その数は Python や Java、JavaScript のような本当に人気のある言語に比べるとまだ少ないものです。また、Nimのパッケージの中には、何百人、何千人もの専任開発者が何年もかけて最適化した他の言語のライブラリとは、今のところ比較にならないものもあります。
 
-### So is Nim really the best start for me?
 
 
-Maybe not. When you intend to learn a programming language today and make a great video game tomorrow, then definitely not. This is just not possible. While there are nice libs for making games with Nim already available, there exists easier solutions in other languages. With some luck you may find some source code for that languages, so that you can patch a few `strings` and perhaps modify some colors and the background music and call it your game.
+実際、Nimの将来は決して安泰ではありません。コアとなる開発者がいなくなるかもしれないし、資金援助がなくなるかもしれないし、もっといい言語が現れるかもしれない。しかし、Nim の開発がいつかストップしたとしても、あなたは Nim を使うことができますし、Nim で学んだ多くの概念は他の現代言語でも使うことができます。
+
+
+
+
+### Nimは初心者のための最初の言語として良い選択でしょうか？
+
+
+C言語を最初の言語として使う場合、コンピュータが実際にどのように動くかをよく学ぶことができるかもしれませんが、学習経験はそれほど良いものではなく、進歩は遅く、Cには現代のプログラミング言語の多くのコンセプトが欠けています。C++、Rust、Haskellは初心者には難しすぎる。そこで、現在では多くの人がPythonから始めています。Pythonは高度な概念をよく学ぶことができ、有用な結果を素早く得ることができますが、コンピュータの内部動作についてはあまり学ぶことができません。そのため、自分のコードがなぜ遅く、多くのリソースを消費するのか理解できず、プログラムを改善する方法や、制限されたハードウェアでどうすればうまく実行できるのかがわからなくなる可能性があります。それは、内燃機関やトランスミッション、ブレーキが実際にどのように機能するのかについて何の知識も持たずに、車の運転を学ぶようなものです。Nimにはそのような制約がありません。Pythonのように高レベルの概念が利用できますが、低レベルのものにもアクセスできるので、望めば本当に内部構造を理解することができます。 Nimの学習リソースは主流の言語と比べるとまだそれほど良くはありませんが、すでにいくつかの素晴らしいチュートリアルがありますし、この本が初心者にも少しは役立つことを期待しています。
+
+
+
+### Nimは本当に良い教育言語なのでしょうか？
+
+
+1980年代のPascalや前世紀末のModula/Oberonと同じように、一般的にはイエスです。しかし、NimにはまだWirthian言語と同じ問題があります。就職にはあまり役立たないのです。子供たちにJavaScriptやC言語を教えれば、何らかの事情で進学を断念したとき、少なくとも簡単な就職先が見つかるかもしれない。ニッチな言語では、残念ながらそうならないので、教師は自分の責任について知っておく必要があります。そしてもちろん、子供たちの興味に反して教えることは、あまり意味がない。JavaScriptを覚えて、ビジュアルエフェクトなどを簡単に作りたいときに、自宅のPCやスマートフォンですぐに使えないような言語を教えるのは難しいです。
+
+
+
+
+### では、ニムは本当に自分にとって最高のスタート地点なのだろうか？
+
+
+そうではないかもしれません。今日プログラミング言語を学んで、明日には素晴らしいビデオゲームを作ろうと思っているのなら、絶対にダメです。それは無理な話です。Nim でゲームを作るための素敵なライブラリはすでにありますが、他の言語にはもっと簡単なソリューションがあります。運が良ければ、その言語のソースコードが見つかるかもしれません。そうすれば、いくつかの「文字列」をパッチして、色やBGMを変更すれば、あなたのゲームと呼ぶことができるでしょう。
 
 
 
